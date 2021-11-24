@@ -14,6 +14,7 @@ class CompanyTypeSeeder extends Seeder
      */
     public function run(){
         DB::table('company_types')->insert([
+            //Default Company Type
             [
                 'type_name' => 'A definir',
                 'type_description' => 'A definir'

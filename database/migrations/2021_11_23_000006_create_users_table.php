@@ -17,11 +17,19 @@ class CreateUsersTable extends Migration
          * User
          */
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->id(); //user id
+            $table->string('name'); //user complete name
+            $table->string('email')->unique(); //user email
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('phone'); //user phone
+            $table->string('password'); //user password
+            $table->boolean('is_deleted')->default(false); //is user deleted ?
+            //FK - roles table
+            $table->foreignId('user_role_id')->default(4)->constrained();  //default: 'Colaborador'
+            //FK - departments table
+            $table->foreignId('department_id')->default(1)->constrained(); // default: 'A definir'
+            //FK - companies table
+            $table->foreignId('company_id')->default(2)->constrained(); // default: Main company
             $table->rememberToken();
             $table->timestamps();
         });
