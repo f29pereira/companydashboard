@@ -101,6 +101,15 @@
         @endif
     @endif
 
+    {{-- Pooper JS CDN --}}
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    {{-- Enable tooltips everywhere --}}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
 

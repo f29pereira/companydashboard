@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -33,10 +34,22 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 /**
  * User Role
  */
+Route::get('/roles/index', [UserRoleController::class, 'index'])->name('roles');
 
 /**
  * User
  */
+Route::get('/users/menu', [UserController::class, 'usersMenu'])->name('menuUsers');
+
+Route::get('/users/index', [UserController::class, 'index'])->name('users');
+
+Route::get('/users/show/{id}', [UserController::class, 'show'])->name('showUser');
+
+Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('editUser');
+
+Route::post('/users/update/{id}', [UserController::class, 'update'])->name('updateUser');
+
+Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('deleteUser');
 
 /**
  * User Profile

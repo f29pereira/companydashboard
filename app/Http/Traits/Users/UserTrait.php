@@ -6,16 +6,13 @@ use App\Models\Users\User;
 
 trait UserTrait{
     /**
-     * List of users (not admin)
+     * List of users
      *
      * @return array[] $list
      */
     public function userList(){
         //Eaguer loading: userRole, department, company
-        $list = User::with(['userRole', 'department', 'company'])->where([
-            ['user_role_id', '!=', 1], //User is not Admin
-            ['is_deleted', false] //User is not deleted
-        ])->get();
+        $list = User::with(['userRole', 'department', 'company'])->where('is_deleted', false)->get();
 
         return $list;
     }

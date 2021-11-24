@@ -6,7 +6,7 @@ use App\Models\Users\UserRole;
 
 trait UserRoleTrait{
     /**
-     * List of user roles
+     * List of roles
      *
      * @return array[] $list
      */
@@ -19,7 +19,7 @@ trait UserRoleTrait{
     }
 
     /**
-     * Count of user roles
+     * Count of roles
      *
      * @return int $count
      */

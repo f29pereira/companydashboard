@@ -45,7 +45,7 @@ class AuthServiceProvider extends ServiceProvider
          *  @return \Illuminate\Auth\Access\Response
          */
         Gate::define('is_respDepartment', function (User $user){
-            return $user->user_role_id === 2
+            return $user->user_role_id === 3
                 ? Response::allow()
                 : Response::deny('Ação disponível apenas para Responsável do Departamento.');
         });
@@ -56,7 +56,7 @@ class AuthServiceProvider extends ServiceProvider
          *  @return \Illuminate\Auth\Access\Response
          */
         Gate::define('is_user', function (User $user){
-            return $user->user_role_id === 1 || $user->user_role_id === 2 || $user->user_role_id === 3
+            return $user->user_role_id === 1 || $user->user_role_id === 2 || $user->user_role_id === 3 || $user->user_role_id === 4
                 ? Response::allow()
                 : Response::deny('Ação disponível apenas para Colaborador.');
         });

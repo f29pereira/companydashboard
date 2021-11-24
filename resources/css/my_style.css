@@ -1,0 +1,4 @@
+/*Datatables hover row color**/
+.table-hover tbody tr:hover td {
+    background-color: #b3ccff;
+}
