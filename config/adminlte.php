@@ -230,11 +230,11 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
@@ -246,25 +246,36 @@ return [
         [
             'text' => 'Home',
             'url'  => '',
+            'icon' => 'fas fa-home',
         ],
         [
             'text'        => 'Utilizadores',
             'url'         => '',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'icon'        => 'fas fa-users',
+            'can'         => 'is_admin',
+            //'label'       => 4,
+            //'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'        => 'Gestão',
+            'url'         => '',
+            'icon'        => 'fas fa-th',
+            'can'         => 'is_admin',
         ],
+        ['header' => 'Conta de Utilizador'],
+        [
+            'text' => 'Perfil',
+            'url'  => '/user/profile',
+            'icon' => 'fas fa-fw fa-user',
+            'can'  => 'is_user',
+        ],
+        /*
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
+        ],*/
+        /*
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -319,6 +330,7 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+        */
     ],
 
     /*

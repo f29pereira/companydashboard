@@ -82,4 +82,16 @@ class UserController extends Controller
     {
         //
     }
+
+    public function profile(){
+        return view('profile.user-profile');
+    }
+
+    public function editProfile(){
+        return view('profile.edit-profile');
+    }
+
+    public function updateProfile(){
+
+    }
 }

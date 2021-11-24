@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,6 +36,19 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 /**
  * User
+ */
+
+/**
+ * User Profile
+ */
+Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');
+
+Route::get('/user/edit-profile/{id}', [UserController::class, 'editProfile'])->name('editProfile');
+
+Route::post('/user/update-profile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile');
+
+/**
+ * Management Menu
  */
 
 /**
