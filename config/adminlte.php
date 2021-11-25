@@ -258,7 +258,7 @@ return [
         ],
         [
             'text'        => 'Gestão',
-            'url'         => '',
+            'url'         => '/management/menu',
             'icon'        => 'fas fa-th',
             'can'         => 'is_admin',
         ],

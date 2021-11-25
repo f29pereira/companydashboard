@@ -13,6 +13,7 @@ trait CompanyTypeTrait{
     public function companyTypeList(){
         $list = DB::table('company_types')->where([
             ['id', '!=', 1], //Company Type Default
+            ['id', '!=', 2], //Company Type Main Company
             ['is_deleted', '!=', true] //Company Type soft deleted
         ])->get();
 

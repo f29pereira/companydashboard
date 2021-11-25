@@ -24,6 +24,7 @@ trait CompanyTrait{
     public function companyList(){
         //Eager loading: companyTypes
         $list = Company::with(['companyTypes'])->where([
+            ['is_deleted', false], //Company is not deleted
             ['id', '!=' ,1], //Company Default
             ['company_types_id', '!=' ,2]  //Company 'Principal'
         ])->get();

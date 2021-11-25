@@ -8,7 +8,6 @@ use App\Http\Traits\Users\UserRoleTrait;
 use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Http\Requests\UserPostRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Users\User;
 
@@ -132,7 +131,6 @@ class UserController extends Controller
         return redirect()->route('users');
     }
 
-
     /**
      * Display a user profile
      *
@@ -171,11 +169,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateProfile(UserPostRequest $request , $id){
-        //Specified User
+    public function updateProfile(UserPostRequest  $request, $id){
+        //User
         $user = User::findOrFail($id);
 
-        //User update
+        //User Update
         $user->update($request->all());
 
         //Redirect: User profile

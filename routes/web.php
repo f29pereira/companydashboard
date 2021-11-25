@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Users\ManagementController;
+use App\Http\Controllers\Users\CompanyController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +24,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+/**
+ * Authentication routes
+ */
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -63,6 +68,7 @@ Route::post('/user/update-profile/{id}', [UserController::class, 'updateProfile'
 /**
  * Management Menu
  */
+Route::get('/management/menu', [ManagementController::class, 'managementMenu'])->name('management');
 
 /**
  * Company Type
@@ -71,6 +77,25 @@ Route::post('/user/update-profile/{id}', [UserController::class, 'updateProfile'
 /**
  * Company
  */
+Route::get('/companies/menu', [CompanyController::class, 'companiesMenu'])->name('companiesMenu');
+
+Route::get('/companies/edit-main-company/{id}', [CompanyController::class, 'editMain'])->name('editMainCompany');
+
+Route::post('/companies/update-main-company/{id}', [CompanyController::class, 'updateMain'])->name('updateMainCompany');
+
+Route::get('/companies/index', [CompanyController::class, 'index'])->name('companies');
+
+Route::get('/companies/show/{id}', [CompanyController::class, 'show'])->name('showCompany');
+
+Route::get('/companies/create', [CompanyController::class, 'create'])->name('createCompany');
+
+Route::post('/companies/store', [CompanyController::class, 'store'])->name('storeCompany');
+
+Route::get('/companies/edit/{id}', [CompanyController::class, 'edit'])->name('editCompany');
+
+Route::post('/companies/update/{id}', [CompanyController::class, 'update'])->name('updateCompany');
+
+Route::get('/companies/delete/{id}', [CompanyController::class, 'softDelete'])->name('deleteCompany');
 
 /**
  * Departments

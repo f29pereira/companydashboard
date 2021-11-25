@@ -37,7 +37,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->name }}" name="name" id="userName">
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                 </div>
                                 {{-- Error Message --}}
@@ -51,7 +51,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->email }}" name="email" id="userEmail">
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-envelope text-info"></i></span>
                                     </div>
                                 </div>
                                 {{-- Error Message --}}
@@ -65,7 +65,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->phone }}" name="phone" id="userPhone">
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-phone text-info"></i></span>
                                     </div>
                                 </div>
                                 {{-- Error Message --}}
@@ -74,14 +74,12 @@
                                 @enderror
                             </div>
                         </div>
-
                         {{-- Role, Department, Company --}}
                         <div class="row" style="display:none">
-                            <input type="text" class="form-control" value="{{ $user->role_id }}" name="role_id" id="">
+                            <input type="text" class="form-control" value="{{ $user->user_role_id }}" name="user_role_id" id="">
                             <input type="text" class="form-control" value="{{ $user->department_id }}" name="department_id" id="">
                             <input type="text" class="form-control" value="{{ $user->company_id }}" name="company_id" id="">
                         </div>
-
                         {{-- Confirm/Cancel --}}
                         <div class="row">
                             <div class="col-md-3">

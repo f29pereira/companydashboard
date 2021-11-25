@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Utilizadores')
+@section('title', 'Menu de Gestão')
 
 @section('content_header')
 
@@ -20,40 +20,40 @@
                             <i class="fas fa-home fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="fas fa-users fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Utilizadores</h3>
+                        <h3 class="card-title"><i class="fas fa-th fa-lg"></i>&nbsp;&nbsp;&nbsp;Gestão</h3>
                     </div>
                     {{-- Card Body --}}
                     <div class="card-body">
                         <div class="row">
-                            {{-- Registed Users --}}
+                            {{-- Company --}}
                             <div class="col">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                      <h3>{{ $users }}</h3>
-                                      <p>Utilizadores registados</p>
+                                      <h3>{{ $companies }}</h3>
+                                      <p>Empresas</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-users text-white"></i>
+                                        <i class="far fa-building text-white"></i>
                                     </div>
-                                    <a href="{{ url('/users/index') }}" class="small-box-footer">
+                                    <a href="{{ url('/companies/menu') }}" class="small-box-footer">
                                       Saber mais <i class="fas fa-arrow-circle-right"></i>
                                     </a>
-                                </div>
+                                  </div>
                             </div>
-                            {{-- User Roles --}}
+                            {{-- Departments --}}
                             <div class="col">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                      <h3>{{ $roles }}</h3>
-                                      <p>Roles de Utilizador</p>
+                                      <h3>{{ $departments }}</h3>
+                                      <p>Departamentos</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-users-cog text-white"></i>
+                                        <i class="fas fa-user-tie text-white"></i>
                                     </div>
-                                    <a href="{{ url('/roles/index') }}" class="small-box-footer">
-                                      Saber mais <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ url('/departments/index') }}" class="small-box-footer">
+                                        Saber mais <i class="fas fa-arrow-circle-right"></i>
                                     </a>
-                                </div>
+                                  </div>
                             </div>
                         </div>
                     </div>

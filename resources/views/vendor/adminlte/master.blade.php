@@ -45,6 +45,9 @@
         @endif
     @endif
 
+    {{-- Sumernote Bootstrap CSS --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
 
@@ -109,6 +112,9 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
+    {{-- Summernote Bootstrap Js --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')

@@ -2,84 +2,195 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller\Controller;
+use App\Http\Requests\CompanyPostRequest;
+use App\Http\Traits\Users\CompanyTypeTrait;
+use App\Http\Traits\Users\CompanyTrait;
+use App\Models\Users\Company;
 
 class CompanyController extends Controller
 {
+    use CompanyTypeTrait;
+    use CompanyTrait;
+
     /**
-     * Display a listing of the resource.
+     * Display the companies menu.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function companiesMenu(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Main company
+        $company = $this->companyMain();
+
+        //Companies count
+        $count = $this->companyCount();
+
+        return view('admin.companies.companies-menu', compact('company','count'));
     }
 
+
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of companies.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function index(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Main company
+        $mainCompany = $this->companyMain();
+
+        //Company List
+        $companies = $this->companyList();
+
+        return view('admin.companies.index', compact('mainCompany','companies'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the form for creating a new company.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function create(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Main company
+        $mainCompany = $this->companyMain();
+
+        //Company Types List
+        $companyTypes = $this->companyTypeList();
+
+        return view('admin.companies.create', compact('mainCompany', 'companyTypes'));
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created company in storage.
+     *
+     * @param  \Http\Requests\CompanyPostRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(CompanyPostRequest $request){
+        //New Company
+        $company = Company::create($request->all());
+
+        //Redirect: companies list
+        return redirect()->route('companies');
+    }
+
+    /**
+     * Display the specified company.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Specified company
+        $company = Company::findOrFail($id);
+
+        //Main company
+        $mainCompany = $this->companyMain();
+
+        return view('admin.companies.show', compact('company', 'mainCompany'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified company.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Selected Company
+        $company = Company::findOrFail($id);
+
+        //Main company
+        $mainCompany = $this->companyMain();
+
+        //Company Types
+        $companyTypes = $this->companyTypeList();
+
+        return view('admin.companies.edit', compact('company', 'mainCompany' ,'companyTypes'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified company in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Http\Requests\CompanyPostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(CompanyPostRequest $request, $id){
+        //Specified Company
+        $company = Company::findOrFail($id);
+
+        //Company update
+        $company->update($request->all());
+
+        //Redirect: companies list
+        return redirect()->route('companies');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Show the form for editing the main company.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function editMain($id){
+        //Admin Authorizations
+        $this->authorize('is_admin');
+
+        //Selected Company
+        $company = Company::findOrFail($id);
+
+        return view('admin.companies.edit-main', compact('company'));
+    }
+
+    /**
+     * Update the specified company in storage.
+     *
+     * @param  \Http\Requests\CompanyPostRequest  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateMain(CompanyPostRequest $request, $id){
+        //Specified Company
+        $company = Company::findOrFail($id);
+
+        //Company update
+        $company->update($request->all());
+
+        //Redirect: company menu
+        return redirect()->route('companiesMenu');
+    }
+
+    /**
+     * Soft delete the selected company.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function softDelete($id){
+        //Specified User
+        $company = Company::findOrFail($id);
+
+        if($company->is_deleted == false){
+            $company->is_deleted = true;
+            $company->save();
+        }
+
+        //Redirect: companies list
+        return redirect()->route('companies');
     }
 }

@@ -62,6 +62,12 @@
                                 <p>{{ $user->department->department_name }}</p>
                             </div>
                         </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="text-center">
+                                <h4><i class="fas fa-users-cog text-info"></i>&nbsp;<b>Tipo de Utilizador</b></h4>
+                                <p>{{ $user->userRole->role_name }}</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">

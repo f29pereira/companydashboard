@@ -12,6 +12,7 @@ trait DepartmentTrait{
      */
     public function departmentList(){
         $list = DB::table('departments')->where([
+            ['id', '!=', 1], //Department 'A definir'
             ['is_deleted', '!=', true] //Department soft deleted
         ])->get();
 

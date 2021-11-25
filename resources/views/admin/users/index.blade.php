@@ -110,6 +110,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {{-- Confirm/Cancel --}}
                                                         <div class="modal-footer">
                                                             <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/users/delete/'.$user->id) }}" role="button">
                                                                 <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;Confirmar
