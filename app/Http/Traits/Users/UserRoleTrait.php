@@ -13,8 +13,6 @@ trait UserRoleTrait{
     public function roleList(){
         $list = UserRole::all();
 
-        //$list = DB::table('user_roles')->get();
-
         return $list;
     }
 

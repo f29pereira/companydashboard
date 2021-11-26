@@ -93,11 +93,11 @@
                                             <div class="modal-content">
                                                 {{-- Modal Header --}}
                                                 <div class="modal-header bg-danger text-center">
-                                                    <h3 class="modal-title w-100" id="deleteModalLabel"><i class="fas fa-user-times"></i></h3>
+                                                    <h3 class="modal-title w-100" id="deleteModalLabel"><i class="far fa-trash-alt"></i></h3>
                                                 </div>
                                                 {{-- Modal Body --}}
                                                 <div class="modal-body">
-                                                    <div class="text-left"><p><b>Pretende eliminar a empresa ?</b></p></div>
+                                                    <div class="text-left"><p><b>Pretende eliminar a Empresa ?</b></p></div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<b>Nome</b></p>

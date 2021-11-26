@@ -14,7 +14,7 @@ trait CompanyTypeTrait{
         $list = DB::table('company_types')->where([
             ['id', '!=', 1], //Company Type Default
             ['id', '!=', 2], //Company Type Main Company
-            ['is_deleted', '!=', true] //Company Type soft deleted
+            ['is_deleted', '!=', true] //Company Type deleted
         ])->get();
 
         return $list;
@@ -26,8 +26,12 @@ trait CompanyTypeTrait{
       * @return int $count
       */
     public function companyTypeCount(){
-        //id = 1, type_name = 'Indefinido'
-        $count = DB::table('company_types')->where('id', '!=', 1)->count();
+        //Company Type
+        $count = DB::table('company_types')->where([
+            ['id', '!=', 1], //Company Type Default
+            ['id', '!=', 2], //Company Type Main Company
+            ['is_deleted', '!=', true] //Company Type deleted
+        ])->count();
 
         return $count;
     }

@@ -108,7 +108,7 @@
                                     {{-- Company Types --}}
                                     <div class="small-box bg-info">
                                         <div class="inner">
-                                            <h3>{{ $count }}</h3>
+                                            <h3>{{ $typesCount }}</h3>
                                             <p>Relações de Negócio registadas</p>
                                         </div>
                                         <div class="icon">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Users\ManagementController;
 use App\Http\Controllers\Users\CompanyController;
+use App\Http\Controllers\Users\CompanyTypeController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
@@ -73,6 +74,17 @@ Route::get('/management/menu', [ManagementController::class, 'managementMenu'])-
 /**
  * Company Type
  */
+Route::get('/company-types/index', [CompanyTypeController::class, 'index'])->name('types');
+
+Route::get('/company-types/create', [CompanyTypeController::class, 'create'])->name('createType');
+
+Route::post('/company-types/store', [CompanyTypeController::class, 'store'])->name('storeType');
+
+Route::get('/company-types/edit/{id}', [CompanyTypeController::class, 'edit'])->name('editType');
+
+Route::post('/company-type/update/{id}', [CompanyTypeController::class, 'update'])->name('updateType');
+
+Route::get('/company-types/delete/{id}', [CompanyTypeController::class, 'softDelete'])->name('deleteType');
 
 /**
  * Company

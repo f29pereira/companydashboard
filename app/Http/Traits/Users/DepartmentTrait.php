@@ -12,8 +12,8 @@ trait DepartmentTrait{
      */
     public function departmentList(){
         $list = DB::table('departments')->where([
-            ['id', '!=', 1], //Department 'A definir'
-            ['is_deleted', '!=', true] //Department soft deleted
+            ['id', '!=', 1], //Department Default
+            ['is_deleted', false] //Department not deleted
         ])->get();
 
         return $list;
@@ -26,8 +26,8 @@ trait DepartmentTrait{
      */
     public function departmentCount(){
         $count = DB::table('departments')->where([
-            ['id', '!=', 1], //Department 'A definir'
-            ['is_deleted', '!=', true] //Department soft deleted
+            ['id', '!=', 1], //Department Default
+            ['is_deleted', false] //Department not deleted
         ])->count();
 
         return $count;

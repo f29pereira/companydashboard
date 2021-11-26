@@ -7,6 +7,7 @@ use App\Http\Requests\CompanyPostRequest;
 use App\Http\Traits\Users\CompanyTypeTrait;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Models\Users\Company;
+use App\Models\Users\User;
 
 class CompanyController extends Controller
 {
@@ -28,7 +29,10 @@ class CompanyController extends Controller
         //Companies count
         $count = $this->companyCount();
 
-        return view('admin.companies.companies-menu', compact('company','count'));
+        //Company Types count
+        $typesCount = $this->companyTypeCount();
+
+        return view('admin.companies.companies-menu', compact('company','count', 'typesCount'));
     }
 
 
@@ -111,7 +115,7 @@ class CompanyController extends Controller
         //Admin Authorization
         $this->authorize('is_admin');
 
-        //Selected Company
+        //Specified Company
         $company = Company::findOrFail($id);
 
         //Main company
@@ -137,7 +141,7 @@ class CompanyController extends Controller
         //Company update
         $company->update($request->all());
 
-        //Redirect: companies list
+        //Redirect: Companies List
         return redirect()->route('companies');
     }
 
@@ -171,7 +175,7 @@ class CompanyController extends Controller
         //Company update
         $company->update($request->all());
 
-        //Redirect: company menu
+        //Redirect: Company Menu
         return redirect()->route('companiesMenu');
     }
 
@@ -182,6 +186,9 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function softDelete($id){
+        //Admin Authorizations
+        $this->authorize('is_admin');
+
         //Specified User
         $company = Company::findOrFail($id);
 
@@ -189,6 +196,9 @@ class CompanyController extends Controller
             $company->is_deleted = true;
             $company->save();
         }
+
+        //Users Mass Update to Default Company
+        User::where('company_id', $id)->update(['company_id' => 1]);
 
         //Redirect: companies list
         return redirect()->route('companies');

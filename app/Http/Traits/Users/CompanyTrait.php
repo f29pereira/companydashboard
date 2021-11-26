@@ -11,6 +11,7 @@ trait CompanyTrait{
      * @return App\Models\Users\Company
      */
     public function companyMain(){
+        //Company Main
         $company = DB::table('companies')->where('company_types_id', 2)->first();
 
         return $company;
@@ -24,9 +25,9 @@ trait CompanyTrait{
     public function companyList(){
         //Eager loading: companyTypes
         $list = Company::with(['companyTypes'])->where([
-            ['is_deleted', false], //Company is not deleted
+            ['is_deleted', false], //Company not deleted
             ['id', '!=' ,1], //Company Default
-            ['company_types_id', '!=' ,2]  //Company 'Principal'
+            ['company_types_id', '!=' ,2]  //Company Main
         ])->get();
 
         return $list;
@@ -39,8 +40,9 @@ trait CompanyTrait{
      */
     public function companyCount(){
         $count = DB::table('companies')->where([
-            ['id', '!=' ,1], //Company 'Indefinida'
-            ['company_types_id', '!=' ,2]  //Company 'Principal'
+            ['is_deleted', false], //Company not deleted
+            ['id', '!=' ,1], //Company Default
+            ['company_types_id', '!=' ,2]  //Company Main
         ])->count();
 
         return $count;

@@ -16,7 +16,7 @@
                     {{-- Card Header --}}
                     <div class="card-header d-flex justify-content-between">
                         {{-- Return: Companies List --}}
-                        <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="Lista de Empresas">
+                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="Menu Empresas">
                             <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                         </a>
                         {{-- Card Title --}}

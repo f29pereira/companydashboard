@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller\Controller;
 use Illuminate\Http\Request;
+use App\Models\Users\User;
 
 class DepartmentController extends Controller
 {
@@ -73,13 +74,13 @@ class DepartmentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Soft delete the selected department.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function softDelete($id){
+        //Users Mass Update to Default Department
+        User::where('department_id', $id)->update(['department_id' => 1]);
     }
 }
