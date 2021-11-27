@@ -27,6 +27,6 @@ class ManagementController extends Controller
         //Departments count
         $departments = $this->departmentCount();
 
-        return view('management.menu', compact('companies', 'departments'));
+        return view('admin.management.menu', compact('companies', 'departments'));
     }
 }

@@ -260,14 +260,14 @@ return [
             'text'        => 'Gestão',
             'url'         => '/management/menu',
             'icon'        => 'fas fa-th',
-            'can'         => 'is_admin',
+            'can'         => 'is_admin'
         ],
         ['header' => 'Conta de Utilizador'],
         [
             'text' => 'Perfil',
             'url'  => '/user/profile',
             'icon' => 'fas fa-fw fa-user',
-            'can'  => 'is_user',
+            'can'  => 'is_user'
         ],
         /*
         [

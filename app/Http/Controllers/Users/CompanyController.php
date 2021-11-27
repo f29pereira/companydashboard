@@ -138,7 +138,7 @@ class CompanyController extends Controller
         //Specified Company
         $company = Company::findOrFail($id);
 
-        //Company update
+        //Company Update
         $company->update($request->all());
 
         //Redirect: Companies List
@@ -189,7 +189,7 @@ class CompanyController extends Controller
         //Admin Authorizations
         $this->authorize('is_admin');
 
-        //Specified User
+        //Specified Company
         $company = Company::findOrFail($id);
 
         if($company->is_deleted == false){

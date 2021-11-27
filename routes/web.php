@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Users\ManagementController;
 use App\Http\Controllers\Users\CompanyController;
 use App\Http\Controllers\Users\CompanyTypeController;
+use App\Http\Controllers\Users\DepartmentController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
@@ -112,3 +113,14 @@ Route::get('/companies/delete/{id}', [CompanyController::class, 'softDelete'])->
 /**
  * Departments
  */
+Route::get('/departments/index', [DepartmentController::class, 'index'])->name('departments');
+
+Route::get('/departments/create', [DepartmentController::class, 'create'])->name('createDepartment');
+
+Route::post('/departments/store', [DepartmentController::class, 'store'])->name('storeDepartment');
+
+Route::get('/departments/edit/{id}', [DepartmentController::class, 'edit'])->name('editDepartment');
+
+Route::post('/departments/update/{id}', [DepartmentController::class, 'update'])->name('updateDepartment');
+
+Route::get('/departments/delete/{id}', [DepartmentController::class, 'softDelete'])->name('deleteDepartment');
