@@ -22,12 +22,12 @@ class CompanyPostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'company_name' => 'required',
-            'company_description' => 'required',
-            'sector' => 'required',
-            'company_phone' => 'required',
-            'headquarters' => 'required',
-            'website' => 'required',
+            'company_name' => 'required|string',
+            'company_description' => 'required|string',
+            'sector' => 'required|string',
+            'company_phone' => 'required|string',
+            'headquarters' => 'required|string',
+            'website' => 'required|url',
             'company_types_id' => 'required'
         ];
     }
@@ -39,13 +39,13 @@ class CompanyPostRequest extends FormRequest
      */
     public function messages(){
         return[
-            'company_name.required' => 'O campo é obrigatório',
-            'company_description.required' => 'O campo é obrigatório',
-            'sector.required' => 'O campo é obrigatório',
-            'company_phone.required' => 'O campo é obrigatório',
-            'headquarters.required' => 'O campo é obrigatório',
-            'website.required' => 'O campo é obrigatório',
-            'company_types_id.required' => 'O campo é obrigatório'
+            //'company_name.required' => 'O campo é obrigatório',
+            //'company_description.required' => 'O campo é obrigatório',
+            //'sector.required' => 'O campo é obrigatório',
+            //'company_phone.required' => 'O campo é obrigatório',
+            //'headquarters.required' => 'O campo é obrigatório',
+            //'website.required' => 'O campo é obrigatório',
+            //'company_types_id.required' => 'O campo é obrigatório'
         ];
     }
 }

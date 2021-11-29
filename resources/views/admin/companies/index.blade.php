@@ -14,13 +14,19 @@
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Management --}}
-                    <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="Menu Empresas">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Empresas</h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Companies Menu --}}
+                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.company-menu') }}">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-index') }}</h3>
+                        {{-- Return: Management Menu --}}
+                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('tooltip.goTo.management-menu') }}">
+                            <i class="fas fa-th fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
@@ -28,15 +34,15 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                              data-toggle="tooltip" data-placement="right"
-                             title="Lista de Empresas que possuem uma relação de negócio com {{ $mainCompany->company_name }}"></i>
+                             title="{{ __('tooltip.companies.index') }} {{ $mainCompany->company_name }}"></i>
                         </div>
                     </div>
                     {{-- Add Company --}}
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/companies/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="Adicionar Empresa">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;Empresa
+                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.add-company-title') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('tooltip.companies.add-company') }}
                             </a>
                         </div>
                     </div>
@@ -62,25 +68,25 @@
                                 <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
                                 <td>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mb-1">
                                             {{-- Show Company --}}
                                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/companies/show/'. $company->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="Detalhes Empresa">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.show-btn') }}">
                                                 <i class="fas fa-info-circle"></i>
                                             </a>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mb-1">
                                             {{-- Edit Company --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/companies/edit/'. $company->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="Editar Empresa">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 mb-1">
                                             {{-- Delete Company --}}
                                             <span data-toggle="modal" data-target="#deleteCompany-{{ $company->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
-                                                    data-toggle="tooltip" data-placement="bottom" title="Eliminar Empresa">
+                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.softDelete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>

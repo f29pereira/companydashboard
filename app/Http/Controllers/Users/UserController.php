@@ -18,7 +18,6 @@ class UserController extends Controller
     use DepartmentTrait;
     use CompanyTrait;
 
-
     /**
      * Display a users menu.
      *
@@ -50,7 +49,10 @@ class UserController extends Controller
         //Users List
         $users = $this->userList();
 
-        return view('admin.users.index', compact('users'));
+        //Departments List
+        $departments = $this->departmentList();
+
+        return view('admin.users.index', compact('users', 'departments'));
     }
 
     /**

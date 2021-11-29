@@ -16,53 +16,108 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="Lista de Empresas">
+                    <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.company-index') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Registar Empresa</h3>
+                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-create') }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                         data-toggle="tooltip" data-placement="right" title="Formulário para registo de empresa"></i>
+                         data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.create') }}"></i>
                     </div>
                     {{-- Create Company Form --}}
-                    <form action="/companies/store" method="POST">
+                    <form action="/companies/store" method="POST" novalidate>
                         @csrf
 
                         <div class="row">
                             {{-- Company Name --}}
-                            <div class="col-md-4 mb-3  mr-5">
+                            <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyName" class="form-label">Empresa</label>
+                                    <label for="companyName" class="form-label">{{ __('form.company.company_name_label') }}</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="company_name" id="companyName" placeholder="Nome da Empresa">
+                                        <input type="text" name="company_name" id="companyName" class="form-control {{ $errors->has('company_name') ? 'is-invalid' : '' }}"
+                                        value="{{ old('company_name') }}" placeholder="{{ __('form.company.company_name_placeholder') }}" autofocus>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="far fa-building text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span class="far fa-building text-info"></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('company_name'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('company_name') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('company_name')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Company Bussiness Sector --}}
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companySector" class="form-label">Setor de Atividade</label>
+                                    <label for="companySector" class="form-label">{{ __('form.company.sector_label') }}</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="sector" id="companySector" placeholder="Setor de Atividade da Empresa">
+                                        <input type="text" name="sector" id="companySector" class="form-control {{ $errors->has('sector') ? 'is-invalid' : '' }}"
+                                        value="{{ old('sector') }}" placeholder="{{ __('form.company.sector_placeholder') }}" autofocus>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-briefcase text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span class="fas fa-briefcase text-info"></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('sector'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('sector') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('sector')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{-- Company Phone --}}
+                            <div class="col-md-4 mb-3 mr-5">
+                                <div class="form-group">
+                                    <label for="companyPhone" class="form-label">{{ __('form.company.company_phone_label') }}</label>
+                                    <div class="input-group">
+                                        <input type="text" name="company_phone" id="companyPhone" class="form-control {{ $errors->has('company_phone') ? 'is-invalid' : '' }}"
+                                        value="{{ old('company_phone') }}" placeholder="{{ __('form.company.company_phone_placeholder') }}" autofocus>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-phone-alt text-info"></span>
+                                            </div>
+                                        </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('company_phone'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('company_phone') }}</strong>
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Company Headquarters --}}
+                            <div class="col-md-4 mb-3 mr-5">
+                                <div class="form-group">
+                                    <label for="companyHeadquarters" class="form-label">{{ __('form.company.headquarters_label') }}</label>
+                                    <div class="input-group">
+                                        <input type="text" name="headquarters" id="companyHeadquarters" class="form-control {{ $errors->has('headquarters') ? 'is-invalid' : '' }}"
+                                        value="{{ old('headquarters') }}" placeholder="{{ __('form.company.headquarters_placeholder') }}" autofocus>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-map-marked-alt text-info"></span>
+                                            </div>
+                                        </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('headquarters'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('headquarters') }}</strong>
+                                        </div>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -70,72 +125,48 @@
                             {{-- Company Website --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyPhone" class="form-label">Telefone</label>
+                                    <label for="companyWebsite" class="form-label">{{ __('form.company.website_label') }}</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="company_phone" id="companyPhone" placeholder="Telefone da Empresa">
+                                        <input type="url" name="website" id="companyWebsite" class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}"
+                                        value="{{ old('website') }}" placeholder="{{ __('form.company.website_placeholder') }}" autofocus>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-phone-alt text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span class="fas fa-desktop text-info"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    {{-- Error Message --}}
-                                    @error('company_phone')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
-                                </div>
-                            </div>
-                            {{-- Company Headquarters --}}
-                            <div class="col-md-4 mb-3">
-                                <div class="form-group">
-                                    <label for="companyHeadquarters" class="form-label">Localização</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="headquarters" id="companyHeadquarters" placeholder="Localização da Empresa">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-map-marked-alt text-info"></i></span>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('website'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('website') }}</strong>
                                         </div>
+                                        @endif
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('headquarters')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                             {{-- Company Website --}}
-                             <div class="col-md-4 mb-3 mr-5">
-                                <div class="form-group">
-                                    <label for="companyWebsite" class="form-label">Website</label>
-                                    <div class="input-group">
-                                        <input type="url" class="form-control" name="website" id="companyWebsite" placeholder="Website da Empresa">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-desktop text-info"></i></span>
-                                        </div>
-                                    </div>
-                                    {{-- Error Message --}}
-                                    @error('website')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Company Type --}}
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyType" class="form-label">Relação com {{ $mainCompany->company_name }}</label>
+                                    <label for="companyType" class="form-label">{{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}</label>
                                     <div class="input-group">
-                                        <select class="form-control" name="company_types_id" id="companyType">
-                                            <option value="">Escolha um tipo de relação de negócio:</option>
+                                        {{-- <select class="form-control" name="company_types_id" id="companyType"> --}}
+                                        <select class="custom-select" name="company_types_id" id="companyType">
+                                            <option selected disabled value="">{{ __('form.company.company_types_id_placeholder') }}</option>
                                             @foreach ($companyTypes as $companyType)
                                                 <option value="{{ $companyType->id }}">{{ $companyType->type_name }}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="far fa-handshake text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span class="far fa-handshake text-info"></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('company_types_id'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('company_types_id') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('company_types_id')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -156,8 +187,12 @@
                         {{-- Confirm/Cancel --}}
                         <div class="row">
                             <div class="col-md-3">
-                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;Confirmar</button>
-                                <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;Cancelar</button>
+                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg">
+                                    </i>&nbsp;&nbsp;{{ __('form.generic.confirmBtn') }}
+                                </button>
+                                <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg">
+                                    </i>&nbsp;&nbsp;{{ __('form.generic.cancelBtn') }}
+                                </button>
                             </div>
                         </div>
                     </form>

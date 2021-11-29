@@ -14,13 +14,19 @@
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Management --}}
-                    <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="Menu Empresas">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-handshake fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Relações de Negócio</h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Management --}}
+                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="Menu Empresas">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title"><i class="far fa-handshake fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Relações de Negócio</h3>
+                        {{-- Return: Management Menu --}}
+                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="Menu de Gestão">
+                            <i class="fas fa-th fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">

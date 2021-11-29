@@ -16,11 +16,11 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="Menu Empresas">
+                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.management-menu') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-user-tie fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Departamentos da {{ $mainCompany->company_name }}</h3>
+                    <h3 class="card-title"><i class="fas fa-user-tie fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.departments.title-index') }} {{ $mainCompany->company_name }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
@@ -28,14 +28,14 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                             data-toggle="tooltip" data-placement="right"
-                            title="Lista de departamentos da {{ $mainCompany->company_name }}"></i>
+                            title="{{ __('tooltip.departments.index') }} {{ $mainCompany->company_name }}"></i>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/departments/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="Adicionar Departamento">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;Departamento
+                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.departments.add-department-title') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('tooltip.departments.add-department') }}
                             </a>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                         <div class="col-md-6 mb-1">
                                             {{-- Department Edit --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/departments/edit/'. $department->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="Editar Departamento">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.departments.edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         </div>
@@ -64,7 +64,7 @@
                                             {{-- Delete Department --}}
                                             <span data-toggle="modal" data-target="#deleteDepartment-{{ $department->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
-                                                    data-toggle="tooltip" data-placement="bottom" title="Eliminar Departamento">
+                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.departments.softDelete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>
@@ -92,10 +92,10 @@
                                                 {{-- Confirm/Cancel --}}
                                                 <div class="modal-footer">
                                                     <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/departments/delete/'.$department->id) }}" role="button">
-                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;Confirmar
+                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.confirmBtn') }}
                                                     </a>
                                                     <button type="button" class="btn bg-gradient-danger btn-sm" data-dismiss="modal">
-                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;Cancelar
+                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.cancelBtn') }}
                                                     </button>
                                                 </div>
                                             </div>

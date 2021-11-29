@@ -63,7 +63,7 @@
                 </div>
             </div>
             @if($errors->has('phone'))
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('phone') }}</strong>
                 </div>
             @endif

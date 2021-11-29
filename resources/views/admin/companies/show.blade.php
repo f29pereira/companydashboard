@@ -16,11 +16,11 @@
                     {{-- Card Header --}}
                     <div class="card-header d-flex justify-content-between">
                         {{-- Return: Home --}}
-                        <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="Lista de Empresas">
+                        <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.company-index') }}">
                             <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="far fa-edit fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Detalhes Empresa</h3>
+                        <h3 class="card-title"><i class="fas fa-info-circle fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-show') }}</h3>
                     </div>
                     {{-- Card Body --}}
                     <div class="card-body">

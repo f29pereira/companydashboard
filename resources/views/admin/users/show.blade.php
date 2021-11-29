@@ -15,11 +15,11 @@
                     {{-- Card Header --}}
                     <div class="card-header d-flex justify-content-between">
                         {{-- Return: Home --}}
-                        <a href="{{ url('/users/index') }}" data-toggle="tooltip" data-placement="right" title="Lista de Utilizadores">
+                        <a href="{{ url('/users/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.user-index') }}">
                             <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="far fa-address-book fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Detalhes Utilizador</h3>
+                        <h3 class="card-title"><i class="far fa-address-book fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.users.title-show') }}</h3>
                     </div>
                     {{-- Card Body --}}
                     <div class="card-body">

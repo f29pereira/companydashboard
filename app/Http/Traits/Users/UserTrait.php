@@ -12,7 +12,10 @@ trait UserTrait{
      */
     public function userList(){
         //Eaguer loading: userRole, department, company
-        $list = User::with(['userRole', 'department', 'company'])->where('is_deleted', false)->get();
+        $list = User::with(['userRole', 'department', 'company'])->where([
+            ['is_deleted', false], //User is not deleted
+            ['user_role_id', '!=', 1] //User with Admin role
+        ])->get();
 
         return $list;
     }

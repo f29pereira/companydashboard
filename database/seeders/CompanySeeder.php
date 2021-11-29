@@ -33,6 +33,16 @@ class CompanySeeder extends Seeder
                 'headquarters' => 'Lisboa',
                 'website' => 'https://www.google.com/',
                 'company_types_id' => 2
+            ],
+            //Client Company
+            [
+                'company_name' => 'Client Company',
+                'company_description' => 'Lorem ipsum',
+                'sector' => 'Tecnologia',
+                'company_phone' => '962670358',
+                'headquarters' => 'Lisboa',
+                'website' => 'https://www.google.com/',
+                'company_types_id' => 4
             ]
         ]);
     }

@@ -14,6 +14,9 @@ class UserSeeder extends Seeder
      */
     public function run(){
         DB::table('users')->insert([
+            /**
+             * Admin
+             */
             //password: admin123
             [
                 'name'=>'Filipe Pereira',
@@ -22,37 +25,57 @@ class UserSeeder extends Seeder
                 'password'=>'$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted' => false,
                 'user_role_id'=> 1,
-                'department_id' => 6,
+                'department_id' => 7,
                 'company_id' => 2
             ],
+            /**
+             * Gestor Nao Conformidades
+             */
+            //password: admin123
+            [
+                'name'=>'Agatha Parkinson',
+                'email'=>'agatha@gmail.com',
+                'phone' => '962670353',
+                'password'=>'$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
+                'is_deleted' => false,
+                'user_role_id'=> 2,
+                'department_id' => 4,
+                'company_id' => 2
+            ],
+            /**
+             * Responsavel Departamento
+             */
             //departamento123
             [
                 'name'=>'Jeanne Mccallum',
                 'email'=>'jeanne@gmail.com',
                 'phone' => '962670353',
-                'password'=>'$2y$10$wGdifkPeScoUZACNLPnyYeDASCRPwLlXxc43SHCgIW2wcnlltUi52',
-                'is_deleted' => false,
-                'user_role_id'=> 2,
-                'department_id' => 1,
-                'company_id' => 2
-            ],
-            //colaborador123
-            [
-                'name'=>'Nome Colaborador',
-                'email'=>'colaborador@gmail.com',
-                'phone' => '962670353',
-                'password'=>'$2y$10$Ss2VeDq3hIGvrTDIJ1h4TesJUAHG11CxyMZ889w9LafljPzwSa4Xi',
+                'password'=>'$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted' => false,
                 'user_role_id'=> 3,
                 'department_id' => 1,
                 'company_id' => 2
             ],
+            /**
+             * Colaboradores
+             */
             //colaborador123
             [
-                'name'=>'Nicolas Gordon',
-                'email'=>'colaborador2@gmail.com',
+                'name'=>'Phillip Dunne',
+                'email'=>'phillip@gmail.com',
                 'phone' => '962670353',
-                'password'=>'$2y$10$Ss2VeDq3hIGvrTDIJ1h4TesJUAHG11CxyMZ889w9LafljPzwSa4Xi',
+                'password'=>'$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
+                'is_deleted' => false,
+                'user_role_id'=> 4,
+                'department_id' => 1,
+                'company_id' => 2
+            ],
+            //colaborador2123
+            [
+                'name'=>'Nicolas Gordon',
+                'email'=>'nicolas@gmail.com',
+                'phone' => '962670353',
+                'password'=>'$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted' => false,
                 'user_role_id'=> 4,
                 'department_id' => 1,

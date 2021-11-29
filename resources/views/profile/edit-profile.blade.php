@@ -15,17 +15,17 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Home --}}
-                    <a href="{{ url('/user/profile') }}" data-toggle="tooltip" data-placement="right" title="Meu perfil">
+                    <a href="{{ url('/user/profile') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.my-profile') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-user-edit fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Editar Meu Perfil</h3>
+                    <h3 class="card-title"><i class="fas fa-user-edit fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.users.title-edit-profile') }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                        data-toggle="tooltip" data-placement="right" title="Editar dados do meu perfil"></i>
+                        data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.users.edit-profile') }}"></i>
                     </div>
                     {{-- Edit User Form --}}
                     <form action="/user/update-profile/{{ $user->id }}" method="POST">
@@ -83,8 +83,12 @@
                         {{-- Confirm/Cancel --}}
                         <div class="row">
                             <div class="col-md-3">
-                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;Confirmar</button>
-                                <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;Cancelar</button>
+                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3">
+                                    <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.confirmBtn') }}
+                                </button>
+                                <button type="reset" class="btn bg-gradient-danger btn-sm">
+                                    <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.cancelBtn') }}
+                                </button>
                             </div>
                         </div>
                     </form>

@@ -15,11 +15,11 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Home --}}
-                    <a href="{{ url('/home') }}" data-toggle="tooltip" data-placement="right" title="Home">
+                    <a href="{{ url('/home') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.home') }}">
                         <i class="fas fa-home fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-user-circle fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Meu Perfil</h3>
+                    <h3 class="card-title"><i class="fas fa-user-circle fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.users.title-profile') }}</h3>
                 </div>
                 {{-- Card Image --}}
                 {{-- <img src="{{ asset('images/cards/officeBanner.jpg') }}" class="card-img-top" alt="Office desk" width="300" height="200"> --}}
@@ -73,7 +73,7 @@
                         <div class="col-md-4">
                             {{-- Edit Profile --}}
                             <a class="btn bg-gradient-info btn-sm" href="{{ url('/user/edit-profile/'.$user->id) }}"
-                            role="button" data-toggle="tooltip" data-placement="right" title="Editar os meus dados">
+                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.users.edit-profile-btn') }}">
                                 <i class="fas fa-user-edit fa-lg"></i>
                             </a>
                         </div>

@@ -16,16 +16,17 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Users Menu --}}
-                    <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right" title="Gestão Utilizadores">
+                    <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.user-menu') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-users-cog fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Roles de Utilizador</h3>
+                    <h3 class="card-title"><i class="fas fa-users-cog fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.roles.title-index') }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
-                        <i class="far fa-question-circle text-info fa-lg" data-toggle="tooltip" data-placement="right" title="Tipos de utilizadores e respetivas permissões"></i>
+                        <i class="far fa-question-circle text-info fa-lg" data-toggle="tooltip" data-placement="right"
+                         title="{{ __('tooltip.roles.index') }}"></i>
                     </div>
                     {{-- Table --}}
                     <table class="table table-hover table-responsive-md" id="rolesTable">

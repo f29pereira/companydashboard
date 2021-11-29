@@ -15,17 +15,17 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="Gestão">
+                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.management-menu') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;Empresas</h3>
+                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-menu') }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                         data-toggle="tooltip" data-placement="right" title="Menu de Empresas"></i>
+                         data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.menu') }}"></i>
                     </div>
 
                     <div class="row">
@@ -78,7 +78,7 @@
                                         <div class="col-md-4">
                                             {{-- Edit Profile --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/companies/edit-main-company/'. $company->id) }}"
-                                            role="button" data-toggle="tooltip" data-placement="right" title="Editar dados empresa {{ $company->company_name }}">
+                                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.edit-main') }} {{ $company->company_name }}">
                                                 <i class="far fa-edit fa-lg"></i>
                                             </a>
                                         </div>
