@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col m-3">
             {{-- Card --}}
-            <div class="card card-info">
+            <div class="card card-warning">
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Users Management --}}
@@ -35,49 +35,76 @@
                             {{-- Name --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userName" class="form-label">Nome</label>
+                                    <label for="userName" class="form-label">
+                                        {{ __('form.user.name_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value="{{ $user->name }}" name="name" id="userName">
+                                        <input type="text" name="name" id="userName" class="form-control @error('name') is-invalid @enderror"
+                                        value="{{ $user->name }}" placeholder="{{ __('form.user.name_placeholder') }}">
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="far fa-address-card fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span><i class="far fa-address-card fa-lg text-info"></i></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('name')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Email --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userEmail" class="form-label">Email</label>
+                                    <label for="userEmail" class="form-label">
+                                        {{ __('form.user.email_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value="{{ $user->email }}" name="email" id="userEmail">
+                                        <input type="text" name="email"  id="userEmail" class="form-control @error('email') is-invalid @enderror"
+                                        value="{{ $user->email }}" placeholder="{{ __('form.user.email_placeholder') }}">
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-envelope fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-envelope fa-lg text-info"></i></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('email')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Phone --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userPhone" class="form-label">Telefone</label>
+                                    <label for="userPhone" class="form-label">
+                                        {{ __('form.user.phone_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value="{{ $user->phone }}" name="phone" id="userPhone">
+                                        <input type="text" name="phone" id="userPhone" class="form-control @error('phone') is-invalid @enderror"
+                                        value="{{ $user->phone }}" placeholder="{{ __('form.user.phone_placeholder') }}">
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-phone-alt fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-phone-alt fa-lg text-info"></i></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('phone')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -85,9 +112,13 @@
                             {{-- Department --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userDepartment" class="form-label">Departamento</label>
+                                    <label for="userDepartment" class="form-label">
+                                        {{ __('form.user.department_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <select class="form-control" name="department_id" id="userDepartment">
+                                        <select name="department_id" id="userDepartment" class="form-control @error('department_id') is-invalid @enderror">
                                             @foreach ($departments as $department)
                                             <option value="{{ $department->id }}" {{ $user->department_id == $department->id ? 'selected' : '' }}>
                                                 {{ $department->department_name }}
@@ -95,21 +126,29 @@
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-user-tie fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-user-tie fa-lg text-info"></i></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @error('department_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('department_id')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Role --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userRole" class="form-label">Role de Utilizador</label>
+                                    <label for="userRole" class="form-label">
+                                        {{ __('form.user.role_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <select class="form-control" name="user_role_id" id="userRole">
+                                        <select name="user_role_id" id="userRole" class="form-control @error('user_role_id') is-invalid @enderror">
                                             @foreach ($roles as $role)
                                             <option value="{{ $role->id }}" {{ $user->user_role_id == $role->id ? 'selected' : '' }}>
                                                 {{ $role->role_name }}
@@ -117,13 +156,17 @@
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-users-cog fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-users-cog fa-lg text-info"></i></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @error('user_role_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('user_role_id')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
                             </div>
                             {{-- Company --}}

@@ -103,34 +103,36 @@
                                                 </div>
                                                 {{-- Modal Body --}}
                                                 <div class="modal-body">
-                                                    <div class="text-left"><p><b>Pretende eliminar a Empresa ?</b></p></div>
+                                                    <div class="row mb-3">
+                                                        <strong>{{ __('tooltip.companies.softDelete-question') }}</strong>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<b>Nome</b></p>
+                                                            <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_name_label') }}</strong></p>
                                                             <p>{{ $company->company_name }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-briefcase fa-lg text-danger"></i>&nbsp;<b>Setor de Atividade</b></p>
+                                                            <p><i class="fas fa-briefcase fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.sector_label') }}</strong></p>
                                                             <p>{{ $company->sector }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;<b>Telefone</b></p>
+                                                            <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_phone_label') }}</strong></p>
                                                             <p>{{ $company->company_phone }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-map-marked-alt fa-lg text-danger"></i>&nbsp;<b>Localização</b></p>
+                                                            <p><i class="fas fa-map-marked-alt fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.headquarters_label') }}</strong></p>
                                                             <p>{{ $company->headquarters }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-desktop fa-lg text-danger"></i>&nbsp;<b>Website</b></p>
+                                                            <p><i class="fas fa-desktop fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.website_label') }}</strong></p>
                                                             <p>{{ $company->website }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="far fa-handshake fa-lg text-danger"></i>&nbsp;<b>Relação com {{ $mainCompany->company_name }}</b></p>
+                                                            <p><i class="far fa-handshake fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}</strong></p>
                                                             <p>{{ $company->headquarters }}</p>
                                                         </div>
                                                     </div>

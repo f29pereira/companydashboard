@@ -81,10 +81,17 @@
                                                 </div>
                                                 {{-- Modal Body --}}
                                                 <div class="modal-body">
-                                                    <div class="text-left"><p><b>Pretende eliminar o Departamento ?</b></p></div>
+                                                    <div class="text-left">
+                                                        <div class="row">
+                                                            <i class="far fa-question-circle text-danger fa-lg"
+                                                            data-toggle="tooltip" data-placement="right"
+                                                            title="{{ __('tooltip.departments.softDelete') }}"></i>&nbsp;&nbsp;
+                                                            <p><b>{{ __('tooltip.departments.softDelete-question') }}</b></p>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>Nome</b></p>
+                                                            <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>{{ __('form.department.department_name_label') }}</b></p>
                                                             <p>{{ $department->department_name }}</p>
                                                         </div>
                                                     </div>

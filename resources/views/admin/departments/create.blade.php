@@ -35,18 +35,34 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="departmentName" class="form-label">Nome</label>
+                                    <label for="departmentName" class="form-label">
+                                        {{ __('form.department.department_name_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="department_name" id="departmentName" placeholder="Nome do Departamento">
+                                        <input type="text" name="department_name" id="departmentName" class="form-control {{ $errors->has('department_name') ? 'is-invalid' : '' }}"
+                                        value="{{ old('department_name') }}" placeholder="{{ __('form.department.department_name_placeholder') }}" autofocus>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-user-tie fa-lg text-info"></i></span>
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user-tie text-info"></span>
+                                            </div>
                                         </div>
+                                        {{-- Error Message --}}
+                                        @if($errors->has('department_name'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('department_name') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
-                                    {{-- Error Message --}}
-                                    @error('department_name')
-                                        <div><p class="text-danger">{{ $message }}</p></div>
-                                    @enderror
                                 </div>
+                            </div>
+                        </div>
+                        {{-- Required Fields --}}
+                        <div class="row">
+                            <div class="col-md-3 mb-4">
+                                <strong>
+                                    <i class="fas fa-asterisk text-danger fa-sm"></i>
+                                    &nbsp;{{ __('form.generic.requiredField') }}
+                                </strong>
                             </div>
                         </div>
                         {{-- Confirm/Cancel --}}

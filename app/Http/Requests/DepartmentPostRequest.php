@@ -33,7 +33,7 @@ class DepartmentPostRequest extends FormRequest
      */
     public function messages(){
         return[
-            'department_name.required' => 'O campo é obrigatório',
+            //'department_name.required' => 'O campo é obrigatório',
         ];
     }
 }

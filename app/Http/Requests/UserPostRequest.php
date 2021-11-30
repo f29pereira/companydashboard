@@ -38,12 +38,12 @@ class UserPostRequest extends FormRequest
      */
     public function messages(){
         return[
-            'name.required' => 'O campo é obrigatório',
-            'email.required' => 'O campo é obrigatório',
-            'phone.required' => 'O campo é obrigatório',
-            'user_role_id.required' => 'O campo é obrigatório',
-            'department_id.required' => 'O campo é obrigatório',
-            'company_id.required' => 'O campo é obrigatório'
+            //'name.required' => 'O campo é obrigatório',
+            //'email.required' => 'O campo é obrigatório',
+            //'phone.required' => 'O campo é obrigatório',
+            //'user_role_id.required' => 'O campo é obrigatório',
+            //'department_id.required' => 'O campo é obrigatório',
+            //'company_id.required' => 'O campo é obrigatório'
         ];
     }
 }

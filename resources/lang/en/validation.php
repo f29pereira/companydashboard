@@ -142,6 +142,28 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        /**
+         * Users
+         */
+
+         /**
+          * Company Types
+          */
+        'type_name' => [
+            'required' => 'The field name is required.'
+        ],
+        'type_description' => [
+            'required' => 'The field description is required.'
+        ],
+
+
+        /**
+         * Companies
+         */
+
+        /**
+         * Departments
+         */
     ],
 
     /*

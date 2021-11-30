@@ -24,21 +24,26 @@
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
-                    <div class="mb-3">
-                        <i class="far fa-question-circle text-info fa-lg"
-                         data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.create') }}"></i>
+                    <div class="row">
+                        <div class="mb-3">
+                            <i class="far fa-question-circle text-info fa-lg"
+                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.create') }}"></i>
+                        </div>
                     </div>
                     {{-- Create Company Form --}}
                     <form action="/companies/store" method="POST" novalidate>
                         @csrf
-
                         <div class="row">
                             {{-- Company Name --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyName" class="form-label">{{ __('form.company.company_name_label') }}</label>
+                                    <label for="companyName" class="form-label">
+                                        {{ __('form.company.company_name_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" name="company_name" id="companyName" class="form-control {{ $errors->has('company_name') ? 'is-invalid' : '' }}"
+                                        <input type="text" name="company_name" id="companyName" class="form-control @error('company_name') is-invalid @enderror"
                                         value="{{ old('company_name') }}" placeholder="{{ __('form.company.company_name_placeholder') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -57,9 +62,13 @@
                             {{-- Company Bussiness Sector --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companySector" class="form-label">{{ __('form.company.sector_label') }}</label>
+                                    <label for="companySector" class="form-label">
+                                        {{ __('form.company.sector_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" name="sector" id="companySector" class="form-control {{ $errors->has('sector') ? 'is-invalid' : '' }}"
+                                        <input type="text" name="sector" id="companySector" class="form-control @error('sector') is-invalid @enderror"
                                         value="{{ old('sector') }}" placeholder="{{ __('form.company.sector_placeholder') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -80,9 +89,13 @@
                             {{-- Company Phone --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyPhone" class="form-label">{{ __('form.company.company_phone_label') }}</label>
+                                    <label for="companyPhone" class="form-label">
+                                        {{ __('form.company.company_phone_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" name="company_phone" id="companyPhone" class="form-control {{ $errors->has('company_phone') ? 'is-invalid' : '' }}"
+                                        <input type="text" name="company_phone" id="companyPhone" class="form-control @error('company_phone') is-invalid @enderror"
                                         value="{{ old('company_phone') }}" placeholder="{{ __('form.company.company_phone_placeholder') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -98,13 +111,16 @@
                                     </div>
                                 </div>
                             </div>
-
                             {{-- Company Headquarters --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyHeadquarters" class="form-label">{{ __('form.company.headquarters_label') }}</label>
+                                    <label for="companyHeadquarters" class="form-label">
+                                        {{ __('form.company.headquarters_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="text" name="headquarters" id="companyHeadquarters" class="form-control {{ $errors->has('headquarters') ? 'is-invalid' : '' }}"
+                                        <input type="text" name="headquarters" id="companyHeadquarters" class="form-control @error('headquarters') is-invalid @enderror"
                                         value="{{ old('headquarters') }}" placeholder="{{ __('form.company.headquarters_placeholder') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -125,9 +141,13 @@
                             {{-- Company Website --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyWebsite" class="form-label">{{ __('form.company.website_label') }}</label>
+                                    <label for="companyWebsite" class="form-label">
+                                        {{ __('form.company.website_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
-                                        <input type="url" name="website" id="companyWebsite" class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}"
+                                        <input type="url" name="website" id="companyWebsite" class="form-control @error('website') is-invalid @enderror"
                                         value="{{ old('website') }}" placeholder="{{ __('form.company.website_placeholder') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -135,22 +155,26 @@
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @if($errors->has('website'))
-                                        <div class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('website') }}</strong>
-                                        </div>
-                                        @endif
+                                        @error('website')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             {{-- Company Type --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
-                                    <label for="companyType" class="form-label">{{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}</label>
+                                    <label for="companyType" class="form-label">
+                                        {{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                     <div class="input-group">
                                         {{-- <select class="form-control" name="company_types_id" id="companyType"> --}}
-                                        <select class="custom-select" name="company_types_id" id="companyType">
-                                            <option selected disabled value="">{{ __('form.company.company_types_id_placeholder') }}</option>
+                                        <select name="company_types_id" id="companyType" class="custom-select @error('company_types_id') is-invalid @enderror">
+                                            <option value="">{{ __('form.company.company_types_id_placeholder') }}</option>
                                             @foreach ($companyTypes as $companyType)
                                                 <option value="{{ $companyType->id }}">{{ $companyType->type_name }}</option>
                                             @endforeach
@@ -161,11 +185,11 @@
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @if($errors->has('company_types_id'))
-                                        <div class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('company_types_id') }}</strong>
-                                        </div>
-                                        @endif
+                                        @error('company_types_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -173,15 +197,20 @@
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 {{-- Company Description --}}
-                                {{-- <div id="summernote" name="company_description"></div> --}}
                                 <div class="form-group">
-                                    <label for="">Descrição</label>
+                                    <label for="summernote">
+                                        {{ __('form.company.company_description_label') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                    </label>
                                 </div>
-                                <textarea name="company_description" id="summernote" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="company_description" id="summernote" cols="30" rows="10"></textarea>
                                 {{-- Error Message --}}
                                 @error('company_description')
-                                <div><p class="text-danger">{{ $message }}</p></div>
-                            @enderror
+                                    <div class="text-danger">
+                                        <small><strong>{{ $message }}</strong></small>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         {{-- Confirm/Cancel --}}
@@ -214,12 +243,11 @@
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear']],
                 ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontname', ['fontname']],
                 ['fontsize', ['fontsize']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
             ],
-            placeholder: 'Descrição da Empresa',
+            placeholder: '(...)',
             tabsize: 2,
             height: 100
       });

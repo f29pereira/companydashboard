@@ -36,7 +36,9 @@
                                 {{-- Company Name --}}
                                 <div class="col-md-4 mb-3  mr-5">
                                     <div class="form-group">
-                                        <label for="companyName" class="form-label">Empresa</label>
+                                        <label for="companyName" class="form-label">
+                                            {{ __('form.company.company_name_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="company_name" value="{{ $company->company_name }}" id="companyName">
                                             <div class="input-group-append">
@@ -52,7 +54,9 @@
                                 {{-- Company Bussiness Sector --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
-                                        <label for="companySector" class="form-label">Setor de Atividade</label>
+                                        <label for="companySector" class="form-label">
+                                            {{ __('form.company.sector_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="sector" value="{{ $company->sector }}" id="companySector">
                                             <div class="input-group-append">
@@ -70,7 +74,9 @@
                                 {{-- Company Website --}}
                                 <div class="col-md-4 mb-3 mr-5">
                                     <div class="form-group">
-                                        <label for="companyPhone" class="form-label">Telefone</label>
+                                        <label for="companyPhone" class="form-label">
+                                            {{ __('form.company.company_phone_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="company_phone" value="{{ $company->company_phone }}" id="companyPhone">
                                             <div class="input-group-append">
@@ -86,7 +92,9 @@
                                 {{-- Company Headquarters --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
-                                        <label for="companyHeadquarters" class="form-label">Localização</label>
+                                        <label for="companyHeadquarters" class="form-label">
+                                            {{ __('form.company.headquarters_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="headquarters" value="{{ $company->headquarters }}" id="companyHeadquarters">
                                             <div class="input-group-append">
@@ -104,7 +112,9 @@
                                  {{-- Company Website --}}
                                  <div class="col-md-4 mb-3 mr-5">
                                     <div class="form-group">
-                                        <label for="companyWebsite" class="form-label">Website</label>
+                                        <label for="companyWebsite" class="form-label">
+                                            {{ __('form.company.website_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <input type="url" class="form-control" name="website" value="{{ $company->website }}" id="companyWebsite">
                                             <div class="input-group-append">
@@ -120,7 +130,11 @@
                                 {{-- Company Type --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
-                                        <label for="companyType" class="form-label">Relação com {{ $mainCompany->company_name }}</label>
+                                        {{-- <label for="companyType" class="form-label">Relação com {{ $mainCompany->company_name }}</label> --}}
+                                        <label for="companyType" class="form-label">
+                                            {{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}
+                                            &nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                         <div class="input-group">
                                             <select class="form-control" name="company_types_id" id="companyType">
                                                 @foreach ($companyTypes as $companyType)
@@ -145,13 +159,25 @@
                                     {{-- Company Description --}}
                                     {{-- <div id="summernote" name="company_description"></div> --}}
                                     <div class="form-group">
-                                        <label for="">Descrição</label>
+                                        <label for="summernote">
+                                            {{ __('form.company.company_description_label') }}
+                                            &nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                        </label>
                                     </div>
                                     <textarea name="company_description" id="summernote" cols="30" rows="10"></textarea>
                                     {{-- Error Message --}}
                                     @error('company_description')
                                     <div><p class="text-danger">{{ $message }}</p></div>
                                 @enderror
+                                </div>
+                            </div>
+                            {{-- Required Fields --}}
+                            <div class="row">
+                                <div class="col-md-3 mb-4">
+                                    <strong>
+                                        <i class="fas fa-asterisk text-danger fa-sm"></i>
+                                        &nbsp;{{ __('form.generic.requiredField') }}
+                                    </strong>
                                 </div>
                             </div>
                             {{-- Confirm/Cancel --}}

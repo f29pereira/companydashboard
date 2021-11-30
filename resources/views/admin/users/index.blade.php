@@ -87,30 +87,30 @@
                                                     </div>
                                                     {{-- Modal Body --}}
                                                     <div class="modal-body">
-                                                        <div class="text-left"><p><b>Pretende eliminar o utilizador ?</b></p></div>
+                                                        <div class="text-left"><p><b>{{ __('tooltip.users.softDelete-question') }}</b></p></div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <p><i class="far fa-address-card fa-lg text-danger"></i>&nbsp;<b>Nome</b></p>
+                                                                <p><i class="far fa-address-card fa-lg text-danger"></i>&nbsp;<b>{{ __('form.user.name_label') }}</b></p>
                                                                 <p>{{ $user->name }}</p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p><i class="fas fa-envelope fa-lg text-danger"></i>&nbsp;<b>Email</b></p>
+                                                                <p><i class="fas fa-envelope fa-lg text-danger"></i>&nbsp;<b>{{ __('form.user.email_label') }}</b></p>
                                                                 <p> {{ $user->email }}</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;<b>Telefone</b></p>
+                                                                <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;<b>{{ __('form.user.phone_label') }}</b></p>
                                                                 <p>{{ $user->phone }}</p>
                                                             </div>
                                                                 <div class="col-md-6">
-                                                                <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<b>Empresa</b></p>
+                                                                <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<b>{{ __('form.user.company_label') }}</b></p>
                                                                 <p>{{ $user->company->company_name }}</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>Departamento</b></p>
+                                                                <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>{{ __('form.user.department_label') }}</b></p>
                                                                 <p>{{ $user->department->department_name }}</p>
                                                             </div>
                                                         </div>

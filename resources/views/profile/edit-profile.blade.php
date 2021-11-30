@@ -33,7 +33,7 @@
                         <div class="row">
                             {{-- Name --}}
                             <div class="col-md-4 mb-3">
-                                <label for="userName" class="form-label">Nome</label>
+                                <label for="userName" class="form-label">{{ __('form.user.name_label') }}</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->name }}" name="name" id="userName">
                                     <div class="input-group-append">
@@ -47,7 +47,7 @@
                             </div>
                             {{-- Email --}}
                             <div class="col-md-4 mb-3">
-                                <label for="userEmail" class="form-label">Email</label>
+                                <label for="userEmail" class="form-label">{{ __('form.user.email_label') }}</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->email }}" name="email" id="userEmail">
                                     <div class="input-group-append">
@@ -61,7 +61,7 @@
                             </div>
                             {{-- Phone --}}
                             <div class="col-md-4 mb-3">
-                                <label for="userPhone" class="form-label">Telefone</label>
+                                <label for="userPhone" class="form-label">{{ __('form.user.phone_label') }}</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="{{ $user->phone }}" name="phone" id="userPhone">
                                     <div class="input-group-append">

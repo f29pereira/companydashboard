@@ -10,10 +10,34 @@ return[
     |
     */
     'generic' => [
-        'confirmBtn' => 'Confirm',
-        'cancelBtn'  => 'Cancel'
+        'requiredField' => 'required field',
+        'confirmBtn'    => 'Confirm',
+        'cancelBtn'     => 'Cancel'
     ],
 
+    /**
+     * Users Form
+     */
+    'user' => [
+        //Name
+        'name_label'                => 'Name',
+        'name_placeholder'          => 'User Full Name',
+        //Email
+        'email_label'               => 'Email',
+        'email_placeholder'         => 'User Email',
+        //Phone
+        'phone_label'               => 'Phone',
+        'phone_placeholder'         => 'User Phone',
+        //Role
+        'role_label'                => 'User Role',
+        'role_placeholder'          => 'User Role',
+        //Company
+        'company_label'             => 'Company',
+        'company_placeholder'       => 'User Company',
+        //Department
+        'department_label'          => 'Department',
+        'department_placeholder'    => 'User Department',
+    ],
 
     /**
      * Companies Form
@@ -24,7 +48,6 @@ return[
         'company_name_placeholder' => 'Company Name',
         //Description
         'company_description_label' => 'Description',
-        'company_description_placeholder' => 'Company Description',
         //Sector
         'sector_label' => 'Activity Sector',
         'sector_placeholder' => 'Company Activity Sector',

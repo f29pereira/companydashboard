@@ -34,8 +34,8 @@ class CompanyTypePostRequest extends FormRequest
      */
     public function messages(){
         return[
-            'type_name.required' => 'O campo é obrigatório',
-            'type_description.required' => 'O campo é obrigatório'
+            //'type_name.required' => 'O campo é obrigatório',
+            //'type_description.required' => 'O campo é obrigatório'
         ];
     }
 }
