@@ -249,7 +249,7 @@ return [
             'icon' => 'fas fa-home',
         ],
         [
-            'text'        => 'Utilizadores',
+            'text'        => 'Users',
             'url'         => '/users/menu',
             'icon'        => 'fas fa-users',
             'can'         => 'is_admin',
@@ -257,14 +257,14 @@ return [
             //'label_color' => 'success',
         ],
         [
-            'text'        => 'Gestão',
+            'text'        => 'Management',
             'url'         => '/management/menu',
             'icon'        => 'fas fa-th',
             'can'         => 'is_admin'
         ],
-        ['header' => 'Conta de Utilizador'],
+        ['header' => 'User'],
         [
-            'text' => 'Perfil',
+            'text' => 'Profile',
             'url'  => '/user/profile',
             'icon' => 'fas fa-fw fa-user',
             'can'  => 'is_user'

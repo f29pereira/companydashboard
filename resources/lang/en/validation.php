@@ -156,7 +156,6 @@ return [
             'required' => 'The field description is required.'
         ],
 
-
         /**
          * Companies
          */

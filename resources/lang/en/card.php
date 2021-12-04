@@ -10,10 +10,20 @@ return[
     |
     */
 
+    'generic' => [
+        'moreInfo' => 'More info'
+    ],
+    /**
+     * Management Menu
+     */
+    'management' => [
+        'title-index'        => 'Management',
+    ],
     /**
      * User
      */
     'users' => [
+        'registered'         => 'Registered Users',
         'title-index'        => 'Users',
         'title-edit'         => 'Edit User',
         'title-show'         => 'User Details',
@@ -24,12 +34,13 @@ return[
      * User Roles
      */
     'roles' => [
-        'title-index'   => 'Use Roles',
+        'title-index'   => 'User Roles',
     ],
     /**
      * Company Types
      */
     'company_types' => [
+        'registered'    => 'Registered Business Relationships',
         'title-index'   => 'Business Relationships',
         'title-create'  => 'Add Business relationship',
         'title-edit'    => 'Edit Business relationship',
@@ -38,6 +49,7 @@ return[
      * Company
      */
     'companies' => [
+        'registered'    => 'Registered Companies',
         'title-menu'    => 'Companies Menu',
         'title-index'   => 'Companies',
         'title-create'  => 'Register Company',
@@ -48,6 +60,7 @@ return[
      * Department
      */
     'departments' => [
+        'registered'    => 'Registered Departments',
         'title-index'   => 'Departments of',
         'title-create'  => 'Register Department',
         'title-edit'    => 'Edit Department',

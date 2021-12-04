@@ -20,7 +20,7 @@
                             <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-edit') }}</h3>
+                        <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-edit') }} {{ $company->company_name }}</h3>
                     </div>
                     {{-- Card Body --}}
                     <div class="card-body">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- Company Bussiness Sector --}}
+                                {{-- Company Activity Sector --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
                                         <label for="companySector" class="form-label">
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                {{-- Company Website --}}
+                                {{-- Company Phone --}}
                                 <div class="col-md-4 mb-3 mr-5">
                                     <div class="form-group">
                                         <label for="companyPhone" class="form-label">
@@ -94,7 +94,7 @@
                                             data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="text" name="company_phone" id="companyPhone"  class="form-control @error('company_phone') is-invalid @enderror"
+                                            <input type="text" name="company_phone" id="companyWebsite"  class="form-control @error('company_phone') is-invalid @enderror"
                                             value="{{ $company->company_phone }}" placeholder="{{ __('form.company.company_phone_placeholder') }}">
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
@@ -168,8 +168,8 @@
                                 </div>
                             </div>
                             <div class="row">
+                                {{-- Company Description --}}
                                 <div class="col-md-12 mb-3">
-                                    {{-- Company Description --}}
                                     <div class="form-group">
                                         <label for="summernote" class="form-label">
                                             {{ __('form.company.company_description_label') }}

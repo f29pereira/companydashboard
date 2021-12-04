@@ -48,6 +48,9 @@
     {{-- Sumernote Bootstrap CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
+    {{-- Toastr CSS --}}
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
 
@@ -106,6 +109,7 @@
 
     {{-- Pooper JS CDN --}}
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
     {{-- Enable tooltips everywhere --}}
     <script>
         $(function () {
@@ -115,6 +119,12 @@
 
     {{-- Summernote Bootstrap Js --}}
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+    {{-- Toastr JS --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    {{-- Toastr Message script --}}
+    @include('notification.toastr-msg')
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')

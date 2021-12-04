@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col m-3">
                 {{-- Card --}}
-                <div class="card card-info">
+                <div class="card card-warning">
                     {{-- Card Header --}}
                     <div class="card-header d-flex justify-content-between">
                         {{-- Return: Companies List --}}
@@ -37,63 +37,86 @@
                                 <div class="col-md-4 mb-3  mr-5">
                                     <div class="form-group">
                                         <label for="companyName" class="form-label">
-                                            {{ __('form.company.company_name_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                            {{ __('form.company.company_name_label') }}&nbsp;&nbsp;
+                                            <i class="fas fa-asterisk text-danger fa-sm"
+                                            data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="company_name" value="{{ $company->company_name }}" id="companyName">
+                                            <input type="text" name="company_name" id="companyName" class="form-control @error('company_name') is-invalid @enderror"
+                                            value="{{ $company->company_name }}" placeholder="{{ __('form.company.company_name_placeholder') }}">
                                             <div class="input-group-append">
-                                                <span class="input-group-text"><i class="far fa-building text-info"></i></span>
+                                                <div class="input-group-text">
+                                                    <span><i class="far fa-building text-info"></i></span>
+                                                </div>
                                             </div>
+                                            {{-- Error Message --}}
+                                            @error('company_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        {{-- Error Message --}}
-                                        @error('company_name')
-                                            <div><p class="text-danger">{{ $message }}</p></div>
-                                        @enderror
                                     </div>
                                 </div>
-                                {{-- Company Bussiness Sector --}}
+                                {{-- Company Activity Sector --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
                                         <label for="companySector" class="form-label">
-                                            {{ __('form.company.sector_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                            {{ __('form.company.sector_label') }}&nbsp;&nbsp;
+                                            <i class="fas fa-asterisk text-danger fa-sm"
+                                            data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="sector" value="{{ $company->sector }}" id="companySector">
+                                            <input type="text" name="sector" id="companySector" class="form-control @error('sector') is-invalid @enderror"
+                                            value="{{ $company->sector }}" placeholder="{{ __('form.company.sector_placeholder') }}">
                                             <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fas fa-briefcase text-info"></i></span>
+                                                <div class="input-group-text">
+                                                    <span><i class="fas fa-briefcase text-info"></i></span>
+                                                </div>
                                             </div>
+                                            {{-- Error Message --}}
+                                            @error('sector')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        {{-- Error Message --}}
-                                        @error('sector')
-                                            <div><p class="text-danger">{{ $message }}</p></div>
-                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                {{-- Company Website --}}
+                                {{-- Company Phone --}}
                                 <div class="col-md-4 mb-3 mr-5">
                                     <div class="form-group">
                                         <label for="companyPhone" class="form-label">
-                                            {{ __('form.company.company_phone_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                            {{ __('form.company.company_phone_label') }}&nbsp;&nbsp;
+                                            <i class="fas fa-asterisk text-danger fa-sm"
+                                            data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="company_phone" value="{{ $company->company_phone }}" id="companyPhone">
+                                            <input type="text" name="company_phone" id="companyWebsite"  class="form-control @error('company_phone') is-invalid @enderror"
+                                            value="{{ $company->company_phone }}" placeholder="{{ __('form.company.company_phone_placeholder') }}">
                                             <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fas fa-phone-alt text-info"></i></span>
+                                                <div class="input-group-text">
+                                                    <span><i class="fas fa-phone-alt text-info"></i></span>
+                                                </div>
                                             </div>
+                                            {{-- Error Message --}}
+                                            @error('company_phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        {{-- Error Message --}}
-                                        @error('company_phone')
-                                            <div><p class="text-danger">{{ $message }}</p></div>
-                                        @enderror
                                     </div>
                                 </div>
                                 {{-- Company Headquarters --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
                                         <label for="companyHeadquarters" class="form-label">
-                                            {{ __('form.company.headquarters_label') }}&nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                            {{ __('form.company.headquarters_label') }}&nbsp;&nbsp;
+                                            <i class="fas fa-asterisk text-danger fa-sm"
+                                            data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="headquarters" value="{{ $company->headquarters }}" id="companyHeadquarters">
@@ -155,29 +178,21 @@
                                 </div>
                             </div>
                             <div class="row">
+                                {{-- Company Description --}}
                                 <div class="col-md-12 mb-3">
-                                    {{-- Company Description --}}
-                                    {{-- <div id="summernote" name="company_description"></div> --}}
                                     <div class="form-group">
                                         <label for="summernote">
                                             {{ __('form.company.company_description_label') }}
-                                            &nbsp;&nbsp;<strong><i class="fas fa-asterisk text-danger fa-sm"></i></strong>
+                                            &nbsp;&nbsp;
+                                            <i class="fas fa-asterisk text-danger fa-sm"
+                                            data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
                                         </label>
                                     </div>
                                     <textarea name="company_description" id="summernote" cols="30" rows="10"></textarea>
                                     {{-- Error Message --}}
                                     @error('company_description')
                                     <div><p class="text-danger">{{ $message }}</p></div>
-                                @enderror
-                                </div>
-                            </div>
-                            {{-- Required Fields --}}
-                            <div class="row">
-                                <div class="col-md-3 mb-4">
-                                    <strong>
-                                        <i class="fas fa-asterisk text-danger fa-sm"></i>
-                                        &nbsp;{{ __('form.generic.requiredField') }}
-                                    </strong>
+                                    @enderror
                                 </div>
                             </div>
                             {{-- Confirm/Cancel --}}
@@ -206,7 +221,6 @@
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear']],
                 ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontname', ['fontname']],
                 ['fontsize', ['fontsize']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]

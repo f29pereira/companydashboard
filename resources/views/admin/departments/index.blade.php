@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    @can('is_admin')
     {{-- Permisson: Administrator --}}
+    @can('is_admin')
     <div class="row">
         <div class="col m-3">
             {{-- Card --}}
@@ -124,19 +124,19 @@
         </div>
     </div>
     @endcan
-@endsection
+@stop
 
 @section('css')
     <link rel="stylesheet" href="{{ url('/css/my_style.css') }}">
-@endsection
+@stop
 
 @section('js')
     <script>
         $(document).ready( function () {
             $('#departmentTable').DataTable({
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },
+                // language:{
+                //     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                // },
                 columnDefs: [
                     { orderable: false, targets: 1 }
                 ]
@@ -144,3 +144,5 @@
         });
     </script>
 @stop
+
+

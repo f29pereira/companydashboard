@@ -55,8 +55,19 @@ class DepartmentController extends Controller
         //New Department
         $department = Department::create($request->all());
 
-        //Redirect: Departments List
-        return redirect()->route('departments');
+        //Redirect: Departments List with success message
+        //return redirect()->route('departments');
+
+        $text = __('page.departments.create-success') . "AAAAAAAAAAA";
+
+        // $notification = array(
+        //     'title' => '',
+        //     'message' => ''
+        // );
+
+
+        //return redirect()->route('departments')->with('message', 'Department Added sucessfully!');
+        return redirect()->route('departments')->with('message', $text);
     }
 
     /**

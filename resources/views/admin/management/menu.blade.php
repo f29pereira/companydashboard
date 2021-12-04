@@ -20,7 +20,7 @@
                             <i class="fas fa-home fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="fas fa-th fa-lg"></i>&nbsp;&nbsp;&nbsp;Gestão</h3>
+                        <h3 class="card-title"><i class="fas fa-th fa-lg"></i>&nbsp;&nbsp;&nbsp;{{ __('card.management.title-index') }}</h3>
                     </div>
                     {{-- Card Body --}}
                     <div class="card-body">
@@ -30,7 +30,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $companies }}</h3>
-                                      <p>Empresas</p>
+                                      <p>{{ __('card.companies.registered') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="far fa-building text-white"></i>
@@ -45,7 +45,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $departments }}</h3>
-                                      <p>Departamentos</p>
+                                      <p>{{ __('card.departments.registered') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-user-tie text-white"></i>

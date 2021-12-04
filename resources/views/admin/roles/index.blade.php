@@ -16,75 +16,65 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Users Menu --}}
-                    <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.user-menu') }}">
+                    <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.users-menu') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-users-cog fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.roles.title-index') }}</h3>
+                    <h3 class="card-title">
+                        <i class="fas fa-users-cog fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                        {{ __('page.roles.index-title') }}
+                    </h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg" data-toggle="tooltip" data-placement="right"
-                         title="{{ __('tooltip.roles.index') }}"></i>
+                         title="{{ __('page.roles.tip-index') }}"></i>
                     </div>
                     {{-- Table --}}
                     <table class="table table-hover table-responsive-md" id="rolesTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
                             <tr>
-                                <th scope="col">Ação</th>
-                                <th scope="col">
-                                    <i class="far fa-question-circle text-info fa-lg"
-                                    data-toggle="tooltip" data-placement="top" title="{{ $roles[0]->role_description }}"></i>
-                                    &nbsp;Administrador
-                                </th>
-                                <th scope="col">
-                                    <i class="far fa-question-circle text-info fa-lg"
-                                    data-toggle="tooltip" data-placement="top" title="{{ $roles[3]->role_description }}"></i>
-                                    Colaborador
-                                </th>
+                                <th scope="col">{{ __('page.roles.th-action') }}</th>
+                                <th scope="col">{{ __('page.roles.th-admin') }}</th>
+                                <th scope="col">{{ __('page.roles.th-collaborator') }}</th>
                             </tr>
                         </thead>
                         {{-- Table Body --}}
                         <tbody class="text-center">
                             <tr>
-                                <td>Consultar meu perfil</td>
-                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
-                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Editar meu perfil</td>
-                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
-                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Consultar permissões de utilizador</td>
+                                <td>{{ __('page.roles.action-users') }}</td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>Gerir utilizadores registados</td>
+                                <td>{{ __('page.roles.action-companies') }}</td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>Gerir empresas registadas</td>
+                                <td>{{ __('page.roles.action-company_types') }}</td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>Gerir departamentos registadas</td>
+                                <td>{{ __('page.roles.action-departments') }}</td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td>{{ __('page.roles.action-profile') }}</td>
+                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
+                                <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                             </tr>
                         </tbody>
                         {{-- Table Footer --}}
                         <tfoot class="text-center">
                             <tr>
-                                <th>Ação</th>
-                                <th>Administrador</th>
-                                <th>Colaborador</th>
+                                <th>{{ __('page.roles.th-action') }}</th>
+                                <th>{{ __('page.roles.th-admin') }}</th>
+                                <th>{{ __('page.roles.th-collaborator') }}</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -103,9 +93,9 @@
     <script>
         $(document).ready( function () {
             $('#rolesTable').DataTable({
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },
+                // language:{
+                //     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                // },
                 columnDefs: [
                     { orderable: false, targets: [1,2] }
                 ]

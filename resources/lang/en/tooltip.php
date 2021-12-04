@@ -29,27 +29,27 @@ return [
      * Users Tooltips
      */
     'users' => [
-        'index'                 => 'List of registered users',
-        'show-btn'              => 'User Details',
+        'index'                 => '',
+        'show-btn'              => '',
         //Edit User
-        'edit-btn'              => 'Update User Data',
-        'edit'                  => 'Form to update user data',
+        'edit-btn'              => '',
+        'edit'                  => '',
         //Delete User
-        'softDelete-btn'        => 'Delete User',
-        'softDelete'            => 'The selected user will be deleted',
-        'softDelete-question'   => 'Do you want to delete the selected user?',
+        'softDelete-btn'        => '',
+        'softDelete'            => '',
+        'softDelete-question'   => '',
         //User Profile
-        'edit-profile-btn'      => 'Update my profile',
-        'edit-profile'          => 'Form to update my profile data'
+        'edit-profile-btn'      => '',
+        'edit-profile'          => ''
     ],
 
     /**
      * User Roles Tooltips
      */
     'roles' => [
-        'index'                 => 'Types of user roles and associated permissions',
-        'administrator'         => 'Administrator user role',
-        'collaborator'          => 'Collaborator user role'
+        'index'                 => '',
+        'administrator'         => '',
+        'collaborator'          => ''
     ],
 
     /**
