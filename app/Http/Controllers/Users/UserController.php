@@ -110,8 +110,12 @@ class UserController extends Controller
         //User Update
         $user->update($request->all());
 
+        //User successfully updated
+        $text = __('page.users.toastr-title') . " " . $user->name . '\n'
+        . __('page.generic.toastr-update-success');
+
         //Redirect: Users List
-        return redirect()->route('users');
+        return redirect()->route('users')->with('message', $text);
     }
 
     /**
@@ -129,8 +133,12 @@ class UserController extends Controller
             $user->save();
         }
 
-        //Redirect: users list
-        return redirect()->route('users');
+        //User successfully deleted
+        $text = __('page.users.toastr-title') . " " . $user->name . '\n'
+        . __('page.generic.toastr-delete-success');
+
+        //Redirect: Users list
+        return redirect()->route('users')->with('message', $text);
     }
 
     /**

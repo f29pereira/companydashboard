@@ -94,6 +94,10 @@ return [
          */
         'tip-edit'         => 'Form to update user profile data',
         /**
+         * Tooltip - User Delete Modal
+         */
+        'tip-delete'        => 'The selected user will be deleted',
+        /**
          * Users Form Label
          */
         'label-name'        => 'Name',
@@ -125,6 +129,10 @@ return [
          */
         'tip-edit-profile-btn'  => 'Update my profile data',
         'tip-edit-profile'      => 'Form to update my profile data',
+        /**
+         * Notifications Message
+         */
+        'toastr-title' => 'User:'
     ],
     /*
     |--------------------------------------------------------------------------
@@ -174,16 +182,96 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Management Menu Language Lines
+    | Company Menu Language Lines
     |--------------------------------------------------------------------------
     |
     */
+    'company-menu' => [
+        'index-title'               => 'Companies',
+        'registered-companies'      => 'Registered Companies',
+        'registered-company_types'  => 'Registered Business Relationships',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Companies Language Lines
     |--------------------------------------------------------------------------
     |
     */
+    'companies' => [
+        /**
+         * Company Cards Title
+         */
+        'index-title'       => 'Companies',
+        'create-title'      => 'Register Company',
+        'show-title'        => 'Company Details',
+        'edit-title'        => 'Edit Company data',
+        'delete-title'      => 'Delete Company',
+        /**
+         * Tooltip - Company Table Page
+         */
+        'tip-index'         => 'List of registered companies with business relationship with',
+        /**
+         * Add Company Button
+         */
+        'add-title'         => 'Company',
+        'tip-add'           => 'Register company',
+        /**
+         * Company Table Header/Footer
+         */
+        'th-name'           => 'Name',
+        'th-type'           => 'B.Relationship with',
+        'th-sector'         => 'Activity Sector',
+        'th-website'        => 'Website',
+        'th-management'     => 'Company management',
+        /**
+         * Tooltip - Management Company Buttons
+         */
+        'tip-show-btn'      => 'Show Company Details',
+        'tip-edit-btn'      => 'Update Company Data',
+        'tip-delete-btn'    => 'Delete Company',
+        /**
+         * Tooltip - Company Create Page
+         */
+        'tip-create'        => 'Form to register a new company',
+        /**
+         * Tooltip - Company Edit Page
+         */
+        'tip-edit'          => 'Form to update company data',
+        /**
+         * Tooltip - Department Delete Modal
+         */
+        'tip-delete'        => 'The selected company will be deleted',
+        /**
+         * Company Form Label/Placeholder
+         */
+        //label
+        'label-name'                => 'Name',
+        'label-description'         => 'Description',
+        'label-sector'              => 'Activity Sector',
+        'label-phone'               => 'Phone',
+        'label-headquarters'        => 'Headquaerters',
+        'label-website'             => 'Website',
+        'label-type'                => 'Business Relationship with',
+        //placeholder create
+        'text-create-name'          => 'Insert Company name',
+        'text-create-description'   => 'Insert Company description',
+        'text-create-sector'        => 'Insert Company activity sector',
+        'text-create-phone'         => 'Insert Company Phone',
+        'text-create-headquarters'  => 'Insert Company Headquaerters',
+        'text-create-website'       => 'Insert Company Website',
+        'text-create-type'          => 'Select Business Relationship:',
+        //placeholder update
+        'text-update-name'          => 'Update Company name',
+        'text-update-description'   => 'Update Company description',
+        'text-update-sector'        => 'Update Company activity sector',
+        'text-update-phone'         => 'Update Company phone',
+        'text-update-headquarters'  => 'Update Company headquarters',
+        'text-update-website'       => 'Update Company website',
+        /**
+         * Notifications Message
+         */
+        'toastr-title' => 'Company:'
+    ],
     /*
     |--------------------------------------------------------------------------
     | Company Types Language Lines
@@ -221,11 +309,11 @@ return [
         /**
          * Tooltip - Company Type Create Page
          */
-        'tip-create'        => 'Form to create business relationship',
+        'tip-create'        => 'Form to register a new business relationship',
         /**
          * Tooltip - Company Type Edit Page
          */
-        'tip-edit'          => 'Form to update business relationship',
+        'tip-edit'          => 'Form to update business relationship data',
         /**
          * Tooltip - Department Delete Modal
          */
@@ -243,7 +331,7 @@ return [
         'text-update-name'          => 'Update Business Relationship name',
         'text-update-description'   => 'Update Business Relationship description',
         /**
-         * Notifications Message Success
+         * Notifications Message
          */
         'toastr-title' => 'Business relationship:'
     ],
@@ -283,7 +371,7 @@ return [
         /**
          * Tooltip - Department Create Page
          */
-        'tip-create'         => 'Form to create department',
+        'tip-create'         => 'Form to register a new department',
         /**
          * Tooltip - Department Edit Page
          */
@@ -301,7 +389,7 @@ return [
         'text-create-name'         => 'Department name',
         'text-update-name'         => 'Update Department name',
         /**
-         * Notifications Message Success
+         * Notifications Message
          */
         'toastr-title' => 'Department:'
     ]

@@ -16,18 +16,21 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.company-index') }}">
+                    <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-index') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-create') }}</h3>
+                    <h3 class="card-title">
+                        <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                        {{ __('page.companies.create-title') }}
+                    </h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="row">
-                        <div class="mb-3">
+                        <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.create') }}"></i>
+                            data-toggle="tooltip" data-placement="right" title="{{ __('page.companies.tip-create') }}"></i>
                         </div>
                     </div>
                     {{-- Create Company Form --}}
@@ -38,13 +41,13 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companyName" class="form-label">
-                                        {{ __('form.company.company_name_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-name') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="company_name" id="companyName" class="form-control @error('company_name') is-invalid @enderror"
-                                        value="{{ old('company_name') }}" placeholder="{{ __('form.company.company_name_placeholder') }}" autofocus>
+                                        value="{{ old('company_name') }}" placeholder="{{ __('page.companies.text-create-name') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="far fa-building text-info"></span>
@@ -63,13 +66,13 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companySector" class="form-label">
-                                        {{ __('form.company.sector_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-sector') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="sector" id="companySector" class="form-control @error('sector') is-invalid @enderror"
-                                        value="{{ old('sector') }}" placeholder="{{ __('form.company.sector_placeholder') }}" autofocus>
+                                        value="{{ old('sector') }}" placeholder="{{ __('page.companies.text-create-sector') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-briefcase text-info"></span>
@@ -90,13 +93,13 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companyPhone" class="form-label">
-                                        {{ __('form.company.company_phone_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-phone') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="company_phone" id="companyPhone" class="form-control @error('company_phone') is-invalid @enderror"
-                                        value="{{ old('company_phone') }}" placeholder="{{ __('form.company.company_phone_placeholder') }}" autofocus>
+                                        value="{{ old('company_phone') }}" placeholder="{{ __('page.companies.text-create-phone') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-phone-alt text-info"></span>
@@ -115,13 +118,13 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companyHeadquarters" class="form-label">
-                                        {{ __('form.company.headquarters_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-headquarters') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="headquarters" id="companyHeadquarters" class="form-control @error('headquarters') is-invalid @enderror"
-                                        value="{{ old('headquarters') }}" placeholder="{{ __('form.company.headquarters_placeholder') }}" autofocus>
+                                        value="{{ old('headquarters') }}" placeholder="{{ __('page.companies.text-create-headquarters') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-map-marked-alt text-info"></span>
@@ -142,13 +145,13 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companyWebsite" class="form-label">
-                                        {{ __('form.company.website_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-website') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="url" name="website" id="companyWebsite" class="form-control @error('website') is-invalid @enderror"
-                                        value="{{ old('website') }}" placeholder="{{ __('form.company.website_placeholder') }}" autofocus>
+                                        value="{{ old('website') }}" placeholder="{{ __('page.companies.label-website') }}" autofocus>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-desktop text-info"></span>
@@ -167,14 +170,14 @@
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
                                     <label for="companyType" class="form-label">
-                                        {{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-type') }} {{ $mainCompany->company_name }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         {{-- <select class="form-control" name="company_types_id" id="companyType"> --}}
                                         <select name="company_types_id" id="companyType" class="custom-select @error('company_types_id') is-invalid @enderror">
-                                            <option value="">{{ __('form.company.company_types_id_placeholder') }}</option>
+                                            <option value="">{{ __('page.companies.text-create-type') }}</option>
                                             @foreach ($companyTypes as $companyType)
                                                 <option value="{{ $companyType->id }}">{{ $companyType->type_name }}</option>
                                             @endforeach
@@ -201,7 +204,7 @@
                                     <label for="summernote">
                                         {{ __('form.company.company_description_label') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
-                                        data-toggle="tooltip" data-placement="right" title="{{ __('form.generic.requiredField') }}"></i>
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                 </div>
                                 <textarea class="form-control" name="company_description" id="summernote" cols="30" rows="10"></textarea>
@@ -217,10 +220,10 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('form.generic.confirmBtn') }}
+                                    </i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
                                 </button>
                                 <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('form.generic.cancelBtn') }}
+                                    </i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
                                 </button>
                             </div>
                         </div>

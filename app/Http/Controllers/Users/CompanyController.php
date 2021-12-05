@@ -82,8 +82,13 @@ class CompanyController extends Controller
         //New Company
         $company = Company::create($request->all());
 
-        //Redirect: companies list
-        return redirect()->route('companies');
+        //Company successfully created
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-create-success');
+
+        //Redirect: Companies List
+        return redirect()->route('companies')->with('message', $text);
     }
 
     /**
@@ -141,8 +146,13 @@ class CompanyController extends Controller
         //Company Update
         $company->update($request->all());
 
+        //Company successfully updated
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-update-success');
+
         //Redirect: Companies List
-        return redirect()->route('companies');
+        return redirect()->route('companies')->with('message', $text);
     }
 
     /**
@@ -175,8 +185,13 @@ class CompanyController extends Controller
         //Company update
         $company->update($request->all());
 
+        //Company successfully updated
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-update-success');
+
         //Redirect: Company Menu
-        return redirect()->route('companiesMenu');
+        return redirect()->route('companiesMenu')->with('message', $text);
     }
 
     /**
@@ -200,7 +215,12 @@ class CompanyController extends Controller
         //Users Mass Update to Default Company
         User::where('company_id', $id)->update(['company_id' => 1]);
 
+        //Company successfully deleted
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-delete-success');
+
         //Redirect: companies list
-        return redirect()->route('companies');
+        return redirect()->route('companies')->with('message', $text);
     }
 }

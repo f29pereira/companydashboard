@@ -93,6 +93,13 @@
                                                     </div>
                                                     {{-- Modal Body --}}
                                                     <div class="modal-body">
+                                                        <div class="text-left">
+                                                            <div class="row">
+                                                                <i class="far fa-question-circle text-danger fa-lg"
+                                                                data-toggle="tooltip" data-placement="right"
+                                                                title="{{ __('page.users.tip-delete') }}"></i>&nbsp;&nbsp;
+                                                            </div>
+                                                        </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <p><i class="far fa-address-card fa-lg text-danger"></i>&nbsp;<b>{{ __('page.users.label-name') }}</b></p>

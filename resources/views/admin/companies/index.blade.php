@@ -17,13 +17,16 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         {{-- Return: Companies Menu --}}
-                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.company-menu') }}">
+                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-index') }}">
                             <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                         </a>
                         {{-- Card Title --}}
-                        <h3 class="card-title"><i class="far fa-building fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.companies.title-index') }}</h3>
+                        <h3 class="card-title">
+                            <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('page.companies.index-title') }}
+                        </h3>
                         {{-- Return: Management Menu --}}
-                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('tooltip.goTo.management-menu') }}">
+                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('page.link.management-menu') }}">
                             <i class="fas fa-th fa-lg"></i>
                         </a>
                     </div>
@@ -34,15 +37,15 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                              data-toggle="tooltip" data-placement="right"
-                             title="{{ __('tooltip.companies.index') }} {{ $mainCompany->company_name }}"></i>
+                             title="{{ __('page.companies.tip-index') }} {{ $mainCompany->company_name }}"></i>
                         </div>
                     </div>
                     {{-- Add Company --}}
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/companies/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.companies.add-company-title') }}">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('tooltip.companies.add-company') }}
+                            data-toggle="tooltip" data-placement="right" title="{{ __('page.companies.tip-add') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('page.companies.add-title') }}
                             </a>
                         </div>
                     </div>
@@ -51,11 +54,11 @@
                         {{-- Table Head --}}
                         <thead class="text-center">
                             <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Relação com {{ $mainCompany->company_name }}</th>
-                                <th scope="col">Atividade</th>
-                                <th scope="col">Website</th>
-                                <th scope="col">Gestão Empresa</th>
+                                <th scope="col">{{ __('page.companies.th-name') }}</th>
+                                <th scope="col">{{ __('page.companies.th-type') }} {{ $mainCompany->company_name }}</th>
+                                <th scope="col">{{ __('page.companies.th-sector') }}</th>
+                                <th scope="col">{{ __('page.companies.th-website') }}</th>
+                                <th scope="col">{{ __('page.companies.th-management') }}</th>
                             </tr>
                         </thead>
                         {{-- Table Body --}}
@@ -71,14 +74,14 @@
                                         <div class="col-md-4 mb-1">
                                             {{-- Show Company --}}
                                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/companies/show/'. $company->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.show-btn') }}">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('page.companies.tip-show-btn') }}">
                                                 <i class="fas fa-info-circle"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-4 mb-1">
                                             {{-- Edit Company --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/companies/edit/'. $company->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.edit-btn') }}">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('page.companies.tip-edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         </div>
@@ -86,7 +89,7 @@
                                             {{-- Delete Company --}}
                                             <span data-toggle="modal" data-target="#deleteCompany-{{ $company->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
-                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.companies.softDelete-btn') }}">
+                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('page.companies.tip-delete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>
@@ -99,41 +102,62 @@
                                             <div class="modal-content">
                                                 {{-- Modal Header --}}
                                                 <div class="modal-header bg-danger text-center">
-                                                    <h3 class="modal-title w-100" id="deleteModalLabel"><i class="far fa-trash-alt"></i></h3>
+                                                    <h5 class="modal-title w-100" id="deleteModalLabel">
+                                                        <i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;
+                                                        {{ __('page.companies.delete-title') }}
+                                                    </h5>
                                                 </div>
                                                 {{-- Modal Body --}}
                                                 <div class="modal-body">
-                                                    <div class="row mb-3">
-                                                        <strong>{{ __('tooltip.companies.softDelete-question') }}</strong>
+                                                    <div class="text-left">
+                                                        <div class="row">
+                                                            <i class="far fa-question-circle text-danger fa-lg"
+                                                            data-toggle="tooltip" data-placement="right"
+                                                            title="{{ __('page.companies.tip-delete') }}"></i>&nbsp;&nbsp;
+                                                        </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="far fa-building fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_name_label') }}</strong></p>
+                                                            <p>
+                                                                <i class="far fa-building fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-name') }}</strong>
+                                                            </p>
                                                             <p>{{ $company->company_name }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-briefcase fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.sector_label') }}</strong></p>
+                                                            <p>
+                                                                <i class="fas fa-briefcase fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-sector') }}</strong>
+                                                            </p>
                                                             <p>{{ $company->sector }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_phone_label') }}</strong></p>
+                                                            <p><i class="fas fa-phone-alt fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-phone') }}</strong>
+                                                            </p>
                                                             <p>{{ $company->company_phone }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-map-marked-alt fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.headquarters_label') }}</strong></p>
+                                                            <p><i class="fas fa-map-marked-alt fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-headquarters') }}</strong>
+                                                            </p>
                                                             <p>{{ $company->headquarters }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <p><i class="fas fa-desktop fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.website_label') }}</strong></p>
+                                                            <p><i class="fas fa-desktop fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-website') }}</strong>
+                                                            </p>
                                                             <p>{{ $company->website }}</p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <p><i class="far fa-handshake fa-lg text-danger"></i>&nbsp;<strong>{{ __('form.company.company_types_id_label') }} {{ $mainCompany->company_name }}</strong></p>
-                                                            <p>{{ $company->headquarters }}</p>
+                                                            <p><i class="far fa-handshake fa-lg text-danger"></i>&nbsp;
+                                                                <strong>{{ __('page.companies.label-type') }} {{ $mainCompany->company_name }}</strong>
+                                                            </p>
+                                                            <p>{{ $company->companyTypes->type_name }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="row" style="display:none">
@@ -143,11 +167,11 @@
                                                 {{-- Confirm/Cancel --}}
                                                 <div class="modal-footer">
                                                     <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/companies/delete/'.$company->id) }}" role="button">
-                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;Confirmar
+                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
                                                     </a>
 
                                                     <button type="button" class="btn bg-gradient-danger btn-sm" data-dismiss="modal">
-                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;Cancelar
+                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -160,11 +184,11 @@
                         {{-- Table Footer --}}
                         <tfoot  class="text-center">
                             <tr>
-                                <th>Nome</th>
-                                <th>Relação com {{ $mainCompany->company_name }}</th>
-                                <th>Atividade</th>
-                                <th>Website</th>
-                                <th>Gestão Empresa</th>
+                                <th>{{ __('page.companies.th-name') }}</th>
+                                <th>{{ __('page.companies.th-type') }} {{ $mainCompany->company_name }}</th>
+                                <th>{{ __('page.companies.th-sector') }}</th>
+                                <th>{{ __('page.companies.th-website') }}</th>
+                                <th>{{ __('page.companies.th-management') }}</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -183,9 +207,9 @@
     <script>
         $(document).ready( function () {
             $('#companiesTable').DataTable({
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },
+                // language:{
+                //     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                // },
                 columnDefs: [
                     { orderable: false, targets: 4 }
                 ]

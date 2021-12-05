@@ -38,7 +38,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userName" class="form-label">
-                                        {{ __('form.user.name_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-name') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -63,7 +63,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userEmail" class="form-label">
-                                        {{ __('form.user.email_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-email') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -88,7 +88,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userPhone" class="form-label">
-                                        {{ __('form.user.phone_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-phone') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -115,7 +115,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userDepartment" class="form-label">
-                                        {{ __('form.user.department_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-department') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -145,7 +145,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userRole" class="form-label">
-                                        {{ __('form.user.role_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-role') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
