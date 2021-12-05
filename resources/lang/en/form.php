@@ -64,16 +64,4 @@ return[
         'company_types_id_label' => 'Business relationship with',
         'company_types_id_placeholder' => 'Choose a type of business relationship:',
     ],
-
-    /**
-     * Company Type Form
-     */
-    'company_types' => [
-        //Name
-        'type_name_label' => 'Name',
-        'type_name_placeholder' => 'Business relationship name',
-        //Description
-        'type_description_label' => 'Description',
-        'type_description_placeholder' => 'Business relationship description'
-    ]
 ];

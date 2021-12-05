@@ -37,15 +37,6 @@ return[
         'title-index'   => 'User Roles',
     ],
     /**
-     * Company Types
-     */
-    'company_types' => [
-        'registered'    => 'Registered Business Relationships',
-        'title-index'   => 'Business Relationships',
-        'title-create'  => 'Add Business relationship',
-        'title-edit'    => 'Edit Business relationship',
-    ],
-    /**
      * Company
      */
     'companies' => [

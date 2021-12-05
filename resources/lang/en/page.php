@@ -8,18 +8,27 @@ return [
     |
     */
     'generic' => [
-        'moreInfo' => 'More info',
+        'moreInfo'                  => 'More info',
         /**
          * Form Buttons
          */
-        'confirmBtn' => 'Confirm',
-        'cancelBtn' => 'Cancel',
+        'confirmBtn'                => 'Confirm',
+        'cancelBtn'                 => 'Cancel',
         //Required form fields
-        'tip-required' => 'required field',
-        //Toastr notifications: create/update/delete
-        'toastr-create-success' => 'created successfully.',
-        'toastr-update-success' => 'updated successfully.',
-        'toastr-delete-success' => 'deleted successfully.',
+        'tip-required'              => 'required field',
+        /**
+         * Toastr notifications messages
+         */
+        'toastr-create-success'     => 'created successfully.',
+        'toastr-update-success'     => 'updated successfully.',
+        'toastr-delete-success'     => 'deleted successfully.',
+        /**
+         * User actions
+         */
+        'action-crud'               => 'CRUD',
+        'action-show-update-delete' => 'Consult/Edit/Delete',
+        'action-create-edit-delete' => 'Create/Edit/Delete',
+        'action-show-edit'          => 'Consult/Edit',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -46,8 +55,8 @@ return [
     */
     'users-menu' => [
         'card-title'        => 'Users',
-        'registered_users'  => 'Registered Users',
-        'registered_roles'  => 'Registered User Roles',
+        'registered-users'  => 'Registered Users',
+        'registered-roles'  => 'User Roles',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -141,20 +150,31 @@ return [
         /**
          * User Roles Actions
          */
-        //Users
-        'action-users'          => 'Consult/Edit/Delete users',
-        //Companies
-        'action-companies'      => 'CRUD companies',
-        //Companies
-        'action-company_types'  => 'Create/Edit/Delete business relationships',
-        //Departments
-        'action-departments'    => 'CRUD departments',
-        //Profile
-        'action-profile'        => 'Consult/Edit my profile data',
+        //Users (Consult/Edit/Delete)
+        'action-users'          => 'users',
+        //Companies (CRUD)
+        'action-companies'      => 'companies',
+        //Companies (Create/Edit/Delete)
+        'action-company_types'  => 'business relationships',
+        //Departments (Create/Edit/Delete)
+        'action-departments'    => 'departments',
+        //Profile (Show/Edit)
+        'action-profile'        => 'my profile data',
     ],
     /*
     |--------------------------------------------------------------------------
-    | Management Language Lines
+    | Management Menu Language Lines
+    |--------------------------------------------------------------------------
+    |
+    */
+    'management-menu' => [
+        'index-title'               => 'Management',
+        'registered-companies'      => 'Registered Companies',
+        'registered-departments'    => 'Registered Departments',
+    ],
+    /*
+    |--------------------------------------------------------------------------
+    | Management Menu Language Lines
     |--------------------------------------------------------------------------
     |
     */
@@ -164,6 +184,69 @@ return [
     |--------------------------------------------------------------------------
     |
     */
+    /*
+    |--------------------------------------------------------------------------
+    | Company Types Language Lines
+    |--------------------------------------------------------------------------
+    |
+    */
+    'company-types' => [
+        /**
+         * Company Types Cards Title
+         */
+        'index-title'       => 'Business Relationships',
+        'create-title'      => 'Register Business Relationship',
+        'edit-title'        => 'Edit Business Relationship data',
+        'delete-title'      => 'Delete Business Relationship',
+        /**
+         * Tooltip - Company Types Table Page
+         */
+        'tip-index'         => 'List of registered business relationships',
+        /**
+         * Add Company Type Button
+         */
+        'add-title'         => 'Business Relationship',
+        'tip-add'           => 'Register business relationship',
+        /**
+         * Company Types Table Header/Footer
+         */
+        'th-name'           => 'Name',
+        'th-description'    => 'Description',
+        'th-management'     => 'B.Relationship management',
+        /**
+         * Tooltip - Management Company Types Buttons
+         */
+        'tip-edit-btn'      => 'Update Business Relationship Data',
+        'tip-delete-btn'    => 'Delete Business Relationship',
+        /**
+         * Tooltip - Company Type Create Page
+         */
+        'tip-create'        => 'Form to create business relationship',
+        /**
+         * Tooltip - Company Type Edit Page
+         */
+        'tip-edit'          => 'Form to update business relationship',
+        /**
+         * Tooltip - Department Delete Modal
+         */
+        'tip-delete'        => 'Companies with this business relationship (to be deleted) will have an undefined business relationship',
+        /**
+         * Company Type Form Label/Placeholder
+         */
+        //label
+        'label-name'        => 'Name',
+        'label-description' => 'Description',
+        //placeholder create
+        'text-create-name'         => 'Insert Business Relationship name',
+        'text-create-description'  => 'Insert Business Relationship description',
+        //placeholder update
+        'text-update-name'          => 'Update Business Relationship name',
+        'text-update-description'   => 'Update Business Relationship description',
+        /**
+         * Notifications Message Success
+         */
+        'toastr-title' => 'Business relationship:'
+    ],
     /*
     |--------------------------------------------------------------------------
     | Departments Language Lines
@@ -176,7 +259,6 @@ return [
          */
         'index-title'       => 'Departments',
         'create-title'      => 'Register Department',
-        'show-title'        => 'Department Details',
         'edit-title'        => 'Edit Department data',
         'delete-title'      => 'Delete Department',
         /**
@@ -211,12 +293,11 @@ return [
          */
         'tip-delete'        => 'Users of this department (to be deleted) will have an undefined department',
         /**
-         * Department Form Label
+         * Department Form Label/Placeholder
          */
+        //label
         'label-name'        => 'Name',
-        /**
-         * Department Create/Update Form Placeholder
-         */
+        //placeholder
         'text-create-name'         => 'Department name',
         'text-update-name'         => 'Update Department name',
         /**

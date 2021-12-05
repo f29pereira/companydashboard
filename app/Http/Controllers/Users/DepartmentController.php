@@ -93,7 +93,7 @@ class DepartmentController extends Controller
         //Department Update
         $department->update($request->all());
 
-        //Department successfully update
+        //Department successfully updated
         $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
         . __('page.generic.toastr-update-success');
 
@@ -122,7 +122,7 @@ class DepartmentController extends Controller
         //Users Mass Update to Default Department
         User::where('department_id', $id)->update(['department_id' => 1]);
 
-        //Department successfully update
+        //Department successfully deleted
         $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
         . __('page.generic.toastr-delete-success');
 

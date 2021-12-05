@@ -44,27 +44,42 @@
                         {{-- Table Body --}}
                         <tbody class="text-center">
                             <tr>
-                                <td>{{ __('page.roles.action-users') }}</td>
+                                <td>
+                                    {{ __('page.generic.action-show-update-delete') }}
+                                    <b>{{ __('page.roles.action-users') }}</b>
+                                </td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>{{ __('page.roles.action-companies') }}</td>
+                                <td>
+                                    {{ __('page.generic.action-crud') }}
+                                    <b>{{ __('page.roles.action-companies') }}</b>
+                                </td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>{{ __('page.roles.action-company_types') }}</td>
+                                <td>
+                                    {{ __('page.generic.action-create-edit-delete') }}
+                                    <b>{{ __('page.roles.action-company_types') }}</b>
+                                </td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>{{ __('page.roles.action-departments') }}</td>
+                                <td>
+                                    {{ __('page.generic.action-create-edit-delete') }}
+                                    <b>{{ __('page.roles.action-departments') }}</b>
+                                </td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-times-circle text-danger fa-lg"></i></td>
                             </tr>
                             <tr>
-                                <td>{{ __('page.roles.action-profile') }}</td>
+                                <td>
+                                    {{ __('page.generic.action-show-edit') }}
+                                    <b>{{ __('page.roles.action-profile') }}</b>
+                                </td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                                 <td><i class="fas fa-check-circle text-success fa-lg"></i></td>
                             </tr>

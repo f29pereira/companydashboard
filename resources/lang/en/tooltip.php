@@ -53,24 +53,6 @@ return [
     ],
 
     /**
-     * Company Types Tooltips
-     */
-    'company_types' => [
-        'index'                  => 'List of registered business relationships',
-        //Add Company Type
-        'add-company_type'       => 'Business relationship',
-        'add-company_type-title' => 'Add Business relationship',
-        'create'                 => 'Form to register a new business relationship',
-        //Edit Company Type
-        'edit-btn'               => 'Update Business relationship Data',
-        'edit'                   => 'Form to update business relationship data',
-        //Delete Company Type
-        'softDelete-btn'         => 'Delete Business relationship',
-        'softDelete'             => 'Companies with the associated business relationship will have an undefined business relationship',
-        'softDelete-question'    => 'Do you want to delete the selected business relationship?',
-    ],
-
-    /**
      * Company Tooltips
      */
     'companies' => [

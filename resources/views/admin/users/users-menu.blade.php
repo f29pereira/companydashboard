@@ -33,7 +33,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $users }}</h3>
-                                      <p>{{ __('page.users-menu.registered_users') }}</p>
+                                      <p>{{ __('page.users-menu.registered-users') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users text-white"></i>
@@ -49,7 +49,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $roles }}</h3>
-                                      <p>{{ __('page.users-menu.registered_roles') }}</p>
+                                      <p>{{ __('page.users-menu.registered-roles') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users-cog text-white"></i>

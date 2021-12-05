@@ -54,8 +54,13 @@ class CompanyTypeController extends Controller
         //Company Type Create
         $companyType = CompanyType::create($request->all());
 
-        //Redirect
-        return redirect()->route('types');
+        //Company Type sucessfully created
+        $text = __('page.company-types.toastr-title') . " "
+        . $companyType->type_name . '\n'
+        . __('page.generic.toastr-create-success');
+
+        //Redirect: Company Types List
+        return redirect()->route('types')->with('message', $text);
     }
 
     /**
@@ -88,8 +93,13 @@ class CompanyTypeController extends Controller
         //Company Type Update
         $companyType->update($request->all());
 
+        //Company Type sucessfully updated
+        $text = __('page.company-types.toastr-title') . " "
+        . $companyType->type_name . '\n'
+        . __('page.generic.toastr-update-success');
+
         //Redirect: Company Types List
-        return redirect()->route('types');
+        return redirect()->route('types')->with('message', $text);
     }
 
     /**
@@ -113,7 +123,12 @@ class CompanyTypeController extends Controller
         //Companies Mass Update to Default Company Type
         Company::where('company_types_id', $id)->update(['company_types_id' => 1]);
 
+        //Company Type successfully deleted
+        $text = __('page.company-types.toastr-title') . " "
+        . $companyType->type_name . '\n'
+        . __('page.generic.toastr-delete-success');
+
         //Redirect: Company Types List
-        return redirect()->route('types');
+        return redirect()->route('types')->with('message', $text);
     }
 }
