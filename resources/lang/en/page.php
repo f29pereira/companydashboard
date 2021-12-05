@@ -9,9 +9,17 @@ return [
     */
     'generic' => [
         'moreInfo' => 'More info',
+        /**
+         * Form Buttons
+         */
         'confirmBtn' => 'Confirm',
         'cancelBtn' => 'Cancel',
-        'tip-required' => 'required attribute'
+        //Required form fields
+        'tip-required' => 'required field',
+        //Toastr notifications: create/update/delete
+        'toastr-create-success' => 'created successfully.',
+        'toastr-update-success' => 'updated successfully.',
+        'toastr-delete-success' => 'deleted successfully.',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -53,6 +61,7 @@ return [
         'index-title'       => 'Users',
         'show-title'        => 'User Details',
         'edit-title'        => 'Edit User data',
+        'delete-title'      => 'Delete User',
         /**
          * Users Table
          */
@@ -62,19 +71,15 @@ return [
         'th-department'     => 'Department',
         'th-management'     => 'User management',
         /**
-         * User Tooltip - User Table Page
+         * Tooltip - User Table Page
          */
         'tip-index'         => 'List of registered users',
         /**
-         * User Tooltip - Management User Buttons
+         * Tooltip - Management User Buttons
          */
         'tip-show-btn'      => 'Show User Details',
         'tip-edit-btn'      => 'Update User Data',
         'tip-delete-btn'    => 'Delete User',
-        /**
-         * User Delete Modal Question
-         */
-        'check-delete'      => 'Do you want to delete the selected user ?',
         /**
          * User Tooltip - User Edit Page
          */
@@ -91,12 +96,12 @@ return [
         /**
          * Users Update Form Placeholder
          */
-        'text-name'         => 'Update User Full Name',
-        'text-email'        => 'Update User Email',
-        'text-phone'        => 'Update User Phone',
-        'text-role'         => 'Update User Role',
-        'text-company'      => 'Update User Company',
-        'text-department'   => 'Update User Department',
+        'text-name'         => 'Update User full name',
+        'text-email'        => 'Update User email',
+        'text-phone'        => 'Update User phone',
+        'text-role'         => 'Update User role',
+        'text-company'      => 'Update User company',
+        'text-department'   => 'Update User department',
         /**
          * User Tooltip - Update User
          */
@@ -167,8 +172,56 @@ return [
     */
     'departments' => [
         /**
-         * Message Success - Create Department
+         * Departments Cards Title
          */
-        'create-success' => 'Department created successfully'
+        'index-title'       => 'Departments',
+        'create-title'      => 'Register Department',
+        'show-title'        => 'Department Details',
+        'edit-title'        => 'Edit Department data',
+        'delete-title'      => 'Delete Department',
+        /**
+         * Tooltip - Departments Table Page
+         */
+        'tip-index'         => 'List of registered departments',
+        /**
+         * Add Department Button
+         */
+        'add-title'         => 'Department',
+        'tip-add'           => 'Register department',
+        /**
+         * Departments Table Header/Footer
+         */
+        'th-name'           => 'Name',
+        'th-management'     => 'Department management',
+        /**
+         * Tooltip - Management Department Buttons
+         */
+        'tip-edit-btn'      => 'Update Department Data',
+        'tip-delete-btn'    => 'Delete Department',
+        /**
+         * Tooltip - Department Create Page
+         */
+        'tip-create'         => 'Form to create department',
+        /**
+         * Tooltip - Department Edit Page
+         */
+        'tip-edit'         => 'Form to update department name',
+        /**
+         * Tooltip - Department Delete Modal
+         */
+        'tip-delete'        => 'Users of this department (to be deleted) will have an undefined department',
+        /**
+         * Department Form Label
+         */
+        'label-name'        => 'Name',
+        /**
+         * Department Create/Update Form Placeholder
+         */
+        'text-create-name'         => 'Department name',
+        'text-update-name'         => 'Update Department name',
+        /**
+         * Notifications Message Success
+         */
+        'toastr-title' => 'Department:'
     ]
 ];

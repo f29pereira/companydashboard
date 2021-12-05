@@ -86,11 +86,13 @@
                                                 <div class="modal-content">
                                                     {{-- Modal Header --}}
                                                     <div class="modal-header bg-danger text-center">
-                                                        <h3 class="modal-title w-100" id="deleteModalLabel"><i class="fas fa-user-times"></i></h3>
+                                                        <h5 class="modal-title w-100" id="deleteModalLabel">
+                                                            <i class="fas fa-user-times"></i>&nbsp;&nbsp;&nbsp;
+                                                            {{ __('page.users.delete-title') }}
+                                                        </h5>
                                                     </div>
                                                     {{-- Modal Body --}}
                                                     <div class="modal-body">
-                                                        <div class="text-left"><p><b>{{ __('page.users.check-delete') }}</b></p></div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <p><i class="far fa-address-card fa-lg text-danger"></i>&nbsp;<b>{{ __('page.users.label-name') }}</b></p>

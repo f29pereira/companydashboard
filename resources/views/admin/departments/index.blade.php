@@ -16,11 +16,13 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.goTo.management-menu') }}">
+                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.management-menu') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="fas fa-user-tie fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('card.departments.title-index') }} {{ $mainCompany->company_name }}</h3>
+                    <h3 class="card-title"><i class="fas fa-user-tie fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                        {{ __('page.departments.index-title') }} {{ $mainCompany->company_name }}
+                    </h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
@@ -28,14 +30,14 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                             data-toggle="tooltip" data-placement="right"
-                            title="{{ __('tooltip.departments.index') }} {{ $mainCompany->company_name }}"></i>
+                            title="{{ __('page.departments.tip-index') }} {{ $mainCompany->company_name }}"></i>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/departments/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('tooltip.departments.add-department-title') }}">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('tooltip.departments.add-department') }}
+                            data-toggle="tooltip" data-placement="right" title="{{ __('page.departments.tip-add') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('page.departments.add-title') }}
                             </a>
                         </div>
                     </div>
@@ -43,8 +45,8 @@
                     <table class="table table-hover table-responsive-md" id="departmentTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
-                            <th scope="col">Nome</th>
-                            <th scope="col">Gestão</th>
+                            <th scope="col">{{ __('page.departments.th-name') }}</th>
+                            <th scope="col">{{ __('page.departments.th-management') }}</th>
                         </thead>
                         {{-- Table Body --}}
                         <tbody class="text-center">
@@ -56,7 +58,7 @@
                                         <div class="col-md-6 mb-1">
                                             {{-- Department Edit --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/departments/edit/'. $department->id) }}" role="button"
-                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.departments.edit-btn') }}">
+                                            data-toggle="tooltip" data-placement="bottom" title="{{ __('page.departments.tip-edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         </div>
@@ -64,7 +66,7 @@
                                             {{-- Delete Department --}}
                                             <span data-toggle="modal" data-target="#deleteDepartment-{{ $department->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
-                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('tooltip.departments.softDelete-btn') }}">
+                                                    data-toggle="tooltip" data-placement="bottom" title="{{ __('page.departments.tip-delete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>
@@ -77,7 +79,10 @@
                                             <div class="modal-content">
                                                 {{-- Modal Header --}}
                                                 <div class="modal-header bg-danger text-center">
-                                                    <h3 class="modal-title w-100" id="deleteModalLabel"><i class="far fa-trash-alt"></i></h3>
+                                                    <h5 class="modal-title w-100" id="deleteModalLabel">
+                                                        <i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;
+                                                        {{ __('page.departments.delete-title') }}
+                                                    </h5>
                                                 </div>
                                                 {{-- Modal Body --}}
                                                 <div class="modal-body">
@@ -85,13 +90,12 @@
                                                         <div class="row">
                                                             <i class="far fa-question-circle text-danger fa-lg"
                                                             data-toggle="tooltip" data-placement="right"
-                                                            title="{{ __('tooltip.departments.softDelete') }}"></i>&nbsp;&nbsp;
-                                                            <p><b>{{ __('tooltip.departments.softDelete-question') }}</b></p>
+                                                            title="{{ __('page.departments.tip-delete') }}"></i>&nbsp;&nbsp;
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>{{ __('form.department.department_name_label') }}</b></p>
+                                                            <p><i class="fas fa-user-tie fa-lg text-danger"></i>&nbsp;<b>{{ __('page.departments.label-name') }}</b></p>
                                                             <p>{{ $department->department_name }}</p>
                                                         </div>
                                                     </div>
@@ -99,24 +103,23 @@
                                                 {{-- Confirm/Cancel --}}
                                                 <div class="modal-footer">
                                                     <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/departments/delete/'.$department->id) }}" role="button">
-                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.confirmBtn') }}
+                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
                                                     </a>
                                                     <button type="button" class="btn bg-gradient-danger btn-sm" data-dismiss="modal">
-                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('form.generic.cancelBtn') }}
+                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                         {{-- Table Footer --}}
                         <tfoot class="text-center">
-                            <th>Nome</th>
-                            <th>Gestão</th>
+                            <th>{{ __('page.departments.th-name') }}</th>
+                            <th>{{ __('page.departments.th-management') }}</th>
                         </tfoot>
                     </table>
                 </div>

@@ -56,14 +56,4 @@ return[
         'title-edit'    => 'Edit Company',
         'title-show'    => 'Company Details',
     ],
-    /**
-     * Department
-     */
-    'departments' => [
-        'registered'    => 'Registered Departments',
-        'title-index'   => 'Departments of',
-        'title-create'  => 'Register Department',
-        'title-edit'    => 'Edit Department',
-        'title-show'    => 'Department Details',
-    ],
 ];

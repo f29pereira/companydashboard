@@ -1,8 +1,9 @@
 {{-- Toastr Notification --}}
-
 <script>
     @if(Session::has('message'))
-        toastr.options = {
+
+    //Toastr notification customization
+    toastr.options = {
         "closeButton": true,
         "debug": false,
         "newestOnTop": false,
@@ -18,9 +19,9 @@
         "hideEasing": "linear",
         "showMethod": "show",
         "hideMethod": "fadeOut"
-        }
+    }
 
-        toastr.success('{{ Session::get('message') }}')
+    toastr.success('{{ Session::get('message') }}');
     @endif
 </script>
 

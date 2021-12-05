@@ -46,7 +46,7 @@ class DepartmentController extends Controller
     }
 
     /**
-     * Store a newly created company in storage.
+     * Store a newly created department in storage.
      *
      * @param  App\Http\Requests\DepartmentPostRequest  $request
      * @return \Illuminate\Http\Response
@@ -55,18 +55,11 @@ class DepartmentController extends Controller
         //New Department
         $department = Department::create($request->all());
 
-        //Redirect: Departments List with success message
-        //return redirect()->route('departments');
+        //Department successfully created
+        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
+        . __('page.generic.toastr-create-success');
 
-        $text = __('page.departments.create-success') . "AAAAAAAAAAA";
-
-        // $notification = array(
-        //     'title' => '',
-        //     'message' => ''
-        // );
-
-
-        //return redirect()->route('departments')->with('message', 'Department Added sucessfully!');
+        //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);
     }
 
@@ -100,8 +93,12 @@ class DepartmentController extends Controller
         //Department Update
         $department->update($request->all());
 
+        //Department successfully update
+        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
+        . __('page.generic.toastr-update-success');
+
         //Redirect: Departments List
-        return redirect()->route('departments');
+        return redirect()->route('departments')->with('message', $text);
     }
 
     /**
@@ -125,7 +122,11 @@ class DepartmentController extends Controller
         //Users Mass Update to Default Department
         User::where('department_id', $id)->update(['department_id' => 1]);
 
+        //Department successfully update
+        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
+        . __('page.generic.toastr-delete-success');
+
         //Redirect: Departments List
-        return redirect()->route('departments');
+        return redirect()->route('departments')->with('message', $text);
     }
 }

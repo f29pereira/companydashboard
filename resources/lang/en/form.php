@@ -66,15 +66,6 @@ return[
     ],
 
     /**
-     * Department Form
-     */
-    'department' => [
-        //Name
-        'department_name_label' => 'Name',
-        'department_name_placeholder' => 'Department Name',
-    ],
-
-    /**
      * Company Type Form
      */
     'company_types' => [

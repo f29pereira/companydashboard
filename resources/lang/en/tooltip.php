@@ -90,22 +90,4 @@ return [
         'softDelete-btn'        => 'Delete Company',
         'softDelete-question'   => 'Do you want to delete the selected company?',
     ],
-
-    /**
-     * Department Tooltips
-     */
-    'departments' => [
-        'index'                 => 'List of registered departments of company',
-        //Add Department
-        'add-department'        => 'Department',
-        'add-department-title'  => 'Add Department',
-        'create'                => 'Form to register a new department',
-        //Edit Department
-        'edit-btn'              => 'Update Department Data',
-        'edit'                  => 'Form to update department data',
-        //Delete Department
-        'softDelete-btn'        => 'Delete Department',
-        'softDelete'            => 'Users associated with the selected department will have an undefined department',
-        'softDelete-question'   => 'Do you want to delete the selected department ?',
-    ]
 ];
