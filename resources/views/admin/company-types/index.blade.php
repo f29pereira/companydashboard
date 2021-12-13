@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Relações de Negócio')
+@section('title', __('page.titles.company_types-index'))
 
 @section('content_header')
 

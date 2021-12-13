@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Utilizador')
+@section('title', __('page.titles.users-edit'))
 
 @section('content_header')
 

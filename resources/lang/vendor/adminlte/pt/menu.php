@@ -20,8 +20,8 @@ return [
      * Custom Menu
      */
     'home'                          => 'Home',
-    'users_menu'                    => 'Users',
-    'management_menu'               => 'Management',
-    'user_account'                  => 'User Account',
-    'user_profile'                  => 'My Profile',
+    'users_menu'                    => 'Utilizadores',
+    'management_menu'               => 'Gestão',
+    'user_account'                  => 'Conta Utilizador',
+    'user_profile'                  => 'Meu perfil',
 ];

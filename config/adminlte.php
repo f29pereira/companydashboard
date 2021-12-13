@@ -236,101 +236,36 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => false,
         ],
-
-        // Sidebar items:
-        /*
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],*/
-        [
-            'text' => 'Home',
+            'text' => 'home',
             'url'  => '/home',
             'icon' => 'fas fa-home',
         ],
         [
-            'text'        => 'Users',
+            'text'        => 'users_menu',
             'url'         => '/users/menu',
             'icon'        => 'fas fa-users',
             'can'         => 'is_admin',
-            //'label'       => 4,
-            //'label_color' => 'success',
         ],
         [
-            'text'        => 'Management',
+            'text'        => 'management_menu',
             'url'         => '/management/menu',
             'icon'        => 'fas fa-th',
             'can'         => 'is_admin'
         ],
-        ['header' => 'User'],
         [
-            'text' => 'Profile',
-            'url'  => '/user/profile',
-            'icon' => 'fas fa-fw fa-user',
-            'can'  => 'is_user'
-        ],
-        /*
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],*/
-        /*
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'user_account',
+            'icon'    => 'fas fa-fw fa-user',
+            'can'  => 'is_user',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'user_profile',
+                    'icon' => 'fas fa-user-circle',
+                    'url'  => '/user/profile',
+                    'can'  => 'is_user',
                 ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            ]
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-        */
     ],
 
     /*

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Utilizadores')
+@section('title', __('page.titles.users-index'))
 
 @section('content_header')
 

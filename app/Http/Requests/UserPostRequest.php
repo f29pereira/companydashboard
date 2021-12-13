@@ -22,12 +22,13 @@ class UserPostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'user_role_id' => 'required',
-            'department_id' => 'required',
-            'company_id' => 'required',
+            //'image'             => ['file', 'mimes:png,jpg,jpeg'],
+            'name'              => ['required', 'string', 'max:255'],
+            'email'             => ['required', 'string', 'email', 'max:255'/*, 'unique:users'*/],
+            'phone'             => ['required', 'string', 'min:9'],
+            'user_role_id'      => 'required',
+            'department_id'     => 'required',
+            'company_id'        => 'required',
         ];
     }
 

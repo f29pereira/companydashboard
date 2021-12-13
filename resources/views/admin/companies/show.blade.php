@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Detalhes Empresa')
+@section('title', __('page.titles.companies-show'))
 
 @section('content_header')
 

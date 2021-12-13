@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Criar Empresa')
+@section('title', __('page.titles.companies-create'))
 
 @section('content_header')
 

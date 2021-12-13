@@ -63,6 +63,10 @@ Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('d
  */
 Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');
 
+Route::get('/user/edit-profile-pic/{id}', [UserController::class, 'editProfilePic'])->name('editProfilePic');
+
+Route::post('/user/update-profile-pic/{id}', [UserController::class, 'updateProfilePic'])->name('updateProfilePic');
+
 Route::get('/user/edit-profile/{id}', [UserController::class, 'editProfile'])->name('editProfile');
 
 Route::post('/user/update-profile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile');

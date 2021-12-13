@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Menu de Gestão')
+@section('title', __('page.titles.management-menu'))
 
 @section('content_header')
 

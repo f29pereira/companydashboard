@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Relação de Negócio')
+@section('title', __('page.titles.company_types-edit'))
 
 @section('content_header')
 

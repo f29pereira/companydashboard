@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Perfil')
+@section('title', __('page.titles.user_profile-edit'))
 
 @section('content_header')
 
@@ -32,9 +32,10 @@
                     {{-- Edit User Form --}}
                     <form action="/user/update-profile/{{ $user->id }}" method="POST">
                         @csrf
+
                         <div class="row">
-                            {{-- Name --}}
-                            <div class="col-md-4 mb-3">
+                            {{-- User Name --}}
+                            <div class="col-md-4 mb-3 mr-3">
                                 <div class="form-group">
                                     <label for="userName" class="form-label">
                                         {{ __('page.users.label-name') }}&nbsp;&nbsp;
@@ -58,11 +59,12 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- Email --}}
-                            <div class="col-md-4 mb-3">
+                            {{-- / .User Name --}}
+                            {{-- User Email --}}
+                            <div class="col-md-4 mb-3 mr-3">
                                 <div class="form-group">
                                     <label for="userEmail" class="form-label">
-                                        {{ __('form.user.email_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-email') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -83,11 +85,15 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- Phone --}}
-                            <div class="col-md-4">
+                            {{-- / .User Email --}}
+                        </div>
+
+                        <div class="row">
+                            {{-- User Phone --}}
+                            <div class="col-md-4 mb-3 mr-3">
                                 <div class="form-group">
                                     <label for="userPhone" class="form-label">
-                                        {{ __('form.user.phone_label') }}&nbsp;&nbsp;
+                                        {{ __('page.users.label-phone') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -108,6 +114,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- / .User Phone --}}
                         </div>
                         {{-- Role, Department, Company --}}
                         <div class="row" style="display:none">
@@ -127,6 +134,7 @@
                             </div>
                         </div>
                     </form>
+                    {{-- / .Edit User Form --}}
                 </div>
             </div>
         </div>

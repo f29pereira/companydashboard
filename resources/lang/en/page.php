@@ -32,13 +32,50 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
+    | Page titles Lines
+    |--------------------------------------------------------------------------
+    |
+    */
+    'titles' => [
+        //User Menu
+        'users-menu'            => 'Dashboard - User Menu',
+        //Users
+        'users-index'           => 'Dashboard - User List',
+        'users-show'            => 'Dashboard - User Details',
+        'users-edit'            => 'Dashboard - Edit User',
+        //Users
+        'user_profile-index'    => 'Dashboard - User Profile',
+        'user_profile-edit'     => 'Dashboard - Edit Profile',
+        //Roles
+        'roles-index'           => 'Dashboard - User roles List',
+        //Management
+        'management-menu'       => 'Dashboard - Management',
+        //Company Menu
+        'company-menu'          => 'Dashboard - Company Menu',
+        'companies-edit-main'   => 'Dashboard - Edit Company',
+        //Companies
+        'companies-index'       => 'Dashboard - Company List',
+        'companies-create'      => 'Dashboard - Register Company',
+        'companies-show'        => 'Dashboard - Company Details',
+        'companies-edit'        => 'Dashboard - Edit Company',
+        //Company Types
+        'company_types-index'   => 'Dashboard - B.Relationship List',
+        'company_types-create'  => 'Dashboard - Register B.R',
+        'company_types-edit'    => 'Dashboard - Edit B.R',
+        //Departments
+        'companies-index'       => 'Dashboard - Company List',
+        'companies-show'        => 'Dashboard - Company Details',
+        'companies-edit'        => 'Dashboard -Edit Company',
+    ],
+    /*
+    |--------------------------------------------------------------------------
     | Links Language Lines
     |--------------------------------------------------------------------------
     |
     */
     'link' => [
         'home'                  => 'Return to: Home',
-        'users-menu'             => 'Return to: User Menu',
+        'users-menu'            => 'Return to: User Menu',
         'user-index'            => 'Return to: List of users',
         'management-menu'       => 'Return to: Management Menu',
         'company-menu'          => 'Return to: Company Menu',
@@ -103,6 +140,7 @@ return [
         'label-name'        => 'Name',
         'label-email'       => 'Email',
         'label-phone'       => 'Phone',
+        'label-photo'       => 'User Photo',
         'label-role'        => 'User Role',
         'label-company'     => 'Company',
         'label-department'  => 'Department',
@@ -118,21 +156,28 @@ return [
         /**
          * User Tooltip - Update User
          */
-        'tip-edit'          => 'Form to update user data',
+        'tip-edit'              => 'Form to update user data',
         /**
          * User Profile Cards Title
          */
         'index-profile-title'   => 'My Profile',
+        'edit-profile-pic'      => 'Update my photo',
         'edit-profile-title'    => 'Update my profile',
+        //Default User Profile Picture Alt
+        'alt-picture-default'   => 'Default User profile photo',
+        //User Profile Picture Alt
+        'alt-picture'           => 'User profile picture',
         /**
          * User Tooltip - Update My Profile
          */
-        'tip-edit-profile-btn'  => 'Update my profile data',
-        'tip-edit-profile'      => 'Form to update my profile data',
+        'tip-edit-profile-btn'      => 'Update my profile data',
+        'tip-edit-profile_pic-btn'  => 'Update my profile photo',
+        'tip-edit-profile'          => 'Form to update my profile data',
+        'tip-edit-profile_pic'      => 'Form to update my profile photo',
         /**
          * Notifications Message
          */
-        'toastr-title' => 'User:'
+        'toastr-title'          => 'User:'
     ],
     /*
     |--------------------------------------------------------------------------
@@ -190,6 +235,10 @@ return [
         'index-title'               => 'Companies',
         'registered-companies'      => 'Registered Companies',
         'registered-company_types'  => 'Registered Business Relationships',
+        /**
+         * Tooltip - Company Menu Page
+         */
+        'tip-index'                 => 'Company Menu',
     ],
     /*
     |--------------------------------------------------------------------------

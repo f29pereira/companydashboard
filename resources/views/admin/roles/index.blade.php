@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Permissões de Utilizador')
+@section('title', __('page.titles.roles-index'))
 
 @section('content_header')
 

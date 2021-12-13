@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Menu Empresas')
+@section('title', __('page.titles.company-menu'))
 
 @section('content_header')
 
@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                         data-toggle="tooltip" data-placement="right" title="{{ __('page.companies.tip-index') }}"></i>
+                         data-toggle="tooltip" data-placement="right" title="{{ __('page.company-menu.tip-index') }}"></i>
                     </div>
 
                     <div class="row">
@@ -104,7 +104,8 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- Companies --}}
+                        {{-- / .Main Company --}}
+                        {{-- Other Information --}}
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12 mb-3">
@@ -112,36 +113,40 @@
                                     <div class="small-box bg-info">
                                         <div class="inner">
                                             <h3>{{ $count }}</h3>
-                                            <p>Empresas registadas</p>
+                                            <p>{{ __('page.company-menu.registered-companies') }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="far fa-building text-white"></i>
                                         </div>
                                         <a href="{{ url('/companies/index') }}" class="small-box-footer">
-                                            Saber mais <i class="fas fa-arrow-circle-right"></i>
+                                            {{ __('page.generic.moreInfo') }} <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
+                                    {{-- / .Companies --}}
                                 </div>
                                 <div class="col-md-12">
                                     {{-- Company Types --}}
                                     <div class="small-box bg-info">
                                         <div class="inner">
                                             <h3>{{ $typesCount }}</h3>
-                                            <p>Relações de Negócio registadas</p>
+                                            <p>{{ __('page.company-menu.registered-company_types') }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="far fa-handshake text-white"></i>
                                         </div>
                                         <a href="{{ url('/company-types/index') }}" class="small-box-footer">
-                                            Saber mais <i class="fas fa-arrow-circle-right"></i>
+                                            {{ __('page.generic.moreInfo') }} <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
+                                    {{-- /.Company Types --}}
                                 </div>
                             </div>
                         </div>
+                        {{-- /.Other Information --}}
                     </div>
                 </div>
             </div>
+            {{-- /.Card --}}
         </div>
     </div>
     @endcan

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique(); //user email
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone'); //user phone
+            $table->string('image')->default('');//user photo
             $table->string('password'); //user password
             $table->boolean('is_deleted')->default(false); //is user deleted ?
             //FK - roles table

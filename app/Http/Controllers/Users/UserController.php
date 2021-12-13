@@ -9,6 +9,7 @@ use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Http\Requests\UserPostRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\Users\User;
 
 class UserController extends Controller
@@ -153,7 +154,7 @@ class UserController extends Controller
         //Authenticated User
         $user = Auth::user();
 
-        return view('profile.user-profile', compact('user'));
+        return view('user.profile.user-profile', compact('user'));
     }
 
 
@@ -169,7 +170,7 @@ class UserController extends Controller
         //Authenticated User
         $user = Auth::user();
 
-        return view('profile.edit-profile', compact('user'));
+        return view('user.profile.edit-profile', compact('user'));
     }
 
     /**
@@ -185,6 +186,50 @@ class UserController extends Controller
 
         //User Update
         $user->update($request->all());
+
+        //Redirect: User profile
+        return redirect()->route('profile');
+    }
+
+    /**
+     * Show the form for updating the user profile picture
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editProfilePic(){
+        //User Authorization
+        $this->authorize('is_user');
+
+        //Authenticated User
+        $user = Auth::user();
+
+        return view('user.profile.edit-profile-pic', compact('user'));
+    }
+
+    /**
+     * Update the specified user profile picture in storage.
+     *
+     * @param  Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateProfilePic(Request $request, $id){
+        //User
+        $user = User::findOrFail($id);
+
+        $request->validate([
+            'image' =>  ['file', 'mimes:png,jpg,jpeg']
+        ]);
+
+        //Image Name
+        $imageName = time() . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images/users/registered'), $imageName);
+
+        $user->image = $imageName;
+
+        //User Update
+        $user->save();
 
         //Redirect: User profile
         return redirect()->route('profile');
