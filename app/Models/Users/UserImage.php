@@ -5,25 +5,23 @@ namespace App\Models\Users;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class UserImage extends Model
 {
     use HasFactory;
 
     /**
-     * Table roles
+     * Table user_images
      *
      * @var string $table
      */
-    protected $table = 'user_roles';
+    protected $table = 'user_images';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable =[
-        'role_name'
-    ];
+    protected $fillable = ['image_name'];
 
     /**
      * Indicates if the model should be timestamped
@@ -33,7 +31,7 @@ class UserRole extends Model
     public $timestamps = false;
 
     /**
-     * Eloquent relation between User and User Role
+     * Eloquent relation between User and User Image
      */
     public function user(){
         return $this->hasOne(User::class);

@@ -27,7 +27,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="text-center">
                                     <h4><i class="far fa-address-card text-info"></i>&nbsp;<strong>{{ __('page.users.label-name') }}</strong></h4>
-                                    <p>{{ $user->name }}</p>
+                                    <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">

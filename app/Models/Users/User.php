@@ -26,10 +26,11 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'image',
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'phone',
+        'image',
         'password',
         'user_role_id',
         'department_id',
@@ -62,11 +63,18 @@ class User extends Authenticatable
      */
     public $timestamps = true;
 
-     /**
-     * Eloquent relation between User and Role
+    /**
+     * Eloquent relation between User and User Role
      */
     public function userRole(){
         return $this->belongsTo(UserRole::class, 'user_role_id');
+    }
+
+    /**
+     * Eloquent relation between User and User Image
+     */
+    public function userImage(){
+        return $this->belongsTo(UserImage::class, 'user_image_id');
     }
 
     /**

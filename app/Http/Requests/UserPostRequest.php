@@ -22,8 +22,8 @@ class UserPostRequest extends FormRequest
      */
     public function rules(){
         return [
-            //'image'             => ['file', 'mimes:png,jpg,jpeg'],
-            'name'              => ['required', 'string', 'max:255'],
+            'first_name'        => ['required', 'string', 'max:50'],
+            'last_name'         => ['required', 'string', 'max:50'],
             'email'             => ['required', 'string', 'email', 'max:255'/*, 'unique:users'*/],
             'phone'             => ['required', 'string', 'min:9'],
             'user_role_id'      => 'required',
@@ -38,13 +38,6 @@ class UserPostRequest extends FormRequest
      * @return array
      */
     public function messages(){
-        return[
-            //'name.required' => 'O campo é obrigatório',
-            //'email.required' => 'O campo é obrigatório',
-            //'phone.required' => 'O campo é obrigatório',
-            //'user_role_id.required' => 'O campo é obrigatório',
-            //'department_id.required' => 'O campo é obrigatório',
-            //'company_id.required' => 'O campo é obrigatório'
-        ];
+        return[];
     }
 }

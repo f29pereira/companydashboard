@@ -34,24 +34,24 @@
                     <form action="/users/update/{{ $user->id }}" method="POST">
                         @csrf
                         <div class="row">
-                            {{-- Name --}}
+                            {{-- First Name --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userName" class="form-label">
-                                        {{ __('page.users.label-name') }}&nbsp;&nbsp;
+                                    <label for="userFirstName" class="form-label">
+                                        {{ __('page.users.label-first_name') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
-                                        <input type="text" name="name" id="userName" class="form-control @error('name') is-invalid @enderror"
-                                        value="{{ $user->name }}" placeholder="{{ __('page.users.text-name') }}">
+                                        <input type="text" name="first_name" id="userFirstName" class="form-control @error('first_name') is-invalid @enderror"
+                                        value="{{ $user->first_name }}" placeholder="{{ __('page.users.text-first_name') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="far fa-address-card fa-lg text-info"></i></span>
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @error('name')
+                                        @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,6 +59,33 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.First Name --}}
+                            {{-- Last Name --}}
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="userLastName" class="form-label">
+                                        {{ __('page.users.label-last_name') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="text" name="last_name" id="userLastName" class="form-control @error('last_name') is-invalid @enderror"
+                                        value="{{ $user->last_name }}" placeholder="{{ __('page.users.text-last_name') }}">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span><i class="far fa-address-card fa-lg text-info"></i></span>
+                                            </div>
+                                        </div>
+                                        {{-- Error Message --}}
+                                        @error('last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- /.Last Name --}}
                             {{-- Email --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
@@ -84,6 +111,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Email --}}
                             {{-- Phone --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
@@ -109,6 +137,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Phone --}}
                         </div>
                         <div class="row">
                             {{-- Department --}}
@@ -141,6 +170,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Department --}}
                             {{-- Role --}}
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
@@ -171,10 +201,12 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Role --}}
                             {{-- Company --}}
                             <div style="display: none">
                                 <input type="text" class="form-control" value="{{ $user->company_id }}" name="company_id" id="userCompany">
                             </div>
+                            {{-- /.Company --}}
                         </div>
                         {{-- Confirm/Cancel --}}
                         <div class="row">
@@ -187,6 +219,7 @@
                                 </button>
                             </div>
                         </div>
+                        {{-- /.Confirm/Cancel --}}
                     </form>
                 </div>
             </div>

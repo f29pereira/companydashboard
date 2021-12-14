@@ -32,8 +32,8 @@
                             {{-- User Photo --}}
                             <div class="card-body box-profile">
                                 <div class="text-center">
-                                    @if ($user->image === '')
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/users/default-user.png') }}"
+                                    @if ($user->user_image_id === 1)
+                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/users/'.$user->userImage->image_name) }}"
                                     alt="{{ __('page.users.alt-picture-default') }}">
                                     @else
                                     <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/users/registered/' . $user->image) }}"
@@ -43,7 +43,7 @@
 
                                 <h3 class="profile-username text-center">
                                     <i class="far fa-address-card text-info"></i>
-                                    {{ $user->name }}
+                                    {{ $user->first_name }} {{ $user->last_name }}
                                 </h3>
 
                                 <p class="text-muted text-center">Inserir cargo na empresa</p>

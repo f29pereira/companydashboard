@@ -19,9 +19,9 @@ return [
         /**
          * Toastr notifications messages
          */
-        'toastr-create-success'     => 'created successfully.',
-        'toastr-update-success'     => 'updated successfully.',
-        'toastr-delete-success'     => 'deleted successfully.',
+        'toastr-create-success'     => '- created successfully.',
+        'toastr-update-success'     => '- data updated successfully.',
+        'toastr-delete-success'     => '- deleted successfully.',
         /**
          * User actions
          */
@@ -138,6 +138,8 @@ return [
          * Users Form Label
          */
         'label-name'        => 'Name',
+        'label-first_name'  => 'First Name',
+        'label-last_name'   => 'Last Name',
         'label-email'       => 'Email',
         'label-phone'       => 'Phone',
         'label-photo'       => 'User Photo',
@@ -147,7 +149,8 @@ return [
         /**
          * Users Update Form Placeholder
          */
-        'text-name'         => 'Update User full name',
+        'text-first_name'   => 'Update User first name',
+        'text-last_name'    => 'Update User last name',
         'text-email'        => 'Update User email',
         'text-phone'        => 'Update User phone',
         'text-role'         => 'Update User role',
@@ -177,7 +180,9 @@ return [
         /**
          * Notifications Message
          */
-        'toastr-title'          => 'User:'
+        'toastr-title'          => 'User:',
+        'toastr-user-img'       => 'User photo sucessfully updated'
+
     ],
     /*
     |--------------------------------------------------------------------------

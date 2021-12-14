@@ -49,7 +49,7 @@
                         <tbody class="text-center">
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->department->department_name }}</td>
@@ -103,7 +103,7 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <p><i class="far fa-address-card fa-lg text-danger"></i>&nbsp;<b>{{ __('page.users.label-name') }}</b></p>
-                                                                <p>{{ $user->name }}</p>
+                                                                <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p><i class="fas fa-envelope fa-lg text-danger"></i>&nbsp;<b>{{ __('page.users.label-email') }}</b></p>
@@ -158,8 +158,8 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </div>
+    </div>
     @endcan
 @endsection
 

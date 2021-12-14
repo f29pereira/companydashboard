@@ -98,7 +98,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified user in storage.
      *
      * @param  App\Http\Requests\UserPostRequest  $request
      * @param  int  $id
@@ -108,12 +108,11 @@ class UserController extends Controller
         //Specified User
         $user = User::findOrFail($id);
 
-        //User Update
+        //User data update
         $user->update($request->all());
 
-        //User successfully updated
-        $text = __('page.users.toastr-title') . " " . $user->name . '\n'
-        . __('page.generic.toastr-update-success');
+        //User edit message
+        $text = $this->msgEdit($user);
 
         //Redirect: Users List
         return redirect()->route('users')->with('message', $text);
@@ -134,9 +133,8 @@ class UserController extends Controller
             $user->save();
         }
 
-        //User successfully deleted
-        $text = __('page.users.toastr-title') . " " . $user->name . '\n'
-        . __('page.generic.toastr-delete-success');
+        //User delete message
+        $text = $this->msgDelete($user);
 
         //Redirect: Users list
         return redirect()->route('users')->with('message', $text);
@@ -217,19 +215,38 @@ class UserController extends Controller
         //User
         $user = User::findOrFail($id);
 
+        //Image validation
         $request->validate([
             'image' =>  ['file', 'mimes:png,jpg,jpeg']
         ]);
 
-        //Image Name
-        $imageName = time() . '.' . $request->image->extension();
+        if($request->image != ''){
+            //Image Name
+            $imageName = time() . '.' . $request->image->extension();
 
-        $request->image->move(public_path('images/users/registered'), $imageName);
+            //Store image on public folder
+            $request->image->move(public_path('images/users/registered'), $imageName);
 
-        $user->image = $imageName;
+            $user->image = $imageName;
 
-        //User Update
-        $user->save();
+            //User Update
+            $user->save();
+
+            //User Image successfully updated
+            $text = __('page.users.toastr-user-img');
+
+            return redirect()->route('profile')->with('message', $text);
+        }
+        /*else{
+
+            //Old image path (acabar o nome da img)
+            $oldImg_path = public_path('images/users/registered');
+
+            if(file_exists($oldImg_path)){
+                //Delete old image
+                unlink($oldImg_path);
+            }
+        }*/
 
         //Redirect: User profile
         return redirect()->route('profile');

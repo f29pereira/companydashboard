@@ -44,4 +44,30 @@ trait UserTrait{
 
         return $count;
     }
+
+    /**
+     * Toastr Message - User successfully updated
+     *
+     * @param  App\Models\Users\User    $user
+     * @return string                   $text
+     */
+    public function msgEdit(User $user){
+        $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name  . '\n'
+        . __('page.generic.toastr-update-success');
+
+        return $text;
+    }
+
+    /**
+     * Toastr Message - User successfully deleted
+     *
+     * @param  App\Models\Users\User    $user
+     * @return string                   $text
+     */
+    public function msgDelete(User $user){
+        $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name . '\n'
+        . __('page.generic.toastr-delete-success');
+
+        return $text;
+    }
 }
