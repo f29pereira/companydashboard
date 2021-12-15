@@ -33,10 +33,12 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     @if ($user->user_image_id === 1)
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/users/'.$user->userImage->image_name) }}"
+                                    <img class="profile-user-img img-fluid img-circle" id="{{ $user->user_image_id }}"
+                                    src="{{ asset('images/users/'. $user->userImage->image_name) }}"
                                     alt="{{ __('page.users.alt-picture-default') }}">
                                     @else
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/users/registered/' . $user->image) }}"
+                                    <img class="profile-user-img img-fluid img-circle" id="{{ $user->user_image_id }}"
+                                    src="{{ asset('images/users/'. $user->userImage->image_name) }}"
                                     alt="{{ __('page.users.alt-picture') }}">
                                     @endif
                                 </div>

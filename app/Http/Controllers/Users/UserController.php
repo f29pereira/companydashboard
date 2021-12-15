@@ -5,17 +5,20 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Traits\Users\UserTrait;
 use App\Http\Traits\Users\UserRoleTrait;
+use App\Http\Traits\Users\UserImageTrait;
 use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Http\Requests\UserPostRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Users\User;
+use App\Models\Users\UserImage;
 
 class UserController extends Controller
 {
     use UserTrait;
     use UserRoleTrait;
+    use UserImageTrait;
     use DepartmentTrait;
     use CompanyTrait;
 
@@ -190,7 +193,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for updating the user profile picture
+     * Show the form for updating the user profile image
      *
      * @return \Illuminate\Http\Response
      */
@@ -201,19 +204,23 @@ class UserController extends Controller
         //Authenticated User
         $user = Auth::user();
 
+        //Return: Edit User Profile picture
         return view('user.profile.edit-profile-pic', compact('user'));
     }
 
     /**
-     * Update the specified user profile picture in storage.
+     * Update the specified user profile image in storage.
      *
      * @param  Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function updateProfilePic(Request $request, $id){
-        //User
+        //Specified User
         $user = User::findOrFail($id);
+
+        //Old User Image
+        $oldUserImage = UserImage::findOrFail($user->user_image_id);
 
         //Image validation
         $request->validate([
@@ -221,32 +228,43 @@ class UserController extends Controller
         ]);
 
         if($request->image != ''){
-            //Image Name
+            //New image name
             $imageName = time() . '.' . $request->image->extension();
 
-            //Store image on public folder
-            $request->image->move(public_path('images/users/registered'), $imageName);
+            //New User Image
+            $newUserImage = $this->createImage($imageName);
 
-            $user->image = $imageName;
+            //User previously had: default user image
+            if($user->user_image_id == 1){
+                //Update User
+                $user->user_image_id = $newUserImage->id;
+                $user->save();
 
-            //User Update
-            $user->save();
+            }else{
+                //Update User
+                $user->user_image_id = $newUserImage->id;
+                $user->save();
+
+                //Delete old User Image (DB)
+                $this->deleteImage($oldUserImage->id);
+
+                //Old User Image path
+                $oldUserImage_path = public_path('images/users/'. $oldUserImage->image_name);
+
+                //Delete old User Image (public folder)
+                if(file_exists($oldUserImage_path)){
+                    unlink($oldUserImage_path);
+                }
+            }
+
+            //Store new user image (public folder)
+            $request->image->move(public_path('images/users/'), $imageName);
 
             //User Image successfully updated
             $text = __('page.users.toastr-user-img');
 
             return redirect()->route('profile')->with('message', $text);
         }
-        /*else{
-
-            //Old image path (acabar o nome da img)
-            $oldImg_path = public_path('images/users/registered');
-
-            if(file_exists($oldImg_path)){
-                //Delete old image
-                unlink($oldImg_path);
-            }
-        }*/
 
         //Redirect: User profile
         return redirect()->route('profile');
