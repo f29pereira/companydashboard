@@ -38,7 +38,7 @@
                                     alt="{{ __('page.users.alt-picture-default') }}">
                                     @else
                                     <img class="profile-user-img img-fluid img-circle" id="{{ $user->user_image_id }}"
-                                    src="{{ asset('images/users/'. $user->userImage->image_name) }}"
+                                    src="{{ asset('storage/users/'. $user->userImage->image_name) }}"
                                     alt="{{ __('page.users.alt-picture') }}">
                                     @endif
                                 </div>

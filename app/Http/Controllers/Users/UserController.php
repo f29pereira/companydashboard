@@ -248,8 +248,8 @@ class UserController extends Controller
                 //Delete old User Image (DB)
                 $this->deleteImage($oldUserImage->id);
 
-                //Old User Image path
-                $oldUserImage_path = public_path('images/users/'. $oldUserImage->image_name);
+                //Old User Image path (public/storage folder)
+                $oldUserImage_path = public_path('/storage/users/'. $oldUserImage->image_name);
 
                 //Delete old User Image (public folder)
                 if(file_exists($oldUserImage_path)){
@@ -257,12 +257,13 @@ class UserController extends Controller
                 }
             }
 
-            //Store new user image (public folder)
-            $request->image->move(public_path('images/users/'), $imageName);
+            //Store new user image (public/storage folder)
+            $request->image->move(public_path('/storage/users/'), $imageName);
 
             //User Image successfully updated
             $text = __('page.users.toastr-user-img');
 
+            //Redirect: User profile
             return redirect()->route('profile')->with('message', $text);
         }
 
