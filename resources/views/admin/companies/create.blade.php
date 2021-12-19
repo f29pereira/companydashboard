@@ -202,7 +202,7 @@
                                 {{-- Company Description --}}
                                 <div class="form-group">
                                     <label for="summernote">
-                                        {{ __('form.company.company_description_label') }}&nbsp;&nbsp;
+                                        {{ __('page.companies.label-description') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>

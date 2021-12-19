@@ -142,6 +142,7 @@ return [
         'label-last_name'   => 'Last Name',
         'label-email'       => 'Email',
         'label-phone'       => 'Phone',
+        'label-profession'  => 'Profession',
         'label-photo'       => 'User Photo',
         'label-role'        => 'User Role',
         'label-company'     => 'Company',

@@ -17,13 +17,25 @@
 
     {{-- User menu toggler --}}
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-        @if(config('adminlte.usermenu_image'))
+        @if ( Auth::user()->user_image_id === 1)
+        {{-- Default User Image --}}
+        <img src="{{ asset('images/default/'. Auth::user()->userImage->image_name) }}"
+            class="user-image img-circle elevation-2"
+            alt="{{ __('page.users.alt-picture') }}">
+        {{-- /.Default User Image --}}
+        @else
+        {{-- Custom User Image --}}
+        <img src="{{ asset('storage/users/'. Auth::user()->userImage->image_name) }}"
+            class="user-image img-circle elevation-2"
+            alt="{{ __('page.users.alt-picture') }}">
+        {{-- /.Custom User Image --}}
+        @endif
+        {{-- @if(config('adminlte.usermenu_image'))
             <img src="{{ Auth::user()->adminlte_image() }}"
                  class="user-image img-circle elevation-2"
                  alt="{{ Auth::user()->first_name . Auth::user()->last_name }}">
-        @endif
+        @endif --}}
         <span @if(config('adminlte.usermenu_image')) class="d-none d-md-inline" @endif>
-            <i class="fas fa-user-circle fa-lg"></i>
             {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
         </span>
     </a>

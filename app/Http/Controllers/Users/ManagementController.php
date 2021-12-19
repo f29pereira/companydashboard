@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Http\Traits\Users\DepartmentTrait;
-use Illuminate\Http\Request;
 
 class ManagementController extends Controller
 {

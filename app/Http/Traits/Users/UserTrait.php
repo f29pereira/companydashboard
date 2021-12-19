@@ -2,7 +2,9 @@
 
 namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Users\User;
+
 
 trait UserTrait{
     /**
