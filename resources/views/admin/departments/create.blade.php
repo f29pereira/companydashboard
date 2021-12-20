@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Criar Departamento')
+@section('title', __('page.titles.departments-create'))
 
 @section('content_header')
 

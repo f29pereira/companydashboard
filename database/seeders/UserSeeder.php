@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             /**
              * Responsavel Departamento
              */
-            //departamento123
+            //password: admin123
             [
                 'first_name'=>'Jeanne',
                 'last_name'=>'Mccallum',
@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
             /**
              * Colaboradores
              */
-            //colaborador123
+            //password: admin123
             [
                 'first_name'=>'Phillip',
                 'last_name'=>'Dunne',
@@ -78,7 +78,7 @@ class UserSeeder extends Seeder
                 'department_id' => 1,
                 'company_id' => 2
             ],
-            //colaborador2123
+            //password: admin123
             [
                 'first_name'=>'Nicolas',
                 'last_name'=>'Gordon',

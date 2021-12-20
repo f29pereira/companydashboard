@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', __('page.titles.user_profile-edit'))
+@section('title', __('page.titles.user_profile_pic-edit'))
 
 @section('content_header')
 

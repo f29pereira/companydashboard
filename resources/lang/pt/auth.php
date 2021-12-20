@@ -3,7 +3,7 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Authentication - Language Lines (en)
+    | Authentication - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -11,19 +11,19 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'failed'    => 'These credentials do not match our records.',
-    'password'  => 'The provided password is incorrect.',
-    'throttle'  => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed'    => 'As credenciais não correspondem aos nossos registos.',
+    'password'  => 'A password está incorreta.',
+    'throttle'  => 'Muitas tentativas de login. Por favor tente novamente em :seconds segundos.',
     /*
     |--------------------------------------------------------------------------
-    | AuthService Gates - Language Lines (en)
+    | AuthService Gates - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
     | The following language lines are used in error messages when the user
     | does not have permission for a page.
     |
     */
-    'admin'             => 'Action only available to the Administrator user role.',
-    'departmentResp'    => 'Action only available to the Department manager user role.',
-    'user'              => 'Action only available to the registered users.',
+    'admin'             => 'Ação disponível apenas para o role de utilizador - Administrador.',
+    'departmentResp'    => 'Ação disponível apenas para o role de utilizador - Responsável de Departamento.',
+    'user'              => 'Ação disponível apenas para o role de utilizador - Colaborador.',
 ];

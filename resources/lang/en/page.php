@@ -3,7 +3,7 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Generic Language Lines
+    | Generic - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -32,7 +32,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Page titles Lines
+    | Page titles - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -44,12 +44,13 @@ return [
         'users-show'            => 'Dashboard - User Details',
         'users-edit'            => 'Dashboard - Edit User',
         //Users
-        'user_profile-index'    => 'Dashboard - User Profile',
-        'user_profile-edit'     => 'Dashboard - Edit Profile',
+        'user_profile-index'    => 'Dashboard - My Profile',
+        'user_profile-edit'     => 'Dashboard - Edit My Profile',
+        'user_profile_pic-edit' => 'Dashboard - Edit Profile Picture',
         //Roles
         'roles-index'           => 'Dashboard - User roles List',
         //Management
-        'management-menu'       => 'Dashboard - Management',
+        'management-menu'       => 'Dashboard - Management Menu',
         //Company Menu
         'company-menu'          => 'Dashboard - Company Menu',
         'companies-edit-main'   => 'Dashboard - Edit Company',
@@ -63,13 +64,13 @@ return [
         'company_types-create'  => 'Dashboard - Register B.R',
         'company_types-edit'    => 'Dashboard - Edit B.R',
         //Departments
-        'companies-index'       => 'Dashboard - Company List',
-        'companies-show'        => 'Dashboard - Company Details',
-        'companies-edit'        => 'Dashboard -Edit Company',
+        'departments-index'     => 'Dashboard - Department List',
+        'departments-create'    => 'Dashboard - Register Department',
+        'departments-edit'      => 'Dashboard - Edit Department',
     ],
     /*
     |--------------------------------------------------------------------------
-    | Links Language Lines
+    | Links to Pages - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -86,7 +87,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | User Menu Language Lines
+    | User Menu - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -97,7 +98,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Users Language Lines
+    | Users - Language Lines (en)
     |--------------------------------------------------------------------------
     */
     'users' => [
@@ -138,8 +139,8 @@ return [
          * Users Form Label
          */
         'label-name'        => 'Name',
-        'label-first_name'  => 'First Name',
-        'label-last_name'   => 'Last Name',
+        'label-first_name'  => 'Name',
+        'label-last_name'   => 'Surname',
         'label-email'       => 'Email',
         'label-phone'       => 'Phone',
         'label-profession'  => 'Profession',
@@ -150,13 +151,13 @@ return [
         /**
          * Users Update Form Placeholder
          */
-        'text-first_name'   => 'Update User first name',
-        'text-last_name'    => 'Update User last name',
-        'text-email'        => 'Update User email',
-        'text-phone'        => 'Update User phone',
-        'text-role'         => 'Update User role',
-        'text-company'      => 'Update User company',
-        'text-department'   => 'Update User department',
+        'text-first_name'   => 'Update user name',
+        'text-last_name'    => 'Update user surname',
+        'text-email'        => 'Update user email',
+        'text-phone'        => 'Update user phone',
+        'text-role'         => 'Update user role',
+        'text-company'      => 'Update user company',
+        'text-department'   => 'Update user department',
         /**
          * User Tooltip - Update User
          */
@@ -182,12 +183,12 @@ return [
          * Notifications Message
          */
         'toastr-title'          => 'User:',
-        'toastr-user-img'       => 'User photo sucessfully updated'
+        'toastr-user-img'       => 'User photo sucessfully updated.'
 
     ],
     /*
     |--------------------------------------------------------------------------
-    | User Roles Language Lines
+    | User Roles - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -205,7 +206,7 @@ return [
         /**
          * User Roles Tooltip - Roles Table Page
          */
-        'tip-index'         => 'List of actions and user role permissions',
+        'tip-index'         => 'List of actions/user role permissions',
         /**
          * User Roles Actions
          */
@@ -222,7 +223,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Management Menu Language Lines
+    | Management Menu - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -233,8 +234,8 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Company Menu Language Lines
-    |--------------------------------------------------------------------------
+    | Company Menu - Language Lines (en)
+    |-------------------------------------------------------------------------
     |
     */
     'company-menu' => [
@@ -248,7 +249,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Companies Language Lines
+    | Companies - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -329,7 +330,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Company Types Language Lines
+    | Company Types - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
@@ -392,7 +393,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Departments Language Lines
+    | Departments - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     */
