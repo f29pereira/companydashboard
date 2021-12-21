@@ -7,6 +7,7 @@ use App\Http\Controllers\Users\CompanyTypeController;
 use App\Http\Controllers\Users\DepartmentController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,6 +21,13 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Locale configuration
+Route::get('/language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
 
 //User Login
 Route::get('/', function () {

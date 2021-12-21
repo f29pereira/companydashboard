@@ -305,7 +305,7 @@ return [
         'label-description'         => 'Description',
         'label-sector'              => 'Activity Sector',
         'label-phone'               => 'Phone',
-        'label-headquarters'        => 'Headquaerters',
+        'label-headquarters'        => 'Headquarters',
         'label-website'             => 'Website',
         'label-type'                => 'Business Relationship with',
         //placeholder create

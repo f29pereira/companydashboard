@@ -14,6 +14,12 @@
         @yield('content_top_nav_left')
     </ul>
 
+    {{-- Navbar Top --}}
+    <ul class="navbar-nav">
+        {{-- Language dropdown menu --}}
+        @include('adminlte::partials.navbar.dropdown-languague')
+    </ul>
+
     {{-- Navbar right links --}}
     <ul class="navbar-nav ml-auto">
         {{-- Custom right links --}}
