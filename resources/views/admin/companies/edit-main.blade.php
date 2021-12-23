@@ -14,17 +14,25 @@
                 {{-- Card --}}
                 <div class="card card-info">
                     {{-- Card Header --}}
-                    <div class="card-header d-flex justify-content-between">
-                        {{-- Return: Companies List --}}
-                        <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-menu') }}">
-                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                        </a>
-                        {{-- Card Title --}}
-                        <h5 class="card-title">
-                            <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('page.companies.edit-title') }}
-                        </h5>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            {{-- Return: Companies List --}}
+                            <a href="{{ url('/companies/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-menu') }}">
+                                <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                            </a>
+                            {{-- Card Title --}}
+                            <h5 class="card-title">
+                                <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                                {{ __('page.companies.edit-title') }}
+                            </h5>
+                            {{-- Return: Management Menu --}}
+                            <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('page.link.management-menu') }}">
+                                <i class="fas fa-th fa-lg"></i>
+                            </a>
+                        </div>
                     </div>
+                    {{-- /.Card Header --}}
+
                     {{-- Card Body --}}
                     <div class="card-body">
                         <div class="mb-3">
@@ -203,6 +211,7 @@
                             </div>
                         </form>
                     </div>
+                    {{-- /.Card Body --}}
                 </div>
             </div>
         </div>

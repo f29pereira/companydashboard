@@ -95,7 +95,7 @@ return [
     |
     */
     'users-menu' => [
-        'card-title'        => 'Users',
+        'card-title'        => 'Users Menu',
         'registered-users'  => 'Registered Users',
         'registered-roles'  => 'User Roles',
     ],
@@ -232,7 +232,7 @@ return [
     |
     */
     'management-menu' => [
-        'index-title'               => 'Management',
+        'index-title'               => 'Management Menu',
         'registered-companies'      => 'Registered Companies',
         'registered-departments'    => 'Registered Departments',
     ],
@@ -243,7 +243,7 @@ return [
     |
     */
     'company-menu' => [
-        'index-title'               => 'Companies',
+        'index-title'               => 'Companies Menu',
         'registered-companies'      => 'Registered Companies',
         'registered-company_types'  => 'Registered Business Relationships',
         /**

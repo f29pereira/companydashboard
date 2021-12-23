@@ -14,17 +14,25 @@
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Management --}}
-                    <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-index') }}">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title">
-                        <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.companies.create-title') }}
-                    </h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Management --}}
+                        <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-index') }}">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title">
+                            <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('page.companies.create-title') }}
+                        </h3>
+                        {{-- Return: Management Menu --}}
+                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('page.link.management-menu') }}">
+                            <i class="fas fa-th fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
+                {{-- /.Card Header --}}
+
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="row">
@@ -238,7 +246,9 @@
                         </div>
                     </form>
                 </div>
+                {{-- /.Card Body --}}
             </div>
+            {{-- /.Card --}}
         </div>
     </div>
     @endcan

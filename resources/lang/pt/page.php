@@ -93,7 +93,7 @@ return  [
     |
     */
     'users-menu' => [
-        'card-title'        => 'Utilizadores',
+        'card-title'        => 'Menu de Utilizadores',
         'registered-users'  => 'Utilizadores registados',
         'registered-roles'  => 'Roles Utilizador',
     ],
@@ -229,7 +229,7 @@ return  [
     |
     */
     'management-menu' => [
-        'index-title'               => 'Menu Gestão',
+        'index-title'               => 'Menu de Gestão',
         'registered-companies'      => 'Empresas registadas',
         'registered-departments'    => 'Departamentos registados',
     ],
@@ -240,7 +240,7 @@ return  [
     |
     */
     'company-menu' => [
-        'index-title'               => 'Empresas',
+        'index-title'               => 'Menu de Empresas',
         'registered-companies'      => 'Empresas registadas',
         'registered-company_types'  => 'Relações de Negócio registadas',
         /**

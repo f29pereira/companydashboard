@@ -14,18 +14,25 @@
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Management --}}
-                    <a href="{{ url('/company-types/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company_types-index') }}">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title">
-                        <i class="far fa-handshake fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.company-types.create-title') }}
-                    </h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Home --}}
+                        <a href="{{ url('/companies/index') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.company-index') }}">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title">
+                            <i class="fas fa-info-circle fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('page.companies.show-title') }}
+                        </h3>
+                        {{-- Return: Management Menu --}}
+                        <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="left" title="{{ __('page.link.management-menu') }}">
+                            <i class="fas fa-th fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
                 {{-- /.Card Header --}}
+
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="row">
