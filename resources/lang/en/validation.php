@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Validation Language Lines
+    | Validation - Language Lines (en)
     |--------------------------------------------------------------------------
     |
     | The following language lines contain the default error messages used by
@@ -129,7 +129,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Validation Language Lines
+    | Custom - Validation Language Lines (en)
     |--------------------------------------------------------------------------
     |
     | Here you may specify custom validation messages for attributes using the
@@ -142,32 +142,11 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-        /**
-         * Users
-         */
-
-         /**
-          * Company Types
-          */
-        'type_name' => [
-            'required' => 'The field name is required.'
-        ],
-        'type_description' => [
-            'required' => 'The field description is required.'
-        ],
-
-        /**
-         * Companies
-         */
-
-        /**
-         * Departments
-         */
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Validation Attributes
+    | Custom Validation Attributes (en)
     |--------------------------------------------------------------------------
     |
     | The following language lines are used to swap our attribute placeholder
@@ -176,6 +155,20 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        //Users
+        'first_name'            => 'name',
+        'last_name'             => 'surname',
+        'department_id'         => 'department',
+        //Company
+        'company_name'          => 'name',
+        'sector'                => 'activity sector ',
+        'company_phone'         => 'phone',
+        'company_types_id'      => 'b.relationship',
+        'company_description'   => 'description',
+        //Company Types
+        'type_name'             => 'name',
+        'type_description'      => 'description',
+    ],
 
 ];

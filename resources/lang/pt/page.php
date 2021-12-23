@@ -8,6 +8,7 @@ return  [
     |
     */
     'generic' => [
+        'language'                  => 'Idioma',
         'moreInfo'                  => 'Mais informações',
         /**
          * Form Buttons
@@ -19,9 +20,9 @@ return  [
         /**
          * Toastr notifications messages
          */
-        'toastr-create-success'     => '- criado(a) com sucesso.',
+        'toastr-create-success'     => '- registado com sucesso.',
         'toastr-update-success'     => '- dados atualizados com sucesso.',
-        'toastr-delete-success'     => '- eliminado(a) com sucesso.',
+        'toastr-delete-success'     => '- eliminado com sucesso.',
         /**
          * User actions
          */
@@ -106,8 +107,8 @@ return  [
          * Users Cards Title
          */
         'index-title'       => 'Utilizadores',
-        'show-title'        => 'Detalhes Utilizador',
-        'edit-title'        => 'Editar dados Utilizador',
+        'show-title'        => 'Detalhes do Utilizador',
+        'edit-title'        => 'Editar dados do Utilizador',
         'delete-title'      => 'Eliminar Utilizador',
         /**
          * Users Table
@@ -155,9 +156,10 @@ return  [
         'text-last_name'            => 'Atualizar sobrenome do utilizador',
         'text-email'                => 'Atualizar email do utilizador',
         'text-phone'                => 'Atualizar telefone do utilizador',
+        'text-profession'           => 'Atualizar cargo do utilizador',
         'text-role'                 => 'Atualizar role do utilizador',
         'text-company'              => 'Atualizar empresa do utilizador',
-        'text-department'           => 'Atualizar departamento do utilizador',
+        'text-department'           => 'Escolha um departamento:',
         /**
          * User Tooltip - Update User
          */
@@ -175,10 +177,10 @@ return  [
         /**
          * User Tooltip - Update My Profile
          */
-        'tip-edit-profile-btn'      => 'Atualizar dados de perfil',
-        'tip-edit-profile_pic-btn'  => 'Atualizar foto de perfil',
-        'tip-edit-profile'          => 'Formulário para atualizar dados de perfil',
-        'tip-edit-profile_pic'      => 'Formulário para atualizar foto de perfil',
+        'tip-edit-profile-btn'      => 'Atualizar os meus dados de perfil',
+        'tip-edit-profile_pic-btn'  => 'Atualizar a minha foto de perfil',
+        'tip-edit-profile'          => 'Formulário para atualizar os meus dados de perfil',
+        'tip-edit-profile_pic'      => 'Formulário para atualizar a minha foto de perfil',
         /**
          * Notifications Message
          */

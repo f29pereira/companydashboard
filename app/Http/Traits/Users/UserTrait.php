@@ -13,10 +13,13 @@ trait UserTrait{
      * @return array[] $list
      */
     public function userList(){
+        //Authenticated User
+        $user = Auth::user();
+
         //Eaguer loading: userRole, department, company
         $list = User::with(['userRole', 'department', 'company'])->where([
             ['is_deleted', false], //User is not deleted
-            ['user_role_id', '!=', 1] //User with Admin role
+            ['id', '!=', $user->id] //User is not the authenticated user
         ])->get();
 
         return $list;

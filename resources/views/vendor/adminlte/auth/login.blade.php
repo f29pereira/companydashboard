@@ -31,7 +31,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-envelope fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-lock fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -85,13 +85,13 @@
 
 @section('auth_footer')
     {{-- Password reset link --}}
-    @if($password_reset_url)
+    {{-- @if($password_reset_url)
         <p class="my-0">
             <a href="{{ $password_reset_url }}">
                 {{ __('adminlte::adminlte.i_forgot_my_password') }}
             </a>
         </p>
-    @endif
+    @endif --}}
 
     {{-- Register link --}}
     @if($register_url)

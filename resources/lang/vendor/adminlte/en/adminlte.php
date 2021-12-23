@@ -1,11 +1,17 @@
 <?php
 
 return [
-
-    'first_name'                  => 'First name',
-    'last_name'                   => 'Last name',
+    /*
+    |--------------------------------------------------------------------------
+    | Login - Language Lines (en)
+    |--------------------------------------------------------------------------
+    |
+    */
+    'first_name'                  => 'Name',
+    'last_name'                   => 'Surname',
     'email'                       => 'Email',
     'phone'                       => 'Phone Number',
+    'profession'                  => 'Profession',
     'photo'                       => 'User Photo',
     'password'                    => 'Password',
     'retype_password'             => 'Retype password',

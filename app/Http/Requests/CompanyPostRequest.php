@@ -38,14 +38,6 @@ class CompanyPostRequest extends FormRequest
      * @return array
      */
     public function messages(){
-        return[
-            //'company_name.required' => 'O campo é obrigatório',
-            //'company_description.required' => 'O campo é obrigatório',
-            //'sector.required' => 'O campo é obrigatório',
-            //'company_phone.required' => 'O campo é obrigatório',
-            //'headquarters.required' => 'O campo é obrigatório',
-            //'website.required' => 'O campo é obrigatório',
-            //'company_types_id.required' => 'O campo é obrigatório'
-        ];
+        return[];
     }
 }

@@ -11,7 +11,7 @@
     @php( $register_url = $register_url ? url($register_url) : '' )
 @endif
 
-@section('auth_header', __('adminlte::adminlte.register_message'))
+@section('auth_header', __('adminlte::adminlte.register_a_new_membership'))
 
 @section('auth_body')
     <form action="{{ $register_url }}" method="post">
@@ -24,7 +24,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-user {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-user fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-user {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-user fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-envelope fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
             value="{{ old('phone') }}" placeholder="{{ __('adminlte::adminlte.phone') }}" autofocus>
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-phone {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-phone fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
             @if($errors->has('phone'))
@@ -88,6 +88,26 @@
                 </div>
             @endif
         </div>
+        {{-- /.Phone field --}}
+
+        {{-- Profession field --}}
+        <div class="input-group mb-3">
+            <input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror"
+                value="{{ old('profession') }}" placeholder="{{ __('adminlte::adminlte.profession') }}" autofocus>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-briefcase fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                </div>
+            </div>
+
+            @error('profession')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        {{-- /.Profession field --}}
 
         {{-- Password field --}}
         <div class="input-group mb-3">
@@ -96,7 +116,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-lock fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 
@@ -115,7 +135,7 @@
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-lock fa-lg text-info {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
 

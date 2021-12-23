@@ -20,8 +20,12 @@
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
-                    <h3 class="card-title"><i class="far fa-handshake fa-lg"></i></i>&nbsp;&nbsp;&nbsp;{{ __('page.company-types.create-title') }}</h3>
+                    <h3 class="card-title">
+                        <i class="far fa-handshake fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                        {{ __('page.company-types.create-title') }}
+                    </h3>
                 </div>
+                {{-- /.Card Header --}}
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="row">
@@ -31,7 +35,7 @@
                         </div>
                     </div>
                     {{-- Create Company Type Form  --}}
-                    <form action="/company-types/store" method="POST">
+                    <form action="/company-types/store" method="POST" novalidate>
                         @csrf
                         <div class="row">
                             {{-- Company Type Name --}}
@@ -51,11 +55,11 @@
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @error('type_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        @if($errors->has('type_name'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('type_name') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -76,11 +80,11 @@
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @error('type_description')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        @if($errors->has('type_description'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('type_description') }}</strong>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -88,17 +92,22 @@
                         {{-- Confirm/Cancel --}}
                         <div class="row">
                             <div class="col-md-3">
-                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
+                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3">
+                                    <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;
+                                    {{ __('page.generic.confirmBtn') }}
                                 </button>
-                                <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
+                                <button type="reset" class="btn bg-gradient-danger btn-sm">
+                                    <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;
+                                    {{ __('page.generic.cancelBtn') }}
                                 </button>
                             </div>
                         </div>
+                        {{-- /.Confirm/Cancel --}}
                     </form>
                 </div>
+                {{-- /.Card Body --}}
             </div>
+            {{-- /.Card --}}
         </div>
     </div>
     @endcan

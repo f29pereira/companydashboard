@@ -32,9 +32,8 @@
                              data-toggle="tooltip" data-placement="right" title="{{ __('page.companies.tip-edit') }}"></i>
                         </div>
                         {{-- Edit Company Form --}}
-                        <form action="/companies/update/{{ $company->id }}" method="POST">
+                        <form action="/companies/update/{{ $company->id }}" method="POST" novalidate>
                             @csrf
-
                             <div class="row">
                                 {{-- Company Name --}}
                                 <div class="col-md-4 mb-3  mr-5">
@@ -61,6 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- /.Company Name --}}
                                 {{-- Company Activity Sector --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
@@ -86,6 +86,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- /.Company Activity Sector --}}
                             </div>
                             <div class="row">
                                 {{-- Company Phone --}}
@@ -113,6 +114,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- /.Company Phone --}}
                                 {{-- Company Headquarters --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
@@ -122,21 +124,27 @@
                                             data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="headquarters" value="{{ $company->headquarters }}" id="companyHeadquarters">
+                                            <input type="text" name="headquarters" id="companyHeadquarters" class="form-control @error('headquarters') is-invalid @enderror"
+                                            value="{{ $company->headquarters }}" placeholder="{{ __('page.companies.text-update-headquarters') }}">
                                             <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fas fa-map-marked-alt text-info"></i></span>
+                                                <div class="input-group-text">
+                                                    <span><i class="fas fa-map-marked-alt text-info"></i></span>
+                                                </div>
                                             </div>
+                                            {{-- Error Message --}}
+                                            @error('headquarters')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        {{-- Error Message --}}
-                                        @error('headquarters')
-                                            <div><p class="text-danger">{{ $message }}</p></div>
-                                        @enderror
                                     </div>
                                 </div>
+                                {{-- /.Company Headquarters --}}
                             </div>
                             <div class="row">
-                                 {{-- Company Website --}}
-                                 <div class="col-md-4 mb-3 mr-5">
+                                {{-- Company Website --}}
+                                <div class="col-md-4 mb-3 mr-5">
                                     <div class="form-group">
                                         <label for="companyWebsite" class="form-label">
                                             {{ __('page.companies.label-phone') }}&nbsp;&nbsp;
@@ -144,17 +152,23 @@
                                             data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                         </label>
                                         <div class="input-group">
-                                            <input type="url" class="form-control" name="website" value="{{ $company->website }}" id="companyWebsite">
+                                            <input type="url" name="website"  id="companyWebsite" class="form-control @error('website') is-invalid @enderror"
+                                            value="{{ $company->website }}" placeholder="{{ __('page.companies.text-update-website') }}">
                                             <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fas fa-desktop text-info"></i></span>
+                                                <div class="input-group-text">
+                                                    <span><i class="fas fa-desktop text-info"></i></span>
+                                                </div>
                                             </div>
+                                            {{-- Error Message --}}
+                                            @error('website')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        {{-- Error Message --}}
-                                        @error('website')
-                                            <div><p class="text-danger">{{ $message }}</p></div>
-                                        @enderror
                                     </div>
                                 </div>
+                                {{-- /.Company Website --}}
                                 {{-- Company Type --}}
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
@@ -181,24 +195,28 @@
                                         @enderror
                                     </div>
                                 </div>
+                                {{-- /.Company Type --}}
                             </div>
                             <div class="row">
                                 {{-- Company Description --}}
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
-                                        <label for="summernote">
+                                        <label for="summernote" class="form-label">
                                             {{ __('page.companies.label-description') }}
-                                            &nbsp;&nbsp;
                                             <i class="fas fa-asterisk text-danger fa-sm"
                                             data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                         </label>
                                     </div>
-                                    <textarea name="company_description" id="summernote" cols="30" rows="10"></textarea>
+                                    <textarea name="company_description" id="summernote" class="form-control @error('company_description') is-invalid @enderror"
+                                    cols="30" rows="10"></textarea>
                                     {{-- Error Message --}}
                                     @error('company_description')
-                                    <div><p class="text-danger">{{ $message }}</p></div>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
+                                {{-- /.Company Description --}}
                             </div>
                             {{-- Confirm/Cancel --}}
                             <div class="row">
@@ -211,7 +229,9 @@
                                     </button>
                                 </div>
                             </div>
+                            {{-- /.Confirm/Cancel --}}
                         </form>
+                        {{-- /.Edit Company Form --}}
                     </div>
                 </div>
             </div>

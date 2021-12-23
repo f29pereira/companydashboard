@@ -8,6 +8,7 @@ return [
     |
     */
     'generic' => [
+        'language'                  => 'Language',
         'moreInfo'                  => 'More info',
         /**
          * Form Buttons
@@ -37,6 +38,8 @@ return [
     |
     */
     'titles' => [
+        //Home
+        'home'                  => 'Dashboard - Home',
         //User Menu
         'users-menu'            => 'Dashboard - User Menu',
         //Users
@@ -154,10 +157,11 @@ return [
         'text-first_name'   => 'Update user name',
         'text-last_name'    => 'Update user surname',
         'text-email'        => 'Update user email',
-        'text-phone'        => 'Update user phone',
+        'text-phone'        => 'Update user email',
+        'text-profession'   => 'Update user profession',
         'text-role'         => 'Update user role',
         'text-company'      => 'Update user company',
-        'text-department'   => 'Update user department',
+        'text-department'   => 'Select department:',
         /**
          * User Tooltip - Update User
          */

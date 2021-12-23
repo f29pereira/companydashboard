@@ -17,7 +17,10 @@
     {{-- Navbar Top --}}
     <ul class="navbar-nav">
         {{-- Language dropdown menu --}}
-        @include('adminlte::partials.navbar.dropdown-languague')
+        <li class="nav-item dropdown">
+            @include('adminlte::partials.navbar.dropdown-languague')
+        </li>
+        {{-- /.Language dropdown menu --}}
     </ul>
 
     {{-- Navbar right links --}}

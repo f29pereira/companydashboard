@@ -62,6 +62,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Name --}}
                             {{-- Company Bussiness Sector --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
@@ -87,6 +88,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Bussiness Sector --}}
                         </div>
                         <div class="row">
                             {{-- Company Phone --}}
@@ -114,6 +116,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Phone --}}
                             {{-- Company Headquarters --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
@@ -139,6 +142,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Headquarters --}}
                         </div>
                         <div class="row">
                             {{-- Company Website --}}
@@ -166,6 +170,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Website --}}
                             {{-- Company Type --}}
                             <div class="col-md-4 mb-3 mr-5">
                                 <div class="form-group">
@@ -196,10 +201,11 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- /.Company Type --}}
                         </div>
                         <div class="row">
+                            {{-- Company Description --}}
                             <div class="col-md-12 mb-3">
-                                {{-- Company Description --}}
                                 <div class="form-group">
                                     <label for="summernote">
                                         {{ __('page.companies.label-description') }}&nbsp;&nbsp;
@@ -215,15 +221,18 @@
                                     </div>
                                 @enderror
                             </div>
+                            {{-- /.Company Description --}}
                         </div>
                         {{-- Confirm/Cancel --}}
                         <div class="row">
                             <div class="col-md-3">
-                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3"><i class="far fa-check-square fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
+                                <button type="submit" class="btn bg-gradient-success btn-sm mr-3">
+                                    <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;
+                                    {{ __('page.generic.confirmBtn') }}
                                 </button>
-                                <button type="reset" class="btn bg-gradient-danger btn-sm"><i class="far fa-window-close fa-lg">
-                                    </i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
+                                <button type="reset" class="btn bg-gradient-danger btn-sm">
+                                    <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;
+                                    {{ __('page.generic.cancelBtn') }}
                                 </button>
                             </div>
                         </div>

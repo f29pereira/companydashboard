@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Validation Language Lines
+    | Validation - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
     | The following language lines contain the default error messages used by
@@ -129,7 +129,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Validation Language Lines
+    | Custom Validation - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
     | Here you may specify custom validation messages for attributes using the
@@ -142,33 +142,11 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-
-        /**
-         * Users
-         */
-
-        /**
-         * Company Types
-         */
-        'type_name' => [
-            'required' => 'O campo é obrigatório.'
-        ],
-        'type_description' => [
-            'required' => 'O campo é obrigatório.'
-        ],
-
-        /**
-         * Companies
-         */
-
-        /**
-         * Departments
-         */
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Validation Attributes
+    | Custom Validation Attributes (pt)
     |--------------------------------------------------------------------------
     |
     | The following language lines are used to swap our attribute placeholder
@@ -177,6 +155,25 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        //Users
+        'first_name'            => 'nome',
+        'last_name'             => 'sobrenome',
+        'phone'                 => 'telefone',
+        'profession'            => 'cargo',
+        'department_id'         => 'departamento',
+        //Company
+        'company_name'          => 'nome',
+        'sector'                => 'setor de atividade',
+        'company_phone'         => 'telefone',
+        'headquarters'          => 'sede',
+        'company_types_id'      => 'r.negócio',
+        'company_description'   => 'descrição',
+        //Company Types
+        'type_name'             => 'nome',
+        'type_description'      => 'descrição',
+        //Department
+        'department_name'       => 'nome',
+    ],
 
 ];

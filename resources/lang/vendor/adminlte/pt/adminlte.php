@@ -1,10 +1,17 @@
 <?php
 
 return [
-
-    'full_name'                   => 'Nome Completo',
+    /*
+    |--------------------------------------------------------------------------
+    | Login - Language Lines (pt)
+    |--------------------------------------------------------------------------
+    |
+    */
+    'first_name'                  => 'Nome',
+    'last_name'                   => 'Sobrenome',
     'email'                       => 'Email',
     'phone'                       => 'Número de Telefone',
+    'profession'                  => 'Cargo',
     'password'                    => 'Password',
     'retype_password'             => 'Digite novamente a password',
     'remember_me'                 => 'Remember Me',
@@ -15,7 +22,7 @@ return [
     'sign_in'                     => 'Login',
     'log_out'                     => 'Log Out',
     'toggle_navigation'           => 'Alternar navegação',
-    'login_message'               => 'Faça login para iniciar sua sessão',
+    'login_message'               => 'Faça login para iniciar sessão',
     'register_message'            => 'Register a new membership',
     'password_reset_message'      => 'Reset Password',
     'reset_password'              => 'Reset Password',
