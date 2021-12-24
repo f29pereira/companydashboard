@@ -8,6 +8,30 @@ use App\Models\Users\User;
 
 trait UserTrait{
     /**
+     * Authenticated user
+     *
+     * @return App\Models\Users\User    $user
+     */
+    public function userAuth(){
+        //Authenticated User
+        $user = Auth::user();
+
+        return $user;
+    }
+
+    /**
+     * User name and surname
+     *
+     * @param  App\Models\Users\User    $user
+     * @return string                   $name
+     */
+    public function userName(User $user){
+        $name = $user->first_name . ' ' . $user->last_name;
+
+        return $name;
+    }
+
+    /**
      * List of users
      *
      * @return array[] $list
@@ -56,7 +80,7 @@ trait UserTrait{
      * @param  App\Models\Users\User    $user
      * @return string                   $text
      */
-    public function msgEdit(User $user){
+    public function msgEditUser(User $user){
         $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name  . '\n'
         . __('page.generic.toastr-update-success');
 
@@ -69,7 +93,7 @@ trait UserTrait{
      * @param  App\Models\Users\User    $user
      * @return string                   $text
      */
-    public function msgDelete(User $user){
+    public function msgDeleteUser(User $user){
         $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name . '\n'
         . __('page.generic.toastr-delete-success');
 

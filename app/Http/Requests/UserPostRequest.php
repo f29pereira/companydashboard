@@ -25,7 +25,7 @@ class UserPostRequest extends FormRequest
             'first_name'        => ['required', 'string', 'max:50'],
             'last_name'         => ['required', 'string', 'max:50'],
             'email'             => ['required', 'string', 'email', 'max:255'/*, 'unique:users'*/],
-            'phone'             => ['required', 'string', 'min:9'],
+            'phone'             => ['required', 'string', 'min:9', 'max:50'],
             'profession'        => ['required', 'string', 'max:50'],
             'user_role_id'      => 'required',
             'user_image_id'     => 'required',

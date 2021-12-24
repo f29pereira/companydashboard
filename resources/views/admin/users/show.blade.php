@@ -53,7 +53,7 @@
                                         {{-- User Name --}}
                                         <div class="text-center">
                                             <h4><i class="far fa-address-card text-info"></i>&nbsp;<strong>{{ __('page.users.label-name') }}</strong></h4>
-                                            <p>{{ $user->first_name . ' ' . $user->last_name }} </p>
+                                            <p>{{ $userName }} </p>
                                         </div>
                                         {{-- /.User Name --}}
                                     </div>

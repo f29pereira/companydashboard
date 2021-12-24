@@ -9,6 +9,7 @@ use App\Http\Traits\Users\CompanyTrait;
 use App\Models\Users\Department;
 use Illuminate\Http\Request;
 use App\Models\Users\User;
+use Carbon\Carbon;
 
 class DepartmentController extends Controller
 {
@@ -55,9 +56,12 @@ class DepartmentController extends Controller
         //New Department
         $department = Department::create($request->all());
 
+        //Department date time creation
+        $department->created_at = Carbon::now();
+        $department->save();
+
         //Department successfully created
-        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
-        . __('page.generic.toastr-create-success');
+        $text = $this->msgCreateDepartment($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);
@@ -93,9 +97,12 @@ class DepartmentController extends Controller
         //Department Update
         $department->update($request->all());
 
+        //Department date time update
+        $department->updated_at = Carbon::now();
+        $department->save();
+
         //Department successfully updated
-        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
-        . __('page.generic.toastr-update-success');
+        $text = $this->msgEditDepartment($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);
@@ -123,8 +130,7 @@ class DepartmentController extends Controller
         User::where('department_id', $id)->update(['department_id' => 1]);
 
         //Department successfully deleted
-        $text = __('page.departments.toastr-title') . " " . $department->department_name . '\n'
-        . __('page.generic.toastr-delete-success');
+        $text = $this->msgDeleteDepartment($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);

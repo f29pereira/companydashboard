@@ -72,7 +72,10 @@ class UserController extends Controller
         //Specified User
         $user = User::findOrFail($id);
 
-        return view('admin.users.show', compact('user'));
+        //Specified User User Name
+        $userName = $this->userName($user);
+
+        return view('admin.users.show', compact('user', 'userName'));
     }
 
     /**
@@ -115,7 +118,7 @@ class UserController extends Controller
         $user->update($request->all());
 
         //User edit message
-        $text = $this->msgEdit($user);
+        $text = $this->msgEditUser($user);
 
         //Redirect: Users List
         return redirect()->route('users')->with('message', $text);
@@ -137,7 +140,7 @@ class UserController extends Controller
         }
 
         //User delete message
-        $text = $this->msgDelete($user);
+        $text = $this->msgDeleteUser($user);
 
         //Redirect: Users list
         return redirect()->route('users')->with('message', $text);
@@ -153,9 +156,12 @@ class UserController extends Controller
         $this->authorize('is_user');
 
         //Authenticated User
-        $user = Auth::user();
+        $user = $this->userAuth();
 
-        return view('user.profile.user-profile', compact('user'));
+        //Authenticated User Name
+        $userName = $this->userName(Auth::user());
+
+        return view('user.profile.user-profile', compact('user', 'userName'));
     }
 
 
@@ -169,7 +175,7 @@ class UserController extends Controller
         $this->authorize('is_user');
 
         //Authenticated User
-        $user = Auth::user();
+        $user = $this->userAuth();
 
         return view('user.profile.edit-profile', compact('user'));
     }
@@ -202,7 +208,7 @@ class UserController extends Controller
         $this->authorize('is_user');
 
         //Authenticated User
-        $user = Auth::user();
+        $user = $this->userAuth();
 
         //Return: Edit User Profile picture
         return view('user.profile.edit-profile-pic', compact('user'));

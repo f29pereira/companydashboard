@@ -11,7 +11,7 @@ return [
     'last_name'                   => 'Surname',
     'email'                       => 'Email',
     'phone'                       => 'Phone Number',
-    'profession'                  => 'Profession',
+    'profession'                  => 'Profession on the company',
     'photo'                       => 'User Photo',
     'password'                    => 'Password',
     'retype_password'             => 'Retype password',

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller\Controller;
+use App\Http\Traits\Users\UserTrait;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    use UserTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -22,8 +25,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index(){
+        //Authenticated User
+        $userName = $this->userName(Auth::user());
+
+        return view('home', compact('userName'));
     }
 }

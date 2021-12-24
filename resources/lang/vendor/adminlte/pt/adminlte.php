@@ -11,7 +11,7 @@ return [
     'last_name'                   => 'Sobrenome',
     'email'                       => 'Email',
     'phone'                       => 'Número de Telefone',
-    'profession'                  => 'Cargo',
+    'profession'                  => 'Cargo na empresa',
     'password'                    => 'Password',
     'retype_password'             => 'Digite novamente a password',
     'remember_me'                 => 'Remember Me',

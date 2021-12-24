@@ -88,6 +88,16 @@ return  [
     ],
     /*
     |--------------------------------------------------------------------------
+    | Home - Language Lines (pt)
+    |--------------------------------------------------------------------------
+    |
+    */
+    'home' => [
+        'card-title'        => 'Home',
+        'welcome-msg'       => 'Seja bem vindo,',
+    ],
+    /*
+    |--------------------------------------------------------------------------
     | User Menu - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
@@ -113,7 +123,7 @@ return  [
         /**
          * Users Table
          */
-        'th-name'           => 'Nome',
+        'th-name-image'     => 'Utilizador',
         'th-email'          => 'Email',
         'th-phone'          => 'Telefone',
         'th-department'     => 'Departamento',
@@ -180,7 +190,7 @@ return  [
         'tip-edit-profile-btn'      => 'Atualizar os meus dados de perfil',
         'tip-edit-profile_pic-btn'  => 'Atualizar a minha foto de perfil',
         'tip-edit-profile'          => 'Formulário para atualizar os meus dados de perfil',
-        'tip-edit-profile_pic'      => 'Formulário para atualizar a minha foto de perfil',
+        'tip-edit-profile_pic'      => 'Formulário para atualizar a minha foto de perfil. Formatos disponíveis: png, jpg, jpeg',
         /**
          * Notifications Message
          */

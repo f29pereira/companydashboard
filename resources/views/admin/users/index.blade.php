@@ -38,7 +38,7 @@
                         {{-- Table Head --}}
                         <thead class="text-center">
                             <tr>
-                                <th scope="col">{{ __('page.users.th-name') }}</th>
+                                <th scope="col">{{ __('page.users.th-name-image') }}</th>
                                 <th scope="col">{{ __('page.users.th-email') }}</th>
                                 <th scope="col">{{ __('page.users.th-phone') }}</th>
                                 <th scope="col">{{ __('page.users.th-department') }}</th>
@@ -49,7 +49,24 @@
                         <tbody class="text-center">
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->first_name }} {{ $user->last_name }}</td>
+                                    <td>
+                                        @if ($user->user_image_id == 1)
+                                        {{-- Default User Image --}}
+                                        <img src="{{ asset('images/default/'. $user->userImage->image_name) }}"
+                                            class="user-image img-circle elevation-2"
+                                            alt="{{ __('page.users.alt-picture') }}" width="35" height="35">
+                                        {{-- /.Default User Image --}}
+                                        @else
+                                        {{-- Custom User Image --}}
+                                        <img src="{{ asset('storage/users/'. $user->userImage->image_name) }}"
+                                            class="user-image img-circle elevation-2"
+                                            alt="{{ __('page.users.alt-picture') }}" width="35" height="35">
+                                        {{-- /.Custom User Image --}}
+                                        @endif
+                                        &nbsp;&nbsp;
+                                        {{-- User Name --}}
+                                        {{ $user->first_name }} {{ $user->last_name }}
+                                    </td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->department->department_name }}</td>
@@ -149,7 +166,7 @@
                             </tbody>
                             {{-- Table Footer --}}
                             <tfoot class="text-center">
-                                <th scope="col">{{ __('page.users.th-name') }}</th>
+                                <th scope="col">{{ __('page.users.th-name-image') }}</th>
                                 <th scope="col">{{ __('page.users.th-email') }}</th>
                                 <th scope="col">{{ __('page.users.th-phone') }}</th>
                                 <th scope="col">{{ __('page.users.th-department') }}</th>
