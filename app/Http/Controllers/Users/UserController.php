@@ -72,7 +72,7 @@ class UserController extends Controller
         //Specified User
         $user = User::findOrFail($id);
 
-        //Specified User User Name
+        //Specified User - User Name
         $userName = $this->userName($user);
 
         return view('admin.users.show', compact('user', 'userName'));
@@ -114,11 +114,14 @@ class UserController extends Controller
         //Specified User
         $user = User::findOrFail($id);
 
-        //User data update
+        //User Update - form data
         $user->update($request->all());
 
-        //User edit message
-        $text = $this->msgEditUser($user);
+        //User Update - updated_at
+        $this->userUpdatedAt($user);
+
+        //Message: user updated
+        $text = $this->userUpdateMsg($user);
 
         //Redirect: Users List
         return redirect()->route('users')->with('message', $text);
@@ -134,13 +137,14 @@ class UserController extends Controller
         //Specified User
         $user = User::findOrFail($id);
 
-        if($user->is_deleted == false){
-            $user->is_deleted = true;
-            $user->save();
-        }
+        //User Delete
+        $this->userDelete($user);
 
-        //User delete message
-        $text = $this->msgDeleteUser($user);
+        //User Update - deleted_at
+        $this->userDeletedAt($user);
+
+        //Message: user deleted
+        $text = $this->userDeleteMsg($user);
 
         //Redirect: Users list
         return redirect()->route('users')->with('message', $text);
@@ -191,11 +195,17 @@ class UserController extends Controller
         //User
         $user = User::findOrFail($id);
 
-        //User Update
+        //User Update - form data
         $user->update($request->all());
 
+        //User Update - updated_at
+        $this->userUpdatedAt($user);
+
+        //Message: user (profile) updated
+        $text = $this->userUpdateProfileMsg($user);
+
         //Redirect: User profile
-        return redirect()->route('profile');
+        return redirect()->route('profile')->with('message', $text);
     }
 
     /**
@@ -266,8 +276,11 @@ class UserController extends Controller
             //Store new user image (public/storage folder)
             $request->image->move(public_path('/storage/users/'), $imageName);
 
-            //User Image successfully updated
-            $text = __('page.users.toastr-user-img');
+            //User Update - updated_at
+            $this->userUpdatedAt($user);
+
+            //Message: user image updated
+            $text = $this->userUpdatePicMsg();
 
             //Redirect: User profile
             return redirect()->route('profile')->with('message', $text);

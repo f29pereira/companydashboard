@@ -17,10 +17,11 @@ class CreateDepartmentsTable extends Migration
          * User department
          */
         Schema::create('departments', function (Blueprint $table) {
-            $table->id(); //department id
-            $table->string('department_name'); //department name
-            $table->boolean('is_deleted')->default(false); //is department deleted ?
-            $table->timestamps();
+            $table->id();                                   //department id
+            $table->string('department_name');              //department name
+            $table->boolean('is_deleted')->default(false);  //is department deleted ? default: no
+            $table->timestamps();                           //department create/update time
+            $table->timestamp('deleted_at')->nullable();    //department delete time
         });
     }
 

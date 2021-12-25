@@ -30,7 +30,7 @@ class CompanyController extends Controller
         $count = $this->companyCount();
 
         //Company Types count
-        $typesCount = $this->companyTypeCount();
+        $typesCount = $this->typeCount();
 
         return view('admin.companies.companies-menu', compact('company','count', 'typesCount'));
     }
@@ -67,7 +67,7 @@ class CompanyController extends Controller
         $mainCompany = $this->companyMain();
 
         //Company Types List
-        $companyTypes = $this->companyTypeList();
+        $companyTypes = $this->typeList();
 
         return view('admin.companies.create', compact('mainCompany', 'companyTypes'));
     }
@@ -79,13 +79,14 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(CompanyPostRequest $request){
-        //New Company
+        //Company Create - form data
         $company = Company::create($request->all());
 
-        //Company successfully created
-        $text = __('page.companies.toastr-title') . " "
-        . $company->company_name . '\n'
-        . __('page.generic.toastr-create-success');
+        //Company Update - created_at
+        $this->companyCreatedAt($company);
+
+        //Message: company created
+        $text = $this->companyCreateMsg($company);
 
         //Redirect: Companies List
         return redirect()->route('companies')->with('message', $text);
@@ -127,7 +128,7 @@ class CompanyController extends Controller
         $mainCompany = $this->companyMain();
 
         //Company Types
-        $companyTypes = $this->companyTypeList();
+        $companyTypes = $this->typeList();
 
         return view('admin.companies.edit', compact('company', 'mainCompany' ,'companyTypes'));
     }
@@ -143,13 +144,14 @@ class CompanyController extends Controller
         //Specified Company
         $company = Company::findOrFail($id);
 
-        //Company Update
+        //Company Update - form data
         $company->update($request->all());
 
-        //Company successfully updated
-        $text = __('page.companies.toastr-title') . " "
-        . $company->company_name . '\n'
-        . __('page.generic.toastr-update-success');
+        //Company Update - updated_at
+        $this->companyUpdatedAt($company);
+
+        //Message: company updated
+        $text = $this->companyUpdateMsg($company);
 
         //Redirect: Companies List
         return redirect()->route('companies')->with('message', $text);
@@ -182,13 +184,14 @@ class CompanyController extends Controller
         //Specified Company
         $company = Company::findOrFail($id);
 
-        //Company update
+        //Company Update - form data
         $company->update($request->all());
 
-        //Company successfully updated
-        $text = __('page.companies.toastr-title') . " "
-        . $company->company_name . '\n'
-        . __('page.generic.toastr-update-success');
+        //Company Update - updated_at
+        $this->companyUpdatedAt($company);
+
+        //Message: company updated
+        $text = $this->companyUpdateMsg($company);
 
         //Redirect: Company Menu
         return redirect()->route('companiesMenu')->with('message', $text);
@@ -207,18 +210,17 @@ class CompanyController extends Controller
         //Specified Company
         $company = Company::findOrFail($id);
 
-        if($company->is_deleted == false){
-            $company->is_deleted = true;
-            $company->save();
-        }
+        //Company Delete
+        $this->companyDelete($company);
+
+        //Company Update - deleted_at
+        $this->companyDeletedAt($company);
 
         //Users Mass Update to Default Company
         User::where('company_id', $id)->update(['company_id' => 1]);
 
-        //Company successfully deleted
-        $text = __('page.companies.toastr-title') . " "
-        . $company->company_name . '\n'
-        . __('page.generic.toastr-delete-success');
+        //Message: company deleted
+        $text = $this->companyDeleteMsg($company);
 
         //Redirect: companies list
         return redirect()->route('companies')->with('message', $text);

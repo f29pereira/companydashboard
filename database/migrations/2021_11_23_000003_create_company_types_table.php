@@ -17,11 +17,12 @@ class CreateCompanyTypesTable extends Migration
          * Relations between companies
          */
         Schema::create('company_types', function (Blueprint $table) {
-            $table->id(); //company id
-            $table->string('type_name'); //company type name
-            $table->string('type_description'); //company type description
-            $table->boolean('is_deleted')->default(false); //is company type deleted ?
-            $table->timestamps();
+            $table->id();                                   //company type id
+            $table->string('type_name');                    //company type name
+            $table->string('type_description');             //company type description
+            $table->boolean('is_deleted')->default(false);  //is company type deleted ?
+            $table->timestamps();                           //company type create/update time
+            $table->timestamp('deleted_at')->nullable();    //company type delete time
         });
     }
 

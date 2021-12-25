@@ -17,17 +17,18 @@ class CreateCompaniesTable extends Migration
          * Companies
          */
         Schema::create('companies', function (Blueprint $table) {
-            $table->id(); //company id
-            $table->string('company_name'); //company name
-            $table->text('company_description'); //company description
-            $table->string('sector'); //company activity sector
-            $table->string('company_phone'); //company phone
-            $table->string('headquarters');//company location
-            $table->string('website'); //company website link
-            $table->boolean('is_deleted')->default(false); //is company deleted ?
+            $table->id();                                   //company id
+            $table->string('company_name');                 //company name
+            $table->text('company_description');            //company description
+            $table->string('sector');                       //company activity sector
+            $table->string('company_phone');                //company phone
+            $table->string('headquarters');                 //company location
+            $table->string('website');                      //company website link
+            $table->boolean('is_deleted')->default(false);  //is company deleted ?
             //FK - company types
             $table->foreignId('company_types_id')->constrained();
-            $table->timestamps();
+            $table->timestamps();                           //company create/update time
+            $table->timestamp('deleted_at')->nullable();    //company delete time
         });
     }
 

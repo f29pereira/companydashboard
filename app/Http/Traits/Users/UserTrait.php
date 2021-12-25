@@ -4,8 +4,11 @@ namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Users\User;
+use Carbon\Carbon;
 
-
+/**
+ * User Trait
+ */
 trait UserTrait{
     /**
      * Authenticated user
@@ -75,16 +78,68 @@ trait UserTrait{
     }
 
     /**
+     * Update the updated_at attribute of the specified user
+     *
+     * @param  App\Models\Users\User    $user
+     */
+    public function userUpdatedAt(User $user){
+        $user->updated_at = Carbon::now();
+        $user->save();
+    }
+
+    /**
      * Toastr Message - User successfully updated
      *
      * @param  App\Models\Users\User    $user
      * @return string                   $text
      */
-    public function msgEditUser(User $user){
+    public function userUpdateMsg(User $user){
         $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name  . '\n'
         . __('page.generic.toastr-update-success');
 
         return $text;
+    }
+
+    /**
+     * Toastr Message - User profile data successfully updated
+     */
+    public function userUpdateProfileMsg(){
+        $text = __('page.users.toastr-user-profile');
+
+        return $text;
+    }
+
+    /**
+     * Toastr Message - User profile image successfully updated
+     *
+     * @return string                   $text
+     */
+    public function userUpdatePicMsg(){
+        $text = __('page.users.toastr-user-img');
+
+        return $text;
+    }
+
+    /**
+     * Delete the specified company type
+     *
+     * @param  App\Models\Users\User    $user
+     */
+    public function userDelete(User $user){
+        if($user->is_deleted == false){
+            $user->is_deleted = true;
+            $user->save();
+        }
+    }
+
+    /**
+     * Update the deleted_at attribute of the specified user
+     *
+     * @param  App\Models\Users\User      $user
+     */
+    public function userDeletedAt(User $user){
+        $user->deleted_at = Carbon::now();
+        $user->save();
     }
 
     /**
@@ -93,7 +148,7 @@ trait UserTrait{
      * @param  App\Models\Users\User    $user
      * @return string                   $text
      */
-    public function msgDeleteUser(User $user){
+    public function userDeleteMsg(User $user){
         $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name . '\n'
         . __('page.generic.toastr-delete-success');
 

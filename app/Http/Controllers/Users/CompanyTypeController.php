@@ -27,7 +27,7 @@ class CompanyTypeController extends Controller
         $mainCompany = $this->companyMain();
 
         //Company Type List
-        $companyTypes = $this->companyTypeList();
+        $companyTypes = $this->typeList();
 
         return view('admin.company-types.index', compact('mainCompany','companyTypes'));
     }
@@ -51,13 +51,14 @@ class CompanyTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(CompanyTypePostRequest $request){
-        //Company Type Create
+        //Company Type Create - form data
         $companyType = CompanyType::create($request->all());
 
-        //Company Type sucessfully created
-        $text = __('page.company-types.toastr-title') . " "
-        . $companyType->type_name . '\n'
-        . __('page.generic.toastr-create-success');
+        //Company Type Update - created_at
+        $this->typeCreatedAt($companyType);
+
+        //Message: company type created
+        $text = $this->typeCreateMsg($companyType);
 
         //Redirect: Company Types List
         return redirect()->route('types')->with('message', $text);
@@ -90,13 +91,14 @@ class CompanyTypeController extends Controller
         //Specified Company Type
         $companyType = CompanyType::findOrFail($id);
 
-        //Company Type Update
+        //Company Type Update - form data
         $companyType->update($request->all());
 
-        //Company Type sucessfully updated
-        $text = __('page.company-types.toastr-title') . " "
-        . $companyType->type_name . '\n'
-        . __('page.generic.toastr-update-success');
+        //Company Type Update - updated_at
+        $this->typeUpdatedAt($companyType);
+
+        //Message: company type updated
+        $text = $this->typeUpdateMsg($companyType);
 
         //Redirect: Company Types List
         return redirect()->route('types')->with('message', $text);
@@ -115,18 +117,17 @@ class CompanyTypeController extends Controller
         //Specified Company Type
         $companyType = CompanyType::findOrFail($id);
 
-        if($companyType->is_deleted == false){
-            $companyType->is_deleted = true;
-            $companyType->save();
-        }
+        //Company Type Delete
+        $this->typeDelete($companyType);
+
+        //Company Type Update - deleted_at
+        $this->typeDeletedAt($companyType);
 
         //Companies Mass Update to Default Company Type
         Company::where('company_types_id', $id)->update(['company_types_id' => 1]);
 
-        //Company Type successfully deleted
-        $text = __('page.company-types.toastr-title') . " "
-        . $companyType->type_name . '\n'
-        . __('page.generic.toastr-delete-success');
+        //Message: company type deleted
+        $text = $this->typeDeleteMsg($companyType);
 
         //Redirect: Company Types List
         return redirect()->route('types')->with('message', $text);

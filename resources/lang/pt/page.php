@@ -195,6 +195,7 @@ return  [
          * Notifications Message
          */
         'toastr-title'              => 'Utilizador:',
+        'toastr-user-profile'       => 'Perfil de Utilizador atualizado com sucesso.',
         'toastr-user-img'           => 'Foto de Utilizador atualizada com sucesso.'
     ],
     /*

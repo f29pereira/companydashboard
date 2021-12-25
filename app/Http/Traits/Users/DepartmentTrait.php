@@ -3,7 +3,11 @@
 namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
 use App\Models\Users\Department;
+use Carbon\Carbon;
 
+/**
+ * Department Trait
+ */
 trait DepartmentTrait{
     /**
      * List of departments
@@ -34,12 +38,22 @@ trait DepartmentTrait{
     }
 
     /**
+     * Update the created_at attribute of the specified department
+     *
+     * @param  App\Models\Users\Department      $department
+     */
+    public function departmentCreatedAt(Department $department){
+        $department->created_at = Carbon::now();
+        $department->save();
+    }
+
+    /**
      * Toastr Message - Department successfully created
      *
      * @param  App\Models\Users\Department      $department
      * @return string                           $text
      */
-    public function msgCreateDepartment(Department $department){
+    public function departmentCreateMsg(Department $department){
         $text = __('page.departments.toastr-title')
                 . " " . $department->department_name . '\n'
                 . __('page.generic.toastr-create-success');
@@ -48,12 +62,22 @@ trait DepartmentTrait{
     }
 
     /**
+     * Update the updated_at attribute of the specified department
+     *
+     * @param  App\Models\Users\Department      $department
+     */
+    public function departmentUpdatedAt(Department $department){
+        $department->updated_at = Carbon::now();
+        $department->save();
+    }
+
+    /**
      * Toastr Message - Department successfully updated
      *
      * @param  App\Models\Users\Department      $department
      * @return string                           $text
      */
-    public function msgEditDepartment(Department $department){
+    public function departmentUpdateMsg(Department $department){
         $text = __('page.departments.toastr-title')
                 . " " . $department->department_name . '\n'
                 . __('page.generic.toastr-update-success');
@@ -62,12 +86,34 @@ trait DepartmentTrait{
     }
 
     /**
+     * Delete the specified department
+     *
+     * @param  App\Models\Users\Department      $department
+     */
+    public function departmentDelete(Department $department){
+        if($department->is_deleted == false){
+            $department->is_deleted = true;
+            $department->save();
+        }
+    }
+
+    /**
+     * Update the deleted_at attribute of the specified department
+     *
+     * @param  App\Models\Users\Department      $department
+     */
+    public function departmentDeletedAt(Department $department){
+        $department->deleted_at = Carbon::now();
+        $department->save();
+    }
+
+    /**
      * Toastr Message - Department successfully deleted
      *
      * @param  App\Models\Users\Department      $department
      * @return string                           $text
      */
-    public function msgDeleteDepartment(Department $department){
+    public function departmentDeleteMsg(Department $department){
         $text = __('page.departments.toastr-title')
                 . " " . $department->department_name . '\n'
                 . __('page.generic.toastr-delete-success');

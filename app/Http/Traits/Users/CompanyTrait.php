@@ -3,9 +3,10 @@
 namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
 use App\Models\Users\Company;
+use Carbon\Carbon;
 
 trait CompanyTrait{
-  /**
+    /**
      *  Main company
      *
      * @return App\Models\Users\Company
@@ -34,7 +35,7 @@ trait CompanyTrait{
     }
 
     /**
-     *  Count of companies
+     * Count of companies
      *
      * @return int $count
      */
@@ -46,5 +47,89 @@ trait CompanyTrait{
         ])->count();
 
         return $count;
+    }
+
+    /**
+     * Update the created_at attribute of the specified company
+     *
+     *  @param App\Models\Users\Company      $company
+     */
+    public function companyCreatedAt(Company $company){
+        $company->created_at = Carbon::now();
+        $company->save();
+    }
+
+    /**
+     * Toastr Message - Company successfully created
+     *
+     * @param App\Models\Users\Company      $company
+     * @return string                       $text
+     */
+    public function companyCreateMsg(Company $company){
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-create-success');
+
+        return $text;
+    }
+
+    /**
+     * Update the updated_at attribute of the specified company
+     *
+     *  @param App\Models\Users\Company      $company
+     */
+    public function companyUpdatedAt(Company $company){
+        $company->updated_at = Carbon::now();
+        $company->save();
+    }
+
+    /**
+     * Toastr Message - Company successfully updated
+     *
+     * @param App\Models\Users\Company      $company
+     * @return string                       $text
+     */
+    public function companyUpdateMsg(Company $company){
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-update-success');
+
+        return $text;
+    }
+
+    /**
+     * Delete the specified company
+     *
+     * @param App\Models\Users\Company      $company
+     */
+    public function companyDelete(Company $company){
+        if($company->is_deleted == false){
+            $company->is_deleted = true;
+            $company->save();
+        }
+    }
+
+    /**
+     * Update the deleted_at attribute of the specified company
+     *
+     * @param  App\Models\Users\Company      $company
+     */
+    public function companyDeletedAt(Company $company){
+        $company->deleted_at = Carbon::now();
+        $company->save();
+    }
+
+    /**
+     * Toastr Message - Company successfully deleted
+     *
+     * @param  App\Models\Users\Company         $company
+     * @return string                           $text
+     */
+    public function companyDeleteMsg(Company $company){
+        $text = __('page.companies.toastr-title') . " "
+        . $company->company_name . '\n'
+        . __('page.generic.toastr-delete-success');
+
+        return $text;
     }
 }

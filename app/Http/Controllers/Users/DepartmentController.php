@@ -7,9 +7,7 @@ use App\Http\Requests\DepartmentPostRequest;
 use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Users\CompanyTrait;
 use App\Models\Users\Department;
-use Illuminate\Http\Request;
 use App\Models\Users\User;
-use Carbon\Carbon;
 
 class DepartmentController extends Controller
 {
@@ -53,15 +51,14 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(DepartmentPostRequest $request){
-        //New Department
+        //Department Create - form data
         $department = Department::create($request->all());
 
-        //Department date time creation
-        $department->created_at = Carbon::now();
-        $department->save();
+        //Department Update - created_at
+        $this->departmentCreatedAt($department);
 
-        //Department successfully created
-        $text = $this->msgCreateDepartment($department);
+        //Message: department created
+        $text = $this->departmentCreateMsg($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);
@@ -94,15 +91,14 @@ class DepartmentController extends Controller
         //Specified department
         $department = Department::findOrFail($id);
 
-        //Department Update
+        //Department Update - form data
         $department->update($request->all());
 
-        //Department date time update
-        $department->updated_at = Carbon::now();
-        $department->save();
+        //Department Update - updated_at
+        $this->departmentUpdatedAt($department);
 
-        //Department successfully updated
-        $text = $this->msgEditDepartment($department);
+        //Message: department updated
+        $text = $this->departmentUpdateMsg($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);
@@ -121,16 +117,17 @@ class DepartmentController extends Controller
         //Specified Department
         $department = Department::findOrFail($id);
 
-        if($department->is_deleted == false){
-            $department->is_deleted = true;
-            $department->save();
-        }
+        //Department Delete
+        $this->departmentDelete($department);
+
+        //Department Update - deleted_at
+        $this->departmentDeletedAt($department);
 
         //Users Mass Update to Default Department
         User::where('department_id', $id)->update(['department_id' => 1]);
 
-        //Department successfully deleted
-        $text = $this->msgDeleteDepartment($department);
+        //Message: department deleted
+        $text = $this->departmentDeleteMsg($department);
 
         //Redirect: Departments List
         return redirect()->route('departments')->with('message', $text);

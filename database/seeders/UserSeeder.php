@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -29,7 +30,8 @@ class UserSeeder extends Seeder
                 'user_role_id'  =>  1,
                 'user_image_id' =>  1,
                 'department_id' =>  7,
-                'company_id'    =>  2
+                'company_id'    =>  2,
+                'created_at'    => Carbon::now(),
             ],
             /**
              * Gestor Nao Conformidades
@@ -46,7 +48,8 @@ class UserSeeder extends Seeder
                 'user_role_id'  =>  2,
                 'user_image_id' =>  1,
                 'department_id' =>  4,
-                'company_id'    =>  2
+                'company_id'    =>  2,
+                'created_at'    => Carbon::now(),
             ],
             /**
              * Responsavel Departamento
@@ -63,7 +66,8 @@ class UserSeeder extends Seeder
                 'user_role_id'  =>  3,
                 'user_image_id' =>  1,
                 'department_id' =>  1,
-                'company_id'    =>  2
+                'company_id'    =>  2,
+                'created_at'    => Carbon::now(),
             ],
             /**
              * Colaboradores
@@ -80,7 +84,8 @@ class UserSeeder extends Seeder
                 'user_role_id'  =>  4,
                 'user_image_id' =>  1,
                 'department_id' =>  1,
-                'company_id'    =>  2
+                'company_id'    =>  2,
+                'created_at'    => Carbon::now(),
             ],
             //password: admin123
             [
@@ -94,7 +99,8 @@ class UserSeeder extends Seeder
                 'user_role_id'  =>  4,
                 'user_image_id' =>  1,
                 'department_id' =>  1,
-                'company_id'    =>  2
+                'company_id'    =>  2,
+                'created_at'    => Carbon::now(),
             ]
             //
         ]);

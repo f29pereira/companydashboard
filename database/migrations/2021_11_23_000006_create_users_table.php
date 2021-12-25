@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');                        //user phone
             $table->string('profession');                   //user profession
             $table->string('password');                     //user password
-            $table->boolean('is_deleted')->default(false);  //is user deleted ?
+            $table->boolean('is_deleted')->default(false);  //is user deleted ? default: no
             //FK - user_roles table
             $table->foreignId('user_role_id')->default(4)->constrained();   //default: role: 'Colaborador'
             //FK - user_images table
@@ -35,7 +35,8 @@ class CreateUsersTable extends Migration
             $table->foreignId('company_id')->default(2)->constrained();     //default: Main company
             //$table->rememberToken();
             //$table->timestamp('email_verified_at')->nullable();
-            $table->timestamps();
+            $table->timestamps();                           //user create/update time
+            $table->timestamp('deleted_at')->nullable();    //user delete time
         });
     }
 

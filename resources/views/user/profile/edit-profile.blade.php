@@ -173,8 +173,8 @@
 
                         {{-- Role, Department, Company --}}
                         <div class="row" style="display:none">
-                            <input type="text" class="form-control" value="{{ $user->user_role_id }}" name="user_image_id" id="">
-                            <input type="text" class="form-control" value="{{ $user->user_image_id }}" name="user_role_id" id="">
+                            <input type="text" class="form-control" value="{{ $user->user_role_id }}" name="user_role_id" id="">
+                            <input type="text" class="form-control" value="{{ $user->user_image_id }}" name="user_image_id" id="">
                             <input type="text" class="form-control" value="{{ $user->department_id }}" name="department_id" id="">
                             <input type="text" class="form-control" value="{{ $user->company_id }}" name="company_id" id="">
                         </div>
