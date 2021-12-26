@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Controllers\Users;
+
+use App\Http\Controllers\Controller\Controller;
+use App\Http\Traits\Users\CompanyTrait;
+use App\Http\Traits\Users\DepartmentTrait;
+
+class ManagementController extends Controller
+{
+    use CompanyTrait;
+    use DepartmentTrait;
+
+    /**
+     * Display a management menu.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function managementMenu(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Companies count
+        $companies = $this->companyCount();
+
+        //Departments count
+        $departments = $this->departmentCount();
+
+        return view('admin.management.menu', compact('companies', 'departments'));
+    }
+}
