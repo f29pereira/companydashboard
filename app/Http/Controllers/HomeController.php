@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller\Controller;
-use App\Http\Traits\Users\UserTrait;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Traits\Users\AuthUserTrait;
 
-class HomeController extends Controller
-{
-    use UserTrait;
+/**
+ * Home - Controller
+ */
+class HomeController extends Controller{
+    use AuthUserTrait;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -26,8 +26,8 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        //Authenticated User
-        $userName = $this->userName(Auth::user());
+        //Authenticated User Name
+        $userName = $this->authName();
 
         return view('home', compact('userName'));
     }

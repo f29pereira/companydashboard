@@ -4,6 +4,9 @@ namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
 use App\Models\Users\UserRole;
 
+/**
+ * User Roles - Trait
+ */
 trait UserRoleTrait{
     /**
      * List of roles

@@ -25,5 +25,6 @@ return [
     */
     'admin'             => 'Ação disponível apenas para o role de utilizador - Administrador.',
     'departmentResp'    => 'Ação disponível apenas para o role de utilizador - Responsável de Departamento.',
-    'user'              => 'Ação disponível apenas para o role de utilizador - Colaborador.',
+    'user_company'      => 'Ação disponível apenas para os colaboradores da empresa.',
+    'user'              => 'Ação disponível apenas para os utilizadores registados.',
 ];

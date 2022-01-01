@@ -1,13 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', __('page.titles.management-menu'))
+@section('title', __('page.titles.users-menu'))
 
 @section('content_header')
-
 @stop
 
 @section('content')
-    {{-- Permisson: Administrator --}}
+    {{-- Permission: Administrator --}}
     @can('is_admin')
         <div class="row">
             <div class="col m-3">
@@ -21,47 +20,57 @@
                         </a>
                         {{-- Card Title --}}
                         <h3 class="card-title">
-                            <i class="fas fa-th fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('page.management-menu.index-title') }}
+                            <i class="fas fa-users fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('users.menu.card-title') }}
                         </h3>
                     </div>
+                    {{-- /.Card Header --}}
+
                     {{-- Card Body --}}
                     <div class="card-body">
                         <div class="row">
-                            {{-- Company --}}
+                            {{-- Registed Users --}}
                             <div class="col">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                      <h3>{{ $companies }}</h3>
-                                      <p>{{ __('page.management-menu.registered-companies') }}</p>
+                                      <h3>{{ $users }}</h3>
+                                      <p>{{ __('users.menu.registered-users') }}</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="far fa-building text-white"></i>
+                                        <i class="fas fa-users text-white"></i>
                                     </div>
-                                    <a href="{{ url('/companies/menu') }}" class="small-box-footer">
-                                      {{ __('page.generic.moreInfo') }} <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ url('/users/index') }}" class="small-box-footer">
+                                        {{ __('page.generic.moreInfo') }}
+                                        <i class="fas fa-arrow-circle-right"></i>
                                     </a>
-                                  </div>
+                                </div>
                             </div>
-                            {{-- Departments --}}
+                            {{-- /.Registed Users --}}
+
+                            {{-- User Roles --}}
                             <div class="col">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                      <h3>{{ $departments }}</h3>
-                                      <p>{{ __('page.management-menu.registered-departments') }}</p>
+                                      <h3>{{ $roles }}</h3>
+                                      <p>{{ __('users.menu.registered-roles') }}</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-user-tie text-white"></i>
+                                        <i class="fas fa-users-cog text-white"></i>
                                     </div>
-                                    <a href="{{ url('/departments/index') }}" class="small-box-footer">
-                                        {{ __('page.generic.moreInfo') }} <i class="fas fa-arrow-circle-right"></i>
+                                    <a href="{{ url('/roles/index') }}" class="small-box-footer">
+                                        {{ __('page.generic.moreInfo') }}
+                                        <i class="fas fa-arrow-circle-right"></i>
                                     </a>
-                                  </div>
+                                </div>
                             </div>
+                            {{-- /.User Roles --}}
                         </div>
                     </div>
+                    {{-- /.Card Body --}}
                 </div>
+                {{-- /.Card --}}
             </div>
         </div>
     @endcan
+    {{-- /.Permission: Administrator --}}
 @endsection

@@ -22,7 +22,7 @@ class DepartmentPostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'department_name' => 'required'
+            'department_name' => ['required','string','max:50', 'unique:departments']
         ];
     }
 
@@ -32,8 +32,6 @@ class DepartmentPostRequest extends FormRequest
      * @return array
      */
     public function messages(){
-        return[
-            //'department_name.required' => 'O campo é obrigatório',
-        ];
+        return[];
     }
 }

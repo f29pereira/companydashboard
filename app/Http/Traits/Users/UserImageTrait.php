@@ -4,6 +4,9 @@ namespace App\Http\Traits\Users;
 use Illuminate\Support\Facades\DB;
 use App\Models\Users\UserImage;
 
+/**
+ * Authenticated User Image - Trait
+ */
 trait UserImageTrait{
     /**
      * Create user image

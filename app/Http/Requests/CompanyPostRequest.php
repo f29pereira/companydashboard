@@ -22,13 +22,13 @@ class CompanyPostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'company_name' => 'required|string',
-            'company_description' => 'required|string',
-            'sector' => 'required|string',
-            'company_phone' => 'required|string',
-            'headquarters' => 'required|string',
-            'website' => 'required|url',
-            'company_types_id' => 'required'
+            'company_name'          => ['required','string','max:50'],
+            'company_description'   => ['required'],
+            'sector'                => ['required','string','max:50'],
+            'company_phone'         => 'required',
+            'headquarters'          => ['required','string','max:50'],
+            'website'               => ['required','url'],
+            'company_types_id'      => 'required',
         ];
     }
 

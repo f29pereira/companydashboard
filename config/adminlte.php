@@ -240,6 +240,19 @@ return [
             'text' => 'home',
             'url'  => '/home',
             'icon' => 'fas fa-home',
+            'can'  => 'is_user',
+        ],
+        [
+            'text' => 'department',
+            'url'  => '/user/index',
+            'icon' => 'fas fa-user-tie',
+            'can'  => 'is_user_company',
+        ],
+        [
+            'text' => 'occurrences',
+            'url'  => '/occurrences/index',
+            'icon' => 'fas fa-exclamation-triangle',
+            'can'  => 'is_user_company',
         ],
         [
             'text'        => 'users_menu',

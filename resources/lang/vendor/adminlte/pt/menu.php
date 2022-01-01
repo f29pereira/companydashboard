@@ -1,7 +1,14 @@
 <?php
 
 return [
-
+    /*
+    |--------------------------------------------------------------------------
+    | AdminLTE Left Menu - Language Lines (pt)
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines contain the values for the adminLTE left menu.
+    |
+    */
     'main_navigation'               => 'MAIN NAVIGATION',
     'blog'                          => 'Blog',
     'pages'                         => 'Pages',
@@ -16,12 +23,20 @@ return [
     'important'                     => 'Important',
     'warning'                       => 'Warning',
     'information'                   => 'Information',
-    /**
-     * Custom Menu
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | AdminLTE Left Custom Menu - Language Lines (pt)
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines contain the values for the custom
+    | adminLTE left menu.
+    |
+    */
     'home'                          => 'Home',
+    'department'                    => 'Departamento',
+    'occurrences'                   => 'Ocorrências',
     'users_menu'                    => 'Utilizadores',
     'management_menu'               => 'Gestão',
-    'user_account'                  => 'Conta Utilizador',
+    'user_account'                  => 'Conta de Utilizador',
     'user_profile'                  => 'Meu perfil',
 ];

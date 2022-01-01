@@ -13,6 +13,7 @@
 }
     </style>
 
+    {{-- Permission: Registered User --}}
     @can('is_user')
     <div class="row">
         <div class="col m-3">
@@ -27,7 +28,7 @@
                     {{-- Card Title --}}
                     <h3 class="card-title">
                         <i class="fas fa-user-circle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.users.index-profile-title') }}
+                        {{ __('users.index-profile-title') }}
                     </h3>
                 </div>
                 {{-- /.Card Header --}}
@@ -42,14 +43,14 @@
                                 <img class="rounded-circle border border-width-px border-info"
                                     id="{{ $user->user_image_id }}"
                                     src="{{ asset('images/default/'. $user->userImage->image_name) }}"
-                                    alt="{{ __('page.users.alt-picture') }}" width="250" height="250">
+                                    alt="{{ __('users.alt-picture') }}" width="250" height="250">
                                 {{-- /.Default Image --}}
                                 @else
                                 {{-- Custom Image --}}
                                 <img class="rounded-circle border border-width-px border-info"
                                     id="{{ $user->user_image_id }}"
                                     src="{{ asset('storage/users/'. $user->userImage->image_name) }}"
-                                    alt="{{ __('page.users.alt-picture') }}" width="250" height="250">
+                                    alt="{{ __('users.alt-picture') }}" width="250" height="250">
                                 {{-- /.Custom Image --}}
                                 @endif
                             </div>
@@ -61,7 +62,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- User Name --}}
                                     <div class="text-center">
-                                        <h4><i class="far fa-address-card text-info"></i>&nbsp;<strong>{{ __('page.users.label-name') }}</strong></h4>
+                                        <h4>
+                                            <i class="far fa-address-card text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-name') }}</strong>
+                                        </h4>
                                         <p>{{ $userName }}</p>
                                     </div>
                                     {{-- /.User Name --}}
@@ -69,7 +73,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- User Email --}}
                                     <div class="text-center">
-                                        <h4><i class="fas fa-envelope text-info"></i>&nbsp;<strong>{{ __('page.users.label-email') }}</strong></h4>
+                                        <h4>
+                                            <i class="fas fa-envelope text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-email') }}</strong>
+                                        </h4>
                                         <p>{{ $user->email }}</p>
                                     </div>
                                     {{-- /.User Email --}}
@@ -77,7 +84,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- User Phone --}}
                                     <div class="text-center">
-                                        <h4><i class="fas fa-phone-alt text-info"></i>&nbsp;<strong>{{ __('page.users.label-phone') }}</strong></h4>
+                                        <h4>
+                                            <i class="fas fa-phone-alt text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-phone') }}</strong>
+                                        </h4>
                                         <p>{{ $user->phone }}</p>
                                     </div>
                                     {{-- /.User Phone --}}
@@ -87,7 +97,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- Company --}}
                                     <div class="text-center">
-                                        <h4><i class="far fa-building text-info"></i>&nbsp;<strong>{{ __('page.users.label-company') }}</strong></h4>
+                                        <h4>
+                                            <i class="far fa-building text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-company') }}</strong>
+                                        </h4>
                                         <p>{{ $user->company->company_name }}</p>
                                     </div>
                                     {{-- /.Company --}}
@@ -95,7 +108,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- Department --}}
                                     <div class="text-center">
-                                        <h4><i class="fas fa-user-tie text-info"></i>&nbsp;<strong>{{ __('page.users.label-department') }}</strong></h4>
+                                        <h4>
+                                            <i class="fas fa-user-tie text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-department') }}</strong>
+                                        </h4>
                                         <p>{{ $user->department->department_name }}</p>
                                     </div>
                                     {{-- /.Department --}}
@@ -103,7 +119,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- User Profession --}}
                                     <div class="text-center">
-                                        <h4><i class="fas fa-briefcase text-info"></i>&nbsp;<strong>{{ __('page.users.label-profession') }}</strong></h4>
+                                        <h4>
+                                            <i class="fas fa-briefcase text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-profession') }}</strong>
+                                        </h4>
                                         <p>{{ $user->profession }}</p>
                                     </div>
                                     {{-- /.User Profession --}}
@@ -113,7 +132,10 @@
                                 <div class="col-md-4 mb-3">
                                     {{-- User Role --}}
                                     <div class="text-center">
-                                        <h4><i class="fas fa-users-cog text-info"></i>&nbsp;<strong>{{ __('page.users.label-role') }}</strong></h4>
+                                        <h4>
+                                            <i class="fas fa-users-cog text-info"></i>&nbsp;
+                                            <strong>{{ __('users.label-role') }}</strong>
+                                        </h4>
                                         <p>{{ $user->userRole->role_name }}</p>
                                     </div>
                                     {{-- /.User Role --}}
@@ -127,7 +149,7 @@
                         {{-- Edit User Photo --}}
                         <div class="">
                             <a class="btn bg-gradient-info btn-sm" href="{{ url('/user/edit-profile-pic/'.$user->id) }}"
-                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('page.users.tip-edit-profile_pic-btn') }}">
+                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('users.tip-edit-profile_pic-btn') }}">
                                 <i class="fas fa-camera fa-lg"></i>
                             </a>
                         </div>
@@ -135,7 +157,7 @@
                         {{-- Edit User Data --}}
                         <div class="">
                             <a class="btn bg-gradient-info btn-sm" href="{{ url('/user/edit-profile/'.$user->id) }}"
-                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('page.users.tip-edit-profile-btn') }}">
+                            role="button" data-toggle="tooltip" data-placement="right" title="{{ __('users.tip-edit-profile-btn') }}">
                                 <i class="fas fa-user-edit fa-lg"></i>
                             </a>
                         </div>
@@ -146,13 +168,7 @@
             </div>
         </div>
     </div>
+    {{-- /.Permission: Registered User --}}
     @endcan
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{ url('/css/my_style.css') }}">
-@stop
-
-@section('js')
-
-@stop

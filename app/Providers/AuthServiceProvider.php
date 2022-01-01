@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         /**
          * Determines if the user is an Administrator
          *
-         * @param \App\Models\Users\User $user
+         * @param \App\Models\Users\User            $user
          * @return \Illuminate\Auth\Access\Response
          */
         Gate::define('is_admin', function (User $user){
@@ -41,8 +41,8 @@ class AuthServiceProvider extends ServiceProvider
 
         /**
          *  Determines if the user is an Department Manager
-         * @param \App\Models\Users\User $user
-         *  @return \Illuminate\Auth\Access\Response
+         * @param \App\Models\Users\User            $user
+         * @return \Illuminate\Auth\Access\Response
          */
         Gate::define('is_departmentResp', function (User $user){
             return $user->user_role_id === 3
@@ -51,9 +51,20 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         /**
-         * Determines if the user is an Collaborator
-         * @param \App\Models\Users\User $user
-         *  @return \Illuminate\Auth\Access\Response
+         * Determines if the user is an company collaborator
+         * @param \App\Models\Users\User            $user
+         * @return \Illuminate\Auth\Access\Response
+         */
+        Gate::define('is_user_company', function (User $user){
+            return $user->user_role_id === 2 || $user->user_role_id === 3 || $user->user_role_id === 4
+                ? Response::allow()
+                : Response::deny(__('auth.user_company'));
+        });
+
+        /**
+         * Determines if the user is an registered user
+         * @param \App\Models\Users\User            $user
+         * @return \Illuminate\Auth\Access\Response
          */
         Gate::define('is_user', function (User $user){
             return $user->user_role_id === 1 || $user->user_role_id === 2 || $user->user_role_id === 3 || $user->user_role_id === 4

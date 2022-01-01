@@ -21,13 +21,13 @@
                     {{-- Card Title --}}
                     <h3 class="card-title">
                         <i class="fas fa-user-edit fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.users.edit-profile-pic') }}</h3>
+                        {{ __('users.edit-profile-pic') }}</h3>
                 </div>
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                        data-toggle="tooltip" data-placement="right" title="{{ __('page.users.tip-edit-profile_pic') }}"></i>
+                        data-toggle="tooltip" data-placement="right" title="{{ __('users.tip-edit-profile_pic') }}"></i>
                     </div>
                     {{-- Edit User Photo Form --}}
                     <form action="/user/update-profile-pic/{{ $user->id }}" method="POST" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
                             <div class="col-md-4 mb-3 mr-3">
                                 <div class="form-group">
                                     <label for="userPhoto" class="form-label">
-                                        {{ __('page.users.label-photo') }}&nbsp;&nbsp;
+                                        {{ __('users.label-photo') }}&nbsp;&nbsp;
                                     </label>
                                     <div class="input-group">
                                         <input type="file" name="image" id="userPhoto" class="form-control @error('image') is-invalid @enderror">

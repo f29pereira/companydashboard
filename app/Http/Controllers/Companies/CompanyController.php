@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Users;
+namespace App\Http\Controllers\Companies;
 
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Requests\CompanyPostRequest;
-use App\Http\Traits\Users\CompanyTypeTrait;
-use App\Http\Traits\Users\CompanyTrait;
-use App\Models\Users\Company;
+use App\Http\Traits\Companies\CompanyTypeTrait;
+use App\Http\Traits\Companies\CompanyTrait;
+use App\Models\Companies\Company;
 use App\Models\Users\User;
 
-class CompanyController extends Controller
-{
+/**
+ * Companies - Controller
+ */
+class CompanyController extends Controller{
     use CompanyTypeTrait;
     use CompanyTrait;
 
@@ -32,7 +34,7 @@ class CompanyController extends Controller
         //Company Types count
         $typesCount = $this->typeCount();
 
-        return view('admin.companies.companies-menu', compact('company','count', 'typesCount'));
+        return view('company.companies.menu', compact('company','count', 'typesCount'));
     }
 
 
@@ -51,7 +53,7 @@ class CompanyController extends Controller
         //Company List
         $companies = $this->companyList();
 
-        return view('admin.companies.index', compact('mainCompany','companies'));
+        return view('company.companies.index', compact('mainCompany','companies'));
     }
 
     /**
@@ -69,7 +71,7 @@ class CompanyController extends Controller
         //Company Types List
         $companyTypes = $this->typeList();
 
-        return view('admin.companies.create', compact('mainCompany', 'companyTypes'));
+        return view('company.companies.create', compact('mainCompany', 'companyTypes'));
     }
 
     /**
@@ -108,7 +110,7 @@ class CompanyController extends Controller
         //Main company
         $mainCompany = $this->companyMain();
 
-        return view('admin.companies.show', compact('company', 'mainCompany'));
+        return view('company.companies.show', compact('company', 'mainCompany'));
     }
 
     /**
@@ -130,7 +132,7 @@ class CompanyController extends Controller
         //Company Types
         $companyTypes = $this->typeList();
 
-        return view('admin.companies.edit', compact('company', 'mainCompany' ,'companyTypes'));
+        return view('company.companies.edit', compact('company', 'mainCompany' ,'companyTypes'));
     }
 
     /**
@@ -170,7 +172,7 @@ class CompanyController extends Controller
         //Selected Company
         $company = Company::findOrFail($id);
 
-        return view('admin.companies.edit-main', compact('company'));
+        return view('company.companies.edit-main', compact('company'));
     }
 
     /**

@@ -7,31 +7,18 @@ use App\Models\Users\User;
 use Carbon\Carbon;
 
 /**
- * User Trait
+ * Users - Trait
  */
 trait UserTrait{
     /**
-     * Authenticated user
+     * Count of registered users
      *
-     * @return App\Models\Users\User    $user
+     * @return int $count
      */
-    public function userAuth(){
-        //Authenticated User
-        $user = Auth::user();
+    public function userCount(){
+        $count = DB::table('users')->where('is_deleted', false)->count();
 
-        return $user;
-    }
-
-    /**
-     * User name and surname
-     *
-     * @param  App\Models\Users\User    $user
-     * @return string                   $name
-     */
-    public function userName(User $user){
-        $name = $user->first_name . ' ' . $user->last_name;
-
-        return $name;
+        return $count;
     }
 
     /**
@@ -53,28 +40,15 @@ trait UserTrait{
     }
 
     /**
-     * List of users with department
+     * User name and surname
      *
-     * @return array[] $list
+     * @param  App\Models\Users\User    $user
+     * @return string                   $name
      */
-    public function userDepartmentList(){
-        //Eager loading: department
-        $list = User::with(['department'])->where([
-            ['is_deleted', false] //User is not deleted
-        ])->get();
+    public function userName(User $user){
+        $name = $user->first_name . ' ' . $user->last_name;
 
-        return $list;
-    }
-
-    /**
-     * Count of registered users
-     *
-     *  @return int $count
-     */
-    public function userCount(){
-        $count = DB::table('users')->where('is_deleted', false)->count();
-
-        return $count;
+        return $name;
     }
 
     /**
@@ -94,34 +68,14 @@ trait UserTrait{
      * @return string                   $text
      */
     public function userUpdateMsg(User $user){
-        $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name  . '\n'
+        $text = __('users.toastr-title') . " " . $user->first_name . " " .  $user->last_name  . '\n'
         . __('page.generic.toastr-update-success');
 
         return $text;
     }
 
     /**
-     * Toastr Message - User profile data successfully updated
-     */
-    public function userUpdateProfileMsg(){
-        $text = __('page.users.toastr-user-profile');
-
-        return $text;
-    }
-
-    /**
-     * Toastr Message - User profile image successfully updated
-     *
-     * @return string                   $text
-     */
-    public function userUpdatePicMsg(){
-        $text = __('page.users.toastr-user-img');
-
-        return $text;
-    }
-
-    /**
-     * Delete the specified company type
+     * Delete the specified user
      *
      * @param  App\Models\Users\User    $user
      */
@@ -149,7 +103,7 @@ trait UserTrait{
      * @return string                   $text
      */
     public function userDeleteMsg(User $user){
-        $text = __('page.users.toastr-title') . " " . $user->first_name . " " .  $user->last_name . '\n'
+        $text = __('users.toastr-title') . " " . $user->first_name . " " .  $user->last_name . '\n'
         . __('page.generic.toastr-delete-success');
 
         return $text;

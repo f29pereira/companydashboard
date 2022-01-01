@@ -3,7 +3,6 @@
 @section('title', __('page.titles.roles-index'))
 
 @section('content_header')
-
 @stop
 
 @section('content')
@@ -14,17 +13,27 @@
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Users Menu --}}
-                    <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.users-menu') }}">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title">
-                        <i class="fas fa-users-cog fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.roles.index-title') }}
-                    </h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Users Menu --}}
+                        <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right"
+                        title="{{ __('page.link.users-menu') }}">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title">
+                            <i class="fas fa-users-cog fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('page.roles.index-title') }}
+                        </h3>
+                        {{-- Return: Users Menu --}}
+                        <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right"
+                        title="{{ __('page.link.users-menu') }}">
+                            <i class="fas fa-users fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
+                {{-- /.Card Header --}}
+
                 {{-- Card Body --}}
                 <div class="card-body">
                     <div class="mb-3">
@@ -95,9 +104,11 @@
                     </table>
                 </div>
             </div>
+            {{-- /.Card --}}
         </div>
     </div>
     @endcan
+    {{-- /.Permisson: Administrator --}}
 @endsection
 
 @section('css')

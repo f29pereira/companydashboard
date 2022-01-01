@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Users;
+namespace App\Models\Companies;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class CompanyType extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Company extends Model
      *
      * @var string $table
      */
-    protected $table = 'companies';
+    protected $table = 'company_types';
 
     /**
      * The attributes that are mass assignable.
@@ -22,13 +22,8 @@ class Company extends Model
      * @var string[]
      */
     protected $fillable = [
-        'company_name',
-        'company_description',
-        'sector',
-        'company_phone',
-        'headquarters',
-        'website',
-        'company_types_id'
+        'type_name',
+        'type_description'
     ];
 
     /**
@@ -39,17 +34,9 @@ class Company extends Model
     public $timestamps = false;
 
     /**
-     * Eloquent relation between User and Company
-     *
-     */
-    public function user(){
-        return $this->hasOne(User::class);
-    }
-
-    /**
      * Eloquent relation between CompanyType and Company
      */
-    public function companyTypes(){
-        return $this->belongsTo(CompanyType::class, 'company_types_id');
+    public function company(){
+        return $this->hasOne(Company::class);
     }
 }

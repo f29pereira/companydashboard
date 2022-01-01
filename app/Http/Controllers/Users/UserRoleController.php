@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller\Controller;
 use App\Http\Traits\Users\UserRoleTrait;
 use Illuminate\Http\Request;
 
-class UserRoleController extends Controller
-{
+/**
+ * User Roles - Controller
+ */
+class UserRoleController extends Controller{
     use UserRoleTrait;
 
     /**
@@ -22,6 +24,6 @@ class UserRoleController extends Controller
         //Users List
         $roles = $this->roleList();
 
-        return view('admin.roles.index', compact('roles'));
+        return view('user.user_roles.index', compact('roles'));
     }
 }
