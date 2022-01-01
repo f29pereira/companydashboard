@@ -141,6 +141,14 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        //Company Types
+        'type_name'=>[
+            'unique'    => 'Este nome de r.negócio já está a ser utilizado.'
+        ],
+        //Department
+        'department_name' => [
+            'unique'    => 'Este nome de departamento já está a ser utilizado.'
+        ]
     ],
 
     /*
@@ -172,7 +180,7 @@ return [
         'type_name'             => 'nome',
         'type_description'      => 'descrição',
         //Department
-        'department_name'       => 'nome',
+        'department_name'       => 'nome do departamento',
     ],
 
 ];

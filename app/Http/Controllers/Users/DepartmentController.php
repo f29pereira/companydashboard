@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Requests\DepartmentPostRequest;
 use App\Http\Traits\Users\DepartmentTrait;
-use App\Http\Traits\Users\CompanyTrait;
+use App\Http\Traits\Companies\CompanyTrait;
 use App\Models\Users\Department;
 use App\Models\Users\User;
 
-class DepartmentController extends Controller
-{
+/**
+ * Departments - Controller
+ */
+class DepartmentController extends Controller{
     use DepartmentTrait;
     use CompanyTrait;
 
@@ -29,7 +31,7 @@ class DepartmentController extends Controller
         //Departments List
         $departments = $this->departmentList();
 
-        return view('admin.departments.index', compact('mainCompany', 'departments'));
+        return view('user.departments.index', compact('mainCompany', 'departments'));
     }
 
     /**
@@ -41,7 +43,7 @@ class DepartmentController extends Controller
         //Admin Authorization
         $this->authorize('is_admin');
 
-        return view('admin.departments.create');
+        return view('user.departments.create');
     }
 
     /**
@@ -77,7 +79,7 @@ class DepartmentController extends Controller
         //Specified department
         $department = Department::findOrFail($id);
 
-        return view('admin.departments.edit', compact('department'));
+        return view('user.departments.edit', compact('department'));
     }
 
     /**

@@ -1,27 +1,37 @@
 @extends('adminlte::page')
 
-@section('title', __('page.titles.user_profile-edit'))
+@section('title', __('page.titles.users-edit'))
 
 @section('content_header')
 
 @stop
 
 @section('content')
-    @can('is_user')
+    {{-- Permisson: Administrator --}}
+    @can('is_admin')
     <div class="row">
         <div class="col m-3">
             {{-- Card --}}
             <div class="card card-info">
                 {{-- Card Header --}}
-                <div class="card-header d-flex justify-content-between">
-                    {{-- Return: Home --}}
-                    <a href="{{ url('/user/profile') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.my-profile') }}">
-                        <i class="far fa-arrow-alt-circle-left fa-lg"></i>
-                    </a>
-                    {{-- Card Title --}}
-                    <h3 class="card-title">
-                        <i class="fas fa-user-edit fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.users.edit-profile-title') }}</h3>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        {{-- Return: Users Management --}}
+                        <a href="{{ url('/users/index') }}" data-toggle="tooltip" data-placement="right"
+                        title="{{ __('page.link.user-index') }}">
+                            <i class="far fa-arrow-alt-circle-left fa-lg"></i>
+                        </a>
+                        {{-- Card Title --}}
+                        <h3 class="card-title">
+                            <i class="fas fa-user-edit fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            {{ __('users.edit-title') }}
+                        </h3>
+                        {{-- Return: Users Menu --}}
+                        <a href="{{ url('/users/menu') }}" data-toggle="tooltip" data-placement="right"
+                        title="{{ __('page.link.users-menu') }}">
+                            <i class="fas fa-users fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
                 {{-- /.Card Header --}}
 
@@ -29,23 +39,23 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <i class="far fa-question-circle text-info fa-lg"
-                        data-toggle="tooltip" data-placement="right" title="{{ __('page.users.tip-edit-profile') }}"></i>
+                         data-toggle="tooltip" data-placement="right" title="{{ __('page.users.tip-edit') }}"></i>
                     </div>
                     {{-- Edit User Form --}}
-                    <form action="/user/update-profile/{{ $user->id }}" method="POST" novalidate>
+                    <form action="/users/update/{{ $user->id }}" method="POST" novalidate>
                         @csrf
                         <div class="row">
-                            {{-- User First Name --}}
-                            <div class="col-md-4 mb-3 mr-3">
+                            {{-- First Name --}}
+                            <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userFirstName" class="form-label">
-                                        {{ __('page.users.label-first_name') }}&nbsp;&nbsp;
+                                        {{ __('users.label-first_name') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="first_name" id="userFirstName" class="form-control @error('first_name') is-invalid @enderror"
-                                        value="{{ $user->first_name }}" placeholder="{{ __('page.users.text-first_name') }}">
+                                        value="{{ $user->first_name }}" placeholder="{{ __('users.text-first_name') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="far fa-address-card fa-lg text-info"></i></span>
@@ -60,18 +70,18 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- / .User First Name --}}
-                            {{-- User Last Name --}}
-                            <div class="col-md-4 mb-3 mr-3">
+                            {{-- /.First Name --}}
+                            {{-- Last Name --}}
+                            <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userLastName" class="form-label">
-                                        {{ __('page.users.label-last_name') }}&nbsp;&nbsp;
+                                        {{ __('users.label-last_name') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="last_name" id="userLastName" class="form-control @error('last_name') is-invalid @enderror"
-                                        value="{{ $user->last_name }}" placeholder="{{ __('page.users.text-last_name') }}">
+                                        value="{{ $user->last_name }}" placeholder="{{ __('users.text-last_name') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="far fa-address-card fa-lg text-info"></i></span>
@@ -86,20 +96,20 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- / .User Last Name --}}
+                            {{-- /.Last Name --}}
                         </div>
                         <div class="row">
-                            {{-- User Email --}}
-                            <div class="col-md-4 mb-3 mr-3">
+                            {{-- Email --}}
+                            <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userEmail" class="form-label">
-                                        {{ __('page.users.label-email') }}&nbsp;&nbsp;
+                                        {{ __('users.label-email') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="email"  id="userEmail" class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ $user->email }}" placeholder="{{ __('page.users.text-email') }}">
+                                        value="{{ $user->email }}" placeholder="{{ __('users.text-email') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="fas fa-envelope fa-lg text-info"></i></span>
@@ -114,18 +124,18 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- / .User Email --}}
-                            {{-- User Phone --}}
-                            <div class="col-md-4 mb-3 mr-3">
+                            {{-- /.Email --}}
+                            {{-- Phone --}}
+                            <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="userPhone" class="form-label">
-                                        {{ __('page.users.label-phone') }}&nbsp;&nbsp;
+                                        {{ __('users.label-phone') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
                                         <input type="text" name="phone" id="userPhone" class="form-control @error('phone') is-invalid @enderror"
-                                        value="{{ $user->phone }}" placeholder="{{ __('page.users.text-phone') }}">
+                                        value="{{ $user->phone }}" placeholder="{{ __('users.text-phone') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="fas fa-phone-alt fa-lg text-info"></i></span>
@@ -140,20 +150,58 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- / .User Phone --}}
+                            {{-- /.Phone --}}
                         </div>
                         <div class="row">
-                            {{-- User Profession --}}
-                            <div class="col-md-4 mb-3 mr-3">
+                            {{-- Department --}}
+                            <div class="col-md-4 mb-3">
                                 <div class="form-group">
-                                    <label for="userProfession" class="form-label">
-                                        {{ __('page.users.label-profession') }}&nbsp;&nbsp;
+                                    <label for="userDepartment" class="form-label">
+                                        {{ __('users.label-department') }}&nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     <div class="input-group">
-                                        <input type="text" name="profession" id="userProfession" class="form-control @error('phone') is-invalid @enderror"
-                                        value="{{ $user->profession }}" placeholder="{{ __('page.users.text-profession') }}">
+                                        <select name="department_id" id="userDepartment" class="form-control @error('department_id') is-invalid @enderror">
+                                            @if ($user->department_id == 1)
+                                            {{-- Default User Department --}}
+                                            <option value="">{{ __('users.text-department') }}</option>
+                                            @else
+                                            {{-- User Department --}}
+                                            <option value="{{ $user->department_id }}">{{ $user->department->department_name }}</option>
+                                            @endif
+                                            @foreach ($departments as $department)
+                                            <option value="{{ $department->id }}" {{ $user->department_id == $department->id ? 'selected' : '' }}>
+                                                {{ $department->department_name }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-user-tie fa-lg text-info"></i></span>
+                                            </div>
+                                        </div>
+                                        {{-- Error Message --}}
+                                        @error('department_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- /.Department --}}
+                            {{-- Profession --}}
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="userProfession" class="form-label">
+                                        {{ __('users.label-profession') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="text" name="profession" id="userProfession" class="form-control @error('profession') is-invalid @enderror"
+                                        value="{{ $user->profession }}" placeholder="{{ __('users.text-profession') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span><i class="fas fa-briefcase fa-lg text-info"></i></span>
@@ -168,14 +216,45 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- /.User Profession --}}
+                            {{-- /.Profession --}}
+                        </div>
+                        <div class="row">
+                            {{-- Role --}}
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="userRole" class="form-label">
+                                        {{ __('users.label-role') }}&nbsp;&nbsp;
+                                        <i class="fas fa-asterisk text-danger fa-sm"
+                                        data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
+                                    </label>
+                                    <div class="input-group">
+                                        <select name="user_role_id" id="userRole" class="form-control @error('user_role_id') is-invalid @enderror">
+                                            @foreach ($roles as $role)
+                                            <option value="{{ $role->id }}" {{ $user->user_role_id == $role->id ? 'selected' : '' }}>
+                                                {{ $role->role_name }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span><i class="fas fa-users-cog fa-lg text-info"></i></span>
+                                            </div>
+                                        </div>
+                                        {{-- Error Message --}}
+                                        @error('user_role_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- /.Role --}}
                         </div>
 
                         {{-- Role, Department, Company --}}
                         <div class="row" style="display:none">
-                            <input type="text" class="form-control" value="{{ $user->user_role_id }}" name="user_role_id" id="">
                             <input type="text" class="form-control" value="{{ $user->user_image_id }}" name="user_image_id" id="">
-                            <input type="text" class="form-control" value="{{ $user->department_id }}" name="department_id" id="">
                             <input type="text" class="form-control" value="{{ $user->company_id }}" name="company_id" id="">
                         </div>
 
@@ -200,4 +279,5 @@
         </div>
     </div>
     @endcan
+    {{-- /.Permisson: Administrator --}}
 @endsection

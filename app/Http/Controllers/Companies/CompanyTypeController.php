@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Users;
+namespace App\Http\Controllers\Companies;
 
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Requests\CompanyTypePostRequest;
-use App\Http\Traits\Users\CompanyTypeTrait;
-use App\Http\Traits\Users\CompanyTrait;
-use App\Models\Users\CompanyType;
-use App\Models\Users\Company;
+use App\Http\Traits\Companies\CompanyTypeTrait;
+use App\Http\Traits\Companies\CompanyTrait;
+use App\Models\Companies\CompanyType;
+use App\Models\Companies\Company;
 
-class CompanyTypeController extends Controller
-{
+/**
+ * Company Types - Controller
+ */
+class CompanyTypeController extends Controller{
     use CompanyTypeTrait;
     use CompanyTrait;
 
@@ -29,7 +31,7 @@ class CompanyTypeController extends Controller
         //Company Type List
         $companyTypes = $this->typeList();
 
-        return view('admin.company-types.index', compact('mainCompany','companyTypes'));
+        return view('company.company-types.index', compact('mainCompany','companyTypes'));
     }
 
     /**
@@ -41,7 +43,7 @@ class CompanyTypeController extends Controller
         //Admin Authorization
         $this->authorize('is_admin');
 
-        return view('admin.company-types.create');
+        return view('company.company-types.create');
     }
 
     /**
@@ -77,7 +79,7 @@ class CompanyTypeController extends Controller
         //Specified Company Type
         $companyType = CompanyType::findOrFail($id);
 
-        return view('admin.company-types.edit', compact('companyType'));
+        return view('company.company-types.edit', compact('companyType'));
     }
 
     /**

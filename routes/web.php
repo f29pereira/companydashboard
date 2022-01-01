@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Users\ManagementController;
-use App\Http\Controllers\Users\CompanyController;
-use App\Http\Controllers\Users\CompanyTypeController;
-use App\Http\Controllers\Users\DepartmentController;
+//Users Controllers
+use App\Http\Controllers\Users\AuthUserController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
+use App\Http\Controllers\Users\DepartmentController;
+use App\Http\Controllers\Users\ManagementController;
+//Company Controllers
+use App\Http\Controllers\Companies\CompanyController;
+use App\Http\Controllers\Companies\CompanyTypeController;
+//Nonconformity Controllers
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +56,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/roles/index', [UserRoleController::class, 'index'])->name('roles');
 
 /**
- * User
+ * Users
  */
 Route::get('/users/menu', [UserController::class, 'usersMenu'])->name('menuUsers');
 
@@ -67,17 +71,19 @@ Route::post('/users/update/{id}', [UserController::class, 'update'])->name('upda
 Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('deleteUser');
 
 /**
- * User Profile
+ * Authenticated User
  */
-Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/user/index', [AuthUserController::class, 'index'])->name('usersDepartment');
 
-Route::get('/user/edit-profile-pic/{id}', [UserController::class, 'editProfilePic'])->name('editProfilePic');
+Route::get('/user/profile', [AuthUserController::class, 'profile'])->name('profile');
 
-Route::post('/user/update-profile-pic/{id}', [UserController::class, 'updateProfilePic'])->name('updateProfilePic');
+Route::get('/user/edit-profile-pic/{id}', [AuthUserController::class, 'editProfilePic'])->name('editProfilePic');
 
-Route::get('/user/edit-profile/{id}', [UserController::class, 'editProfile'])->name('editProfile');
+Route::post('/user/update-profile-pic/{id}', [AuthUserController::class, 'updateProfilePic'])->name('updateProfilePic');
 
-Route::post('/user/update-profile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile');
+Route::get('/user/edit-profile/{id}', [AuthUserController::class, 'editProfile'])->name('editProfile');
+
+Route::post('/user/update-profile/{id}', [AuthUserController::class, 'updateProfile'])->name('updateProfile');
 
 /**
  * Management Menu
@@ -136,3 +142,11 @@ Route::get('/departments/edit/{id}', [DepartmentController::class, 'edit'])->nam
 Route::post('/departments/update/{id}', [DepartmentController::class, 'update'])->name('updateDepartment');
 
 Route::get('/departments/delete/{id}', [DepartmentController::class, 'softDelete'])->name('deleteDepartment');
+
+/**
+ * Occurrences
+ */
+Route::get('/occurrences/index', function () {
+    return view('nonconformity.occurrence.index');
+});
+

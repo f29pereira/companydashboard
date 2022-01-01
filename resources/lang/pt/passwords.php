@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Password Reset - Language Lines (en)
+    | Password Reset - Language Lines (pt)
     |--------------------------------------------------------------------------
     |
     | The following language lines are the default lines which match reasons
@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset'     => 'Your password has been reset!',
-    'sent'      => 'We have emailed your password reset link!',
-    'throttled' => 'Please wait before retrying.',
-    'token'     => 'This password reset token is invalid.',
-    'user'      => "We can't find a user with that email address.",
+    'reset'     => 'A sua password foi alterada!',
+    'sent'      => 'O link de redefinição da password foi enviado por email!',
+    'throttled' => 'Por favor aguarde antes de tentar novamente.',
+    'token'     => 'Este token de reset de password é inválido.',
+    'user'      => "Não conseguimos encontrar um utilizador com esse endereço de email.",
 
 ];

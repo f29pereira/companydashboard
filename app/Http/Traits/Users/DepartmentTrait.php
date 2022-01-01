@@ -6,7 +6,7 @@ use App\Models\Users\Department;
 use Carbon\Carbon;
 
 /**
- * Department Trait
+ * Departments - Trait
  */
 trait DepartmentTrait{
     /**

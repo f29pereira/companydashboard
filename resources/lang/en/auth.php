@@ -25,5 +25,6 @@ return [
     */
     'admin'             => 'Action only available to the Administrator user role.',
     'departmentResp'    => 'Action only available to the Department manager user role.',
+    'user_company'      => 'Action only available to the company collaborators',
     'user'              => 'Action only available to the registered users.',
 ];

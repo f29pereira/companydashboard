@@ -22,8 +22,8 @@ class CompanyTypePostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'type_name' => 'required',
-            'type_description' => 'required'
+            'type_name'         => ['required','string','max:50','unique:company_types'],
+            'type_description'  => ['required','max:250']
         ];
     }
 

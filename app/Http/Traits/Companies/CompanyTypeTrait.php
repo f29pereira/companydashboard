@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Traits\Users;
+namespace App\Http\Traits\Companies;
 use Illuminate\Support\Facades\DB;
-use App\Models\Users\CompanyType;
+use App\Models\Companies\CompanyType;
 use Carbon\Carbon;
 
 /**
- * Company Type Trait
+ * Company Types - Trait
  */
 trait CompanyTypeTrait{
     /**
