@@ -12,7 +12,7 @@ trait CompanyTrait{
     /**
      *  Main company
      *
-     * @return App\Models\Users\Company
+     * @return App\Models\Companies\Company
      */
     public function companyMain(){
         //Company Main
@@ -55,7 +55,7 @@ trait CompanyTrait{
     /**
      * Update the created_at attribute of the specified company
      *
-     *  @param App\Models\Users\Company      $company
+     *  @param App\Models\Companies\Company      $company
      */
     public function companyCreatedAt(Company $company){
         $company->created_at = Carbon::now();
@@ -65,7 +65,7 @@ trait CompanyTrait{
     /**
      * Toastr Message - Company successfully created
      *
-     * @param App\Models\Users\Company      $company
+     * @param App\Models\Companies\Company      $company
      * @return string                       $text
      */
     public function companyCreateMsg(Company $company){
@@ -79,7 +79,7 @@ trait CompanyTrait{
     /**
      * Update the updated_at attribute of the specified company
      *
-     *  @param App\Models\Users\Company      $company
+     *  @param App\Models\Companies\Company      $company
      */
     public function companyUpdatedAt(Company $company){
         $company->updated_at = Carbon::now();
@@ -89,7 +89,7 @@ trait CompanyTrait{
     /**
      * Toastr Message - Company successfully updated
      *
-     * @param App\Models\Users\Company      $company
+     * @param App\Models\Companies\Company      $company
      * @return string                       $text
      */
     public function companyUpdateMsg(Company $company){
@@ -103,7 +103,7 @@ trait CompanyTrait{
     /**
      * Delete the specified company
      *
-     * @param App\Models\Users\Company      $company
+     * @param App\Models\Companies\Company      $company
      */
     public function companyDelete(Company $company){
         if($company->is_deleted == false){
@@ -115,7 +115,7 @@ trait CompanyTrait{
     /**
      * Update the deleted_at attribute of the specified company
      *
-     * @param  App\Models\Users\Company      $company
+     * @param  App\Models\Companies\Company      $company
      */
     public function companyDeletedAt(Company $company){
         $company->deleted_at = Carbon::now();
@@ -125,7 +125,7 @@ trait CompanyTrait{
     /**
      * Toastr Message - Company successfully deleted
      *
-     * @param  App\Models\Users\Company         $company
+     * @param  App\Models\Companies\Company         $company
      * @return string                           $text
      */
     public function companyDeleteMsg(Company $company){

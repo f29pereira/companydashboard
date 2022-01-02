@@ -43,7 +43,7 @@ trait CompanyTypeTrait{
     /**
      * Update the created_at attribute of the specified company type
      *
-     * @param App\Models\Users\CompanyType      $companyType
+     * @param App\Models\Companies\CompanyType      $companyType
      */
     public function typeCreatedAt(CompanyType $companyType){
         $companyType->created_at = Carbon::now();
@@ -53,7 +53,7 @@ trait CompanyTypeTrait{
     /**
      * Toastr Message - Company Type successfully created
      *
-     * @param  App\Models\Users\CompanyType     $companyType
+     * @param  App\Models\Companies\CompanyType     $companyType
      * @return string                           $text
      */
     public function typeCreateMsg(CompanyType $companyType){
@@ -67,7 +67,7 @@ trait CompanyTypeTrait{
     /**
      * Update the updated_at attribute of the specified company type
      *
-     * @param App\Models\Users\CompanyType      $companyType
+     * @param App\Models\Companies\CompanyType      $companyType
      */
     public function typeUpdatedAt(CompanyType $companyType){
         $companyType->updated_at = Carbon::now();
@@ -77,7 +77,7 @@ trait CompanyTypeTrait{
     /**
      * Toastr Message - Company Type successfully updated
      *
-     * @param  App\Models\Users\CompanyType     $companyType
+     * @param  App\Models\Companies\CompanyType     $companyType
      * @return string                           $text
      */
     public function typeUpdateMsg(CompanyType $companyType){
@@ -91,7 +91,7 @@ trait CompanyTypeTrait{
     /**
      * Delete the specified company type
      *
-     * @param  App\Models\Users\CompanyType     $companyType
+     * @param  App\Models\Companies\CompanyType     $companyType
      */
     public function typeDelete(CompanyType $companyType){
         if($companyType->is_deleted == false){
@@ -103,7 +103,7 @@ trait CompanyTypeTrait{
     /**
      * Update the deleted_at attribute of the specified company type
      *
-     * @param  App\Models\Users\CompanyType      $companyType
+     * @param  App\Models\Companies\CompanyType      $companyType
      */
     public function typeDeletedAt(CompanyType $companyType){
         $companyType->deleted_at = Carbon::now();
@@ -113,7 +113,7 @@ trait CompanyTypeTrait{
     /**
      * Toastr Message - Company Type successfully deleted
      *
-     * @param  App\Models\Users\CompanyType     $companyType
+     * @param  App\Models\Companies\CompanyType     $companyType
      * @return string                           $text
      */
     public function typeDeleteMsg(CompanyType $companyType){

@@ -36,6 +36,11 @@ class AuthUserController extends Controller{
         //Auth User - Department
         $department = $this->authDepartment();
 
+        //Auth User - Default Department
+        if ($this->authDepartment()->id == 1) {
+            return view('user.user_auth.no-index');
+        }
+
         //List of users
         $users = $this->authUsers();
 
@@ -57,7 +62,7 @@ class AuthUserController extends Controller{
         //Authenticated User Name
         $userName = $this->authName();
 
-        return view('user_auth.profile.user-profile', compact('user', 'userName'));
+        return view('user.user_auth.profile.user-profile', compact('user', 'userName'));
     }
 
     /**
@@ -72,7 +77,7 @@ class AuthUserController extends Controller{
         //Authenticated User
         $user = $this->auth();
 
-        return view('user_auth.profile.edit-profile', compact('user'));
+        return view('user.user_auth.profile.edit-profile', compact('user'));
     }
 
     /**
@@ -112,7 +117,7 @@ class AuthUserController extends Controller{
         $user = $this->auth();
 
         //Return: Edit User Profile picture
-        return view('user_auth.profile.edit-profile-pic', compact('user'));
+        return view('user.user_auth.profile.edit-profile-pic', compact('user'));
     }
 
     /**

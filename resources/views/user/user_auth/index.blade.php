@@ -22,7 +22,7 @@
                        {{-- Card Title --}}
                        <h3 class="card-title">
                            <i class="fas fa-users fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
-                           {{ __('users.index-dep-title') }} {{ $department }}
+                           {{ __('users.index-dep-title') }} - {{ $department->department_name }}
                        </h3>
                        <div></div>
                    </div>
@@ -35,7 +35,7 @@
                    <div class="row">
                        <div class="col mb-3">
                            <i class="far fa-question-circle text-info fa-lg" data-toggle="tooltip"
-                           data-placement="right" title="{{ __('users.tip-dep-index') }} {{ $department }}"></i>
+                           data-placement="right" title="{{ __('users.tip-dep-index') }} {{ $department->department_name }}"></i>
                        </div>
                    </div>
                    {{-- /.Page Tooltip --}}
@@ -45,7 +45,8 @@
                        {{-- Table Head --}}
                        <thead class="text-center">
                             <tr>
-                                <th scope="col">{{ __('users.th-name-image') }}</th>
+                                <th scope="col">{{ __('users.th-collaborator') }}</th>
+                                <th scope="col">{{ __('users.th-profession') }}</th>
                                 <th scope="col">{{ __('users.th-email') }}</th>
                                 <th scope="col">{{ __('users.th-phone') }}</th>
                             </tr>
@@ -72,6 +73,13 @@
                                     &nbsp;&nbsp;
                                     {{-- User Name --}}
                                     {{ $user->first_name }} {{ $user->last_name }}
+                                    &nbsp;
+                                    {{-- User Departmanent Responsible --}}
+                                    @if ($user->user_role_id == 3)
+                                    <i class="fas fa-user-tie text-info fa-lg" data-toggle="tooltip"
+                                    data-placement="right" title="{{ __('users.tip-dep-responsible') }}"></i>
+                                    @endif
+                                    <td>{{ $user->profession }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                </td>
@@ -82,7 +90,8 @@
                        {{-- Table Footer --}}
                        <tfoot class="text-center">
                             <tr>
-                                <th>{{ __('users.th-name-image') }}</th>
+                                <th>{{ __('users.th-collaborator') }}</th>
+                                <th>{{ __('users.th-profession') }}</th>
                                 <th>{{ __('users.th-email') }}</th>
                                 <th>{{ __('users.th-phone') }}</th>
                             </tr>
@@ -114,7 +123,7 @@
                     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
                 },*/
                 columnDefs: [
-                    { orderable: false, targets: 2 }
+                    { orderable: false, targets: 1 }
                 ]
             });
         });

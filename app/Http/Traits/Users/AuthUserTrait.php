@@ -55,12 +55,12 @@ trait AuthUserTrait{
     }
 
     /**
-     * Auth User Department name
+     * Auth User Department
      */
     public function authDepartment(){
         $department = DB::table('departments')
         ->where('id', Auth::user()->department_id)
-        ->value('department_name');
+        ->first();
 
         return $department;
     }
@@ -71,6 +71,7 @@ trait AuthUserTrait{
     public function authUsers(){
         //Eaguer loading: userImage
         $list = User::with(['userImage'])->where([
+            ['user_role_id', '!=', 1], //User is not Administrator
             ['is_deleted', false], //User is not deleted
             ['department_id', Auth::user()->department_id] //User department = Auth User department
         ])->get();

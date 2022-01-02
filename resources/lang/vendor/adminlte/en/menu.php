@@ -34,7 +34,7 @@ return [
     */
     'home'                          => 'Home',
     'department'                    => 'Department',
-    'department'                    => 'Occurrences',
+    'occurrences'                    => 'Occurrences',
     'users_menu'                    => 'Users',
     'management_menu'               => 'Management',
     'user_account'                  => 'User Account',

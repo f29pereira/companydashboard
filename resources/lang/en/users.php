@@ -20,7 +20,6 @@ return[
      * Users Cards Title
      */
     'index-title'       => 'Users',
-    'index-dep-title'   => 'Users from Department -',
     'show-title'        => 'User Details',
     'edit-title'        => 'Edit User data',
     'delete-title'      => 'Delete User',
@@ -31,6 +30,7 @@ return[
     'th-email'          => 'Email',
     'th-phone'          => 'Phone',
     'th-department'     => 'Department',
+    'th-profession'     => 'Profession',
     'th-management'     => 'User management',
     /**
      * Tooltip - User Table Page
@@ -88,8 +88,6 @@ return[
     'index-profile-title'   => 'My Profile',
     'edit-profile-pic'      => 'Update my photo',
     'edit-profile-title'    => 'Update my profile',
-    //Default User Profile Picture Alt
-    'alt-picture-default'   => 'Default User profile photo',
     //User Profile Picture Alt
     'alt-picture'           => 'User profile picture',
     /**
@@ -104,5 +102,17 @@ return[
      */
     'toastr-title'          => 'User:',
     'toastr-user-profile'   => 'User profile sucessfully updated.',
-    'toastr-user-img'       => 'User photo sucessfully updated.'
+    'toastr-user-img'       => 'User photo sucessfully updated.',
+    /*
+    |--------------------------------------------------------------------------
+    | Users from Auth User Department - Language Lines (en)
+    |--------------------------------------------------------------------------
+    */
+    'index-dep-title'       => 'Collaborators from Department',
+    'tip-index-dep'         => 'Departments are assigned by the system administrator',
+    'no-dep-msg'            => 'Sorry, you have not been assigned a department yet.',
+    //table
+    'th-collaborator'       => 'Collaborator',
+    //User Tooltip - Department Responsible
+    'tip-dep-responsible'   =>  'Department Head',
 ];

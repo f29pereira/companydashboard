@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             CompanyTypeSeeder::class,
             CompanySeeder::class,
             DepartmentSeeder::class,
-            UserSeeder::class
+            ResolutionStateSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

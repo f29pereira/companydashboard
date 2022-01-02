@@ -20,7 +20,6 @@ return[
      * Users Cards Title
      */
     'index-title'       => 'Utilizadores',
-    'index-dep-title'   => 'Utilizadores do Departamento -',
     'show-title'        => 'Detalhes do Utilizador',
     'edit-title'        => 'Editar dados do Utilizador',
     'delete-title'      => 'Eliminar Utilizador',
@@ -31,6 +30,7 @@ return[
     'th-email'          => 'Email',
     'th-phone'          => 'Telefone',
     'th-department'     => 'Departamento',
+    'th-profession'     => 'Cargo',
     'th-management'     => 'Gestão - Utilizador',
     /**
      * Tooltip - User Table Page
@@ -88,10 +88,8 @@ return[
     'index-profile-title'       => 'Meu Perfil',
     'edit-profile-pic'          => 'Atualizar foto de perfil',
     'edit-profile-title'        => 'Atualizar dados de perfil',
-    //Default User Profile Picture Alt
-    'alt-picture-default'       => 'Foto de perfil default',
     //User Profile Picture Alt
-    'alt-picture'               => 'Foto de perfil',
+    'alt-picture'               => 'Foto de perfil do Utilizador',
     /**
      * User Tooltip - Update My Profile
      */
@@ -104,5 +102,17 @@ return[
      */
     'toastr-title'              => 'Utilizador:',
     'toastr-user-profile'       => 'Perfil de Utilizador atualizado com sucesso.',
-    'toastr-user-img'           => 'Foto de Utilizador atualizada com sucesso.'
+    'toastr-user-img'           => 'Foto de Utilizador atualizada com sucesso.',
+    /*
+    |--------------------------------------------------------------------------
+    | Users from Auth User Department - Language Lines (pt)
+    |--------------------------------------------------------------------------
+    */
+    'index-dep-title'       => 'Colaboradores do Departamento',
+    'tip-index-dep'         => 'Departamentos são atribuídos pelo administrador do sistema',
+    'no-dep-msg'            => 'Desculpe, ainda não lhe foi atribuído um departamento.',
+    //table
+    'th-collaborator'       => 'Colaborador',
+    //User Tooltip - Department Responsible
+    'tip-dep-responsible'   =>  'Responsável do Departamento',
 ];

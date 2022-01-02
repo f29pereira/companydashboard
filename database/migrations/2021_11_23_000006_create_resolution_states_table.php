@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserRolesTable extends Migration
+class CreateResolutionStatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,11 @@ class CreateUserRolesTable extends Migration
     public function up()
     {
         /**
-         * Roles of users
+         * Occurrences/Nonconformities resolution states
          */
-        Schema::create('user_roles', function (Blueprint $table) {
-            $table->id();                       //user role id
-            $table->string('role_name');        //user role name
-            $table->string('role_description'); //user role description
+        Schema::create('resolution_states', function (Blueprint $table) {
+            $table->id();                   //state id
+            $table->string('state_name');   //state name
         });
     }
 
@@ -30,6 +29,6 @@ class CreateUserRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_roles');
+        Schema::dropIfExists('resolution_states');
     }
 }

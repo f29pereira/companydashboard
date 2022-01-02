@@ -20,16 +20,16 @@ class UserSeeder extends Seeder
              */
             //password: admin123
             [
-                'first_name'    =>  'Filipe',
-                'last_name'     =>  'Pereira',
+                'first_name'    =>  'Administrador',
+                'last_name'     =>  'Sistema',
                 'email'         =>  'admin@gmail.com',
-                'phone'         =>  '962670353',
-                'profession'    =>  'Administrator',
+                'phone'         =>  '',
+                'profession'    =>  '',
                 'password'      =>  '$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted'    =>  false,
                 'user_role_id'  =>  1,
                 'user_image_id' =>  1,
-                'department_id' =>  7,
+                'department_id' =>  1,
                 'company_id'    =>  2,
                 'created_at'    => Carbon::now(),
             ],
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
                 'last_name'     =>  'Parkinson',
                 'email'         =>  'agatha@gmail.com',
                 'phone'         =>  '962670353',
-                'profession'    =>  'Colaborador',
+                'profession'    =>  'Gestor de qualidade e segurança',
                 'password'      =>  '$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted'    =>  false,
                 'user_role_id'  =>  2,
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
                 'created_at'    => Carbon::now(),
             ],
             /**
-             * Responsavel Departamento
+             * Responsavel Departamento - IT
              */
             //password: admin123
             [
@@ -60,17 +60,17 @@ class UserSeeder extends Seeder
                 'last_name'     =>  'Mccallum',
                 'email'         =>  'jeanne@gmail.com',
                 'phone'         =>  '962670353',
-                'profession'    =>  'Colaborador',
+                'profession'    =>  'Full Stack Developer',
                 'password'      =>  '$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted'    =>  false,
                 'user_role_id'  =>  3,
                 'user_image_id' =>  1,
-                'department_id' =>  1,
+                'department_id' =>  7,
                 'company_id'    =>  2,
                 'created_at'    => Carbon::now(),
             ],
             /**
-             * Colaboradores
+             * Colaboradores - IT
              */
             //password: admin123
             [
@@ -78,12 +78,12 @@ class UserSeeder extends Seeder
                 'last_name'     =>  'Dunne',
                 'email'         =>  'phillip@gmail.com',
                 'phone'         =>  '962670353',
-                'profession'    =>  'Colaborador',
+                'profession'    =>  'Front-end Developer',
                 'password'      =>  '$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted'    =>  false,
                 'user_role_id'  =>  4,
                 'user_image_id' =>  1,
-                'department_id' =>  1,
+                'department_id' =>  7,
                 'company_id'    =>  2,
                 'created_at'    => Carbon::now(),
             ],
@@ -93,12 +93,12 @@ class UserSeeder extends Seeder
                 'last_name'     =>  'Gordon',
                 'email'         =>  'nicolas@gmail.com',
                 'phone'         =>  '962670353',
-                'profession'    =>  'Colaborador',
+                'profession'    =>  'Administrador de Sistemas',
                 'password'      =>  '$2y$10$fEymSCymFra2OtDhfTBLruysJG7XycqdOaB6ClEI9dfdPSdqSqhNK',
                 'is_deleted'    =>  false,
                 'user_role_id'  =>  4,
                 'user_image_id' =>  1,
-                'department_id' =>  1,
+                'department_id' =>  7,
                 'company_id'    =>  2,
                 'created_at'    => Carbon::now(),
             ]
