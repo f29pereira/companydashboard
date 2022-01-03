@@ -10,6 +10,7 @@ use App\Http\Controllers\Users\ManagementController;
 //Company Controllers
 use App\Http\Controllers\Companies\CompanyController;
 use App\Http\Controllers\Companies\CompanyTypeController;
+use App\Http\Controllers\Nonconformities\OccurrenceController;
 //Nonconformity Controllers
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -74,6 +75,8 @@ Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('d
  * Authenticated User
  */
 Route::get('/user/index', [AuthUserController::class, 'index'])->name('usersDepartment');
+
+Route::get('/user/occurrence-menu', [AuthUserController::class, 'occurrenceMenu'])->name('menuOccurrences');
 
 Route::get('/user/profile', [AuthUserController::class, 'profile'])->name('profile');
 
@@ -146,7 +149,6 @@ Route::get('/departments/delete/{id}', [DepartmentController::class, 'softDelete
 /**
  * Occurrences
  */
-Route::get('/occurrences/index', function () {
-    return view('nonconformity.occurrence.index');
-});
+Route::get('/occurrences/index', [OccurrenceController::class, 'index'])->name('occurrences');
+
 

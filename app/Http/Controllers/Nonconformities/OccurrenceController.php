@@ -2,19 +2,71 @@
 
 namespace App\Http\Controllers\Nonconformities;
 
-use App\Http\Controllers\Controller\Controller;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 
-class OccurrenceController extends Controller
-{
+use App\Http\Controllers\Controller\Controller;
+use App\Models\Nonconformities\Occurrence;
+use App\Http\Traits\Nonconformities\OccurrenceTrait;
+
+class OccurrenceController extends Controller {
+    use OccurrenceTrait;
+
     /**
-     * Display a listing of the resource.
+     * Display a listing of occurrences.
+     */
+    public function index(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Occurrences List
+        $occurrences = $this->occurrencesList();
+
+        return view('nonconformity.occurrences.index', compact('occurrences'));
+    }
+
+    /**
+     * Display a listing of the not solved occurrences.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function indexNotSolved(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Occurrences List
+        $occurrences = $this->occurNotSolvedList();
+
+        return view('nonconformity.occurrences.index', compact('occurrences'));
+    }
+
+    /**
+     * Display a listing of the solving occurrences.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexSolving(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Occurrences List
+        $occurrences = $this->occurSolvingList();
+
+        return view('nonconformity.occurrences.index', compact('occurrences'));
+    }
+
+    /**
+     * Display a listing of the solved occurrences.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexSolved(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Occurrences List
+        $occurrences = $this->occurSolvedList();
+
+        return view('nonconformity.occurrences.index', compact('occurrences'));
     }
 
     /**

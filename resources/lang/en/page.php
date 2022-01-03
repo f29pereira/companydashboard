@@ -71,6 +71,9 @@ return [
         'departments-create'    => 'Dashboard - Register Department',
         'departments-edit'      => 'Dashboard - Edit Department',
         'user-department-index' => 'Dashboard - My Department',
+        //Occurrences
+        'occurrences-menu'      => 'Dashboard - Occurrences Menu',
+        'occurrences-index'     => 'Dashboard - Occurrences List',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +147,7 @@ return [
         'index-title'               => 'Management Menu',
         'registered-companies'      => 'Registered Companies',
         'registered-departments'    => 'Registered Departments',
+        'registered-occurrences'    => 'Registered Occurrences',
     ],
     /*
     |--------------------------------------------------------------------------

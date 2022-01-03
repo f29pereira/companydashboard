@@ -15,12 +15,10 @@ use Illuminate\Http\Request;
  * Authenticated User - Controller
  */
 class AuthUserController extends Controller{
-    use AuthUserTrait;
-    use UserTrait;
-    use UserImageTrait;
+    use AuthUserTrait, UserTrait, UserImageTrait;
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users from the same department as Auth user.
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +29,7 @@ class AuthUserController extends Controller{
      */
     public function index(){
         //User Authorization
-        $this->authorize('is_user');
+        $this->authorize('is_user_company');
 
         //Auth User - Department
         $department = $this->authDepartment();
@@ -44,8 +42,30 @@ class AuthUserController extends Controller{
         //List of users
         $users = $this->authUsers();
 
-        return view('user.user_auth.index', compact('department', 'users'));
+        return view('user.auth.index', compact('department', 'users'));
     }
+
+    /**
+     * Display the occurrences menu
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function occurrenceMenu(){
+        //User Authorization
+        $this->authorize('is_user_company');
+
+        //Count - occurrences not solved
+        $notSolved = '';
+
+        //Count - occurrences solving
+        $solving = '';
+
+        //Count - occurrences solved
+        $solved = '';
+
+        return view('user.auth.occurrences.menu', compact('notSolved', 'solving', 'solved'));
+    }
+
 
     /**
      * Display the authenticated user profile
@@ -62,7 +82,7 @@ class AuthUserController extends Controller{
         //Authenticated User Name
         $userName = $this->authName();
 
-        return view('user.user_auth.profile.user-profile', compact('user', 'userName'));
+        return view('user.auth.profile.user-profile', compact('user', 'userName'));
     }
 
     /**
@@ -77,7 +97,7 @@ class AuthUserController extends Controller{
         //Authenticated User
         $user = $this->auth();
 
-        return view('user.user_auth.profile.edit-profile', compact('user'));
+        return view('user.auth.profile.edit-profile', compact('user'));
     }
 
     /**
@@ -117,7 +137,7 @@ class AuthUserController extends Controller{
         $user = $this->auth();
 
         //Return: Edit User Profile picture
-        return view('user.user_auth.profile.edit-profile-pic', compact('user'));
+        return view('user.auth.profile.edit-profile-pic', compact('user'));
     }
 
     /**

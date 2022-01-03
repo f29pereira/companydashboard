@@ -4,9 +4,10 @@ namespace App\Models\Companies;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Users\User;
+use App\Models\Nonconformities\Occurrence;
 
-class Company extends Model
-{
+class Company extends Model{
     use HasFactory;
 
     /**
@@ -51,5 +52,12 @@ class Company extends Model
      */
     public function companyTypes(){
         return $this->belongsTo(CompanyType::class, 'company_types_id');
+    }
+
+    /**
+     * Eloquent relation between Company and Occurrence
+     */
+    public function occurrence(){
+        return $this->hasOne(Occurrence::class);
     }
 }

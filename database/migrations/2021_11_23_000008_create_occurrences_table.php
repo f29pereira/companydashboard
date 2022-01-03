@@ -18,11 +18,12 @@ class CreateOccurrencesTable extends Migration
          */
         Schema::create('occurrences', function (Blueprint $table) {
             $table->id();                                   //occurence id
+            $table->string('occurrence_title');             //occurence title
             $table->text('occurrence_description');         //occurence description
             $table->boolean('is_client')->default(false);   //is occurrence from client ? default: no
             $table->boolean('is_deleted')->default(false);  //is occurrence deleted ? default: no
             //FK - users table
-            $table->foreignId('user_role_id')->constrained();                       //user that registered the occurrence
+            $table->foreignId('user_id')->constrained();                            //user that registered the occurrence
             //FK - resolution_states table
             $table->foreignId('resolution_state_id')->default(1)->constrained();    //default: 'Not resolved'
             //FK - companies table

@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller\Controller;
 use App\Http\Traits\Companies\CompanyTrait;
 use App\Http\Traits\Users\DepartmentTrait;
+use App\Http\Traits\Nonconformities\OccurrenceTrait;
 
 /**
  * Management - Controller
  */
 class ManagementController extends Controller{
-    use CompanyTrait;
-    use DepartmentTrait;
+    use CompanyTrait, DepartmentTrait, OccurrenceTrait;
 
     /**
      * Display a management menu.
@@ -28,6 +28,9 @@ class ManagementController extends Controller{
         //Departments count
         $departments = $this->departmentCount();
 
-        return view('management.menu', compact('companies', 'departments'));
+        //Occurrences count
+        $occurrences = $this->occurrencesCount();
+
+        return view('management.menu', compact('companies', 'departments', 'occurrences'));
     }
 }

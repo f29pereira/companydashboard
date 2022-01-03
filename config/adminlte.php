@@ -250,7 +250,7 @@ return [
         ],
         [
             'text' => 'occurrences',
-            'url'  => '/occurrences/index',
+            'url'  => '/user/occurrence-menu',
             'icon' => 'fas fa-exclamation-triangle',
             'can'  => 'is_user_company',
         ],

@@ -13,8 +13,7 @@ use App\Models\Users\User;
  * Departments - Controller
  */
 class DepartmentController extends Controller{
-    use DepartmentTrait;
-    use CompanyTrait;
+    use DepartmentTrait, CompanyTrait;
 
     /**
      * Display a listing of departments.

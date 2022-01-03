@@ -8,9 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Companies\Company;
+use App\Models\Nonconformities\Occurrence;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable{
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -19,7 +19,6 @@ class User extends Authenticatable
      * @var string $table
      */
     protected $table = 'users';
-
 
     /**
      * The attributes that are mass assignable.
@@ -91,5 +90,12 @@ class User extends Authenticatable
      */
     public function company(){
         return $this->belongsTo(Company::class);
+    }
+
+    /**
+     * Eloquent relation between User and Occurrence
+     */
+    public function occurrence(){
+        return $this->hasOne(Occurrence::class);
     }
 }

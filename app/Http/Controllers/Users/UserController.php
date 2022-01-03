@@ -15,11 +15,8 @@ use App\Models\Users\User;
  * Users - Controller
  */
 class UserController extends Controller{
-    use UserTrait;
-    use UserRoleTrait;
-    use UserImageTrait;
-    use DepartmentTrait;
-    use CompanyTrait;
+    use UserTrait, UserRoleTrait, UserImageTrait,
+    DepartmentTrait, CompanyTrait;
 
     /**
      * Display a users menu.

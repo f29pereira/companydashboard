@@ -15,8 +15,8 @@ class ResolutionStateSeeder extends Seeder
     public function run(){
         DB::table('resolution_states')->insert([
             [   'state_name' => 'Not solved'        ],
-            [   'state_name' => 'To be resolved'    ],
-            [   'state_name' => 'Sorted out'        ],
+            [   'state_name' => 'Getting solved'    ],
+            [   'state_name' => 'Solved'            ],
         ]);
     }
 }

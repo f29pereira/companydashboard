@@ -3,7 +3,6 @@
 @section('title', __('page.titles.departments-index'))
 
 @section('content_header')
-
 @stop
 
 @section('content')
@@ -127,6 +126,7 @@
         </div>
     </div>
     @endcan
+    {{-- /.Permisson: Administrator --}}
 @stop
 
 @section('css')
