@@ -23,7 +23,7 @@ return  [
 
     //Table
     'th-title'                  => 'Title',
-    'th-user'                   => 'Created By',
+    'th-user'                   => 'Sended By',
     'th-resolution'             => 'Resolution State',
     'th-management'             => 'Occurrence management',
 
@@ -51,7 +51,7 @@ return  [
 
     /*
     |--------------------------------------------------------------------------
-    | Occurrences Details - Language Lines (en)
+    | Occurrences Show - Language Lines (en)
     |--------------------------------------------------------------------------
     */
     'show-title'              =>  'Occurrence Details',
@@ -59,13 +59,14 @@ return  [
     //Occurrence Details
     'show-occurrence_title'   =>  'Title',
     'show-description'        =>  'Description',
-    'show-user'               =>  'Created By',
+    'show-user'               =>  'Sended By',
+    'show-created_at'         =>  'Send Date',
     'show-state'              =>  'Resolution State',
-    'show-client'             =>  'Client Company',
+    'show-client'             =>  'Company',
 
     /*
     |--------------------------------------------------------------------------
-    | Occurrences Update - Language Lines (en)
+    | Occurrences Edit - Language Lines (en)
     |--------------------------------------------------------------------------
     */
     'edit-title'              =>  'Edit Occurrence',

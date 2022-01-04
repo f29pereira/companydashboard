@@ -10,8 +10,8 @@ use App\Http\Controllers\Users\ManagementController;
 //Company Controllers
 use App\Http\Controllers\Companies\CompanyController;
 use App\Http\Controllers\Companies\CompanyTypeController;
-use App\Http\Controllers\Nonconformities\OccurrenceController;
 //Nonconformity Controllers
+use App\Http\Controllers\Nonconformities\OccurrenceController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -70,23 +70,6 @@ Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('editUser'
 Route::post('/users/update/{id}', [UserController::class, 'update'])->name('updateUser');
 
 Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('deleteUser');
-
-/**
- * Authenticated User
- */
-Route::get('/user/index', [AuthUserController::class, 'index'])->name('usersDepartment');
-
-Route::get('/user/occurrence-menu', [AuthUserController::class, 'occurrenceMenu'])->name('menuOccurrences');
-
-Route::get('/user/profile', [AuthUserController::class, 'profile'])->name('profile');
-
-Route::get('/user/edit-profile-pic/{id}', [AuthUserController::class, 'editProfilePic'])->name('editProfilePic');
-
-Route::post('/user/update-profile-pic/{id}', [AuthUserController::class, 'updateProfilePic'])->name('updateProfilePic');
-
-Route::get('/user/edit-profile/{id}', [AuthUserController::class, 'editProfile'])->name('editProfile');
-
-Route::post('/user/update-profile/{id}', [AuthUserController::class, 'updateProfile'])->name('updateProfile');
 
 /**
  * Management Menu
@@ -151,4 +134,31 @@ Route::get('/departments/delete/{id}', [DepartmentController::class, 'softDelete
  */
 Route::get('/occurrences/index', [OccurrenceController::class, 'index'])->name('occurrences');
 
+Route::get('/occurrences/show/{id}', [OccurrenceController::class, 'show'])->name('showOcurrence');
 
+Route::get('/occurrences/create', [OccurrenceController::class, 'create'])->name('createOccurrence');
+
+Route::post('/occurrences/create', [OccurrenceController::class, 'store'])->name('storeOccurrence');
+
+Route::get('/occurrences/edit/{id}', [OccurrenceController::class, 'edit'])->name('editOccurrence');
+
+Route::post('/occurrences/update/{id}', [OccurrenceController::class, 'update'])->name('updateOccurrence');
+
+Route::get('/occurrences/delete/{id}', [OccurrenceController::class, 'softDelete'])->name('deleteOccurrence');
+
+/**
+ * Authenticated User
+ */
+Route::get('/user/index', [AuthUserController::class, 'index'])->name('usersDepartment');
+
+Route::get('/user/occurrence-menu', [AuthUserController::class, 'occurrenceMenu'])->name('menuOccurrences');
+
+Route::get('/user/profile', [AuthUserController::class, 'profile'])->name('profile');
+
+Route::get('/user/edit-profile-pic/{id}', [AuthUserController::class, 'editProfilePic'])->name('editProfilePic');
+
+Route::post('/user/update-profile-pic/{id}', [AuthUserController::class, 'updateProfilePic'])->name('updateProfilePic');
+
+Route::get('/user/edit-profile/{id}', [AuthUserController::class, 'editProfile'])->name('editProfile');
+
+Route::post('/user/update-profile/{id}', [AuthUserController::class, 'updateProfile'])->name('updateProfile');

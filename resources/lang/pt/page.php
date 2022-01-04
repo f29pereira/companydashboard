@@ -72,6 +72,9 @@ return  [
         //Occurrences
         'occurrences-menu'      => 'Dashboard - Menu de Ocorrências',
         'occurrences-index'     => 'Dashboard - Lista de Ocorrências',
+        'occurrences-create'    => 'Dashboard - Enviar Ocorrência',
+        'occurrences-show'      => 'Dashboard - Detalhes de Ocorrência',
+        'occurrences-edit'      => 'Dashboard - Editar Ocorrência',
     ],
     /*
     |--------------------------------------------------------------------------

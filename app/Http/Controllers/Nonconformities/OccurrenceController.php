@@ -91,14 +91,19 @@ class OccurrenceController extends Controller {
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified occurrence.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Specified occurrence
+        $occurrence = Occurrence::findOrFail($id);
+
+        return view('nonconformity.occurrences.show', compact('occurrence'));
     }
 
     /**

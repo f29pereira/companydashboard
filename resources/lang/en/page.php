@@ -74,6 +74,9 @@ return [
         //Occurrences
         'occurrences-menu'      => 'Dashboard - Occurrences Menu',
         'occurrences-index'     => 'Dashboard - Occurrences List',
+        'occurrences-create'    => 'Dashboard - Send Occurrence',
+        'occurrences-show'      => 'Dashboard - Occurrence Details',
+        'occurrences-edit'      => 'Dashboard - Edit Occurrence',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +93,9 @@ return [
         'company-index'         => 'Return to: List of companies',
         'company_types-index'   => 'Return to: List of business relationships',
         'department-index'      => 'Return to: List of departments',
+        'occurrence-index'      => 'Return to: List of occurrences',
         'my-profile'            => 'Return to: My Profile',
+
     ],
     /*
     |--------------------------------------------------------------------------
