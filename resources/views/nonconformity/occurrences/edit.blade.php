@@ -135,17 +135,22 @@
                                     data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     {{-- Input group --}}
                                     <div class="input-group">
-                                        <select class="form-control" name="resolution_state_ud" id="occurrenceState">
+                                        <select class="form-control" name="resolution_state_id" id="occurrenceState">
                                             @foreach ($states as $state)
-                                            <option value="{{ $state->id }}" {{ $state->id == $occurrence->resolution_state_ud ? 'selected' : '' }}>
+                                            <option value="{{ $state->id }}" {{ $state->id == $occurrence->resolution_state_id ? 'selected' : '' }}>
                                                 {{ $state->state_name }}
                                             </option>
                                             @endforeach
                                         </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-check text-info"></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     {{-- /.Input group --}}
                                     {{-- Error Message --}}
-                                    @error('resolution_state_ud')
+                                    @error('resolution_state_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

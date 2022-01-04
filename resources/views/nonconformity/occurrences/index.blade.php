@@ -48,6 +48,7 @@
                         <thead class="text-center">
                             <th scope="col">{{ __('occurrences.th-user') }}</th>
                             <th scope="col">{{ __('occurrences.th-title') }}</th>
+                            <th scope="col">{{ __('occurrences.th-company') }}</th>
                             <th scope="col">{{ __('occurrences.th-resolution') }}</th>
                             <th scope="col">{{ __('occurrences.th-management') }}</th>
                         </thead>
@@ -75,6 +76,7 @@
                                     {{ $occurrence->user->first_name }} {{ $occurrence->user->last_name }}
                                 </td>
                                 <td>{{ $occurrence->occurrence_title }}</td>
+                                <td>{{ $occurrence->company->company_name }}</td>
                                 <td>{{ $occurrence->resolutionState->state_name }}</td>
                                 {{-- Occurrence Management --}}
                                 <td>
@@ -111,7 +113,35 @@
                                     </div>
 
                                     {{-- Delete Occurrence Modal  --}}
+                                    <div class="modal fade" id="deleteOccurrence-{{ $occurrence->id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                {{-- Modal Header --}}
+                                                <div class="modal-header bg-danger text-center">
+                                                    <h5 class="modal-title w-100" id="deleteModalLabel">
+                                                        <i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;
+                                                        {{ __('occurrences.delete-title') }}
+                                                    </h5>
+                                                </div>
+                                                {{-- /.Modal Header --}}
 
+                                                {{-- Modal Body --}}
+                                                {{-- /.Modal Body --}}
+
+                                                {{-- Confirm/Cancel --}}
+                                                <div class="modal-footer">
+                                                    <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/occurrences/delete/'.$occurrence->id) }}" role="button">
+                                                        <i class="far fa-check-square fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.confirmBtn') }}
+                                                    </a>
+                                                    <button type="button" class="btn bg-gradient-danger btn-sm" data-dismiss="modal">
+                                                        <i class="far fa-window-close fa-lg"></i>&nbsp;&nbsp;{{ __('page.generic.cancelBtn') }}
+                                                    </button>
+                                                </div>
+                                                {{-- /.Confirm/Cancel --}}
+                                            </div>
+                                        </div>
+                                    </div>
                                     {{-- /.Delete Occurrence Modal  --}}
                                 </td>
                                 {{-- /.Occurrence Management --}}
@@ -124,6 +154,7 @@
                         <tfoot class="text-center">
                             <th>{{ __('occurrences.th-user') }}</th>
                             <th>{{ __('occurrences.th-title') }}</th>
+                            <th>{{ __('occurrences.th-company') }}</th>
                             <th>{{ __('occurrences.th-resolution') }}</th>
                             <th>{{ __('occurrences.th-management') }}</th>
                         </tfoot>
@@ -153,7 +184,7 @@
                     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
                 },*/
                 columnDefs: [
-                    { orderable: false, targets: 3 }
+                    { orderable: false, targets: 4 }
                 ]
             });
         });

@@ -162,3 +162,4 @@ Route::post('/user/update-profile-pic/{id}', [AuthUserController::class, 'update
 Route::get('/user/edit-profile/{id}', [AuthUserController::class, 'editProfile'])->name('editProfile');
 
 Route::post('/user/update-profile/{id}', [AuthUserController::class, 'updateProfile'])->name('updateProfile');
+

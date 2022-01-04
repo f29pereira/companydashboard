@@ -114,6 +114,7 @@
                                                             {{ __('users.delete-title') }}
                                                         </h5>
                                                     </div>
+                                                    {{-- /.Modal Header --}}
                                                     {{-- Modal Body --}}
                                                     <div class="modal-body">
                                                         <div class="text-left">
@@ -154,6 +155,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    {{-- /.Modal Body --}}
                                                     {{-- Confirm/Cancel --}}
                                                     <div class="modal-footer">
                                                         <a class="btn bg-gradient-success btn-sm mr-auto" href="{{ url('/users/delete/'.$user->id) }}" role="button">

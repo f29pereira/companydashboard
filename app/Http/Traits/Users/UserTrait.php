@@ -75,7 +75,7 @@ trait UserTrait{
     }
 
     /**
-     * Delete the specified user
+     * Soft Delete the specified user
      *
      * @param  App\Models\Users\User    $user
      */

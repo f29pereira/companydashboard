@@ -164,4 +164,27 @@ class OccurrenceController extends Controller {
     {
         //
     }
+
+    /**
+     * Soft delete the selected occurrence.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function softDelete($id){
+        //Specified Occurrence
+        $occurrence = Occurrence::findOrFail($id);
+
+        //Occurrence Delete
+        $this->occurDelete($occurrence);
+
+        //Occurrence Update - deleted_at
+        $this->occurDeletedAt($occurrence);
+
+        //Message: occurrance deleted
+        $text = $this->occurDeleteMsg();
+
+        //Redirect: Occurrences List
+        return redirect()->route('occurrences')->with('message', $text);
+    }
 }

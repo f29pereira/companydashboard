@@ -28,6 +28,7 @@ class OccurrencePostRequest extends FormRequest{
             'occurrence_title'          => ['required','string','max:250'],
             'occurrence_description'    => ['required'],
             'user_id'                   => ['required'],
+            'resolution_state_id'       => ['required'],
             'company_id'                => ['required'],
         ];
     }

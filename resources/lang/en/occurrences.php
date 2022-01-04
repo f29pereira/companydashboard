@@ -23,6 +23,7 @@ return  [
 
     //Table
     'th-title'                  => 'Title',
+    'th-company'                => 'Company',
     'th-user'                   => 'Sended By',
     'th-resolution'             => 'Resolution State',
     'th-management'             => 'Occurrence management',
@@ -38,6 +39,17 @@ return  [
 
     /*
     |--------------------------------------------------------------------------
+    | Occurrences Delete - Language Lines (en)
+    |--------------------------------------------------------------------------
+    */
+    'delete-title'              =>  'Delete Occurrence',
+
+    //Toastr - Delete Notification Message
+    'toastr-delete-sucess'      =>  'Occurrence sucessfully deleted.',
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Occurrences Create - Language Lines (en)
     |--------------------------------------------------------------------------
     */
@@ -48,6 +60,9 @@ return  [
     'label-title'               =>  'Title',
     'label-description'         =>  'Description',
     'label-company'             =>  'Company',
+
+    //Toastr - Create Notification Message
+    'toastr-update-sucess'      =>  'Occurrence sucessfully sended.',
 
     /*
     |--------------------------------------------------------------------------
@@ -75,6 +90,9 @@ return  [
     //Form Edit placeholder
     'text-edit-title'           =>  'Update Occurrence Title',
     'text-edit-description'     =>  'Description',
+
+    //Toastr - Update Notification Message
+    'toastr-update-sucess'      =>  'Occurrence sucessfully updated.',
 
     /*
     |--------------------------------------------------------------------------

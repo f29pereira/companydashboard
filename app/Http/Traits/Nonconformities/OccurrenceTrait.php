@@ -27,7 +27,9 @@ trait OccurrenceTrait{
      */
     public function occurrencesList(){
         //Eaguer loading: ResolutionState, User, Company
-        $list = Occurrence::with(['resolutionState', 'user', 'company'])->get();
+        $list = Occurrence::with(['resolutionState', 'user', 'company'])->where([
+            ['is_deleted', false], //Occurrence is not deleted
+        ])->get();
 
         return $list;
     }
@@ -148,6 +150,39 @@ trait OccurrenceTrait{
      */
     public function occurUpdateMsg(){
         $text = __('occurrences.toastr-update-sucess');
+
+        return $text;
+    }
+
+    /**
+     * Soft Delete the specified user
+     *
+     * @param App\Models\Nonconformities\Occurrence    $occurrence
+     */
+    public function occurDelete(Occurrence $occurrence){
+        if ($occurrence->is_deleted == false) {
+            $occurrence->is_deleted = true;
+            $occurrence->save();
+        }
+    }
+
+    /**
+     * Update the deleted_at attribute of the specified occurrence
+     *
+     * @param App\Models\Nonconformities\Occurrence    $ocurrence
+     */
+    public function occurDeletedAt(Occurrence $occurrence){
+        $occurrence->deleted_at = Carbon::now();
+        $occurrence->save();
+    }
+
+    /**
+     * Toastr Message - Occurrence successfully deleted
+     *
+     * @return string   $text
+     */
+    public function occurDeleteMsg(){
+        $text = __('occurrences.toastr-delete-sucess');
 
         return $text;
     }
