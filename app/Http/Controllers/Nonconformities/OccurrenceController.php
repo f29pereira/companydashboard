@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Nonconformities;
 
 use Symfony\Component\HttpFoundation\Request;
-
 use App\Http\Controllers\Controller\Controller;
 use App\Models\Nonconformities\Occurrence;
 use App\Http\Traits\Nonconformities\OccurrenceTrait;
+use App\Http\Traits\Companies\CompanyTrait;
+use App\Http\Traits\Nonconformities\ResolutionStateTrait;
+use App\Http\Requests\Nonconformities\OccurrencePostRequest;
 
 class OccurrenceController extends Controller {
-    use OccurrenceTrait;
+    use OccurrenceTrait, CompanyTrait, ResolutionStateTrait;
 
     /**
      * Display a listing of occurrences.
@@ -112,21 +114,44 @@ class OccurrenceController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Specified occurrence
+        $occurrence = Occurrence::findOrFail($id);
+
+        //Companies
+        $companies = $this->companyMainList();
+
+        //Resolution States
+        $states = $this->statesList();
+
+        return view('nonconformity.occurrences.edit', compact('occurrence','companies','states'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified occurrance in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Nonconformities\OccurrencePostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(OccurrencePostRequest $request, $id){
+        //Specified Occurrence
+        $occurrence = Occurrence::findOrFail($id);
+
+        //Occurrence Update - form data
+        $occurrence->update($request->all());
+
+        //Occurrence Update - updated_at
+        $this->occurUpdatedAt($occurrence);
+
+        //Message: occurrence updated
+        $text = $this->occurUpdateMsg();
+
+        //Redirect: Occurrences List
+        return redirect()->route('occurrences')->with('message', $text);
     }
 
     /**

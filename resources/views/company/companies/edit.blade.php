@@ -247,7 +247,7 @@
             </div>
         </div>
     @endcan
-@endsection
+@stop
 
 @section('js')
     <script>
@@ -270,4 +270,4 @@
       //Summernote content
       $('#summernote').summernote('code', content);
     </script>
-@endsection
+@stop

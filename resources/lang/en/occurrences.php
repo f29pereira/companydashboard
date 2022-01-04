@@ -44,33 +44,37 @@ return  [
     'create-title'              =>  'Send Occurrence',
     'tip-create'                =>  'Form to send an occurrence',
 
-    //Form
+    //Form Create label
     'label-title'               =>  'Title',
     'label-description'         =>  'Description',
-    'label-client'              =>  'Client Occurrence?',
+    'label-company'             =>  'Company',
 
     /*
     |--------------------------------------------------------------------------
     | Occurrences Show - Language Lines (en)
     |--------------------------------------------------------------------------
     */
-    'show-title'              =>  'Occurrence Details',
+    'show-title'                =>  'Occurrence Details',
 
     //Occurrence Details
-    'show-occurrence_title'   =>  'Title',
-    'show-description'        =>  'Description',
-    'show-user'               =>  'Sended By',
-    'show-created_at'         =>  'Send Date',
-    'show-state'              =>  'Resolution State',
-    'show-client'             =>  'Company',
+    'show-occurrence_title'     =>  'Title',
+    'show-description'          =>  'Description',
+    'show-user'                 =>  'Sended By',
+    'show-created_at'           =>  'Send Date',
+    'show-state'                =>  'Resolution State',
+    'show-client'               =>  'Company',
 
     /*
     |--------------------------------------------------------------------------
     | Occurrences Edit - Language Lines (en)
     |--------------------------------------------------------------------------
     */
-    'edit-title'              =>  'Edit Occurrence',
-    'tip-edit'                =>  'Form to update an occurrence',
+    'edit-title'                =>  'Edit Occurrence',
+    'tip-edit'                  =>  'Form to update an occurrence',
+
+    //Form Edit placeholder
+    'text-edit-title'           =>  'Update Occurrence Title',
+    'text-edit-description'     =>  'Description',
 
     /*
     |--------------------------------------------------------------------------

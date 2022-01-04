@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Company Create/Update - Form Request
+ */
 class CompanyPostRequest extends FormRequest
 {
     /**

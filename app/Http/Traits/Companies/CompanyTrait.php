@@ -38,6 +38,19 @@ trait CompanyTrait{
     }
 
     /**
+     * List of companies and main dashboard company
+     */
+    public function companyMainList(){
+        //Eager loading: companyTypes
+        $list = Company::with(['companyTypes'])->where([
+            ['is_deleted', false], //Company not deleted
+            ['id', '!=' ,1], //Company Default
+        ])->get();
+
+        return $list;
+    }
+
+    /**
      * Count of companies
      *
      * @return int $count

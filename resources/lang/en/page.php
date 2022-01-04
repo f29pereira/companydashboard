@@ -85,17 +85,24 @@ return [
     |
     */
     'link' => [
+        //Home
         'home'                  => 'Return to: Home',
+        //Users
         'users-menu'            => 'Return to: User Menu',
         'user-index'            => 'Return to: List of users',
+        //Auth User Profile
+        'my-profile'            => 'Return to: My Profile',
+        //Management Menu
         'management-menu'       => 'Return to: Management Menu',
+        //Company
         'company-menu'          => 'Return to: Company Menu',
         'company-index'         => 'Return to: List of companies',
+        //Company Types
         'company_types-index'   => 'Return to: List of business relationships',
+        //Department
         'department-index'      => 'Return to: List of departments',
+        //Occurrences
         'occurrence-index'      => 'Return to: List of occurrences',
-        'my-profile'            => 'Return to: My Profile',
-
     ],
     /*
     |--------------------------------------------------------------------------

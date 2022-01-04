@@ -22,7 +22,7 @@
                         </a>
                         {{-- Card Title --}}
                         <h3 class="card-title">
-                            <i class="fas fa-user-tie fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
                             {{ __('occurrences.index-title') }}
                         </h3>
                         <div></div>
@@ -46,8 +46,8 @@
                     <table class="table table-hover table-responsive-md" id="occurrencesTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
-                            <th scope="col">{{ __('occurrences.th-title') }}</th>
                             <th scope="col">{{ __('occurrences.th-user') }}</th>
+                            <th scope="col">{{ __('occurrences.th-title') }}</th>
                             <th scope="col">{{ __('occurrences.th-resolution') }}</th>
                             <th scope="col">{{ __('occurrences.th-management') }}</th>
                         </thead>
@@ -57,8 +57,24 @@
                         <tbody class="text-center">
                             @foreach ($occurrences as $occurrence)
                             <tr>
+                                <td>
+                                    @if ($occurrence->user->user_image_id == 1)
+                                    {{-- Default User Image --}}
+                                    <img src="{{ asset('images/default/'. $occurrence->user->userImage->image_name) }}"
+                                        class="user-image img-circle elevation-2"
+                                        alt="{{ __('users.alt-picture') }}" width="35" height="35">
+                                    {{-- /.Default User Image --}}
+                                    @else
+                                    {{-- Custom User Image --}}
+                                    <img src="{{ asset('storage/users/'. $occurrence->user->userImage->image_name) }}"
+                                        class="user-image img-circle elevation-2"
+                                        alt="{{ __('users.alt-picture') }}" width="35" height="35">
+                                    {{-- /.Custom User Image --}}
+                                    @endif
+                                    &nbsp;&nbsp;
+                                    {{ $occurrence->user->first_name }} {{ $occurrence->user->last_name }}
+                                </td>
                                 <td>{{ $occurrence->occurrence_title }}</td>
-                                <td>{{ $occurrence->user->first_name }} {{ $occurrence->user->last_name }}</td>
                                 <td>{{ $occurrence->resolutionState->state_name }}</td>
                                 {{-- Occurrence Management --}}
                                 <td>
@@ -106,8 +122,8 @@
 
                         {{-- Table Foot --}}
                         <tfoot class="text-center">
-                            <th>{{ __('occurrences.th-title') }}</th>
                             <th>{{ __('occurrences.th-user') }}</th>
+                            <th>{{ __('occurrences.th-title') }}</th>
                             <th>{{ __('occurrences.th-resolution') }}</th>
                             <th>{{ __('occurrences.th-management') }}</th>
                         </tfoot>

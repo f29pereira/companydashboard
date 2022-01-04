@@ -22,6 +22,8 @@ trait OccurrenceTrait{
 
     /**
      * List of occurrences
+     *
+     * @return array[] $list
      */
     public function occurrencesList(){
         //Eaguer loading: ResolutionState, User, Company

@@ -20,14 +20,13 @@ class CreateOccurrencesTable extends Migration
             $table->id();                                   //occurence id
             $table->string('occurrence_title');             //occurence title
             $table->text('occurrence_description');         //occurence description
-            $table->boolean('is_client')->default(false);   //is occurrence from client ? default: no
             $table->boolean('is_deleted')->default(false);  //is occurrence deleted ? default: no
             //FK - users table
             $table->foreignId('user_id')->constrained();                            //user that registered the occurrence
             //FK - resolution_states table
             $table->foreignId('resolution_state_id')->default(1)->constrained();    //default: 'Not resolved'
             //FK - companies table
-            $table->foreignId('company_id')->nullable()->constrained();             //client company
+            $table->foreignId('company_id')->default(2)->constrained();             //default: Dashboard company
             $table->timestamps();                           //occurence create/update time
             $table->timestamp('deleted_at')->nullable();    //occurrence delete time
         });

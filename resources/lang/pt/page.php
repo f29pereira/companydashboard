@@ -73,7 +73,7 @@ return  [
         'occurrences-menu'      => 'Dashboard - Menu de Ocorrências',
         'occurrences-index'     => 'Dashboard - Lista de Ocorrências',
         'occurrences-create'    => 'Dashboard - Enviar Ocorrência',
-        'occurrences-show'      => 'Dashboard - Detalhes de Ocorrência',
+        'occurrences-show'      => 'Dashboard - Detalhes Ocorrência',
         'occurrences-edit'      => 'Dashboard - Editar Ocorrência',
     ],
     /*
@@ -83,15 +83,24 @@ return  [
     |
     */
     'link' => [
+        //Home
         'home'                  => 'Voltar para: Home',
+        //Users
         'users-menu'            => 'Voltar para: Menu Utilizador',
         'user-index'            => 'Voltar para: Lista Utilizadores',
+        //Auth User Profile
+        'my-profile'            => 'Voltar para: Meu Perfil',
+        //Management Menu
         'management-menu'       => 'Voltar para: Menu Gestão',
+        //Company
         'company-menu'          => 'Voltar para: Menu Empresas',
         'company-index'         => 'Voltar para: Lista Empresas',
+        //Company Types
         'company_types-index'   => 'Voltar para: Lista Relações de Negócio',
+        //Department
         'department-index'      => 'Voltar para: Lista Departamentos',
-        'my-profile'            => 'Voltar para: Meu Perfil',
+        //Occurrences
+        'occurrence-index'      => 'Voltar para: Lista Ocorrências',
     ],
     /*
     |--------------------------------------------------------------------------
