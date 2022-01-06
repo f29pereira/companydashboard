@@ -7,9 +7,10 @@ return[
     |--------------------------------------------------------------------------
     */
     'menu' => [
-        'card-title'        => 'Users Menu',
-        'registered-users'  => 'Registered Users',
-        'registered-roles'  => 'User Roles',
+        'card-title'                => 'Menu de Utilizadores',
+        'registered-users'          => 'Utilizadores Registados',
+        'registered-departments'    => 'Departamentos Registados',
+        'registered-roles'          => 'Roles de Utilizador',
     ],
     /*
     |--------------------------------------------------------------------------

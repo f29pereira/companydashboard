@@ -61,7 +61,7 @@ trait OccurrenceTrait{
     }
 
     /**
-     * List of occurrences - state: solving
+     * List of occurrences - state: getting solved
      *
      * @return array[] $list
      */
@@ -74,7 +74,7 @@ trait OccurrenceTrait{
     }
 
     /**
-     * Count of occurrences - state: solving
+     * Count of occurrences - state: getting solved
      *
      * @return int $count
      */
@@ -155,7 +155,7 @@ trait OccurrenceTrait{
     }
 
     /**
-     * Soft Delete the specified user
+     * Soft Delete the specified occurrence
      *
      * @param App\Models\Nonconformities\Occurrence    $occurrence
      */

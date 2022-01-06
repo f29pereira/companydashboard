@@ -10,6 +10,7 @@ use App\Http\Controllers\Users\ManagementController;
 //Company Controllers
 use App\Http\Controllers\Companies\CompanyController;
 use App\Http\Controllers\Companies\CompanyTypeController;
+use App\Http\Controllers\Nonconformities\NonconformityController;
 //Nonconformity Controllers
 use App\Http\Controllers\Nonconformities\OccurrenceController;
 use Illuminate\Support\Facades\App;
@@ -145,6 +146,23 @@ Route::get('/occurrences/edit/{id}', [OccurrenceController::class, 'edit'])->nam
 Route::post('/occurrences/update/{id}', [OccurrenceController::class, 'update'])->name('updateOccurrence');
 
 Route::get('/occurrences/delete/{id}', [OccurrenceController::class, 'softDelete'])->name('deleteOccurrence');
+
+/**
+ * Nonconformities
+ */
+Route::get('/ncs-occurrences/menu', [NonconformityController::class, 'ncsOccurrencesMenu'])->name('ncsOccurrencesMenu');
+
+Route::get('/nonconformities/index', [NonconformityController::class, 'index'])->name('nonconformities');
+
+Route::get('/nonconformities/show/{id}', [NonconformityController::class, 'show'])->name('showNc');
+
+Route::post('/nonconformities/create', [NonconformityController::class, 'create'])->name('createNc');
+
+Route::get('/nonconformities/edit/{id}', [NonconformityController::class, 'edit'])->name('editNc');
+
+Route::post('/nonconformities/update/{id}', [NonconformityController::class, 'update'])->name('updateNc');
+
+Route::get('/nonconformities/delete/{id}', [NonconformityController::class, 'softDelete'])->name('deleteNc');
 
 /**
  * Authenticated User

@@ -236,36 +236,56 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => false,
         ],
+        //User: Home
         [
             'text' => 'home',
             'url'  => '/home',
             'icon' => 'fas fa-home',
             'can'  => 'is_user',
         ],
-        [
-            'text' => 'department',
-            'url'  => '/user/index',
-            'icon' => 'fas fa-user-tie',
-            'can'  => 'is_user_company',
-        ],
-        [
-            'text' => 'occurrences',
-            'url'  => '/user/occurrence-menu',
-            'icon' => 'fas fa-exclamation-triangle',
-            'can'  => 'is_user_company',
-        ],
+        //Administrator: Users Menu
         [
             'text'        => 'users_menu',
             'url'         => '/users/menu',
             'icon'        => 'fas fa-users',
             'can'         => 'is_admin',
         ],
+        //Administrator: Companies Menu
+        [
+            'text'        => 'companies_menu',
+            'url'         => '/companies/menu',
+            'icon'        => 'far fa-building',
+            'can'         => 'is_admin',
+        ],
+        //Administrator: Occurrences Menu
+        [
+            'text'        => 'ncs_occurrences_menu',
+            'url'         => '/ncs-occurrences/menu',
+            'icon'        => 'fas fa-exclamation-triangle',
+            'can'         => 'is_admin',
+        ],
+        //apagar:
         [
             'text'        => 'management_menu',
             'url'         => '/management/menu',
             'icon'        => 'fas fa-th',
             'can'         => 'is_admin'
         ],
+        //Collaborator/Department Head: Department
+        [
+            'text' => 'user_department',
+            'url'  => '/user/index',
+            'icon' => 'fas fa-user-tie',
+            'can'  => 'is_user_company',
+        ],
+        //Collaborator/Department Head: Occurrences
+        [
+            'text' => 'user_occurrences',
+            'url'  => '/user/occurrence-menu',
+            'icon' => 'fas fa-exclamation-triangle',
+            'can'  => 'is_user_company',
+        ],
+        //User: Profile
         [
             'text'    => 'user_account',
             'icon'    => 'fas fa-fw fa-user',

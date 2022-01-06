@@ -30,10 +30,13 @@ class UserController extends Controller{
         //User Count
         $users = $this->userCount();
 
+        //Departments Count
+        $departments = $this->departmentCount();
+
         //Roles Count
         $roles = $this->roleCount();
 
-        return view('user.users.menu', compact('users', 'roles'));
+        return view('user.users.menu', compact('users','departments','roles'));
     }
 
     /**

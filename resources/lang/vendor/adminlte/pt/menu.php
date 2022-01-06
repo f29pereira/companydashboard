@@ -32,11 +32,16 @@ return [
     | adminLTE left menu.
     |
     */
-    'home'                          => 'Home',
-    'department'                    => 'Departamento',
-    'occurrences'                   => 'Ocorrências',
-    'users_menu'                    => 'Utilizadores',
-    'management_menu'               => 'Gestão',
-    'user_account'                  => 'Conta de Utilizador',
-    'user_profile'                  => 'Meu perfil',
+    //User role: Administrator
+    'users_menu'            => 'Utilizadores',
+    'companies_menu'        => 'Empresas',
+    'ncs_occurrences_menu'  => 'NCs/Ocorrências',
+    'occurrences_menu'      => 'Ocorrências',
+    //User role: Collaborator/Department Head
+    'user_occurrences'      => 'Ocorrências',
+    'user_department'       => 'Departamento',
+    //User
+    'home'                  => 'Home',
+    'user_account'          => 'Conta de Utilizador',
+    'user_profile'          => 'Meu perfil',
 ];

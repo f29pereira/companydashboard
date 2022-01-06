@@ -7,9 +7,10 @@ return[
     |--------------------------------------------------------------------------
     */
     'menu' => [
-        'card-title'        => 'Users Menu',
-        'registered-users'  => 'Registered Users',
-        'registered-roles'  => 'User Roles',
+        'card-title'                => 'Users Menu',
+        'registered-users'          => 'Registered Users',
+        'registered-departments'    => 'Registered Departments',
+        'registered-roles'          => 'User Roles',
     ],
     /*
     |--------------------------------------------------------------------------

@@ -15,7 +15,8 @@
                 {{-- Card Header --}}
                 <div class="card-header d-flex justify-content-between">
                     {{-- Return: Management --}}
-                    <a href="{{ url('/management/menu') }}" data-toggle="tooltip" data-placement="right" title="{{ __('page.link.management-menu') }}">
+                    <a href="{{ url('/home') }}" data-toggle="tooltip" data-placement="right"
+                    title="{{ __('page.link.home') }}">
                         <i class="far fa-arrow-alt-circle-left fa-lg"></i>
                     </a>
                     {{-- Card Title --}}
