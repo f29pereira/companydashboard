@@ -23,8 +23,8 @@ class Occurrence extends Model{
      * @var string[]
      */
     protected $fillable = [
-        'occurrence_title',
-        'occurrence_description',
+        'oc_title',
+        'oc_description',
         'user_id',
         'resolution_state_id',
         'company_id'
@@ -35,7 +35,7 @@ class Occurrence extends Model{
      *
      * @var bool
      */
-    public $timestamps = true;
+    public $timestamps = false;
 
     /**
      * Eloquent relation between Occurrence and ResolutionState

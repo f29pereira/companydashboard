@@ -42,7 +42,7 @@
                     {{-- /.Page Tooltip --}}
 
                     {{-- Edit Occurrence Form --}}
-                    <form action="/occurrences/update/{{ $occurrence->id }}" method="POST">
+                    <form action="/occurrences/update/{{ $occurrence->id }}" method="POST" novalidate>
                         @csrf
                         <div class="row">
                             {{-- Occurrence Title --}}
@@ -55,17 +55,17 @@
                                     </label>
                                     {{-- Input group --}}
                                     <div class="input-group">
-                                        <input type="text" name="occurrence_title" id="occurrenceTitle" class="form-control @error('occurrence_title') is-invalid @enderror"
-                                        value="{{ $occurrence->occurrence_title }}" placeholder="{{ __('occurrences.text-edit-title') }}">
+                                        <input type="text" name="oc_title" id="occurrenceTitle" class="form-control @error('oc_title') is-invalid @enderror"
+                                        value="{{ $occurrence->oc_title }}" placeholder="{{ __('occurrences.text-edit-title') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-heading text-info"></span>
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @if($errors->has('occurrence_title'))
+                                        @if($errors->has('oc_title'))
                                         <div class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('occurrence_title') }}</strong>
+                                            <strong>{{ $errors->first('oc_title') }}</strong>
                                         </div>
                                         @endif
                                         {{-- /.Error Message --}}
@@ -84,10 +84,10 @@
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
-                                    <textarea name="occurrence_description" id="summernote" class="form-control @error('occurrence_description') is-invalid @enderror"
+                                    <textarea name="oc_description" id="summernote" class="form-control @error('oc_description') is-invalid @enderror"
                                     cols="30" rows="10"></textarea>
                                     {{-- Error Message --}}
-                                    @error('occurrence_description')
+                                    @error('oc_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -205,8 +205,8 @@
             height: 150
       });
 
-      //Company description
-      var content = {!! json_encode($occurrence->occurrence_description) !!};
+      //Occurrence description
+      var content = {!! json_encode($occurrence->oc_description) !!};
 
       //Summernote content
       $('#summernote').summernote('code', content);

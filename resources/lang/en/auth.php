@@ -24,6 +24,7 @@ return [
     |
     */
     'admin'             => 'Action only available to the Administrator user role.',
+    'is_user_nc'        => 'Action only available to the Administrator and Collaborators from Quality Department.',
     'departmentResp'    => 'Action only available to the Department manager user role.',
     'user_company'      => 'Action only available to the company collaborators',
     'user'              => 'Action only available to the registered users.',

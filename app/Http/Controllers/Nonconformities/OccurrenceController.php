@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Nonconformities;
 
-use Symfony\Component\HttpFoundation\Request;
 use App\Http\Controllers\Controller\Controller;
 use App\Models\Nonconformities\Occurrence;
-use App\Http\Traits\Nonconformities\OccurrenceTrait;
 use App\Http\Traits\Companies\CompanyTrait;
+use App\Http\Traits\Nonconformities\OccurrenceTrait;
 use App\Http\Traits\Nonconformities\ResolutionStateTrait;
 use App\Http\Requests\Nonconformities\OccurrencePostRequest;
 
 class OccurrenceController extends Controller {
-    use OccurrenceTrait, CompanyTrait, ResolutionStateTrait;
+    use OccurrenceTrait, ResolutionStateTrait, CompanyTrait;
 
     /**
      * Display a listing of occurrences.
@@ -76,20 +75,40 @@ class OccurrenceController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        //Admin Authorization
+        $this->authorize('is_admin');
+
+        //Main Company
+        $mainCompany = $this->companyMain();
+
+        //Companies List
+        $companies = $this->companyList();
+
+        //Resolution States List
+        $states = $this->statesList();
+
+        return view('nonconformity.occurrences.create', compact('mainCompany','companies','states'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created occurrence in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Nonconformities\OccurrencePostRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(OccurrencePostRequest  $request){
+        //Occurrence Create - form data
+        $occurrence = Occurrence::create($request->all());
+
+        //Occurrence Update - created_at
+        $this->occurCreatedAt($occurrence);
+
+        //Message: occurrence created
+        $text = $this->occurCreateMsg();
+
+        //Redirect: Occurrences List
+        return redirect()->route('occurrences')->with('message', $text);
     }
 
     /**

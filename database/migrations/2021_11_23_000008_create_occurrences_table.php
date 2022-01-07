@@ -18,8 +18,8 @@ class CreateOccurrencesTable extends Migration
          */
         Schema::create('occurrences', function (Blueprint $table) {
             $table->id();                                   //occurence id
-            $table->string('occurrence_title');             //occurence title
-            $table->text('occurrence_description');         //occurence description
+            $table->string('oc_title');                     //occurence title
+            $table->text('oc_description');                 //occurence description
             $table->boolean('is_deleted')->default(false);  //is occurrence deleted ? default: no
             //FK - users table
             $table->foreignId('user_id')->constrained();                            //user that registered the occurrence

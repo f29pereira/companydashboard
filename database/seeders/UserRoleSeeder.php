@@ -19,10 +19,6 @@ class UserRoleSeeder extends Seeder
                 'role_description' => 'Utilizador com permissão para gerir utilizadores registados'
             ],
             [
-                'role_name' => 'Gestor Não Conformidades',
-                'role_description' => 'Utilizador com permissão para gerir não conformidades'
-            ],
-            [
                 'role_name' => 'R.Departamento',
                 'role_description' => 'Utilizador com permissão para consultar os colaboradores do seu departamento'
             ],

@@ -24,6 +24,7 @@ return [
     |
     */
     'admin'             => 'Ação disponível apenas para o role de utilizador - Administrador.',
+    'is_user_nc'        => 'Ação disponível apenas para o roles de utilizador - Administrador e colaboradores do departamento de Qualidade.',
     'departmentResp'    => 'Ação disponível apenas para o role de utilizador - Responsável de Departamento.',
     'user_company'      => 'Ação disponível apenas para os colaboradores da empresa.',
     'user'              => 'Ação disponível apenas para os utilizadores registados.',

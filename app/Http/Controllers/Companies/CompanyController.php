@@ -13,8 +13,7 @@ use App\Models\Users\User;
  * Companies - Controller
  */
 class CompanyController extends Controller{
-    use CompanyTypeTrait;
-    use CompanyTrait;
+    use CompanyTrait, CompanyTypeTrait;
 
     /**
      * Display the companies menu.

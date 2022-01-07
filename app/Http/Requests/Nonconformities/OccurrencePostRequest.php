@@ -13,8 +13,7 @@ class OccurrencePostRequest extends FormRequest{
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(){
         return true;
     }
 
@@ -25,11 +24,11 @@ class OccurrencePostRequest extends FormRequest{
      */
     public function rules(){
         return [
-            'occurrence_title'          => ['required','string','max:250'],
-            'occurrence_description'    => ['required'],
+            'oc_title'                  => ['required','string','max:250'],
+            'oc_description'            => ['required'],
             'user_id'                   => ['required'],
             'resolution_state_id'       => ['required'],
-            'company_id'                => ['required'],
+            //'company_id'                => ['required'],
         ];
     }
 }

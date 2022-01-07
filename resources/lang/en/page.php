@@ -71,12 +71,19 @@ return [
         'departments-create'    => 'Dashboard - Register Department',
         'departments-edit'      => 'Dashboard - Edit Department',
         'user-department-index' => 'Dashboard - My Department',
+        //Nonconformities/Occurrences Menu
+        'ncs_occurrences-menu'  => 'Dashboard - Ncs/Occurrences Menu',
         //Occurrences
         'occurrences-menu'      => 'Dashboard - Occurrences Menu',
         'occurrences-index'     => 'Dashboard - Occurrences List',
         'occurrences-create'    => 'Dashboard - Send Occurrence',
         'occurrences-show'      => 'Dashboard - Occurrence Details',
         'occurrences-edit'      => 'Dashboard - Edit Occurrence',
+        //Nonconformities
+        'ncs-index'             => 'Dashboard - Nc List',
+        'ncs-create'            => 'Dashboard - Register Nc',
+        'ncs-show'              => 'Dashboard - Nc Details',
+        'ncs-edit'              => 'Dashboard - Edit Nc',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -101,8 +108,10 @@ return [
         'company_types-index'   => 'Return to: List of business relationships',
         //Department
         'department-index'      => 'Return to: List of departments',
+        //Nonconformities and Occurrences Menu
+        'ncs-occurrences-menu'  => 'Return to: Ncs/Occurrences Menu',
         //Occurrences
-        'occurrence-index'      => 'Return to: List of occurrences',
+        'occurrences-index'      => 'Return to: List of occurrences',
     ],
     /*
     |--------------------------------------------------------------------------

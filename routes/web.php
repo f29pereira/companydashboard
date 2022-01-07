@@ -6,13 +6,12 @@ use App\Http\Controllers\Users\AuthUserController;
 use App\Http\Controllers\Users\UserRoleController;
 use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Users\DepartmentController;
-use App\Http\Controllers\Users\ManagementController;
 //Company Controllers
 use App\Http\Controllers\Companies\CompanyController;
 use App\Http\Controllers\Companies\CompanyTypeController;
-use App\Http\Controllers\Nonconformities\NonconformityController;
 //Nonconformity Controllers
 use App\Http\Controllers\Nonconformities\OccurrenceController;
+use App\Http\Controllers\Nonconformities\NonconformityController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -71,11 +70,6 @@ Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('editUser'
 Route::post('/users/update/{id}', [UserController::class, 'update'])->name('updateUser');
 
 Route::get('/users/delete/{id}', [UserController::class, 'softDelete'])->name('deleteUser');
-
-/**
- * Management Menu
- */
-Route::get('/management/menu', [ManagementController::class, 'managementMenu'])->name('management');
 
 /**
  * Company Type
@@ -139,7 +133,7 @@ Route::get('/occurrences/show/{id}', [OccurrenceController::class, 'show'])->nam
 
 Route::get('/occurrences/create', [OccurrenceController::class, 'create'])->name('createOccurrence');
 
-Route::post('/occurrences/create', [OccurrenceController::class, 'store'])->name('storeOccurrence');
+Route::post('/occurrences/store', [OccurrenceController::class, 'store'])->name('storeOccurrence');
 
 Route::get('/occurrences/edit/{id}', [OccurrenceController::class, 'edit'])->name('editOccurrence');
 

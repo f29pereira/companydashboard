@@ -264,13 +264,6 @@ return [
             'icon'        => 'fas fa-exclamation-triangle',
             'can'         => 'is_admin',
         ],
-        //apagar:
-        [
-            'text'        => 'management_menu',
-            'url'         => '/management/menu',
-            'icon'        => 'fas fa-th',
-            'can'         => 'is_admin'
-        ],
         //Collaborator/Department Head: Department
         [
             'text' => 'user_department',

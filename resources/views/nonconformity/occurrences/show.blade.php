@@ -40,7 +40,7 @@
                                     <i class="fas fa-heading text-info"></i>&nbsp;
                                     <strong>{{ __('occurrences.show-occurrence_title') }}</strong>
                                 </h4>
-                                <p>{{ $occurrence->occurrence_title }}</p>
+                                <p>{{ $occurrence->oc_title }}</p>
                             </div>
                             {{-- /.Occurrence Title --}}
 
@@ -50,7 +50,7 @@
                                     <i class="fas fa-align-justify text-info"></i>&nbsp;
                                     <strong>{{ __('occurrences.show-description') }}</strong>
                                 </h4>
-                                {!! $occurrence->occurrence_description !!}
+                                {!! $occurrence->oc_description !!}
                             </div>
                             {{-- /.Occurrence Description --}}
                         </div>

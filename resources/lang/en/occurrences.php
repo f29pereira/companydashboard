@@ -44,9 +44,11 @@ return  [
     */
     'delete-title'              =>  'Delete Occurrence',
 
+    //Tooltip
+    'tip-delete'                => 'The selected occurrence will be deleted',
+
     //Toastr - Delete Notification Message
     'toastr-delete-sucess'      =>  'Occurrence sucessfully deleted.',
-
 
     /*
     |--------------------------------------------------------------------------
@@ -59,7 +61,16 @@ return  [
     //Form Create label
     'label-title'               =>  'Title',
     'label-description'         =>  'Description',
-    'label-company'             =>  'Company',
+    'label-company'             =>  'Is a client occurrence?',
+
+    //Form Create placeholder
+    'text-create-title'         =>  'Insert Occurrence Title',
+    'text-create-description'   =>  'Insert Occurrence Description',
+    'text-create-company'       =>  'Select Company:',
+
+    //Radio button
+    'radio-yes'                 =>  'Yes',
+    'radio-no'                  =>  'No',
 
     //Toastr - Create Notification Message
     'toastr-update-sucess'      =>  'Occurrence sucessfully sended.',

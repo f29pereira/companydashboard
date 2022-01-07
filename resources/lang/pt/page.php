@@ -69,12 +69,19 @@ return  [
         'departments-create'    => 'Dashboard - Registar Departamento',
         'departments-edit'      => 'Dashboard - Editar Departamento',
         'user-department-index' => 'Dashboard - Meu Departamento',
+        //Nonconformities/Occurrences Menu
+        'ncs_occurrences-menu'  => 'Dashboard - NCs/Ocorrências Menu',
         //Occurrences
         'occurrences-menu'      => 'Dashboard - Menu de Ocorrências',
         'occurrences-index'     => 'Dashboard - Lista de Ocorrências',
         'occurrences-create'    => 'Dashboard - Enviar Ocorrência',
         'occurrences-show'      => 'Dashboard - Detalhes Ocorrência',
         'occurrences-edit'      => 'Dashboard - Editar Ocorrência',
+        //Nonconformities
+        'ncs-index'             => 'Dashboard - Lista Não Conformidades',
+        'ncs-create'            => 'Dashboard - Registar NC',
+        'ncs-show'              => 'Dashboard - Detalhes NC',
+        'ncs-edit'              => 'Dashboard - Editar NC',
     ],
     /*
     |--------------------------------------------------------------------------
@@ -99,6 +106,8 @@ return  [
         'company_types-index'   => 'Voltar para: Lista Relações de Negócio',
         //Department
         'department-index'      => 'Voltar para: Lista Departamentos',
+        //Nonconformities and Occurrences Menu
+        'ncs-occurrences-menu'  => 'Voltar para: Menu NCs/Ocorrências',
         //Occurrences
         'occurrence-index'      => 'Voltar para: Lista Ocorrências',
     ],
