@@ -8,9 +8,6 @@ return  [
     */
     'menu' => [
         'card-title'            =>  'Occurrences Menu',
-        'registered-not_solved' =>  'Registered Occurrences - not solved',
-        'registered-solving'    =>  'Registered Occurrences - to be solved',
-        'registered-solved'     =>  'Registered Occurrences - solved',
     ],
 
     /*
@@ -68,10 +65,6 @@ return  [
     'text-create-description'   =>  'Insert Occurrence Description',
     'text-create-company'       =>  'Select Company:',
 
-    //Radio button
-    'radio-yes'                 =>  'Yes',
-    'radio-no'                  =>  'No',
-
     //Toastr - Create Notification Message
     'toastr-update-sucess'      =>  'Occurrence sucessfully sended.',
 
@@ -100,7 +93,7 @@ return  [
 
     //Form Edit placeholder
     'text-edit-title'           =>  'Update Occurrence Title',
-    'text-edit-description'     =>  'Description',
+    'text-edit-description'     =>  'Update Occurrence Description',
 
     //Toastr - Update Notification Message
     'toastr-update-sucess'      =>  'Occurrence sucessfully updated.',

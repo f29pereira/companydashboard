@@ -128,7 +128,7 @@ trait OccurrenceTrait{
      * @return string   $text
      */
     public function occurCreateMsg(){
-        $text = __('occurrences.toastr-create-sucess');
+        $text = __('oc.toastr-create-sucess');
 
         return $text;
     }
@@ -149,7 +149,7 @@ trait OccurrenceTrait{
      * @return string   $text
      */
     public function occurUpdateMsg(){
-        $text = __('occurrences.toastr-update-sucess');
+        $text = __('oc.toastr-update-sucess');
 
         return $text;
     }
@@ -182,7 +182,7 @@ trait OccurrenceTrait{
      * @return string   $text
      */
     public function occurDeleteMsg(){
-        $text = __('occurrences.toastr-delete-sucess');
+        $text = __('oc.toastr-delete-sucess');
 
         return $text;
     }

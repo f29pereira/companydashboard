@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('occurrences.index-title') }}
+                            {{ __('oc.index-title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                             data-toggle="tooltip" data-placement="right"
-                            title="{{ __('occurrences.tip-index') }}"></i>
+                            title="{{ __('oc.tip-index') }}"></i>
                         </div>
                     </div>
                     {{-- /.Page Tooltip --}}
@@ -46,8 +46,8 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/occurrences/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('occurrences.tip-add') }}">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('occurrences.add-title') }}
+                            data-toggle="tooltip" data-placement="right" title="{{ __('oc.tip-add') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('oc.add-title') }}
                             </a>
                         </div>
                     </div>
@@ -57,11 +57,11 @@
                     <table class="table table-hover table-responsive-md" id="occurrencesTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
-                            <th scope="col">{{ __('occurrences.th-user') }}</th>
-                            <th scope="col">{{ __('occurrences.th-title') }}</th>
-                            <th scope="col">{{ __('occurrences.th-company') }}</th>
-                            <th scope="col">{{ __('occurrences.th-resolution') }}</th>
-                            <th scope="col">{{ __('occurrences.th-management') }}</th>
+                            <th scope="col">{{ __('oc.th-user') }}</th>
+                            <th scope="col">{{ __('oc.th-title') }}</th>
+                            <th scope="col">{{ __('oc.th-company') }}</th>
+                            <th scope="col">{{ __('oc.th-resolution') }}</th>
+                            <th scope="col">{{ __('oc.th-management') }}</th>
                         </thead>
                         {{-- /.Table Head --}}
 
@@ -96,7 +96,7 @@
                                             {{-- Show Occurrence --}}
                                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/occurrences/show/'.$occurrence->id) }}"
                                                 role="button" data-toggle="tooltip" data-placement="bottom"
-                                                title="{{ __('occurrences.tip-show-btn') }}">
+                                                title="{{ __('oc.tip-show-btn') }}">
                                                 <i class="fas fa-info-circle"></i>
                                             </a>
                                             {{-- /.Show Occurrence --}}
@@ -105,7 +105,7 @@
                                             {{-- Edit Occurrence --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/occurrences/edit/'.$occurrence->id) }}"
                                                 role="button" data-toggle="tooltip" data-placement="bottom"
-                                                title="{{ __('occurrences.tip-edit-btn') }}">
+                                                title="{{ __('oc.tip-edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                             {{-- /.Edit Occurrence --}}
@@ -115,7 +115,7 @@
                                             <span data-toggle="modal" data-target="#deleteOccurrence-{{ $occurrence->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
                                                     data-toggle="tooltip" data-placement="bottom"
-                                                    title="{{ __('occurrences.tip-delete-btn') }}">
+                                                    title="{{ __('oc.tip-delete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>
@@ -132,7 +132,7 @@
                                                 <div class="modal-header bg-danger text-center">
                                                     <h5 class="modal-title w-100" id="deleteModalLabel">
                                                         <i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;
-                                                        {{ __('occurrences.delete-title') }}
+                                                        {{ __('oc.delete-title') }}
                                                     </h5>
                                                 </div>
                                                 {{-- /.Modal Header --}}
@@ -144,7 +144,7 @@
                                                         <div class="row">
                                                             <i class="far fa-question-circle text-danger fa-lg"
                                                             data-toggle="tooltip" data-placement="right"
-                                                            title="{{ __('occurrences.tip-delete') }}"></i>&nbsp;&nbsp;
+                                                            title="{{ __('oc.tip-delete') }}"></i>&nbsp;&nbsp;
                                                         </div>
                                                     </div>
                                                     {{-- /.Modal Tooltip --}}
@@ -155,7 +155,7 @@
                                                         <div class="col-md-6">
                                                             <p>
                                                                 <i class="fas fa-heading fa-lg text-danger"></i>&nbsp;
-                                                                <strong>{{ __('occurrences.th-title') }}</strong>
+                                                                <strong>{{ __('oc.show-occurrence_title') }}</strong>
                                                             </p>
                                                             <p>{{ $occurrence->oc_title }}</p>
                                                         </div>
@@ -165,7 +165,7 @@
                                                         <div class="col-md-6">
                                                             <p>
                                                                 <i class="fas fa-check fa-lg text-danger"></i>&nbsp;
-                                                                <strong>{{ __('occurrences.th-resolution') }}</strong>
+                                                                <strong>{{ __('oc.show-state') }}</strong>
                                                             </p>
                                                             <p>{{ $occurrence->resolutionState->state_name }}</p>
                                                         </div>
@@ -176,7 +176,7 @@
                                                         <div class="col-md-6">
                                                             <p>
                                                                 <i class="fas fa-user fa-lg text-danger"></i>&nbsp;
-                                                                <strong>{{ __('occurrences.th-user') }}</strong>
+                                                                <strong>{{ __('oc.show-user') }}</strong>
                                                             </p>
                                                             <p>
                                                                 @if ($occurrence->user->user_image_id == 1)
@@ -202,13 +202,11 @@
                                                         <div class="col-md-6">
                                                             <p>
                                                                 <i class="far fa-calendar-alt fa-lg text-danger"></i>&nbsp;
-                                                                <strong>{{ __('occurrences.th-title') }}</strong>
+                                                                <strong>{{ __('oc.show-created_at') }}</strong>
                                                             </p>
                                                             <p>{{ $occurrence->created_at }}</p>
                                                         </div>
                                                         {{-- /.Occurrence Send Date --}}
-
-
                                                     </div>
                                                     {{-- /.Occurrence Data --}}
                                                 </div>
@@ -237,11 +235,11 @@
 
                         {{-- Table Foot --}}
                         <tfoot class="text-center">
-                            <th>{{ __('occurrences.th-user') }}</th>
-                            <th>{{ __('occurrences.th-title') }}</th>
-                            <th>{{ __('occurrences.th-company') }}</th>
-                            <th>{{ __('occurrences.th-resolution') }}</th>
-                            <th>{{ __('occurrences.th-management') }}</th>
+                            <th>{{ __('oc.th-user') }}</th>
+                            <th>{{ __('oc.th-title') }}</th>
+                            <th>{{ __('oc.th-company') }}</th>
+                            <th>{{ __('oc.th-resolution') }}</th>
+                            <th>{{ __('oc.th-management') }}</th>
                         </tfoot>
                         {{-- /.Table Foot --}}
                     </table>

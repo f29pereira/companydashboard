@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('occurrences.create-title') }}
+                            {{ __('oc.create-title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('occurrences.tip-create') }}"></i>
+                            data-toggle="tooltip" data-placement="right" title="{{ __('oc.tip-create') }}"></i>
                         </div>
                     </div>
                     {{-- /.Page Tooltip --}}
@@ -49,14 +49,14 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="occurrenceTitle" class="form-label">
-                                        {{ __('occurrences.label-title') }} &nbsp;&nbsp;
+                                        {{ __('oc.label-title') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     {{-- Input group --}}
                                     <div class="input-group">
                                         <input type="text" name="occurrence_title" id="occurrenceTitle" class="form-control @error('occurrence_title') is-invalid @enderror"
-                                        placeholder="{{ __('occurrences.text-create-title') }}">
+                                        placeholder="{{ __('oc.text-create-title') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-heading text-info"></span>
@@ -80,7 +80,7 @@
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="summernote" class="form-label">
-                                        {{ __('occurrences.label-description') }} &nbsp;&nbsp;
+                                        {{ __('oc.label-description') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -139,7 +139,7 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
             ],
-            placeholder: {!! json_encode(__('occurrences.text-create-description')) !!},
+            placeholder: {!! json_encode(__('oc.text-create-description')) !!},
             tabsize: 2,
             height: 150
         });

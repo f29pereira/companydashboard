@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-info-circle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('occurrences.show-title') }}
+                            {{ __('oc.show-title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -38,7 +38,7 @@
                             <div class="col mb-3">
                                 <h4>
                                     <i class="fas fa-heading text-info"></i>&nbsp;
-                                    <strong>{{ __('occurrences.show-occurrence_title') }}</strong>
+                                    <strong>{{ __('oc.show-occurrence_title') }}</strong>
                                 </h4>
                                 <p>{{ $occurrence->oc_title }}</p>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="col mb-3">
                                 <h4>
                                     <i class="fas fa-align-justify text-info"></i>&nbsp;
-                                    <strong>{{ __('occurrences.show-description') }}</strong>
+                                    <strong>{{ __('oc.show-description') }}</strong>
                                 </h4>
                                 {!! $occurrence->oc_description !!}
                             </div>
@@ -61,9 +61,25 @@
                                     <div class="text-center">
                                         <h4>
                                             <i class="fas fa-user text-info"></i>&nbsp;
-                                            <strong>{{ __('occurrences.show-user') }}</strong>
+                                            <strong>{{ __('oc.show-user') }}</strong>
                                         </h4>
-                                        <p>{{ $occurrence->user->first_name }} {{ $occurrence->user->last_name }}</p>
+                                        <p>
+                                            @if ($occurrence->user->user_image_id == 1)
+                                            {{-- Default User Image --}}
+                                            <img src="{{ asset('images/default/'. $occurrence->user->userImage->image_name) }}"
+                                            class="user-image img-circle elevation-2"
+                                            alt="{{ __('users.alt-picture') }}" width="35" height="35">
+                                            {{-- /.Default User Image --}}
+                                            @else
+                                            {{-- Custom User Image --}}
+                                            <img src="{{ asset('storage/users/'. $occurrence->user->userImage->image_name) }}"
+                                            class="user-image img-circle elevation-2"
+                                            alt="{{ __('users.alt-picture') }}" width="35" height="35">
+                                            {{-- /.Custom User Image --}}
+                                            @endif
+                                            &nbsp;&nbsp;
+                                            {{ $occurrence->user->first_name }} {{ $occurrence->user->last_name }}
+                                        </p>
                                     </div>
                                 </div>
                                 {{-- /.Occurrence User --}}
@@ -73,7 +89,7 @@
                                     <div class="text-center">
                                         <h4>
                                             <i class="far fa-calendar-alt text-info"></i>&nbsp;
-                                            <strong>{{ __('occurrences.show-created_at') }}</strong>
+                                            <strong>{{ __('oc.show-created_at') }}</strong>
                                         </h4>
                                         <p>{{ $occurrence->created_at }}</p>
                                     </div>
@@ -87,7 +103,7 @@
                                     <div class="text-center">
                                         <h4>
                                             <i class="fas fa-check text-info"></i>&nbsp;
-                                            <strong>{{ __('occurrences.show-state') }}</strong>
+                                            <strong>{{ __('oc.show-state') }}</strong>
                                         </h4>
                                         <p>{{ $occurrence->resolutionState->state_name }}</p>
                                     </div>
@@ -100,7 +116,7 @@
                                     <div class="text-center">
                                         <h4>
                                             <i class="far fa-building text-info"></i>&nbsp;
-                                            <strong>{{ __('occurrences.show-client') }}</strong>
+                                            <strong>{{ __('oc.show-client') }}</strong>
                                         </h4>
                                         <p>{{ $occurrence->company->company_name }}</p>
                                     </div>
@@ -118,4 +134,4 @@
     </div>
     @endcan
     {{-- /.Permisson: Administrator --}}
-@endsection
+@stop
