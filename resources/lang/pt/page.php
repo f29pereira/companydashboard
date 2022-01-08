@@ -72,11 +72,13 @@ return  [
         //Nonconformities/Occurrences Menu
         'ncs_occurrences-menu'  => 'Dashboard - NCs/Ocorrências Menu',
         //Occurrences
-        'occurrences-menu'      => 'Dashboard - Menu de Ocorrências',
         'occurrences-index'     => 'Dashboard - Lista de Ocorrências',
         'occurrences-create'    => 'Dashboard - Enviar Ocorrência',
         'occurrences-show'      => 'Dashboard - Detalhes Ocorrência',
         'occurrences-edit'      => 'Dashboard - Editar Ocorrência',
+        //Occurrences - Auth
+        'auth-oc-menu'      => 'Dashboard - Minhas Ocorrências',
+        'auth-oc-index'         => 'Dashboard - Lista de Ocorrências',
         //Nonconformities
         'ncs-index'             => 'Dashboard - Lista Não Conformidades',
         'ncs-create'            => 'Dashboard - Registar NC',
@@ -108,6 +110,8 @@ return  [
         'department-index'      => 'Voltar para: Lista Departamentos',
         //Nonconformities and Occurrences Menu
         'ncs-occurrences-menu'  => 'Voltar para: Menu NCs/Ocorrências',
+        //Auth - Occurrences Menu
+        'auth-occurrence-menu'  =>  'Voltar para: Menu de Ocorrências',
         //Occurrences
         'occurrence-index'      => 'Voltar para: Lista Ocorrências',
     ],

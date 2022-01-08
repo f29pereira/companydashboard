@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Traits\Users;
+
+use App\Models\Nonconformities\Occurrence;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Users\User;
@@ -74,6 +76,103 @@ trait AuthUserTrait{
             ['user_role_id', '!=', 1], //User is not Administrator
             ['is_deleted', false], //User is not deleted
             ['department_id', Auth::user()->department_id] //User department = Auth User department
+        ])->get();
+
+        return $list;
+    }
+
+    /**
+     * Count of occurrences (not solved) created by Auth User.
+     *
+     * @return int $count
+     */
+    public function authNotSolvedCount(){
+        $count = DB::table('occurrences')
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 1],     //Occurrence with resolution state 'Not Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
+        ])->count();
+
+        return $count;
+    }
+
+    /**
+     * List of occurrences (not solved) created by Auth User.
+     *
+     * @return array[] $list
+     */
+    public function authNotSolvedList(){
+        //Eaguer loading: Company
+        $list = Occurrence::with(['company'])
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 1],     //Occurrence with resolution state 'Not Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
+        ])->get();
+
+        return $list;
+    }
+
+    /**
+     * Count of occurrences (getting solved) created by Auth User.
+     *
+     * @return int $count
+     */
+    public function authSolvingCount(){
+        $count = DB::table('occurrences')
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 2],     //Occurrence with resolution state 'Getting Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
+        ])->count();
+
+        return $count;
+    }
+
+    /**
+     * List of occurrences (getting solved) created by Auth User.
+     *
+     * @return array[] $list
+     */
+    public function authSolvingList(){
+        $list = Occurrence::with(['company'])
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 2],     //Occurrence with resolution state 'Not Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
+        ])->get();
+
+        return $list;
+    }
+
+    /**
+     * Count of occurrences (solved) created by Auth User.
+     *
+     * @return int $count
+     */
+    public function authSolvedCount(){
+        $count = DB::table('occurrences')
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 3],     //Occurrence with resolution state 'Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
+        ])->count();
+
+        return $count;
+    }
+
+    /**
+     * List of occurrences (solved) created by Auth User.
+     *
+     * @return array[] $list
+     */
+    public function authSolvedList(){
+        $list = Occurrence::with(['company'])
+        ->where([
+            ['is_deleted', false],          //Occurrence is not deleted
+            ['resolution_state_id', 3],     //Occurrence with resolution state 'Not Solved'
+            ['user_id', Auth::user()->id]   //Occurrence 'user_id' = Auth user id
         ])->get();
 
         return $list;

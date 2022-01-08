@@ -18,11 +18,6 @@ class AuthUserController extends Controller{
     use AuthUserTrait, UserTrait, UserImageTrait;
 
     /**
-     * Display a listing of the users from the same department as Auth user.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    /**
      * Display a listing of users from the same department as the Auth user.
      *
      * @return \Illuminate\Http\Response
@@ -55,17 +50,92 @@ class AuthUserController extends Controller{
         $this->authorize('is_user_company');
 
         //Count - occurrences not solved
-        $notSolved = '';
+        $notSolved = $this->authNotSolvedCount();
 
         //Count - occurrences solving
-        $solving = '';
+        $solving = $this->authSolvingCount();
 
         //Count - occurrences solved
-        $solved = '';
+        $solved = $this->authSolvedCount();
 
         return view('user.auth.occurrences.menu', compact('notSolved', 'solving', 'solved'));
     }
 
+    /**
+     * Display a listing of occurrences (not solved) created by Auth User.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexNotSolved(){
+        //User Authorization
+        $this->authorize('is_user_company');
+
+        //Auth User Occurrences - not solved
+        $occurrences = $this->authNotSolvedList();
+
+        //Page Title
+        $title = __('oc.auth.index-not-solved-title');
+
+        //Page tooltip
+        $tooltip = __('oc.auth.tip-index-not-solved');
+
+        return view('user.auth.occurrences.index', compact('occurrences','title','tooltip'));
+    }
+
+    /**
+     * Display a listing of occurrences (getting solved) created by Auth User.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexGettingSolved(){
+        //User Authorization
+        $this->authorize('is_user_company');
+
+        //Auth User Occurrences - getting solved
+        $occurrences = $this->authSolvingList();
+
+        //Page Title
+        $title = __('oc.auth.index-getting-solved-title');
+
+        //Page tooltip
+        $tooltip = __('oc.auth.tip-index-getting-solved');
+
+        return view('user.auth.occurrences.index', compact('occurrences','title','tooltip'));
+    }
+
+    /**
+     * Display a listing of occurrences (solved) created by Auth User.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexSolved(){
+        //User Authorization
+        $this->authorize('is_user_company');
+
+        //Auth User Occurrences - solved
+        $occurrences = $this->authSolvedList();
+
+        //Page Title
+        $title = __('oc.auth.index-solved-title');
+
+        //Page tooltip
+        $tooltip = __('oc.auth.tip-index-solved');
+
+        return view('user.auth.occurrences.index', compact('occurrences','title','tooltip'));
+    }
+
+    /**
+     * Display the specified Auth User occurrence.
+     */
+    public function showOccurrence($id){
+        //User Authorization
+        $this->authorize('is_user_company');
+
+        //Specified occurrence
+        $occurrence = '';
+
+        return view('user.auth.occurrences.show', compact('occurrence'));
+    }
 
     /**
      * Display the authenticated user profile

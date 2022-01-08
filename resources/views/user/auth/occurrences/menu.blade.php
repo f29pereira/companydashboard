@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '')
+@section('title', __('page.titles.auth-oc-menu'))
 
 @section('content_header')
 @stop
@@ -23,7 +23,7 @@
                             {{-- Card Title --}}
                             <h3 class="card-title">
                                 <i class="fas fa-exclamation-triangle fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
-                                {{ __('occurrences.menu.card-title') }}
+                                {{ __('oc.menu.card-title') }}
                             </h3>
                             <div></div>
                         </div>
@@ -32,13 +32,16 @@
 
                     {{-- Card Body --}}
                     <div class="card-body">
+                        {{-- Page Tooltip --}}
+                        {{-- /.Page Tooltip --}}
+
                         {{-- Add Ocurrence --}}
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <a class="btn bg-gradient-success btn-sm" href="" role="button"
-                                data-toggle="tooltip" data-placement="right" title="{{ __('occurrences.tip-add') }}">
+                                data-toggle="tooltip" data-placement="right" title="{{ __('oc.tip-add') }}">
                                     <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;
-                                    {{ __('occurrences.add-title') }}
+                                    {{ __('oc.add-title') }}
                                 </a>
                             </div>
                         </div>
@@ -50,13 +53,13 @@
                             <div class="col">
                                 <div class="small-box bg-danger">
                                     <div class="inner">
-                                        <h3>0</h3>
-                                        <p>{{ __('occurrences.auth-menu.registered-not_solved') }}</p>
+                                        <h3>{{ $notSolved }}</h3>
+                                        <p>{{ __('oc.auth-menu.registered-not_solved') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-exclamation-triangle text-white"></i>
                                     </div>
-                                    <a href="{{ url('/occurrences/index') }}" class="small-box-footer">
+                                    <a href="{{ url('/user/occurrences-not_solved/index') }}" class="small-box-footer">
                                         {{ __('page.generic.moreInfo') }}
                                         <i class="fas fa-arrow-circle-right"></i>
                                     </a>
@@ -68,13 +71,13 @@
                             <div class="col">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
-                                        <h3>0</h3>
-                                        <p>{{ __('occurrences.auth-menu.registered-solving') }}</p>
+                                        <h3>{{ $solving }}</h3>
+                                        <p>{{ __('oc.auth-menu.registered-getting-solved') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-exclamation-triangle text-white"></i>
                                     </div>
-                                    <a href="{{ url('/occurrences/index') }}" class="small-box-footer">
+                                    <a href="{{ url('/user/occurrences-getting_solved/index') }}" class="small-box-footer">
                                         {{ __('page.generic.moreInfo') }}
                                         <i class="fas fa-arrow-circle-right"></i>
                                     </a>
@@ -86,13 +89,13 @@
                             <div class="col">
                                 <div class="small-box bg-success">
                                     <div class="inner">
-                                        <h3>0</h3>
-                                        <p>{{ __('occurrences.auth-menu.registered-solved') }}</p>
+                                        <h3>{{ $solved }}</h3>
+                                        <p>{{ __('oc.auth-menu.registered-solved') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-exclamation-triangle text-white"></i>
                                     </div>
-                                    <a href="{{ url('/occurrences/index') }}" class="small-box-footer">
+                                    <a href="{{ url('/user/occurrences-solved/index') }}" class="small-box-footer">
                                         {{ __('page.generic.moreInfo') }}
                                         <i class="fas fa-arrow-circle-right"></i>
                                     </a>

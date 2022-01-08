@@ -24,7 +24,7 @@ class OccurrencePostRequest extends FormRequest{
      */
     public function rules(){
         return [
-            'oc_title'                  => ['required','string','max:250'],
+            'oc_title'                  => ['required','string','max:50'],
             'oc_description'            => ['required'],
             'user_id'                   => ['required'],
             'resolution_state_id'       => ['required'],

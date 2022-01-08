@@ -27,7 +27,8 @@ trait OccurrenceTrait{
      */
     public function occurrencesList(){
         //Eaguer loading: ResolutionState, User, Company
-        $list = Occurrence::with(['resolutionState', 'user', 'company'])->where([
+        $list = Occurrence::with(['resolutionState', 'user', 'company'])
+        ->where([
             ['is_deleted', false], //Occurrence is not deleted
         ])->get();
 

@@ -57,7 +57,7 @@ class AuthServiceProvider extends ServiceProvider
          * @param \App\Models\Users\User            $user
          * @return \Illuminate\Auth\Access\Response
          */
-        Gate::define('is_departmentResp', function (User $user){
+        Gate::define('is_department_head', function (User $user){
             return $user->user_role_id === 2
                 ? Response::allow()
                 : Response::deny(__('auth.departmentResp'));

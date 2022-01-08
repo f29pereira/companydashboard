@@ -233,7 +233,7 @@
                         </tbody>
                         {{-- /.Table Body --}}
 
-                        {{-- Table Foot --}}
+                        {{-- Table Footer --}}
                         <tfoot class="text-center">
                             <th>{{ __('oc.th-user') }}</th>
                             <th>{{ __('oc.th-title') }}</th>
@@ -241,7 +241,7 @@
                             <th>{{ __('oc.th-resolution') }}</th>
                             <th>{{ __('oc.th-management') }}</th>
                         </tfoot>
-                        {{-- /.Table Foot --}}
+                        {{-- /.Table Footer --}}
                     </table>
                     {{-- /.Table --}}
                 </div>

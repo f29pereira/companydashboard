@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Occurrences - Languages Lines (pt)
+ */
 return [
     /*
     |--------------------------------------------------------------------------
@@ -104,10 +106,10 @@ return [
     |--------------------------------------------------------------------------
     */
     'auth-menu' => [
-        'card-title'            =>  'Ocorrências Enviadas',
-        'registered-not_solved' =>  'Ocorrências Enviadas - não resolvidas',
-        'registered-solving'    =>  'Ocorrências Enviadas - a serem resolvidas',
-        'registered-solved'     =>  'Ocorrências Enviadas - resolvidas',
+        'card-title'                =>  'Ocorrências Enviadas',
+        'registered-not_solved'     =>  'Ocorrências Enviadas - não resolvidas',
+        'registered-getting-solved' =>  'Ocorrências Enviadas - a serem resolvidas',
+        'registered-solved'         =>  'Ocorrências Enviadas - resolvidas',
     ]
 
 ];

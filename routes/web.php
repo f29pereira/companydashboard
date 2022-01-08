@@ -150,7 +150,9 @@ Route::get('/nonconformities/index', [NonconformityController::class, 'index'])-
 
 Route::get('/nonconformities/show/{id}', [NonconformityController::class, 'show'])->name('showNc');
 
-Route::post('/nonconformities/create', [NonconformityController::class, 'create'])->name('createNc');
+Route::get('/nonconformities/create', [NonconformityController::class, 'create'])->name('createNc');
+
+Route::post('/nonconformities/store', [NonconformityController::class, 'post'])->name('storeNc');
 
 Route::get('/nonconformities/edit/{id}', [NonconformityController::class, 'edit'])->name('editNc');
 
@@ -159,12 +161,30 @@ Route::post('/nonconformities/update/{id}', [NonconformityController::class, 'up
 Route::get('/nonconformities/delete/{id}', [NonconformityController::class, 'softDelete'])->name('deleteNc');
 
 /**
- * Authenticated User
+ * Authenticated User - Department
  */
 Route::get('/user/index', [AuthUserController::class, 'index'])->name('usersDepartment');
 
+/**
+ * Authenticated User - Occurrences
+ */
 Route::get('/user/occurrence-menu', [AuthUserController::class, 'occurrenceMenu'])->name('menuOccurrences');
 
+Route::get('/user/occurrences-not_solved/index', [AuthUserController::class, 'indexNotSolved'])->name('authOcNotSolved');
+
+Route::get('/user/occurrences-getting_solved/index', [AuthUserController::class, 'indexGettingSolved'])->name('authOcGettingSolved');
+
+Route::get('/user/occurrences-solved/index', [AuthUserController::class, 'indexSolved'])->name('authOcSolved');
+
+Route::get('/user/occurrences/show/{id}', [AuthUserController::class, 'showOccurrence'])->name('authShowOc');
+
+Route::get('/user/occurrences/create', [AuthUserController::class, ''])->name('authCreateOc');
+
+Route::post('/user/occurrences/store', [AuthUserController::class, ''])->name('authStore');
+
+/**
+ * Authenticated User - Profile
+ */
 Route::get('/user/profile', [AuthUserController::class, 'profile'])->name('profile');
 
 Route::get('/user/edit-profile-pic/{id}', [AuthUserController::class, 'editProfilePic'])->name('editProfilePic');
