@@ -107,9 +107,9 @@ return  [
     */
     'auth-menu' => [
         'card-title'                =>  'Sent Occurrences',
-        'registered-not-solved'     =>  'Sent Occurrences - not solved',
-        'registered-getting-solved' =>  'Sent Occurrences - getting solved',
-        'registered-solved'         =>  'Sent Occurrences - solved',
+        'registered-not-solved'     =>  'Occurrences not solved',
+        'registered-getting-solved' =>  'Occurrences getting solved',
+        'registered-solved'         =>  'Occurrences solved',
     ],
 
     'auth' => [
@@ -119,29 +119,43 @@ return  [
         |--------------------------------------------------------------------------
         */
         //Occurrences Not Solved
-        'index-not-solved-title'    =>  'Occurrences - Not Solved',
-        'tip-index-not-solved'      =>  'List of my not solved occurrences',
+        'index-not-solved-title'        =>  'Occurrences - Not Solved',
+        'tip-index-not-solved'          =>  'List of my not solved occurrences',
 
         //Occurrences Getting Solved
-        'index-getting-solved-title'=>  'Occurrences - Getting Solved',
-        'tip-index-getting-solved'  =>  'List of my occurrences getting solved',
+        'index-getting-solved-title'    =>  'Occurrences - Getting Solved',
+        'tip-index-getting-solved'      =>  'List of my occurrences getting solved',
 
         //Occurrences Solved
-        'index-solved-title'  =>  'Occurrences - Solved',
-        'tip-index-solved'          =>  'List of my solved occurrences',
+        'index-solved-title'            =>  'Occurrences - Solved',
+        'tip-index-solved'              =>  'List of my solved occurrences',
 
         //Table
-        'th-title'=> 'Title',
-        'th-created_at'=> 'Send Date',
-        'th-company'=> 'Company',
-        'th-management'=> 'Occurrence Details',
+        'th-title'                      => 'Title',
+        'th-created_at'                 => 'Send Date',
+        'th-company'                    => 'Company',
+        'th-management'                 => 'Occurrence Details',
 
         //Tooltips - management Buttons
-        'tip-show-btn'              => 'Show Occurrence Details',
+        'tip-show-btn'                  => 'Show Occurrence Details',
 
         //Add Occurrence Button
-        'add-title'                 => 'Occurrence',
-        'tip-add'                   => 'Send occurrence',
+        'add-title'                     => 'Occurrence',
+        'tip-add'                       => 'Send occurrence',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Auth User: Occurrences Show - Language Lines (en)
+        |--------------------------------------------------------------------------
+        */
+        'show-title'                =>  'Occurrence Details',
+
+        //Occurrence Details
+        'show-oc_title'             =>  'Title',
+        'show-description'          =>  'Description',
+        'show-created_at'           =>  'Send Date',
+        'show-state'                =>  'Resolution State',
+        'show-client'               =>  'Company',
 
         /*
         |--------------------------------------------------------------------------
@@ -162,19 +176,5 @@ return  [
 
         //Toastr - Create Notification Message
         'toastr-update-sucess'      =>  'Occurrence sucessfully sended.',
-
-        /*
-        |--------------------------------------------------------------------------
-        | Auth User: Occurrences Show - Language Lines (en)
-        |--------------------------------------------------------------------------
-        */
-        'show-title'                =>  'Occurrence Details',
-
-        //Occurrence Details
-        'show-oc_title'             =>  'Title',
-        'show-description'          =>  'Description',
-        'show-created_at'           =>  'Send Date',
-        'show-state'                =>  'Resolution State',
-        'show-client'               =>  'Company',
     ]
 ];

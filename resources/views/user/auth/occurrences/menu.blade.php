@@ -23,7 +23,7 @@
                             {{-- Card Title --}}
                             <h3 class="card-title">
                                 <i class="fas fa-exclamation-triangle fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
-                                {{ __('oc.menu.card-title') }}
+                                {{ __('oc.auth-menu.card-title') }}
                             </h3>
                             <div></div>
                         </div>

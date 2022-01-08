@@ -127,6 +127,7 @@
                                     <div class="modal fade" id="deleteOccurrence-{{ $occurrence->id }}" tabindex="-1"
                                     role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
+                                            {{-- Modal Content --}}
                                             <div class="modal-content">
                                                 {{-- Modal Header --}}
                                                 <div class="modal-header bg-danger text-center">
@@ -223,6 +224,7 @@
                                                 </div>
                                                 {{-- /.Confirm/Cancel --}}
                                             </div>
+                                            {{-- /.Modal Content --}}
                                         </div>
                                     </div>
                                     {{-- /.Delete Occurrence Modal  --}}

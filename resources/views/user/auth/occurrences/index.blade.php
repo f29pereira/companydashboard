@@ -72,14 +72,103 @@
                                     <div class="row">
                                         <div class="col-md-12 mb-1">
                                             {{-- Show Occurrence --}}
-                                            <a class="btn bg-gradient-success btn-sm" href="{{ url('/user/occurrences/show/'.$oc->id) }}"
-                                                role="button" data-toggle="tooltip" data-placement="bottom"
-                                                title="{{ __('oc.auth.tip-show-btn') }}">
-                                                <i class="fas fa-info-circle"></i>
-                                            </a>
+                                            <span data-toggle="modal" data-target="#showOccurrence-{{ $oc->id }}">
+                                                <button type="button" class="btn bg-gradient-success btn-sm"
+                                                    data-toggle="tooltip" data-placement="bottom"
+                                                    title="{{ __('oc.auth.tip-show-btn') }}">
+                                                    <i class="fas fa-info-circle"></i>
+                                                </button>
+                                            </span>
                                             {{-- /.Show Occurrence --}}
                                         </div>
                                     </div>
+
+                                    {{-- Occurrence Details Modal --}}
+                                    <div class="modal fade" id="showOccurrence-{{ $oc->id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="showModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            {{-- Modal Content --}}
+                                            <div class="modal-content">
+                                                {{-- Modal Header --}}
+                                                <div class="modal-header bg-info text-center">
+                                                    <h5 class="modal-title w-100" id="deleteModalLabel">
+                                                        <i class="fas fa-info-circle"></i>&nbsp;&nbsp;&nbsp;
+                                                        {{ __('oc.auth.show-title') }}
+                                                    </h5>
+                                                    {{-- Close Button --}}
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <i class="fas fa-times text-white"></i>
+                                                    </button>
+                                                    {{-- /.Close Button --}}
+                                                </div>
+                                                {{-- /.Modal Header --}}
+
+                                                {{-- Modal Body --}}
+                                                <div class="modal-body">
+                                                    {{-- Occurrence Data --}}
+                                                    <div class="row">
+                                                        {{-- Occurrence Title --}}
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                <i class="fas fa-heading fa-lg text-info"></i>&nbsp;
+                                                                <strong>{{ __('oc.auth.show-oc_title') }}</strong>
+                                                            </p>
+                                                            <p>{{ $oc->oc_title }}</p>
+                                                        </div>
+                                                        {{-- /.Occurrence Title --}}
+                                                    </div>
+                                                    <div class="row">
+                                                        {{-- Occurrence Description --}}
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                <i class="fas fa-align-justify fa-lg text-info"></i>&nbsp;
+                                                                <strong>{{ __('oc.auth.show-description') }}</strong>
+                                                            </p>
+                                                            {!! $oc->oc_description !!}
+                                                        </div>
+                                                        {{-- /.Occurrence Description --}}
+                                                    </div>
+                                                    <div class="row">
+                                                        {{-- Occurrence Send Date --}}
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <i class="far fa-calendar-alt fa-lg text-info"></i>&nbsp;
+                                                                <strong>{{ __('oc.auth.show-created_at') }}</strong>
+                                                            </p>
+                                                            <p>{{ $oc->created_at }}</p>
+                                                        </div>
+                                                        {{-- /.Occurrence Send Date --}}
+
+                                                        {{-- Occurrence Resolution State --}}
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <i class="fas fa-check fa-lg text-info"></i>&nbsp;
+                                                                <strong>{{ __('oc.auth.show-state') }}</strong>
+                                                            </p>
+                                                            <p>{{ $oc->resolutionState->state_name }}</p>
+                                                        </div>
+                                                        {{-- /.Occurrence Resolution State --}}
+
+                                                        {{-- Permission: Department Head --}}
+                                                        @can('is_department_head')
+                                                        <div class="col-md-4">
+                                                            <p>
+                                                                <i class="far fa-building fa-lg text-info"></i>&nbsp;
+                                                                <strong>{{ __('oc.auth.show-client') }}</strong>
+                                                            </p>
+                                                            <p>{{ $oc->company->company_name }}</p>
+                                                        </div>
+                                                        @endcan
+                                                        {{-- /.Permission: Department Head --}}
+                                                    </div>
+                                                    {{-- /.Occurrence Data --}}
+                                                </div>
+                                                {{-- /.Modal Body --}}
+                                            </div>
+                                            {{-- /.Modal Content --}}
+                                        </div>
+                                    </div>
+                                    {{-- /.Occurrence Details Modal --}}
                                 </td>
                             </tr>
                             @endforeach

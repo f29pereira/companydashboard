@@ -113,7 +113,7 @@ return [
         //Nonconformities and Occurrences Menu
         'ncs-occurrences-menu'  => 'Return to: Ncs/Occurrences Menu',
         //Auth - Occurrences Menu
-        'auth-occurrence-menu'  =>  'Return to: Occurrences Menu',
+        'auth-occurrence-menu'  =>  'Return to: My Occurrences',
         //Occurrences
         'occurrences-index'      => 'Return to: List of occurrences',
     ],
