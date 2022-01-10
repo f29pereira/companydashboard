@@ -3,17 +3,6 @@
 return[
     /*
     |--------------------------------------------------------------------------
-    | Users Menu - Language Lines (pt)
-    |--------------------------------------------------------------------------
-    */
-    'menu' => [
-        'card-title'                => 'Menu de Utilizadores',
-        'registered-users'          => 'Utilizadores Registados',
-        'registered-departments'    => 'Departamentos Registados',
-        'registered-roles'          => 'Roles de Utilizador',
-    ],
-    /*
-    |--------------------------------------------------------------------------
     | Users Views - Language Lines (pt)
     |--------------------------------------------------------------------------
     */
@@ -104,16 +93,4 @@ return[
     'toastr-title'              => 'Utilizador:',
     'toastr-user-profile'       => 'Perfil de Utilizador atualizado com sucesso.',
     'toastr-user-img'           => 'Foto de Utilizador atualizada com sucesso.',
-    /*
-    |--------------------------------------------------------------------------
-    | Users from Auth User Department - Language Lines (pt)
-    |--------------------------------------------------------------------------
-    */
-    'index-dep-title'       => 'Colaboradores do Departamento',
-    'tip-index-dep'         => 'Departamentos são atribuídos pelo administrador do sistema',
-    'no-dep-msg'            => 'Desculpe, ainda não lhe foi atribuído um departamento.',
-    //table
-    'th-collaborator'       => 'Colaborador',
-    //User Tooltip - Department Responsible
-    'tip-dep-responsible'   =>  'Responsável do Departamento',
 ];

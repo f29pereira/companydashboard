@@ -7,15 +7,13 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * Nonconformity Create/Update - Form Request
  */
-class NonconformityPostRequest extends FormRequest
-{
+class NonconformityPostRequest extends FormRequest{
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(){
         return true;
     }
 
@@ -24,10 +22,18 @@ class NonconformityPostRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules(){
         return [
             //
         ];
+    }
+
+    /**
+     *  Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function messages(){
+        return[];
     }
 }

@@ -22,7 +22,7 @@
                        {{-- Card Title --}}
                        <h3 class="card-title">
                            <i class="fas fa-users fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
-                           {{ __('users.index-dep-title') }} - {{ $department->department_name }}
+                           {{ __('auth/users.title') }} - {{ $department->department_name }}
                        </h3>
                        <div></div>
                    </div>
@@ -35,7 +35,7 @@
                    <div class="row">
                        <div class="col mb-3">
                            <i class="far fa-question-circle text-info fa-lg" data-toggle="tooltip"
-                           data-placement="right" title="{{ __('users.tip-dep-index') }} {{ $department->department_name }}"></i>
+                           data-placement="right" title="{{ __('auth/users.tip') }} {{ $department->department_name }}"></i>
                        </div>
                    </div>
                    {{-- /.Page Tooltip --}}
@@ -45,13 +45,14 @@
                        {{-- Table Head --}}
                        <thead class="text-center">
                             <tr>
-                                <th scope="col">{{ __('users.th-collaborator') }}</th>
-                                <th scope="col">{{ __('users.th-profession') }}</th>
-                                <th scope="col">{{ __('users.th-email') }}</th>
-                                <th scope="col">{{ __('users.th-phone') }}</th>
+                                <th scope="col">{{ __('auth/users.th-collaborator') }}</th>
+                                <th scope="col">{{ __('auth/users.th-profession') }}</th>
+                                <th scope="col">{{ __('auth/users.th-email') }}</th>
+                                <th scope="col">{{ __('auth/users.th-phone') }}</th>
                             </tr>
                         </thead>
                        {{-- /.Table Head --}}
+
                        {{-- Table Body --}}
                        <tbody class="text-center">
                            @foreach ($users as $user)
@@ -75,10 +76,11 @@
                                     {{ $user->first_name }} {{ $user->last_name }}
                                     &nbsp;
                                     {{-- User Departmanent Responsible --}}
-                                    @if ($user->user_role_id == 3)
+                                    @if ($user->user_role_id == 2)
                                     <i class="fas fa-user-tie text-info fa-lg" data-toggle="tooltip"
-                                    data-placement="right" title="{{ __('users.tip-dep-responsible') }}"></i>
+                                    data-placement="right" title="{{ __('auth/users.tip-dep-head') }}"></i>
                                     @endif
+                                    {{-- /.User Departmanent Responsible --}}
                                     <td>{{ $user->profession }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
@@ -87,13 +89,14 @@
                            @endforeach
                        </tbody>
                        {{-- /.Table Body --}}
+
                        {{-- Table Footer --}}
                        <tfoot class="text-center">
                             <tr>
-                                <th>{{ __('users.th-collaborator') }}</th>
-                                <th>{{ __('users.th-profession') }}</th>
-                                <th>{{ __('users.th-email') }}</th>
-                                <th>{{ __('users.th-phone') }}</th>
+                                <th>{{ __('auth/users.th-collaborator') }}</th>
+                                <th>{{ __('auth/users.th-profession') }}</th>
+                                <th>{{ __('auth/users.th-email') }}</th>
+                                <th>{{ __('auth/users.th-phone') }}</th>
                             </tr>
                        </tfoot>
                        {{-- /.Table Footer --}}
@@ -116,16 +119,27 @@
 
 @section('js')
     <script>
-        $(document).ready( function () {
-            $('#usersTable').DataTable({
-                /*
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },*/
-                columnDefs: [
-                    { orderable: false, targets: 1 }
-                ]
+        var locale = "{!! config('app.locale') !!}";
+
+        if (locale.valueOf() == new String("pt").valueOf()) {
+            $(document).ready( function () {
+                $('#usersTable').DataTable({
+                    language:{
+                        url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                    },
+                    columnDefs: [
+                        { orderable: false, targets: 1 }
+                    ],
+                });
             });
-        });
+        }else{
+            $(document).ready( function () {
+                $('#usersTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: 1 }
+                    ]
+                });
+            });
+        }
     </script>
 @stop

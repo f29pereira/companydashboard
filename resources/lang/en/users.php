@@ -3,17 +3,6 @@
 return[
     /*
     |--------------------------------------------------------------------------
-    | Users Menu - Language Lines (en)
-    |--------------------------------------------------------------------------
-    */
-    'menu' => [
-        'card-title'                => 'Users Menu',
-        'registered-users'          => 'Registered Users',
-        'registered-departments'    => 'Registered Departments',
-        'registered-roles'          => 'User Roles',
-    ],
-    /*
-    |--------------------------------------------------------------------------
     | Users Views - Language Lines (en)
     |--------------------------------------------------------------------------
     */
@@ -104,16 +93,4 @@ return[
     'toastr-title'          => 'User:',
     'toastr-user-profile'   => 'User profile sucessfully updated.',
     'toastr-user-img'       => 'User photo sucessfully updated.',
-    /*
-    |--------------------------------------------------------------------------
-    | Users from Auth User Department - Language Lines (en)
-    |--------------------------------------------------------------------------
-    */
-    'index-dep-title'       => 'Collaborators from Department',
-    'tip-index-dep'         => 'Departments are assigned by the system administrator',
-    'no-dep-msg'            => 'Sorry, you have not been assigned a department yet.',
-    //table
-    'th-collaborator'       => 'Collaborator',
-    //User Tooltip - Department Responsible
-    'tip-dep-responsible'   =>  'Department Head',
 ];

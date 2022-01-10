@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Companies;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Company Create/Update - Form Request
  */
-class CompanyPostRequest extends FormRequest
-{
+class CompanyPostRequest extends FormRequest{
     /**
      * Determine if the user is authorized to make this request.
      *

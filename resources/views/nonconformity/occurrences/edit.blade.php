@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('oc.edit-title') }}
+                            {{ __('oc/edit.title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('occurrences.tip-edit') }}"></i>
+                            data-toggle="tooltip" data-placement="right" title="{{ __('oc/edit.tip') }}"></i>
                         </div>
                     </div>
                     {{-- /.Page Tooltip --}}
@@ -49,14 +49,14 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="occurrenceTitle" class="form-label">
-                                        {{ __('oc.label-title') }} &nbsp;&nbsp;
+                                        {{ __('oc/edit.label-title') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     {{-- Input group --}}
                                     <div class="input-group">
                                         <input type="text" name="oc_title" id="occurrenceTitle" class="form-control @error('oc_title') is-invalid @enderror"
-                                        value="{{ $occurrence->oc_title }}" placeholder="{{ __('oc.text-edit-title') }}">
+                                        value="{{ $occurrence->oc_title }}" placeholder="{{ __('oc/edit.text-title') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-heading text-info"></span>
@@ -80,7 +80,7 @@
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="summernote" class="form-label">
-                                        {{ __('oc.label-description') }} &nbsp;&nbsp;
+                                        {{ __('oc/edit.label-description') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
@@ -102,7 +102,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="occurrenceCompany" class="form-label">
-                                        {{ __('oc.label-company') }} &nbsp;&nbsp;
+                                        {{ __('oc/edit.label-company') }} &nbsp;&nbsp;
                                     </label>
                                     {{-- Input group --}}
                                     <div class="input-group">
@@ -129,7 +129,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="occurrenceState" class="form-label">
-                                        {{ __('oc.show-state') }} &nbsp;&nbsp;
+                                        {{ __('oc/edit.label-state') }} &nbsp;&nbsp;
                                     </label>
                                     <i class="fas fa-asterisk text-danger fa-sm"
                                     data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
@@ -201,7 +201,7 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
             ],
-            placeholder: {!! json_encode(__('oc.text-edit-description')) !!},
+            placeholder: {!! json_encode(__('oc/edit.text-description')) !!},
             tabsize: 2,
             height: 150
       });

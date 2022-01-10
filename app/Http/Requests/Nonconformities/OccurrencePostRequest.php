@@ -27,8 +27,15 @@ class OccurrencePostRequest extends FormRequest{
             'oc_title'                  => ['required','string','max:50'],
             'oc_description'            => ['required'],
             'user_id'                   => ['required'],
-            'resolution_state_id'       => ['required'],
-            //'company_id'                => ['required'],
         ];
+    }
+
+    /**
+     *  Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function messages(){
+        return[];
     }
 }

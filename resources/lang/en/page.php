@@ -129,41 +129,6 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | User Roles - Language Lines (en)
-    |--------------------------------------------------------------------------
-    |
-    */
-    'roles' => [
-        /**
-         * User Roles card title
-         */
-        'index-title'       => 'User Roles',
-        /**
-         * User Roles Table
-         */
-        'th-action'         => 'User Action',
-        'th-admin'          => 'Administrator',
-        'th-collaborator'   => 'Collaborator',
-        /**
-         * User Roles Tooltip - Roles Table Page
-         */
-        'tip-index'         => 'List of actions/user role permissions',
-        /**
-         * User Roles Actions
-         */
-        //Users (Consult/Edit/Delete)
-        'action-users'          => 'users',
-        //Companies (CRUD)
-        'action-companies'      => 'companies',
-        //Companies (Create/Edit/Delete)
-        'action-company_types'  => 'business relationships',
-        //Departments (Create/Edit/Delete)
-        'action-departments'    => 'departments',
-        //Profile (Show/Edit)
-        'action-profile'        => 'my profile data',
-    ],
-    /*
-    |--------------------------------------------------------------------------
     | Management Menu - Language Lines (en)
     |--------------------------------------------------------------------------
     |
@@ -173,21 +138,6 @@ return [
         'registered-companies'      => 'Registered Companies',
         'registered-departments'    => 'Registered Departments',
         'registered-occurrences'    => 'Registered Occurrences',
-    ],
-    /*
-    |--------------------------------------------------------------------------
-    | Company Menu - Language Lines (en)
-    |-------------------------------------------------------------------------
-    |
-    */
-    'company-menu' => [
-        'index-title'               => 'Companies Menu',
-        'registered-companies'      => 'Registered Companies',
-        'registered-company_types'  => 'Registered Business Relationships',
-        /**
-         * Tooltip - Company Menu Page
-         */
-        'tip-index'                 => 'Company Menu',
     ],
     /*
     |--------------------------------------------------------------------------

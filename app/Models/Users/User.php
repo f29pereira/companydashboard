@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Companies\Company;
 use App\Models\Nonconformities\Occurrence;
 
+/**
+ * User Model
+ */
 class User extends Authenticatable{
     use HasApiTokens, HasFactory, Notifiable;
 

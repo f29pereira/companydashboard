@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('oc.create-title') }}
+                            {{ __('oc/create.title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('oc.tip-create') }}"></i>
+                            data-toggle="tooltip" data-placement="right" title="{{ __('oc/create.tip') }}"></i>
                         </div>
                     </div>
                     {{-- /.Page Tooltip --}}
@@ -49,21 +49,21 @@
                             <div class="col-md-4 mb-3">
                                 <div class="form-group">
                                     <label for="occurrenceTitle" class="form-label">
-                                        {{ __('oc.label-title') }} &nbsp;&nbsp;
+                                        {{ __('oc/create.label-title') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
                                     {{-- Input group --}}
                                     <div class="input-group">
-                                        <input type="text" name="occurrence_title" id="occurrenceTitle" class="form-control @error('occurrence_title') is-invalid @enderror"
-                                        placeholder="{{ __('oc.text-create-title') }}">
+                                        <input type="text" name="oc_title" id="occurrenceTitle" class="form-control @error('oc_title') is-invalid @enderror"
+                                        placeholder="{{ __('oc/create.text-title') }}">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <span class="fas fa-heading text-info"></span>
                                             </div>
                                         </div>
                                         {{-- Error Message --}}
-                                        @if($errors->has('occurrence_title'))
+                                        @if($errors->has('oc_title'))
                                         <div class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('occurrence_title') }}</strong>
                                         </div>
@@ -80,14 +80,14 @@
                             <div class="col-md-12 mb-3">
                                 <div class="form-group">
                                     <label for="summernote" class="form-label">
-                                        {{ __('oc.label-description') }} &nbsp;&nbsp;
+                                        {{ __('oc/create.label-description') }} &nbsp;&nbsp;
                                         <i class="fas fa-asterisk text-danger fa-sm"
                                         data-toggle="tooltip" data-placement="right" title="{{ __('page.generic.tip-required') }}"></i>
                                     </label>
-                                    <textarea name="occurrence_description" id="summernote" class="form-control @error('occurrence_description') is-invalid @enderror"
+                                    <textarea name="oc_description" id="summernote" class="form-control @error('oc_description') is-invalid @enderror"
                                     cols="30" rows="10"></textarea>
                                     {{-- Error Message --}}
-                                    @error('occurrence_description')
+                                    @error('oc_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -139,7 +139,7 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
             ],
-            placeholder: {!! json_encode(__('oc.text-create-description')) !!},
+            placeholder: {!! json_encode(__('oc/create.text-description')) !!},
             tabsize: 2,
             height: 150
         });

@@ -22,7 +22,7 @@
                     {{-- Card Title --}}
                     <h3 class="card-title">
                         <i class="far fa-building fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                        {{ __('page.company-menu.index-title') }}
+                        {{ __('companies/menu.card-title') }}
                     </h3>
                 </div>
                 {{-- Card Body --}}
@@ -114,7 +114,7 @@
                                     <div class="small-box bg-info">
                                         <div class="inner">
                                             <h3>{{ $count }}</h3>
-                                            <p>{{ __('page.company-menu.registered-companies') }}</p>
+                                            <p>{{ __('companies/menu.registered-companies') }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="far fa-building text-white"></i>
@@ -130,7 +130,7 @@
                                     <div class="small-box bg-info">
                                         <div class="inner">
                                             <h3>{{ $typesCount }}</h3>
-                                            <p>{{ __('page.company-menu.registered-company_types') }}</p>
+                                            <p>{{ __('companies/menu.registered-company_types') }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="far fa-handshake text-white"></i>

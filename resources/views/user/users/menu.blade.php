@@ -23,7 +23,7 @@
                             {{-- Card Title --}}
                             <h3 class="card-title">
                                 <i class="fas fa-users fa-lg"></i></i>&nbsp;&nbsp;&nbsp;
-                                {{ __('users.menu.card-title') }}
+                                {{ __('users/menu.card-title') }}
                             </h3>
                             <div></div>
                         </div>
@@ -38,7 +38,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $users }}</h3>
-                                      <p>{{ __('users.menu.registered-users') }}</p>
+                                      <p>{{ __('users/menu.registered-users') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users text-white"></i>
@@ -56,7 +56,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $departments }}</h3>
-                                      <p>{{ __('users.menu.registered-departments') }}</p>
+                                      <p>{{ __('users/menu.registered-departments') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users text-white"></i>
@@ -74,7 +74,7 @@
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                       <h3>{{ $roles }}</h3>
-                                      <p>{{ __('users.menu.registered-roles') }}</p>
+                                      <p>{{ __('users/menu.registered-roles') }}</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users-cog text-white"></i>

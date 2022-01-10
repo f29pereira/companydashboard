@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompanyTypePostRequest extends FormRequest
-{
+/**
+ * Department Create/Update - Form Request
+ */
+class DepartmentPostRequest extends FormRequest{
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -22,8 +24,7 @@ class CompanyTypePostRequest extends FormRequest
      */
     public function rules(){
         return [
-            'type_name'         => ['required','string','max:50','unique:company_types'],
-            'type_description'  => ['required','max:250']
+            'department_name' => ['required','string','max:50', 'unique:departments']
         ];
     }
 

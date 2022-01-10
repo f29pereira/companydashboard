@@ -156,15 +156,27 @@
 
 @section('js')
     <script>
-        $(document).ready( function () {
-            $('#companyTypeTable').DataTable({
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },
-                columnDefs: [
-                    { orderable: false, targets: 2 }
-                ]
+        var locale = "{!! config('app.locale') !!}";
+
+        if (locale.valueOf() == new String("pt").valueOf()) {
+            $(document).ready( function () {
+                $('#companyTypeTable').DataTable({
+                    language:{
+                        url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                    },
+                    columnDefs: [
+                        { orderable: false, targets: 2 }
+                    ],
+                });
             });
-        });
+        }else{
+            $(document).ready( function () {
+                $('#companyTypeTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: 2 }
+                    ]
+                });
+            });
+        }
     </script>
 @stop

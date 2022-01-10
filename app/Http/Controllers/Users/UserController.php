@@ -8,7 +8,7 @@ use App\Http\Traits\Users\UserRoleTrait;
 use App\Http\Traits\Users\UserImageTrait;
 use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Companies\CompanyTrait;
-use App\Http\Requests\UserPostRequest;
+use App\Http\Requests\Users\UserPostRequest;
 use App\Models\Users\User;
 
 /**
@@ -104,7 +104,7 @@ class UserController extends Controller{
     /**
      * Update the specified user in storage.
      *
-     * @param  App\Http\Requests\UserPostRequest  $request
+     * @param  App\Http\Requests\Users\UserPostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

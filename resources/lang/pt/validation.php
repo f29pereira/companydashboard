@@ -136,7 +136,6 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
-
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
@@ -161,7 +160,6 @@ return [
     | of "email". This simply helps us make our message more expressive.
     |
     */
-
     'attributes' => [
         //Users
         'first_name'            => 'nome',
@@ -181,6 +179,8 @@ return [
         'type_description'      => 'descrição',
         //Department
         'department_name'       => 'nome do departamento',
+        //Occurrences
+        'oc_title'              => 'título',
+        'oc_description'        => 'descrição',
     ],
-
 ];

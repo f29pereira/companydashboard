@@ -5,8 +5,10 @@ namespace App\Models\Users;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserImage extends Model
-{
+/**
+ * User Image Model
+ */
+class UserImage extends Model{
     use HasFactory;
 
     /**

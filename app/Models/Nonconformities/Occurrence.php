@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Users\User;
 use App\Models\Companies\Company;
 
+/**
+ * Occurrence Model
+ */
 class Occurrence extends Model{
     use HasFactory;
 
@@ -27,7 +30,7 @@ class Occurrence extends Model{
         'oc_description',
         'user_id',
         'resolution_state_id',
-        'company_id'
+        'company_id',
     ];
 
     /**
@@ -41,7 +44,7 @@ class Occurrence extends Model{
      * Eloquent relation between Occurrence and ResolutionState
      */
     public function resolutionState(){
-        return $this->belongsTo(resolutionState::class, 'resolution_state_id');
+        return $this->belongsTo(ResolutionState::class, 'resolution_state_id');
     }
 
     /**

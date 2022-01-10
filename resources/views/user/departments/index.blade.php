@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     {{-- Table --}}
-                    <table class="table table-hover table-responsive-md" id="departmentTable">
+                    <table class="table table-hover table-responsive-md" id="departmentsTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
                             <th scope="col">{{ __('page.departments.th-name') }}</th>
@@ -135,16 +135,28 @@
 
 @section('js')
     <script>
-        $(document).ready( function () {
-            $('#departmentTable').DataTable({
-                // language:{
-                //     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                // },
-                columnDefs: [
-                    { orderable: false, targets: 1 }
-                ]
+        var locale = "{!! config('app.locale') !!}";
+
+        if (locale.valueOf() == new String("pt").valueOf()) {
+            $(document).ready( function () {
+                $('#departmentsTable').DataTable({
+                    language:{
+                        url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                    },
+                    columnDefs: [
+                        { orderable: false, targets: 1 }
+                    ],
+                });
             });
-        });
+        }else{
+            $(document).ready( function () {
+                $('#departmentsTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: 1 }
+                    ]
+                });
+            });
+        }
     </script>
 @stop
 

@@ -5,6 +5,9 @@ namespace App\Models\Nonconformities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Resolution State Model
+ */
 class ResolutionState extends Model{
     use HasFactory;
 

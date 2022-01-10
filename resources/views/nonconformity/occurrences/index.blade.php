@@ -23,7 +23,7 @@
                         {{-- Card Title --}}
                         <h3 class="card-title">
                             <i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;&nbsp;&nbsp;
-                            {{ __('oc.index-title') }}
+                            {{ __('oc/index.index-title') }}
                         </h3>
                         <div></div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="col mb-3">
                             <i class="far fa-question-circle text-info fa-lg"
                             data-toggle="tooltip" data-placement="right"
-                            title="{{ __('oc.tip-index') }}"></i>
+                            title="{{ __('oc/index.tip-index') }}"></i>
                         </div>
                     </div>
                     {{-- /.Page Tooltip --}}
@@ -46,8 +46,8 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/occurrences/create') }}" role="button"
-                            data-toggle="tooltip" data-placement="right" title="{{ __('oc.tip-add') }}">
-                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('oc.add-title') }}
+                            data-toggle="tooltip" data-placement="right" title="{{ __('oc/index.tip-add') }}">
+                                <i class="far fa-plus-square fa-lg"></i>&nbsp;&nbsp;{{ __('oc/index.add-title') }}
                             </a>
                         </div>
                     </div>
@@ -57,11 +57,11 @@
                     <table class="table table-hover table-responsive-md" id="occurrencesTable">
                         {{-- Table Head --}}
                         <thead class="text-center">
-                            <th scope="col">{{ __('oc.th-user') }}</th>
-                            <th scope="col">{{ __('oc.th-title') }}</th>
-                            <th scope="col">{{ __('oc.th-company') }}</th>
-                            <th scope="col">{{ __('oc.th-resolution') }}</th>
-                            <th scope="col">{{ __('oc.th-management') }}</th>
+                            <th scope="col">{{ __('oc/index.th-user') }}</th>
+                            <th scope="col">{{ __('oc/index.th-title') }}</th>
+                            <th scope="col">{{ __('oc/index.th-company') }}</th>
+                            <th scope="col">{{ __('oc/index.th-resolution') }}</th>
+                            <th scope="col">{{ __('oc/index.th-management') }}</th>
                         </thead>
                         {{-- /.Table Head --}}
 
@@ -96,7 +96,7 @@
                                             {{-- Show Occurrence --}}
                                             <a class="btn bg-gradient-success btn-sm" href="{{ url('/occurrences/show/'.$occurrence->id) }}"
                                                 role="button" data-toggle="tooltip" data-placement="bottom"
-                                                title="{{ __('oc.tip-show-btn') }}">
+                                                title="{{ __('oc/index.tip-show-btn') }}">
                                                 <i class="fas fa-info-circle"></i>
                                             </a>
                                             {{-- /.Show Occurrence --}}
@@ -105,7 +105,7 @@
                                             {{-- Edit Occurrence --}}
                                             <a class="btn bg-gradient-warning btn-sm" href="{{ url('/occurrences/edit/'.$occurrence->id) }}"
                                                 role="button" data-toggle="tooltip" data-placement="bottom"
-                                                title="{{ __('oc.tip-edit-btn') }}">
+                                                title="{{ __('oc/index.tip-edit-btn') }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                             {{-- /.Edit Occurrence --}}
@@ -115,7 +115,7 @@
                                             <span data-toggle="modal" data-target="#deleteOccurrence-{{ $occurrence->id }}">
                                                 <button type="button" class="btn bg-gradient-danger btn-sm"
                                                     data-toggle="tooltip" data-placement="bottom"
-                                                    title="{{ __('oc.tip-delete-btn') }}">
+                                                    title="{{ __('oc/index.tip-delete-btn') }}">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </span>
@@ -133,7 +133,7 @@
                                                 <div class="modal-header bg-danger text-center">
                                                     <h5 class="modal-title w-100" id="deleteModalLabel">
                                                         <i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;
-                                                        {{ __('oc.delete-title') }}
+                                                        {{ __('oc/index.delete-title') }}
                                                     </h5>
                                                 </div>
                                                 {{-- /.Modal Header --}}
@@ -145,7 +145,7 @@
                                                         <div class="row">
                                                             <i class="far fa-question-circle text-danger fa-lg"
                                                             data-toggle="tooltip" data-placement="right"
-                                                            title="{{ __('oc.tip-delete') }}"></i>&nbsp;&nbsp;
+                                                            title="{{ __('oc/index.tip-delete') }}"></i>&nbsp;&nbsp;
                                                         </div>
                                                     </div>
                                                     {{-- /.Modal Tooltip --}}
@@ -237,11 +237,11 @@
 
                         {{-- Table Footer --}}
                         <tfoot class="text-center">
-                            <th>{{ __('oc.th-user') }}</th>
-                            <th>{{ __('oc.th-title') }}</th>
-                            <th>{{ __('oc.th-company') }}</th>
-                            <th>{{ __('oc.th-resolution') }}</th>
-                            <th>{{ __('oc.th-management') }}</th>
+                            <th>{{ __('oc/index.th-user') }}</th>
+                            <th>{{ __('oc/index.th-title') }}</th>
+                            <th>{{ __('oc/index.th-company') }}</th>
+                            <th>{{ __('oc/index.th-resolution') }}</th>
+                            <th>{{ __('oc/index.th-management') }}</th>
                         </tfoot>
                         {{-- /.Table Footer --}}
                     </table>
@@ -262,16 +262,27 @@
 
 @section('js')
     <script>
-        $(document).ready( function () {
-            $('#occurrencesTable').DataTable({
-                /*
-                language:{
-                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
-                },*/
-                columnDefs: [
-                    { orderable: false, targets: 4 }
-                ]
+        var locale = "{!! config('app.locale') !!}";
+
+        if (locale.valueOf() == new String("pt").valueOf()) {
+            $(document).ready( function () {
+                $('#occurrencesTable').DataTable({
+                    language:{
+                        url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/pt_pt.json'
+                    },
+                    columnDefs: [
+                        { orderable: false, targets: 4 }
+                    ],
+                });
             });
-        });
+        }else{
+            $(document).ready( function () {
+                $('#occurrencesTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: 4 }
+                    ]
+                });
+            });
+        }
     </script>
 @stop

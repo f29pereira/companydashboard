@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Companies;
 
 use App\Http\Controllers\Controller\Controller;
-use App\Http\Requests\CompanyPostRequest;
+use App\Http\Requests\Companies\CompanyPostRequest;
 use App\Http\Traits\Companies\CompanyTypeTrait;
 use App\Http\Traits\Companies\CompanyTrait;
 use App\Models\Companies\Company;
@@ -76,7 +76,7 @@ class CompanyController extends Controller{
     /**
      * Store a newly created company in storage.
      *
-     * @param  \Http\Requests\CompanyPostRequest  $request
+     * @param  \Http\Requests\Companies\CompanyPostRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(CompanyPostRequest $request){
@@ -137,7 +137,7 @@ class CompanyController extends Controller{
     /**
      * Update the specified company in storage.
      *
-     * @param  \Http\Requests\CompanyPostRequest  $request
+     * @param  \Http\Requests\Companies\CompanyPostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -177,7 +177,7 @@ class CompanyController extends Controller{
     /**
      * Update the specified company in storage.
      *
-     * @param  \Http\Requests\CompanyPostRequest  $request
+     * @param  \Http\Requests\Companies\CompanyPostRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

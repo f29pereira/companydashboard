@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller\Controller;
-use App\Http\Requests\DepartmentPostRequest;
+use App\Http\Requests\Users\DepartmentPostRequest;
 use App\Http\Traits\Users\DepartmentTrait;
 use App\Http\Traits\Companies\CompanyTrait;
 use App\Models\Users\Department;
@@ -48,7 +48,7 @@ class DepartmentController extends Controller{
     /**
      * Store a newly created department in storage.
      *
-     * @param  App\Http\Requests\DepartmentPostRequest  $request
+     * @param  App\Http\Requests\Users\DepartmentPostRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(DepartmentPostRequest $request){
@@ -84,7 +84,7 @@ class DepartmentController extends Controller{
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\DepartmentPostRequest  $request
+     * @param  App\Http\Requests\Users\DepartmentPostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

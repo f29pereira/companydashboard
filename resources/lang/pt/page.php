@@ -146,7 +146,7 @@ return  [
         /**
          * User Roles card title
          */
-        'index-title'       => 'Roles de Utilizador',
+        //'index-title'       => 'Roles de Utilizador',
         /**
          * User Roles Table
          */
@@ -182,21 +182,6 @@ return  [
         'registered-companies'      => 'Empresas registadas',
         'registered-departments'    => 'Departamentos registados',
         'registered-occurrences'    => 'Ocorrências registadas',
-    ],
-    /*
-    |--------------------------------------------------------------------------
-    | Company Menu - Language Lines (pt)
-    |-------------------------------------------------------------------------
-    |
-    */
-    'company-menu' => [
-        'index-title'               => 'Menu de Empresas',
-        'registered-companies'      => 'Empresas registadas',
-        'registered-company_types'  => 'Relações de Negócio registadas',
-        /**
-         * Tooltip - Company Menu Page
-         */
-        'tip-index'                 => 'Menu Empresas',
     ],
     /*
     |--------------------------------------------------------------------------

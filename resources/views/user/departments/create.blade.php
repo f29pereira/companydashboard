@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     {{-- Create Department Form --}}
-                    <form action="/departments/store" method="POST">
+                    <form action="/departments/store" method="POST" novalidate>
                         @csrf
                         <div class="row">
                             <div class="col-md-4 mb-3">
